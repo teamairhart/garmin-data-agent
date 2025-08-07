@@ -94,10 +94,20 @@ class RideDataAgent:
     
     def process_natural_query(self, query: str) -> str:
         """Process natural language queries about ride data"""
+        if self.ride_data is None:
+            return """I can help you analyze your ride data! Try asking questions like:
+            
+- "What was my average speed and heart rate on climbs steeper than 2.5%?"
+- "How was my power distributed across different zones?"
+- "What was my average speed?"
+- "What was my heart rate during the ride?"
+
+Upload your ride data first, then I can provide detailed analysis!"""
+        
         query_lower = query.lower()
         
-        # Simple rule-based responses for now
-        if "climb" in query_lower and ("speed" in query_lower or "heart rate" in query_lower):
+        # Check for climb-related queries (power, speed, heart rate)
+        if "climb" in query_lower:
             climb_data = self.calculate_gradient_analysis()
             if "error" in climb_data:
                 return climb_data["error"]
