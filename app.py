@@ -235,8 +235,9 @@ def debug_llm():
     debug_info = {
         "has_token": bool(os.getenv('HUGGING_FACE_API_TOKEN')),
         "token_preview": os.getenv('HUGGING_FACE_API_TOKEN', '')[:10] + '...' if os.getenv('HUGGING_FACE_API_TOKEN') else 'None',
-        "model_name": llm_agent.model_name,
-        "api_url": llm_agent.api_url
+        "current_model": llm_agent.current_model,
+        "api_url": llm_agent.api_url,
+        "available_models": llm_agent.models_to_try
     }
     
     # Test with simple query

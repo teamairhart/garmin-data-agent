@@ -5,10 +5,16 @@ from typing import Dict, Any, Optional
 import pandas as pd
 
 class HuggingFaceLLMAgent:
-    """GPT OSS integration via Hugging Face Inference API"""
+    """LLM integration via Hugging Face Inference API"""
     
-    def __init__(self, model_name: str = "openai/gpt-oss-20b"):
-        self.model_name = model_name
+    def __init__(self, model_name: str = "mistralai/Mistral-7B-Instruct-v0.3"):
+        # Try multiple models in order of preference
+        self.models_to_try = [
+            "mistralai/Mistral-7B-Instruct-v0.3",  # Reliable, fast
+            "microsoft/DialoGPT-large",            # Backup option
+            "openai/gpt-oss-20b"                   # Original goal (when available)
+        ]
+        self.current_model = model_name
         self.api_url = f"https://api-inference.huggingface.co/models/{model_name}"
         self.headers = {
             "Authorization": f"Bearer {os.getenv('HUGGING_FACE_API_TOKEN', '')}"
@@ -81,24 +87,15 @@ class HuggingFaceLLMAgent:
     def create_cycling_prompt(self, query: str, ride_summary: Dict, sample_data: Dict) -> str:
         """Create a specialized prompt for cycling analysis"""
         
-        prompt = f"""You are an expert cycling coach analyzing ride data. Provide detailed, actionable insights.
+        prompt = f"""[INST] You are an expert cycling coach. Analyze this ride data and answer the question with specific insights.
 
-RIDE SUMMARY:
-- Distance: {ride_summary.get('total_distance', 0) * 0.000621371:.1f} miles
-- Duration: {ride_summary.get('total_time', 0):.1f} hours
-- Avg Speed: {ride_summary.get('avg_speed', 0):.1f} mph
-- Avg Power: {ride_summary.get('avg_power', 0)} watts
-- Avg Heart Rate: {ride_summary.get('avg_heart_rate', 0)} bpm
-- Elevation Gain: {ride_summary.get('total_ascent', 0)} feet
+RIDE: {ride_summary.get('total_distance', 0) * 0.000621371:.1f} miles, {ride_summary.get('total_time', 0):.1f} hours
+PERFORMANCE: {ride_summary.get('avg_speed', 0):.1f} mph avg, {ride_summary.get('avg_power', 0)}W avg, {ride_summary.get('avg_heart_rate', 0)} bpm avg
+ELEVATION: {ride_summary.get('total_ascent', 0)} feet gained
 
-SAMPLE DATA POINTS:
-{json.dumps(sample_data, indent=2)}
+QUESTION: {query}
 
-USER QUESTION: {query}
-
-Provide a cycling coach's analysis with specific insights about performance, pacing, and training recommendations. Keep response under 200 words and focus on actionable advice.
-
-CYCLING COACH RESPONSE:"""
+Provide cycling coach insights in 2-3 sentences with actionable advice. [/INST]"""
         
         return prompt
     
