@@ -17,8 +17,14 @@ class HuggingFaceLLMAgent:
         
     def query_llm(self, prompt: str, max_retries: int = 3) -> Optional[str]:
         """Query the Hugging Face Inference API"""
-        if not os.getenv('HUGGING_FACE_API_TOKEN'):
+        token = os.getenv('HUGGING_FACE_API_TOKEN')
+        if not token:
+            print("DEBUG: No Hugging Face API token found")
             return None
+        
+        print(f"DEBUG: Found API token, first 10 chars: {token[:10]}...")
+        print(f"DEBUG: Querying model: {self.model_name}")
+        print(f"DEBUG: Prompt length: {len(prompt)} characters")
             
         payload = {
             "inputs": prompt,
@@ -40,21 +46,29 @@ class HuggingFaceLLMAgent:
                     timeout=30
                 )
                 
+                print(f"DEBUG: API Response Status: {response.status_code}")
+                
                 if response.status_code == 200:
                     result = response.json()
+                    print(f"DEBUG: API Response: {result}")
                     if isinstance(result, list) and len(result) > 0:
-                        return result[0].get('generated_text', '').strip()
+                        generated_text = result[0].get('generated_text', '').strip()
+                        print(f"DEBUG: Generated text length: {len(generated_text)}")
+                        return generated_text
                     elif isinstance(result, dict):
-                        return result.get('generated_text', '').strip()
+                        generated_text = result.get('generated_text', '').strip()
+                        print(f"DEBUG: Generated text length: {len(generated_text)}")
+                        return generated_text
                 
                 elif response.status_code == 503:  # Model loading
+                    print("DEBUG: Model is loading, waiting...")
                     if attempt < max_retries - 1:
                         import time
                         time.sleep(10)  # Wait for model to load
                         continue
                 
                 else:
-                    print(f"HF API Error {response.status_code}: {response.text}")
+                    print(f"DEBUG: HF API Error {response.status_code}: {response.text}")
                     
             except Exception as e:
                 print(f"LLM Query error (attempt {attempt + 1}): {e}")

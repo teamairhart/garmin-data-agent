@@ -226,5 +226,28 @@ def system_updates():
     report = update_monitor.generate_update_report()
     return f"<pre>{report}</pre>"
 
+@app.route('/system/debug-llm')
+def debug_llm():
+    """Debug LLM API connection"""
+    from src.agents.llm_agent import llm_agent
+    import os
+    
+    debug_info = {
+        "has_token": bool(os.getenv('HUGGING_FACE_API_TOKEN')),
+        "token_preview": os.getenv('HUGGING_FACE_API_TOKEN', '')[:10] + '...' if os.getenv('HUGGING_FACE_API_TOKEN') else 'None',
+        "model_name": llm_agent.model_name,
+        "api_url": llm_agent.api_url
+    }
+    
+    # Test with simple query
+    if debug_info["has_token"]:
+        test_result = llm_agent.query_llm("Hello, test message.")
+        debug_info["test_result"] = test_result if test_result else "No response"
+        debug_info["test_result_length"] = len(test_result) if test_result else 0
+    else:
+        debug_info["test_result"] = "No token - cannot test"
+    
+    return f"<pre>{debug_info}</pre>"
+
 if __name__ == '__main__':
     app.run(debug=True)
