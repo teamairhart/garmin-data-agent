@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h1 class="text-center mb-4">Welcome to Garmin Data Agent</h1>
+        <p class="text-center text-muted mb-5">Upload your Garmin ride data and ask intelligent questions about your performance</p>
+
+        <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+            <div class="upload-area">
+                <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-primary"></i>
+                <h4>Drop your Garmin file here</h4>
+                <p class="text-muted">Upload your .fit or .zip file from Garmin Connect</p>
+                <input type="file" class="form-control" name="file" accept=".fit,.zip" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    📊 Analyze My Ride
+                </button>
+                <div class="mt-3">
+                    <a href="{{ url_for('demo') }}" class="btn btn-outline-secondary">
+                        🎯 Try Demo Data
+                    </a>
+                </div>
+            </div>
+        </form>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">📈 Performance Metrics</h5>
+                        <p class="card-text">Get detailed insights about your speed, power, heart rate, and elevation data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">🤖 AI-Powered Analysis</h5>
+                        <p class="card-text">Ask natural language questions about your ride data using GPT OSS.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">📊 Smart Insights</h5>
+                        <p class="card-text">Discover patterns and trends in your training with LangGraph agents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+{% endblock %}

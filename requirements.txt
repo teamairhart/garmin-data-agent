@@ -1,0 +1,28 @@
+flask
+flask-sqlalchemy
+flask-login
+flask-wtf
+wtforms
+werkzeug
+gunicorn
+
+# Data processing
+pandas
+numpy
+fitparse
+
+# AI/ML
+transformers
+torch
+huggingface-hub
+langgraph
+langchain
+langchain-community
+
+# Visualization
+plotly
+matplotlib
+
+# Utilities
+python-dotenv
+requests

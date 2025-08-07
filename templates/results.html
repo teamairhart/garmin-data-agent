@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h1 class="text-center mb-4">🚴‍♂️ Ride Analysis Results 
+            {% if demo_mode %}<span class="badge bg-info">Demo Data</span>{% endif %}
+        </h1>
+        
+        {% if data_available %}
+        <!-- Metrics Display -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.2f"|format(metrics.total_distance) }} km</h3>
+                    <p class="mb-0">Total Distance</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.1f"|format(metrics.total_time) }} hrs</h3>
+                    <p class="mb-0">Duration</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.1f"|format(metrics.avg_speed) }} km/h</h3>
+                    <p class="mb-0">Avg Speed</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ metrics.avg_heart_rate }} bpm</h3>
+                    <p class="mb-0">Avg Heart Rate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.1f"|format(metrics.max_speed) }} km/h</h3>
+                    <p class="mb-0">Max Speed</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ metrics.max_heart_rate }} bpm</h3>
+                    <p class="mb-0">Max Heart Rate</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ metrics.total_ascent }} m</h3>
+                    <p class="mb-0">Total Ascent</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ metrics.avg_power }} W</h3>
+                    <p class="mb-0">Avg Power</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Garmin-specific metrics -->
+        {% if metrics.normalized_power > 0 or metrics.training_stress_score > 0 %}
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ metrics.normalized_power }} W</h3>
+                    <p class="mb-0">Normalized Power</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.1f"|format(metrics.training_stress_score) }}</h3>
+                    <p class="mb-0">TSS Score</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.1f"|format(metrics.total_time * 60) }} min</h3>
+                    <p class="mb-0">Moving Time</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card text-center">
+                    <h3>{{ "%.0f"|format((metrics.total_ascent / metrics.total_distance) * 1000) }} m/km</h3>
+                    <p class="mb-0">Climbing Rate</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- AI Query Interface -->
+        <div class="query-box mt-5">
+            <h3>🤖 Ask Questions About Your Ride</h3>
+            <p class="text-muted">Ask natural language questions like "What was my average speed on climbs steeper than 5%?"</p>
+            
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="queryInput" 
+                       placeholder="What was my heart rate during the steepest climbs?">
+                <button class="btn btn-primary" type="button" onclick="submitQuery()">
+                    Ask AI 🚀
+                </button>
+            </div>
+            
+            <div id="queryResponse" class="mt-3" style="display: none;">
+                <div class="alert alert-info">
+                    <strong>AI Response:</strong>
+                    <p id="responseText" class="mb-0"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                📁 Upload Another File
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function submitQuery() {
+    const queryInput = document.getElementById('queryInput');
+    const queryText = queryInput.value.trim();
+    
+    if (!queryText) {
+        alert('Please enter a question!');
+        return;
+    }
+    
+    // Show loading state
+    const responseDiv = document.getElementById('queryResponse');
+    const responseText = document.getElementById('responseText');
+    
+    responseDiv.style.display = 'block';
+    responseText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> AI is thinking...';
+    
+    // Send query to backend
+    fetch('/query', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({query: queryText})
+    })
+    .then(response => response.json())
+    .then(data => {
+        responseText.innerHTML = data.response;
+    })
+    .catch(error => {
+        responseText.innerHTML = 'Error: ' + error.message;
+    });
+}
+
+// Allow Enter key to submit query
+document.getElementById('queryInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        submitQuery();
+    }
+});
+</script>
+{% endblock %}
