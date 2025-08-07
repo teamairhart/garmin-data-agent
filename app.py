@@ -61,22 +61,27 @@ def parse_fit_file(fit_file_path):
         return None, str(e)
 
 def extract_ride_metrics(df, session_data):
-    """Extract key metrics from ride data"""
+    """Extract key metrics from ride data - converted to Imperial units"""
     if df is None or df.empty:
         return {}
     
+    # Conversion constants
+    METERS_TO_MILES = 0.000621371
+    METERS_TO_FEET = 3.28084
+    MPS_TO_MPH = 2.23694
+    
     # Handle Garmin's enhanced fields
     metrics = {
-        'total_distance': session_data.get('total_distance', 0) / 1000 if 'total_distance' in session_data else 0,  # Convert to km
+        'total_distance': session_data.get('total_distance', 0) * METERS_TO_MILES,  # Convert to miles
         'total_time': session_data.get('total_timer_time', 0) / 3600 if 'total_timer_time' in session_data else 0,  # Convert to hours
-        'avg_speed': session_data.get('enhanced_avg_speed', session_data.get('avg_speed', 0)) * 3.6,  # Convert to km/h
-        'max_speed': session_data.get('enhanced_max_speed', session_data.get('max_speed', 0)) * 3.6,  # Convert to km/h
+        'avg_speed': session_data.get('enhanced_avg_speed', session_data.get('avg_speed', 0)) * MPS_TO_MPH,  # Convert to mph
+        'max_speed': session_data.get('enhanced_max_speed', session_data.get('max_speed', 0)) * MPS_TO_MPH,  # Convert to mph
         'avg_heart_rate': session_data.get('avg_heart_rate', 0),
         'max_heart_rate': session_data.get('max_heart_rate', 0),
         'avg_power': session_data.get('avg_power', 0),
         'max_power': session_data.get('max_power', session_data.get('normalized_power', 0)),
-        'total_ascent': session_data.get('total_ascent', 0),
-        'total_descent': session_data.get('total_descent', 0),
+        'total_ascent': session_data.get('total_ascent', 0) * METERS_TO_FEET,  # Convert to feet
+        'total_descent': session_data.get('total_descent', 0) * METERS_TO_FEET,  # Convert to feet
         'normalized_power': session_data.get('normalized_power', 0),
         'training_stress_score': session_data.get('training_stress_score', 0)
     }

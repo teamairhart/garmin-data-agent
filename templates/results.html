@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="metric-card text-center">
-                    <h3>{{ "%.2f"|format(metrics.total_distance) }} km</h3>
+                    <h3>{{ "%.1f"|format(metrics.total_distance) }} mi</h3>
                     <p class="mb-0">Total Distance</p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-3">
                 <div class="metric-card text-center">
-                    <h3>{{ "%.1f"|format(metrics.avg_speed) }} km/h</h3>
+                    <h3>{{ "%.1f"|format(metrics.avg_speed) }} mph</h3>
                     <p class="mb-0">Avg Speed</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@
         <div class="row mt-3">
             <div class="col-md-3">
                 <div class="metric-card text-center">
-                    <h3>{{ "%.1f"|format(metrics.max_speed) }} km/h</h3>
+                    <h3>{{ "%.1f"|format(metrics.max_speed) }} mph</h3>
                     <p class="mb-0">Max Speed</p>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-3">
                 <div class="metric-card text-center">
-                    <h3>{{ metrics.total_ascent }} m</h3>
+                    <h3>{{ "%.0f"|format(metrics.total_ascent) }} ft</h3>
                     <p class="mb-0">Total Ascent</p>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-3">
                 <div class="metric-card text-center">
-                    <h3>{{ "%.0f"|format((metrics.total_ascent / metrics.total_distance) * 1000) }} m/km</h3>
+                    <h3>{{ "%.0f"|format(metrics.total_ascent / metrics.total_distance) }} ft/mi</h3>
                     <p class="mb-0">Climbing Rate</p>
                 </div>
             </div>

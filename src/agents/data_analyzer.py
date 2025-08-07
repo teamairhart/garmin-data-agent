@@ -51,12 +51,15 @@ class RideDataAgent:
         # Use Garmin's enhanced_speed if available
         speed_col = 'enhanced_speed' if 'enhanced_speed' in steep_climbs.columns else 'speed'
         
+        # Convert to Imperial units
+        MPS_TO_MPH = 2.23694
+        
         climb_metrics = {
-            "avg_speed_on_climbs": steep_climbs[speed_col].mean() * 3.6 if speed_col in steep_climbs.columns else 0,
+            "avg_speed_on_climbs": steep_climbs[speed_col].mean() * MPS_TO_MPH if speed_col in steep_climbs.columns else 0,  # mph
             "avg_heart_rate_on_climbs": steep_climbs['heart_rate'].mean() if 'heart_rate' in steep_climbs.columns else 0,
             "avg_power_on_climbs": steep_climbs['power'].mean() if 'power' in steep_climbs.columns else 0,
             "steepest_gradient": steep_climbs['gradient'].max(),
-            "total_climb_distance": len(steep_climbs) * 0.01,  # Approximate
+            "total_climb_distance": len(steep_climbs) * 0.01 * 0.621371,  # Convert to miles
             "climb_segments": len(steep_climbs)
         }
         
@@ -117,7 +120,7 @@ Upload your ride data first, then I can provide detailed analysis!"""
             response = f"""Based on your ride analysis:
 
 **Steep Climbs (>2.5% gradient):**
-- Average speed on climbs: {climb_data['avg_speed_on_climbs']:.1f} km/h
+- Average speed on climbs: {climb_data['avg_speed_on_climbs']:.1f} mph
 - Average heart rate on climbs: {climb_data['avg_heart_rate_on_climbs']:.0f} bpm
 - Average power on climbs: {climb_data['avg_power_on_climbs']:.0f} W
 - Steepest gradient: {climb_data['steepest_gradient']:.1f}%
@@ -137,9 +140,9 @@ Upload your ride data first, then I can provide detailed analysis!"""
             return response
         
         elif "average" in query_lower and "speed" in query_lower:
-            avg_speed = self.session_data.get('avg_speed', 0) * 3.6 if self.session_data else 0
-            max_speed = self.session_data.get('max_speed', 0) * 3.6 if self.session_data else 0
-            return f"Your average speed was {avg_speed:.1f} km/h with a maximum speed of {max_speed:.1f} km/h."
+            avg_speed = self.session_data.get('enhanced_avg_speed', self.session_data.get('avg_speed', 0)) * 2.23694 if self.session_data else 0
+            max_speed = self.session_data.get('enhanced_max_speed', self.session_data.get('max_speed', 0)) * 2.23694 if self.session_data else 0
+            return f"Your average speed was {avg_speed:.1f} mph with a maximum speed of {max_speed:.1f} mph."
         
         elif "heart rate" in query_lower:
             avg_hr = self.session_data.get('avg_heart_rate', 0) if self.session_data else 0
