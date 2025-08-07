@@ -12,7 +12,7 @@ from demo_data import generate_demo_ride_data
 
 app = Flask(__name__)
 
-# Production-ready configuration
+# Production-ready configuration - Imperial units enabled
 if os.environ.get('FLASK_ENV') == 'production':
     app.secret_key = os.environ.get('SECRET_KEY', 'fallback-secret-key')
     app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB for production
