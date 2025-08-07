@@ -95,6 +95,40 @@ class RideDataAgent:
         
         return zone_analysis
     
+    def analyze_ride_segments(self, segment_type: str) -> Dict[str, Any]:
+        """Analyze specific segments of the ride"""
+        if self.ride_data is None:
+            return {"error": "No ride data available"}
+        
+        total_points = len(self.ride_data)
+        MPS_TO_MPH = 2.23694
+        
+        if segment_type == "first_half":
+            segment_data = self.ride_data[:total_points//2]
+        elif segment_type == "second_half":
+            segment_data = self.ride_data[total_points//2:]
+        elif segment_type == "first_third":
+            segment_data = self.ride_data[:total_points//3]
+        elif segment_type == "last_third":
+            segment_data = self.ride_data[2*total_points//3:]
+        else:
+            return {"error": f"Unknown segment type: {segment_type}"}
+        
+        # Calculate metrics for this segment
+        speed_col = 'enhanced_speed' if 'enhanced_speed' in segment_data.columns else 'speed'
+        
+        metrics = {
+            "avg_speed": segment_data[speed_col].mean() * MPS_TO_MPH if speed_col in segment_data.columns else 0,
+            "max_speed": segment_data[speed_col].max() * MPS_TO_MPH if speed_col in segment_data.columns else 0,
+            "avg_heart_rate": segment_data['heart_rate'].mean() if 'heart_rate' in segment_data.columns else 0,
+            "max_heart_rate": segment_data['heart_rate'].max() if 'heart_rate' in segment_data.columns else 0,
+            "avg_power": segment_data['power'].mean() if 'power' in segment_data.columns else 0,
+            "max_power": segment_data['power'].max() if 'power' in segment_data.columns else 0,
+            "data_points": len(segment_data)
+        }
+        
+        return metrics
+
     def process_natural_query(self, query: str) -> str:
         """Process natural language queries about ride data"""
         if self.ride_data is None:
@@ -102,15 +136,40 @@ class RideDataAgent:
             
 - "What was my average speed and heart rate on climbs steeper than 2.5%?"
 - "How was my power distributed across different zones?"
-- "What was my average speed?"
-- "What was my heart rate during the ride?"
+- "What was my average speed in the second half of the ride?"
+- "How did my heart rate change during the ride?"
 
 Upload your ride data first, then I can provide detailed analysis!"""
         
         query_lower = query.lower()
         
+        # Check for segment-based queries
+        if "second half" in query_lower or "last half" in query_lower:
+            segment_data = self.analyze_ride_segments("second_half")
+            if "error" in segment_data:
+                return segment_data["error"]
+            
+            return f"""**Second Half of Your Ride:**
+- Average speed: {segment_data['avg_speed']:.1f} mph
+- Maximum speed: {segment_data['max_speed']:.1f} mph  
+- Average heart rate: {segment_data['avg_heart_rate']:.0f} bpm
+- Average power: {segment_data['avg_power']:.0f} W
+
+Compared to your overall ride average of {self.session_data.get('enhanced_avg_speed', 0) * 2.23694:.1f} mph, you {'sped up' if segment_data['avg_speed'] > self.session_data.get('enhanced_avg_speed', 0) * 2.23694 else 'slowed down'} in the second half."""
+        
+        elif "first half" in query_lower:
+            segment_data = self.analyze_ride_segments("first_half")
+            if "error" in segment_data:
+                return segment_data["error"]
+            
+            return f"""**First Half of Your Ride:**
+- Average speed: {segment_data['avg_speed']:.1f} mph
+- Maximum speed: {segment_data['max_speed']:.1f} mph
+- Average heart rate: {segment_data['avg_heart_rate']:.0f} bpm  
+- Average power: {segment_data['avg_power']:.0f} W"""
+        
         # Check for climb-related queries (power, speed, heart rate)
-        if "climb" in query_lower:
+        elif "climb" in query_lower:
             climb_data = self.calculate_gradient_analysis()
             if "error" in climb_data:
                 return climb_data["error"]
@@ -149,15 +208,52 @@ Upload your ride data first, then I can provide detailed analysis!"""
             max_hr = self.session_data.get('max_heart_rate', 0) if self.session_data else 0
             return f"Your average heart rate was {avg_hr} bpm with a maximum of {max_hr} bpm."
         
-        else:
-            return """I can help you analyze your ride data! Try asking questions like:
+        elif "last third" in query_lower or "final third" in query_lower:
+            segment_data = self.analyze_ride_segments("last_third")
+            if "error" in segment_data:
+                return segment_data["error"]
             
-- "What was my average speed and heart rate on climbs steeper than 2.5%?"
+            return f"""**Final Third of Your Ride:**
+- Average speed: {segment_data['avg_speed']:.1f} mph
+- Average heart rate: {segment_data['avg_heart_rate']:.0f} bpm
+- Average power: {segment_data['avg_power']:.0f} W
+
+This shows how you finished strong - or if you faded at the end!"""
+        
+        elif "first third" in query_lower:
+            segment_data = self.analyze_ride_segments("first_third")
+            if "error" in segment_data:
+                return segment_data["error"]
+            
+            return f"""**First Third of Your Ride:**
+- Average speed: {segment_data['avg_speed']:.1f} mph
+- Average heart rate: {segment_data['avg_heart_rate']:.0f} bpm
+- Average power: {segment_data['avg_power']:.0f} W
+
+This shows how you started your ride!"""
+        
+        else:
+            # Enhanced help with more examples
+            return f"""I can analyze your ride data in many ways! Try asking:
+
+**Segment Analysis:**
+- "What was my average speed in the second half of the ride?"
+- "How did I perform in the first third?"
+- "What was my power in the final third?"
+
+**Climb Analysis:**
+- "What was my average power on climbs?"
+- "How fast was I on steep sections?"
+
+**Power & Training:**
 - "How was my power distributed across different zones?"
+- "What was my maximum power output?"
+
+**Overall Stats:**
 - "What was my average speed?"
 - "What was my heart rate during the ride?"
 
-Upload your ride data first, then I can provide detailed analysis!"""
+Your current ride: {self.session_data.get('total_distance', 0) * 0.000621371:.1f} miles with {len(self.ride_data) if self.ride_data is not None else 0} data points to analyze!"""
 
 # Global instance for the Flask app
 ride_analyzer = RideDataAgent()
