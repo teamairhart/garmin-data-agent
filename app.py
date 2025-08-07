@@ -7,6 +7,7 @@ from fitparse import FitFile
 import tempfile
 from src.agents.data_analyzer import ride_analyzer
 from src.agents.update_monitor import update_monitor
+from src.auth import auth_bp, init_db
 from demo_data import generate_demo_ride_data
 
 app = Flask(__name__)
@@ -25,6 +26,12 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Register authentication blueprint
+app.register_blueprint(auth_bp, url_prefix='/auth')
+
+# Initialize database
+init_db()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

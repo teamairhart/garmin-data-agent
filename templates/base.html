@@ -39,15 +39,30 @@
             <a class="navbar-brand" href="{{ url_for('index') }}">🚴‍♂️ Garmin Data Agent</a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                {% if session.user_id %}
+                    <span class="navbar-text me-3">Welcome, {{ session.user_name }}!</span>
+                    <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+                {% endif %}
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {% for category, message in messages %}
+                    {% set alert_type = 'warning' %}
+                    {% if category == 'error' %}
+                        {% set alert_type = 'danger' %}
+                    {% elif category == 'success' %}
+                        {% set alert_type = 'success' %}
+                    {% elif category == 'info' %}
+                        {% set alert_type = 'info' %}
+                    {% endif %}
+                    <div class="alert alert-{{ alert_type }} alert-dismissible fade show" role="alert">
                         {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
