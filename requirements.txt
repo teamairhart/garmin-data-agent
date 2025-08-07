@@ -18,6 +18,8 @@ huggingface-hub
 langgraph
 langchain
 langchain-community
+openai
+accelerate
 
 # Visualization
 plotly

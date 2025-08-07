@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from typing import Dict, Any, List, Optional
 import numpy as np
+from .llm_agent import llm_agent
 
 class RideDataAgent:
     """Agent for analyzing Garmin ride data using GPT OSS model"""
@@ -233,7 +234,13 @@ This shows how you finished strong - or if you faded at the end!"""
 This shows how you started your ride!"""
         
         else:
-            # Enhanced help with more examples
+            # Try GPT OSS for unrecognized queries
+            llm_response = llm_agent.analyze_with_llm(query, self.ride_data, self.session_data)
+            
+            if llm_response:
+                return f"🧠 **AI Analysis:**\n\n{llm_response}\n\n---\n*Powered by GPT OSS*"
+            
+            # Fallback to enhanced help
             return f"""I can analyze your ride data in many ways! Try asking:
 
 **Segment Analysis:**
@@ -249,11 +256,18 @@ This shows how you started your ride!"""
 - "How was my power distributed across different zones?"
 - "What was my maximum power output?"
 
+**Complex Analysis:**
+- "How did my pacing strategy work?"
+- "What does my power curve tell you about my fitness?"
+- "How could I improve my performance?"
+
 **Overall Stats:**
 - "What was my average speed?"
 - "What was my heart rate during the ride?"
 
-Your current ride: {self.session_data.get('total_distance', 0) * 0.000621371:.1f} miles with {len(self.ride_data) if self.ride_data is not None else 0} data points to analyze!"""
+Your current ride: {self.session_data.get('total_distance', 0) * 0.000621371:.1f} miles with {len(self.ride_data) if self.ride_data is not None else 0} data points to analyze!
+
+💡 *Try complex questions - I now use GPT OSS for advanced analysis!*"""
 
 # Global instance for the Flask app
 ride_analyzer = RideDataAgent()
