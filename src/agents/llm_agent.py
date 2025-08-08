@@ -29,7 +29,7 @@ class HuggingFaceLLMAgent:
             return None
         
         print(f"DEBUG: Found API token, first 10 chars: {token[:10]}...")
-        print(f"DEBUG: Querying model: {self.model_name}")
+        print(f"DEBUG: Querying model: {self.current_model}")
         print(f"DEBUG: Prompt length: {len(prompt)} characters")
             
         payload = {
