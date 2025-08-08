@@ -17,18 +17,19 @@ class HuggingFaceLLMAgent:
         self.current_model = model_name
         self.api_url = f"https://api-inference.huggingface.co/models/{model_name}"
         self.headers = {
-            "Authorization": f"Bearer {os.getenv('HUGGING_FACE_API_TOKEN', '')}"
+            "Authorization": f"Bearer {os.getenv('HUGGING_FACE_API_TOKEN', '').strip()}"
         }
         self.max_tokens = 500
         
     def query_llm(self, prompt: str, max_retries: int = 3) -> Optional[str]:
         """Query the Hugging Face Inference API"""
-        token = os.getenv('HUGGING_FACE_API_TOKEN')
+        token = os.getenv('HUGGING_FACE_API_TOKEN', '').strip()
         if not token:
             print("DEBUG: No Hugging Face API token found")
             return None
         
         print(f"DEBUG: Found API token, first 10 chars: {token[:10]}...")
+        print(f"DEBUG: Token length: {len(token)}")
         print(f"DEBUG: Querying model: {self.current_model}")
         print(f"DEBUG: Prompt length: {len(prompt)} characters")
             
@@ -43,11 +44,17 @@ class HuggingFaceLLMAgent:
             }
         }
         
+        # Use fresh headers with cleaned token
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json"
+        }
+        
         for attempt in range(max_retries):
             try:
                 response = requests.post(
                     self.api_url, 
-                    headers=self.headers, 
+                    headers=headers, 
                     json=payload,
                     timeout=30
                 )
