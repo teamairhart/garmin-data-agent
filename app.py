@@ -205,10 +205,15 @@ def upload_file():
 
 @app.route('/query', methods=['POST'])
 def query_data():
+    print(f"DEBUG: Session ride_loaded: {session.get('ride_loaded')}")
+    print(f"DEBUG: Ride analyzer has data: {ride_analyzer.ride_data is not None}")
+    print(f"DEBUG: Ride analyzer data length: {len(ride_analyzer.ride_data) if ride_analyzer.ride_data is not None else 'None'}")
+    
     if not session.get('ride_loaded'):
         return jsonify({'response': 'Please upload a ride file first!'})
     
     query_text = request.json.get('query', '')
+    print(f"DEBUG: Query text: '{query_text}'")
     
     if not query_text:
         return jsonify({'response': 'Please enter a question!'})
@@ -216,8 +221,10 @@ def query_data():
     try:
         # Use the data analyzer to process the query
         response = ride_analyzer.process_natural_query(query_text)
+        print(f"DEBUG: Response length: {len(response)}")
         return jsonify({'response': response})
     except Exception as e:
+        print(f"DEBUG: Exception in query processing: {e}")
         return jsonify({'response': f'Error processing query: {str(e)}'})
 
 @app.route('/system/updates')

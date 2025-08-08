@@ -143,6 +143,7 @@ class RideDataAgent:
 Upload your ride data first, then I can provide detailed analysis!"""
         
         query_lower = query.lower()
+        print(f"DEBUG: Processing query: '{query_lower}'")
         
         # Check for segment-based queries
         if "second half" in query_lower or "last half" in query_lower:
@@ -199,10 +200,15 @@ Compared to your overall ride average of {self.session_data.get('enhanced_avg_sp
             
             return response
         
-        elif "average" in query_lower and "speed" in query_lower:
+        elif "average" in query_lower and ("speed" in query_lower or "mph" in query_lower):
             avg_speed = self.session_data.get('enhanced_avg_speed', self.session_data.get('avg_speed', 0)) * 2.23694 if self.session_data else 0
             max_speed = self.session_data.get('enhanced_max_speed', self.session_data.get('max_speed', 0)) * 2.23694 if self.session_data else 0
             return f"Your average speed was {avg_speed:.1f} mph with a maximum speed of {max_speed:.1f} mph."
+        
+        elif "average" in query_lower and "power" in query_lower:
+            avg_power = self.session_data.get('avg_power', 0) if self.session_data else 0
+            max_power = self.session_data.get('max_power', 0) if self.session_data else 0
+            return f"Your average power was {avg_power} watts with a maximum of {max_power} watts."
         
         elif "heart rate" in query_lower:
             avg_hr = self.session_data.get('avg_heart_rate', 0) if self.session_data else 0
@@ -234,11 +240,15 @@ This shows how you finished strong - or if you faded at the end!"""
 This shows how you started your ride!"""
         
         else:
-            # Try GPT OSS for unrecognized queries
+            print(f"DEBUG: No rule matched, trying LLM for query: '{query_lower}'")
+            # Try LLM for unrecognized queries
             llm_response = llm_agent.analyze_with_llm(query, self.ride_data, self.session_data)
             
             if llm_response:
-                return f"🧠 **AI Analysis:**\n\n{llm_response}\n\n---\n*Powered by GPT OSS*"
+                print(f"DEBUG: LLM returned response of length: {len(llm_response)}")
+                return f"🧠 **AI Analysis:**\n\n{llm_response}\n\n---\n*Powered by Mistral AI*"
+            else:
+                print("DEBUG: LLM returned no response, showing help")
             
             # Fallback to enhanced help
             return f"""I can analyze your ride data in many ways! Try asking:
