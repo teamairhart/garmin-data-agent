@@ -5,7 +5,7 @@ import json
 import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Tuple
 
@@ -171,6 +171,9 @@ def build_file_summary_row(
         "avg_power_w": session_data.get("avg_power"),
         "max_power_w": session_data.get("max_power"),
         "normalized_power_w": session_data.get("normalized_power"),
+        "threshold_power_w": session_data.get("threshold_power"),
+        "intensity_factor": session_data.get("intensity_factor"),
+        "total_work_j": session_data.get("total_work"),
         "avg_heart_rate_bpm": session_data.get("avg_heart_rate"),
         "max_heart_rate_bpm": session_data.get("max_heart_rate"),
         "total_ascent_m": session_data.get("total_ascent"),
@@ -276,6 +279,9 @@ def _write_file_summaries(output_dir: Path, file_summaries: List[Dict[str, Any]]
         "avg_power_w",
         "max_power_w",
         "normalized_power_w",
+        "threshold_power_w",
+        "intensity_factor",
+        "total_work_j",
         "avg_heart_rate_bpm",
         "max_heart_rate_bpm",
         "total_ascent_m",
@@ -329,7 +335,7 @@ def _build_manifest(
     errors: List[Dict[str, str]],
 ) -> Dict[str, Any]:
     manifest: Dict[str, Any] = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "input_dir": str(input_dir),
         "output_dir": str(output_dir),
         "total_fit_files": len(file_summaries),

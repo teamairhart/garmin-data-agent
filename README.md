@@ -53,6 +53,36 @@ This writes:
 
 This is intentionally better than a single giant sparse CSV because FIT data is multi-table by design. Keeping message types separate preserves session summaries, lap structure, device metadata, gear-change events, and developer definitions without throwing away fields that do not live on `record` messages.
 
+### Export Apple Health Data
+
+Export your Apple Health archive from the Health app, then point the XML exporter at `export.xml`:
+
+```bash
+python scripts/export_apple_health.py "/path/to/apple-health/export.xml" \
+  --output-dir exports/apple_health
+```
+
+This writes:
+
+- `exports/apple_health/record_catalog.csv` - one row per Apple Health record type
+- `exports/apple_health/record_types/*.csv` - one CSV per Apple Health record type
+- `exports/apple_health/workout.csv` - Apple Watch workouts
+- `exports/apple_health/activity_summary.csv` - Move/Exercise/Stand summaries
+- `exports/apple_health/daily_metrics.csv` - daily recovery metrics such as sleep, HRV, resting HR, workouts, and activity summaries
+
+### Build A Cross-Source Training Dataset
+
+Once you have Garmin `file_summary.csv` and Apple Health `daily_metrics.csv`, merge them into a single day-level dataset:
+
+```bash
+python scripts/build_training_dataset.py \
+  --garmin-file-summary exports/edge840/file_summary.csv \
+  --apple-daily-metrics exports/apple_health/daily_metrics.csv \
+  --output-path exports/training_dataset/training_daily.csv
+```
+
+The merged dataset includes ride load, TSS, work, sleep, HRV, resting HR, rolling 7-day baselines, and previous-day training columns so you can ask questions like “what kind of sessions reduce next-day HRV?” or “how does sleep change after high-TSS road workouts?”
+
 ### Deploy to Render.com
 
 1. **Connect GitHub repo** to Render
@@ -115,6 +145,11 @@ This is intentionally better than a single giant sparse CSV because FIT data is 
 - Scans every `.fit` file in a folder
 - Preserves all discovered FIT message types, including unknown/vendor-specific ones
 - Writes schema metadata so AI workflows can see what fields exist before deep analysis
+
+### Apple Health Export Pipeline
+- Streams the standard Apple Health XML export
+- Preserves all record types, workouts, and activity summaries
+- Builds daily recovery metrics for cross-source readiness analysis
 
 ### Update Monitor Agent  
 - Monitors PyPI package versions

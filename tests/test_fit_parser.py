@@ -69,6 +69,8 @@ class FitParserTests(unittest.TestCase):
         self.assertEqual(row["sport"], "cycling")
         self.assertEqual(row["avg_speed_mps"], 9.5)
         self.assertEqual(row["training_stress_score"], 81.2)
+        self.assertIsNone(row["threshold_power_w"])
+        self.assertIsNone(row["intensity_factor"])
 
     def test_safe_message_slug_sanitizes_unfriendly_names(self):
         self.assertEqual(safe_message_slug("developer data/id"), "developer_data_id")
