@@ -2,13 +2,12 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, f
 import os
 from werkzeug.utils import secure_filename
 import zipfile
-import pandas as pd
-from fitparse import FitFile
 import tempfile
 from src.agents.data_analyzer import ride_analyzer
 from src.agents.update_monitor import update_monitor
 from src.auth import auth_bp, init_db
 from demo_data import generate_demo_ride_data
+from src.fit_parser import load_single_fit_activity
 
 app = Flask(__name__)
 
@@ -39,23 +38,7 @@ def allowed_file(filename):
 def parse_fit_file(fit_file_path):
     """Parse FIT file and extract ride data"""
     try:
-        fitfile = FitFile(fit_file_path)
-        
-        records = []
-        for record in fitfile.get_messages('record'):
-            data = {}
-            for record_data in record:
-                data[record_data.name] = record_data.value
-            records.append(data)
-        
-        df = pd.DataFrame(records)
-        
-        # Extract session summary
-        session_data = {}
-        for record in fitfile.get_messages('session'):
-            for record_data in record:
-                session_data[record_data.name] = record_data.value
-        
+        df, session_data = load_single_fit_activity(fit_file_path)
         return df, session_data
     except Exception as e:
         return None, str(e)
@@ -112,23 +95,7 @@ def demo():
 def test_real_data():
     """Test with your actual Garmin file"""
     try:
-        fitfile = FitFile('/Users/jonathan_airhart/Downloads/19975720234_ACTIVITY.fit')
-        
-        records = []
-        for record in fitfile.get_messages('record'):
-            data = {}
-            for record_data in record:
-                data[record_data.name] = record_data.value
-            records.append(data)
-        
-        df = pd.DataFrame(records)
-        
-        # Extract session summary
-        session_data = {}
-        for record in fitfile.get_messages('session'):
-            for record_data in record:
-                session_data[record_data.name] = record_data.value
-            break
+        df, session_data = load_single_fit_activity('/Users/jonathan_airhart/Downloads/19975720234_ACTIVITY.fit')
         
         # Load data into the analyzer
         ride_analyzer.load_ride_data(df, session_data)

@@ -64,3 +64,6 @@ logs/
 # Temporary files
 tmp/
 temp/
+
+# Generated exports
+exports/

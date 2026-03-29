@@ -7,6 +7,7 @@ An AI-powered web application for analyzing Garmin ride data with natural langua
 - **Upload Garmin .fit/.zip files** - Direct from Garmin Connect
 - **AI-Powered Analysis** - Ask natural language questions about your rides
 - **Detailed Metrics** - Speed, power, heart rate, elevation, TSS, and more
+- **Full FIT Export** - Batch-export every discovered FIT message type and field to CSV
 - **Climb Analysis** - Analyze performance on steep gradients
 - **Power Zone Distribution** - Training zone breakdowns
 - **Auto-Update Monitoring** - Stay current with dependencies
@@ -33,6 +34,24 @@ python app.py
 
 # Visit http://127.0.0.1:5000
 ```
+
+### Batch Export Every FIT Field
+
+If you want to inspect everything your Edge recorded across a folder of FIT files, use the exporter:
+
+```bash
+python scripts/export_fit_folder.py "/Users/jonathan_airhart/DevProjects/Fitness Data/Garmin_Data" \
+  --output-dir exports/edge840
+```
+
+This writes:
+
+- `exports/edge840/file_summary.csv` - one row per FIT file with ride-level summaries
+- `exports/edge840/message_catalog.csv` - every discovered FIT message type and its CSV file
+- `exports/edge840/manifest.json` - schema manifest with field names, units, and definition numbers
+- `exports/edge840/messages/*.csv` - one CSV per FIT message type (`record`, `session`, `lap`, `event`, `device_info`, unknown vendor messages, and more)
+
+This is intentionally better than a single giant sparse CSV because FIT data is multi-table by design. Keeping message types separate preserves session summaries, lap structure, device metadata, gear-change events, and developer definitions without throwing away fields that do not live on `record` messages.
 
 ### Deploy to Render.com
 
@@ -91,6 +110,11 @@ python app.py
 - Calculates gradients and zones
 - Processes natural language queries
 - Provides detailed ride insights
+
+### FIT Export Pipeline
+- Scans every `.fit` file in a folder
+- Preserves all discovered FIT message types, including unknown/vendor-specific ones
+- Writes schema metadata so AI workflows can see what fields exist before deep analysis
 
 ### Update Monitor Agent  
 - Monitors PyPI package versions
