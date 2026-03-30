@@ -1,0 +1,163 @@
+{
+  "athlete": {
+    "name": "Jonathan Airhart"
+  },
+  "analysis_window": {
+    "start_date": "2025-07-01",
+    "notes": "Default analysis scope begins when structured race preparation started."
+  },
+  "devices": {
+    "primary_bike_head_unit": "Garmin Edge 840",
+    "secondary_wearable": "Apple Watch",
+    "memphis_current_setup": [
+      "Garmin Edge 840",
+      "heart rate monitor"
+    ],
+    "planned_upgrades": [
+      "cadence sensor",
+      "possible road-bike power meter"
+    ],
+    "data_collection_protocol": [
+      "Record every ride on the Garmin when possible.",
+      "Keep wearing the Apple Watch for sleep, HRV, resting HR, and general recovery metrics.",
+      "Use Apple Health as a recovery and secondary workout source, not as the primary bike-analysis source when Garmin FIT files exist."
+    ]
+  },
+  "lab_profiles": [
+    {
+      "source": "Dr. Max Testa / Intermountain Sports Medicine Park City Hospital",
+      "test_type": "cycling_lactate_test",
+      "test_date": "2026-03-18",
+      "authoritative": true,
+      "notes": [
+        "Use this lab profile as the current physiological baseline.",
+        "Treat threshold differently on flats versus climbing/altitude.",
+        "The training zone table is coaching guidance; the summary box contains anchor values from the test sheet."
+      ],
+      "anchors": {
+        "lt": {
+          "power_w": 190,
+          "heart_rate_bpm": 138
+        },
+        "l2": {
+          "power_w": 205,
+          "heart_rate_bpm": 142
+        },
+        "l3": {
+          "power_w": 230,
+          "heart_rate_bpm": 154
+        },
+        "l4": {
+          "power_w": 245,
+          "heart_rate_bpm": 160
+        },
+        "obla": {
+          "power_w": 240,
+          "heart_rate_bpm": 156
+        }
+      },
+      "training_zones": [
+        {
+          "name": "slow_endurance",
+          "heart_rate_bpm_max": 123,
+          "power_w_max": 130
+        },
+        {
+          "name": "long_endurance",
+          "heart_rate_bpm_min": 117,
+          "heart_rate_bpm_max": 133,
+          "power_w_min": 130,
+          "power_w_max": 170
+        },
+        {
+          "name": "medium_endurance",
+          "heart_rate_bpm_min": 139,
+          "heart_rate_bpm_max": 148,
+          "power_w_min": 190,
+          "power_w_max": 220
+        },
+        {
+          "name": "threshold_flats",
+          "heart_rate_bpm_min": 153,
+          "heart_rate_bpm_max": 158,
+          "power_w_min": 230,
+          "power_w_max": 250,
+          "context": "flat terrain, lower altitude"
+        },
+        {
+          "name": "threshold_climbing",
+          "heart_rate_bpm_min": 156,
+          "heart_rate_bpm_max": 161,
+          "power_w_min": 240,
+          "power_w_max": 260,
+          "context": "climbing and altitude"
+        },
+        {
+          "name": "lactic",
+          "heart_rate_bpm_min": 158,
+          "power_w_min": 275
+        },
+        {
+          "name": "sfr",
+          "heart_rate_bpm_min": 125,
+          "heart_rate_bpm_max": 140,
+          "power_w_min": 190,
+          "power_w_max": 220
+        }
+      ]
+    }
+  ],
+  "race_goals": [
+    {
+      "name": "Silver Rush 50 MTB",
+      "date": "2026-07-12",
+      "location": "Leadville, Colorado",
+      "priority": "B",
+      "distance_miles": 50,
+      "elevation_gain_ft": 8000,
+      "terrain": "Mainly fire roads with limited singletrack.",
+      "altitude_ft_min": 10000,
+      "altitude_ft_max": 13000,
+      "goal_finish_time_hours_min": 6,
+      "goal_finish_time_hours_max": 7,
+      "goal_notes": [
+        "High-altitude climbing durability is the main limiter.",
+        "Need sustainable power and pacing for a 6-7 hour effort."
+      ]
+    },
+    {
+      "name": "Park City Point 2 Point",
+      "date": "2026-09-05",
+      "location": "Park City, Utah",
+      "priority": "A",
+      "distance_miles": 77,
+      "elevation_gain_ft": 10000,
+      "terrain": "About 99% singletrack on Park City trails.",
+      "altitude_ft_min": 7000,
+      "altitude_ft_max": 10000,
+      "goal_finish_time_hours_max": 9,
+      "prior_result": {
+        "year": 2025,
+        "finish_time": "12:03:00",
+        "notes": "Late-August Garmin ride should reflect this event effort."
+      },
+      "goal_notes": [
+        "Primary season goal.",
+        "Need much better long-duration durability, climbing repeatability, and technical-trail pacing than last year."
+      ]
+    }
+  ],
+  "analysis_rules": [
+    "Treat the 2026-03-18 Dr. Testa lactate test as the authoritative baseline until superseded by a newer lab test.",
+    "When classifying threshold work, distinguish between flat threshold and climbing/altitude threshold.",
+    "Use Garmin FIT data for record-level bike analysis whenever available.",
+    "Use Apple Health for readiness, sleep, HRV, resting heart rate, and as a secondary ride source when Garmin data is missing.",
+    "Default analysis scope begins on 2025-07-01 unless the user explicitly asks for earlier history."
+  ],
+  "open_inputs_needed": [
+    "Detailed Dr. Testa workout prescriptions for Park City and Memphis",
+    "Typical weekly availability for riding and gym sessions",
+    "Any injuries, mobility limitations, or strength-training restrictions",
+    "Exact Memphis bike sensor setup once cadence and/or power sensors are added"
+  ]
+}

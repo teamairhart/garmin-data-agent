@@ -161,6 +161,27 @@ python scripts/trim_apple_health_export.py \
 - Preserves all record types, workouts, and activity summaries
 - Builds daily recovery metrics for cross-source readiness analysis
 
+## Athlete-Specific Analysis Context
+
+This repo now includes athlete-specific context so future analysis sessions do not need to reconstruct the same assumptions every time:
+
+- `config/athlete_profile.json` - machine-readable physiology, race goals, device setup, and analysis rules
+- `docs/ATHLETE_CONTEXT.md` - narrative brief for the current season
+- `docs/MAXIMUM_OVERLOAD_NOTES.md` - public-source notes on the Maximum Overload strength approach
+
+Current baseline assumptions:
+
+- default analysis window begins on `2025-07-01`
+- Dr. Max Testa's `2026-03-18` lactate test is the authoritative physiology baseline
+- threshold should be analyzed in two contexts:
+  - `threshold_flats`
+  - `threshold_climbing`
+- 2026 goal races:
+  - `Silver Rush 50 MTB` on `2026-07-12`
+  - `Park City Point 2 Point` on `2026-09-05`
+
+When new coaching guidance, race changes, or lab tests arrive, update the profile files before changing the analysis code.
+
 ### Update Monitor Agent  
 - Monitors PyPI package versions
 - Tracks Hugging Face model updates
