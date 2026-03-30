@@ -65,6 +65,7 @@ Recommended collection protocol:
 
 - No current injuries limit training.
 - Athlete has extensive gym experience.
+- Default target is `2` heavy / low-rep strength sessions per week.
 - Current strength framework to track:
   - dynamic warm-up
   - core strength work
@@ -80,6 +81,68 @@ Recommended collection protocol:
     - thruster
   - primary power movement:
     - explosive walking lunges with dumbbells in a cycling-style bent posture
+
+## Schedule And Fueling Context
+
+- Weekly schedule is very flexible.
+- Assume rides and gym sessions can be placed on any day.
+- Long rides of `4-5 hours` are usually feasible when needed.
+- Fueling that appears to work well:
+  - high-calorie drink mix
+  - substantial electrolytes and sodium
+  - gel packs
+- Race fueling constraint:
+  - solid foods are much less realistic during hard racing than liquids and gels
+
+## Current Subjective Training Notes
+
+- Recent `40-50 mile` Memphis rides have felt strong.
+- Recent `30 mile` rides have felt especially strong and not overly fatiguing.
+- On uphill efforts, athlete is intentionally trying to raise cadence from roughly `60-70 rpm` toward `85-95 rpm`.
+- Athlete is confident on descents and technical trail sections.
+- The main problems from the 2025 Point 2 Point were:
+  - pacing
+  - climbing strength
+  - total endurance for many consecutive hours of climbing
+- Cramping and descending confidence were not major issues.
+
+## Dr. Testa Workout Templates
+
+### Memphis
+
+- `zone_2_endurance` x `3` per week:
+  - total ride `2.5+ hours`
+  - `20-30 min` easy at less than `130 W`
+  - `3 x 30 min` at `130-170 W` with `HR <135`
+  - `5 min` stop / fuel / drink between blocks
+
+- `aerobic_threshold_flats` x `1` per week:
+  - `30 min` zone 1-2 warm-up
+  - `10 min` zone 3 at `80-90 rpm`
+  - `4 x 8-15 min` at `230-250 W` or `150-160 bpm`
+  - `4-5 min` very gentle spinning between intervals
+  - start at `8 min` and add `1-2 min` every `2 weeks`
+
+- `intermittent_threshold` x `1` per week:
+  - `30 min` zone 1-2 warm-up
+  - `10 min` zone 3
+  - `2 x 20 min` as `4 x (3 min hard / 2 min easy)`
+  - `30 min` easy riding between the two 20 min sets
+
+### Park City
+
+- `endurance_altitude` x `4` per week:
+  - `1.5-3 hours`
+  - watts below `220`
+  - HR below `150-155`
+
+- `climbing_intervals_altitude` x `1` per week:
+  - `20 min` zone 1-2 warm-up
+  - `10 min` zone 3
+  - `4 x 4 min` uphill at `230-240 W`
+  - `3 min` recovery between reps
+  - `20 min` cooldown
+  - Dr. Testa described this as VO2 max work; in practice treat it as altitude-specific uphill aerobic-power work
 
 ## Dr. Testa Lactate Test Summary
 
@@ -112,6 +175,4 @@ Interpretation note:
 
 The highest-value missing information is:
 
-- Dr. Testa's workout prescriptions for Park City and Memphis
-- Typical weekly time availability for riding and gym work
 - Updated sensor inventory once the Memphis bike gets cadence or power

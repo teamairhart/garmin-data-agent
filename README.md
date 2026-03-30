@@ -84,6 +84,23 @@ python scripts/build_training_dataset.py \
 
 The merged dataset includes ride load, TSS, work, sleep, HRV, resting HR, rolling 7-day baselines, and previous-day training columns so you can ask questions like “what kind of sessions reduce next-day HRV?” or “how does sleep change after high-TSS road workouts?”
 
+### Analyze Recent Rides Against Dr. Testa Zones
+
+If you want a ride-by-ride diagnostic table for the current block, run:
+
+```bash
+python scripts/analyze_recent_rides.py \
+  --start-date 2026-03-01 \
+  --output-path exports/analysis/recent_ride_diagnostics.csv
+```
+
+This writes a recent-ride table with:
+
+- ride duration, miles, and climbing
+- time in key Dr. Testa power and heart-rate ranges
+- climb-specific power, heart rate, and cadence
+- percentage of climbing time spent in the target `85-95 rpm` cadence band
+
 If you want to physically shrink the raw Apple export before analysis, create a trimmed export first:
 
 ```bash

@@ -25,6 +25,8 @@
   },
   "strength_training": {
     "experience_level": "extensive_gym_experience",
+    "target_sessions_per_week": 2,
+    "style": "heavy_weight_low_reps",
     "limitations": [
       "No current injuries that preclude workouts."
     ],
@@ -173,6 +175,108 @@
       ]
     }
   ],
+  "training_constraints": {
+    "weekly_schedule_flexibility": "Very flexible schedule; can usually find 4-5 hours per day for long rides if needed.",
+    "default_assumption": "Training can be placed on any day of the week."
+  },
+  "fueling_preferences": {
+    "long_ride_fueling": [
+      "High-calorie drinks tolerated well",
+      "Electrolytes and high sodium in drinks",
+      "Gel packs tolerated well"
+    ],
+    "race_day_notes": [
+      "Liquid calories and gels are more realistic than solid food during hard races.",
+      "During the 2025 Point 2 Point, solid food was difficult to stomach mid-race."
+    ]
+  },
+  "coached_workouts": {
+    "memphis": [
+      {
+        "name": "zone_2_endurance",
+        "frequency_per_week": 3,
+        "total_duration_hours_min": 2.5,
+        "structure": [
+          "20-30 min easy at less than 130 W",
+          "3 x 30 min at 130-170 W with heart rate below 135",
+          "5 min easy stop / fuel / drink between 30 min blocks"
+        ]
+      },
+      {
+        "name": "aerobic_threshold_flats",
+        "frequency_per_week": 1,
+        "structure": [
+          "30 min zone 1-2 warm-up",
+          "10 min zone 3 at 80-90 rpm cadence",
+          "4 x 8-15 min at 230-250 W or 150-160 bpm",
+          "4-5 min very gentle spinning between intervals"
+        ],
+        "progression_notes": [
+          "Start at 8 min intervals",
+          "Add 1-2 min every 2 weeks"
+        ]
+      },
+      {
+        "name": "intermittent_threshold",
+        "frequency_per_week": 1,
+        "structure": [
+          "30 min zone 1-2 warm-up",
+          "10 min zone 3",
+          "2 x 20 min sets as 4 x (3 min hard / 2 min easy)",
+          "30 min easy riding between the two 20 min sets"
+        ],
+        "notes": [
+          "Long warm-up is intentional and should be preserved.",
+          "The 30 min easy period between sets is part of the workout."
+        ]
+      }
+    ],
+    "park_city": [
+      {
+        "name": "endurance_altitude",
+        "frequency_per_week": 4,
+        "structure": [
+          "1.5-3 hours steady riding",
+          "Keep watts below 220",
+          "Keep heart rate below 150-155"
+        ]
+      },
+      {
+        "name": "climbing_intervals_altitude",
+        "frequency_per_week": 1,
+        "structure": [
+          "20 min zone 1-2 warm-up",
+          "10 min zone 3",
+          "4 x 4 min uphill at 230-240 W",
+          "3 min recovery between reps",
+          "20 min cooldown"
+        ],
+        "notes": [
+          "Dr. Testa described this as VO2 max work.",
+          "Treat it as race-specific uphill aerobic-power work at altitude."
+        ]
+      }
+    ]
+  },
+  "self_assessment": {
+    "current_positive_signals": [
+      "Recent 40-50 mile Memphis rides have felt strong.",
+      "Recent 30 mile rides have felt especially strong and not overly fatiguing."
+    ],
+    "current_focus_cues": [
+      "On uphill efforts, athlete is intentionally trying to raise cadence from about 60-70 rpm toward 85-95 rpm to shift the limiter toward the cardiovascular system instead of local leg fatigue."
+    ],
+    "technical_skill": "Confident on descents and technical sections due to substantial trail-riding background.",
+    "primary_limiters_from_2025_point_to_point": [
+      "overall pacing",
+      "climbing strength",
+      "total endurance for repeated climbing over many hours"
+    ],
+    "non_limiters_from_2025_point_to_point": [
+      "No significant cramping",
+      "Descending confidence was not the problem"
+    ]
+  },
   "analysis_rules": [
     "Treat the 2026-03-18 Dr. Testa lactate test as the authoritative baseline until superseded by a newer lab test.",
     "When classifying threshold work, distinguish between flat threshold and climbing/altitude threshold.",
@@ -181,8 +285,6 @@
     "Default analysis scope begins on 2025-07-01 unless the user explicitly asks for earlier history."
   ],
   "open_inputs_needed": [
-    "Detailed Dr. Testa workout prescriptions for Park City and Memphis",
-    "Typical weekly availability for riding and gym sessions",
     "Exact Memphis bike sensor setup once cadence and/or power sensors are added"
   ]
 }
