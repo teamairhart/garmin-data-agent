@@ -61,6 +61,26 @@ Recommended collection protocol:
 - Keep wearing the Apple Watch for sleep, HRV, resting HR, and recovery context.
 - Use Apple Health as a secondary ride source, not the primary source, when a Garmin FIT file exists.
 
+## Strength Training Context
+
+- No current injuries limit training.
+- Athlete has extensive gym experience.
+- Current strength framework to track:
+  - dynamic warm-up
+  - core strength work
+  - back strength work:
+    - bent over dumbbell row
+    - close grip lat pulldown
+    - pull-ups
+  - lower body strength work:
+    - single leg press
+    - hex / trap bar deadlift
+    - Romanian deadlift
+    - goblet squat
+    - thruster
+  - primary power movement:
+    - explosive walking lunges with dumbbells in a cycling-style bent posture
+
 ## Dr. Testa Lactate Test Summary
 
 Date: `2026-03-18`
@@ -94,5 +114,4 @@ The highest-value missing information is:
 
 - Dr. Testa's workout prescriptions for Park City and Memphis
 - Typical weekly time availability for riding and gym work
-- Any injuries, mobility restrictions, or lifting limitations
 - Updated sensor inventory once the Memphis bike gets cadence or power

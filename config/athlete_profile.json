@@ -23,6 +23,32 @@
       "Use Apple Health as a recovery and secondary workout source, not as the primary bike-analysis source when Garmin FIT files exist."
     ]
   },
+  "strength_training": {
+    "experience_level": "extensive_gym_experience",
+    "limitations": [
+      "No current injuries that preclude workouts."
+    ],
+    "maximum_overload_framework": {
+      "dynamic_warm_up": true,
+      "core_strength": true,
+      "back_strength_options": [
+        "bent over dumbbell row",
+        "close grip lat pulldown",
+        "pull-ups"
+      ],
+      "lower_body_strength_exercises": [
+        "single leg press",
+        "hex or trap bar deadlift",
+        "Romanian deadlift",
+        "goblet squat",
+        "thruster"
+      ],
+      "primary_power_exercise": {
+        "name": "explosive walking lunges",
+        "description": "Walking lunges with dumbbells in a cycling-style bent posture."
+      }
+    }
+  },
   "lab_profiles": [
     {
       "source": "Dr. Max Testa / Intermountain Sports Medicine Park City Hospital",
@@ -157,7 +183,6 @@
   "open_inputs_needed": [
     "Detailed Dr. Testa workout prescriptions for Park City and Memphis",
     "Typical weekly availability for riding and gym sessions",
-    "Any injuries, mobility limitations, or strength-training restrictions",
     "Exact Memphis bike sensor setup once cadence and/or power sensors are added"
   ]
 }
