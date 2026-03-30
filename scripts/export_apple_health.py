@@ -23,6 +23,10 @@ def parse_args() -> argparse.Namespace:
         default="exports/apple_health",
         help="Directory where Apple Health CSV outputs will be written",
     )
+    parser.add_argument(
+        "--cutoff-date",
+        help="Keep only data on or after this date, formatted as YYYY-MM-DD",
+    )
     return parser.parse_args()
 
 
@@ -31,12 +35,14 @@ def main() -> None:
     manifest = export_apple_health_xml(
         xml_path=Path(args.xml_path),
         output_dir=Path(args.output_dir),
+        cutoff_date=args.cutoff_date,
     )
     print(
         json.dumps(
             {
                 "input_file": manifest["input_file"],
                 "output_dir": manifest["output_dir"],
+                "cutoff_date": manifest["cutoff_date"],
                 "record_type_count": manifest["record_type_count"],
                 "record_row_count": manifest["record_row_count"],
                 "workout_row_count": manifest["workout_row_count"],

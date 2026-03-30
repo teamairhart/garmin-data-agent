@@ -59,6 +59,7 @@ Export your Apple Health archive from the Health app, then point the XML exporte
 
 ```bash
 python scripts/export_apple_health.py "/path/to/apple-health/export.xml" \
+  --cutoff-date 2025-07-01 \
   --output-dir exports/apple_health
 ```
 
@@ -82,6 +83,15 @@ python scripts/build_training_dataset.py \
 ```
 
 The merged dataset includes ride load, TSS, work, sleep, HRV, resting HR, rolling 7-day baselines, and previous-day training columns so you can ask questions like “what kind of sessions reduce next-day HRV?” or “how does sleep change after high-TSS road workouts?”
+
+If you want to physically shrink the raw Apple export before analysis, create a trimmed export first:
+
+```bash
+python scripts/trim_apple_health_export.py \
+  "/Users/jonathan_airhart/DevProjects/Fitness Data/Apple_Health/raw/apple_health_export" \
+  "/Users/jonathan_airhart/DevProjects/Fitness Data/Apple_Health/raw/apple_health_export_2025-07-01_plus" \
+  --cutoff-date 2025-07-01
+```
 
 ### Deploy to Render.com
 

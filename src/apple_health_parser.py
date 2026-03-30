@@ -6,7 +6,7 @@ import re
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Tuple
 
@@ -55,7 +55,17 @@ SLEEP_CATEGORY_MAP = {
     5: "asleep_rem",
 }
 
+SLEEP_CATEGORY_TEXT_MAP = {
+    "HKCategoryValueSleepAnalysisInBed": "in_bed",
+    "HKCategoryValueSleepAnalysisAsleep": "asleep",
+    "HKCategoryValueSleepAnalysisAwake": "awake",
+    "HKCategoryValueSleepAnalysisAsleepCore": "asleep_core",
+    "HKCategoryValueSleepAnalysisAsleepDeep": "asleep_deep",
+    "HKCategoryValueSleepAnalysisAsleepREM": "asleep_rem",
+}
+
 ASLEEP_SLEEP_VALUES = {1, 3, 4, 5}
+ASLEEP_SLEEP_STAGE_NAMES = {"asleep", "asleep_core", "asleep_deep", "asleep_rem"}
 
 
 @dataclass
@@ -95,6 +105,19 @@ def parse_apple_datetime(value: Any) -> Optional[datetime]:
             continue
 
     return None
+
+
+def parse_cutoff_date(value: Any) -> Optional[date]:
+    if value in (None, ""):
+        return None
+
+    if isinstance(value, date) and not isinstance(value, datetime):
+        return value
+
+    if isinstance(value, datetime):
+        return value.date()
+
+    return datetime.strptime(str(value), "%Y-%m-%d").date()
 
 
 def normalize_xml_value(value: Any) -> Any:
@@ -211,12 +234,15 @@ def iter_apple_health_rows(xml_path: str | Path) -> Iterator[Tuple[str, str, Dic
 
 def _scan_apple_export(
     xml_path: str | Path,
+    cutoff_date: Optional[date] = None,
 ) -> Tuple[Dict[str, AppleSchema], Dict[str, AppleSchema], Counter]:
     record_schemas: Dict[str, AppleSchema] = defaultdict(AppleSchema)
     table_schemas: Dict[str, AppleSchema] = defaultdict(AppleSchema)
     counters: Counter = Counter()
 
     for element_type, subtype, row in iter_apple_health_rows(xml_path):
+        if not _passes_cutoff(element_type, row, cutoff_date):
+            continue
         counters[f"{element_type}_rows"] += 1
 
         if element_type == "record":
@@ -281,15 +307,19 @@ def _sleep_update(day_row: Dict[str, Any], row: Dict[str, Any]) -> None:
     if duration_seconds is None:
         return
 
-    value_code = int(coerce_float(row.get("value")) or 0)
-    stage_name = SLEEP_CATEGORY_MAP.get(value_code, f"value_{value_code}")
+    raw_value = row.get("value")
+    if isinstance(raw_value, str) and raw_value in SLEEP_CATEGORY_TEXT_MAP:
+        stage_name = SLEEP_CATEGORY_TEXT_MAP[raw_value]
+    else:
+        value_code = int(coerce_float(raw_value) or 0)
+        stage_name = SLEEP_CATEGORY_MAP.get(value_code, f"value_{value_code}")
     day_row[f"sleep_{stage_name}_seconds"] = day_row.get(f"sleep_{stage_name}_seconds", 0.0) + duration_seconds
 
-    if value_code in ASLEEP_SLEEP_VALUES:
+    if stage_name in ASLEEP_SLEEP_STAGE_NAMES:
         day_row["sleep_asleep_seconds"] += duration_seconds
-    elif value_code == 0:
+    elif stage_name == "in_bed":
         day_row["sleep_in_bed_seconds"] += duration_seconds
-    elif value_code == 2:
+    elif stage_name == "awake":
         day_row["sleep_awake_seconds"] += duration_seconds
 
 
@@ -298,18 +328,19 @@ def _update_daily_metrics_from_record(
     row: Dict[str, Any],
 ) -> None:
     record_type = row.get("record_type")
-    start_dt = parse_apple_datetime(row.get("start_date"))
-    end_dt = parse_apple_datetime(row.get("end_date"))
-
-    if record_type == SLEEP_RECORD_TYPE:
-        anchor_dt = end_dt or start_dt
-    else:
-        anchor_dt = start_dt or end_dt
-
-    if anchor_dt is None:
+    if record_type not in STATS_RECORD_TYPES and record_type not in SUM_RECORD_TYPES and record_type not in LATEST_RECORD_TYPES and record_type != SLEEP_RECORD_TYPE:
         return
 
-    day_key = anchor_dt.date().isoformat()
+    anchor_date = _row_anchor_date("record", row)
+    if anchor_date is None:
+        return
+
+    end_dt = parse_apple_datetime(row.get("end_date"))
+    start_dt = parse_apple_datetime(row.get("start_date"))
+    creation_dt = parse_apple_datetime(row.get("creation_date"))
+    anchor_dt = end_dt or start_dt or creation_dt
+
+    day_key = anchor_date.isoformat()
     day_row = daily_rows.setdefault(day_key, _default_daily_row())
     day_row["date"] = day_key
 
@@ -331,11 +362,11 @@ def _update_daily_metrics_from_workout(
     daily_rows: Dict[str, Dict[str, Any]],
     row: Dict[str, Any],
 ) -> None:
-    start_dt = parse_apple_datetime(row.get("start_date"))
-    if start_dt is None:
+    anchor_date = _row_anchor_date("workout", row)
+    if anchor_date is None:
         return
 
-    day_key = start_dt.date().isoformat()
+    day_key = anchor_date.isoformat()
     day_row = daily_rows.setdefault(day_key, _default_daily_row())
     day_row["date"] = day_key
 
@@ -372,6 +403,36 @@ def _update_daily_metrics_from_activity_summary(
     day_row["activity_summary_apple_stand_hours_goal"] = coerce_float(row.get("apple_stand_hours_goal"))
 
 
+def _row_anchor_date(element_type: str, row: Dict[str, Any]) -> Optional[date]:
+    if element_type == "activity_summary":
+        summary_date = row.get("date_components")
+        if summary_date and re.match(r"^\d{4}-\d{2}-\d{2}$", str(summary_date)):
+            return datetime.strptime(str(summary_date), "%Y-%m-%d").date()
+        return None
+
+    start_dt = parse_apple_datetime(row.get("start_date"))
+    end_dt = parse_apple_datetime(row.get("end_date"))
+    creation_dt = parse_apple_datetime(row.get("creation_date"))
+
+    if element_type == "record" and row.get("record_type") == SLEEP_RECORD_TYPE:
+        anchor_dt = end_dt or start_dt or creation_dt
+    else:
+        anchor_dt = end_dt or start_dt or creation_dt
+
+    return anchor_dt.date() if anchor_dt else None
+
+
+def _passes_cutoff(element_type: str, row: Dict[str, Any], cutoff_date: Optional[date]) -> bool:
+    if cutoff_date is None:
+        return True
+
+    anchor_date = _row_anchor_date(element_type, row)
+    if anchor_date is None:
+        return False
+
+    return anchor_date >= cutoff_date
+
+
 def _finalize_daily_rows(daily_rows: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
     finalized_rows: List[Dict[str, Any]] = []
 
@@ -397,12 +458,14 @@ def _finalize_daily_rows(daily_rows: Dict[str, Dict[str, Any]]) -> List[Dict[str
 def export_apple_health_xml(
     xml_path: str | Path,
     output_dir: str | Path,
+    cutoff_date: Any = None,
 ) -> Dict[str, Any]:
     export_path = Path(xml_path).expanduser().resolve()
     output_path = Path(output_dir).expanduser().resolve()
     output_path.mkdir(parents=True, exist_ok=True)
+    cutoff = parse_cutoff_date(cutoff_date)
 
-    record_schemas, table_schemas, counters = _scan_apple_export(export_path)
+    record_schemas, table_schemas, counters = _scan_apple_export(export_path, cutoff_date=cutoff)
 
     record_dir = output_path / "record_types"
     record_dir.mkdir(parents=True, exist_ok=True)
@@ -430,6 +493,8 @@ def export_apple_health_xml(
             writers[(table_name, table_name)] = writer
 
         for element_type, subtype, row in iter_apple_health_rows(export_path):
+            if not _passes_cutoff(element_type, row, cutoff):
+                continue
             if element_type == "record":
                 writers[(element_type, subtype)].writerow(row)
                 _update_daily_metrics_from_record(daily_rows, row)
@@ -476,6 +541,7 @@ def export_apple_health_xml(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "input_file": str(export_path),
         "output_dir": str(output_path),
+        "cutoff_date": cutoff.isoformat() if cutoff else None,
         "record_type_count": len(record_schemas),
         "record_row_count": counters.get("record_rows", 0),
         "workout_row_count": counters.get("workout_rows", 0),
