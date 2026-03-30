@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+
+{% block title %}Training Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-hero mb-4">
+    <div>
+        <p class="eyebrow mb-2">Training Dashboard</p>
+        <h1 class="mb-2">Today's prescription for {{ today }}</h1>
+        <p class="text-muted mb-0">Built from Dr. Testa's zones, your current block plan, and the recent Garmin and Apple Health data snapshot.</p>
+    </div>
+    <div class="hero-meta">
+        {% if today_plan %}
+        <span class="hero-badge">{{ today_plan.location }}</span>
+        <span class="hero-badge secondary">{{ today_plan.block_name }}</span>
+        {% else %}
+        <span class="hero-badge secondary">No scheduled workout</span>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="panel-card h-100">
+            <p class="panel-label">Last 7 Days</p>
+            <div class="stat-row">
+                <div>
+                    <h2>{{ "%.1f"|format(summary_cards.last_7d_hours or 0) }}</h2>
+                    <p class="text-muted mb-0">Ride hours</p>
+                </div>
+                <div>
+                    <h2>{{ "%.0f"|format(summary_cards.last_7d_tss or 0) }}</h2>
+                    <p class="text-muted mb-0">TSS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel-card h-100">
+            <p class="panel-label">Latest Recovery</p>
+            <div class="stat-grid">
+                <div>
+                    <strong>{{ "%.1f"|format(summary_cards.latest_sleep_hours or 0) }}</strong>
+                    <span>Sleep h</span>
+                </div>
+                <div>
+                    <strong>{{ "%.1f"|format(summary_cards.latest_hrv or 0) }}</strong>
+                    <span>HRV</span>
+                </div>
+                <div>
+                    <strong>{{ "%.0f"|format(summary_cards.latest_resting_hr or 0) }}</strong>
+                    <span>Resting HR</span>
+                </div>
+                <div>
+                    <strong>{{ summary_cards.latest_date or "N/A" }}</strong>
+                    <span>Snapshot</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel-card h-100">
+            <p class="panel-label">Latest Ride Signal</p>
+            {% if ride_cards.latest_ride %}
+            <div class="stat-grid">
+                <div>
+                    <strong>{{ "%.2f"|format(ride_cards.latest_ride.duration_hours or 0) }}</strong>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <strong>{{ "%.1f"|format(ride_cards.latest_ride.distance_miles or 0) }}</strong>
+                    <span>Miles</span>
+                </div>
+                <div>
+                    <strong>{{ "%.0f"|format(ride_cards.latest_climb_cadence or 0) }}</strong>
+                    <span>Climb rpm</span>
+                </div>
+                <div>
+                    <strong>{{ "%.1f"|format(ride_cards.latest_threshold_minutes or 0) }}</strong>
+                    <span>Threshold min</span>
+                </div>
+            </div>
+            {% else %}
+            <p class="text-muted mb-0">No recent ride diagnostics available.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    {% for race in race_cards %}
+    <div class="col-md-6">
+        <div class="panel-card h-100">
+            <p class="panel-label">Goal Race</p>
+            <h3 class="mb-1">{{ race.name }}</h3>
+            <p class="text-muted mb-2">{{ race.date }} · {{ race.location }}</p>
+            <div class="stat-row">
+                <div>
+                    <h2>{{ race.days_until }}</h2>
+                    <p class="text-muted mb-0">days away</p>
+                </div>
+                <div>
+                    <strong>{{ race.goal }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="panel-card mb-4">
+            <p class="panel-label">Today's Plan</p>
+            {% if today_plan %}
+            <h2 class="mb-3">{{ today_plan.headline }}</h2>
+            {% for prescription in today_plan.prescriptions %}
+            {% set log_key = today_plan.date ~ '|' ~ prescription.name %}
+            {% set existing_log = workout_logs.get(log_key) %}
+            <div class="prescription-card">
+                <div class="prescription-header">
+                    <div>
+                        <h4 class="mb-1">{{ prescription.summary }}</h4>
+                        <p class="text-muted mb-1">{{ prescription.targets }}</p>
+                    </div>
+                    <span class="pill">{{ prescription.type }}</span>
+                </div>
+                {% if session.user_id %}
+                <form method="POST" action="{{ url_for('log_workout') }}" class="row g-2 mt-2">
+                    <input type="hidden" name="planned_date" value="{{ today_plan.date }}">
+                    <input type="hidden" name="workout_name" value="{{ prescription.name }}">
+                    <input type="hidden" name="workout_type" value="{{ prescription.type }}">
+                    <input type="hidden" name="location" value="{{ today_plan.location }}">
+                    <div class="col-md-3">
+                        <label class="form-label">Status</label>
+                        <select class="form-select" name="status">
+                            {% set selected_status = existing_log.status if existing_log else 'planned' %}
+                            <option value="planned" {% if selected_status == 'planned' %}selected{% endif %}>Planned</option>
+                            <option value="completed" {% if selected_status == 'completed' %}selected{% endif %}>Completed</option>
+                            <option value="modified" {% if selected_status == 'modified' %}selected{% endif %}>Modified</option>
+                            <option value="skipped" {% if selected_status == 'skipped' %}selected{% endif %}>Skipped</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Minutes</label>
+                        <input class="form-control" type="number" name="duration_minutes" value="{{ existing_log.duration_minutes if existing_log else '' }}">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">RPE</label>
+                        <input class="form-control" type="number" min="1" max="10" name="rpe" value="{{ existing_log.rpe if existing_log else '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Notes</label>
+                        <input class="form-control" type="text" name="notes" value="{{ existing_log.notes if existing_log else '' }}" placeholder="How it felt">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary btn-sm" type="submit">Save workout log</button>
+                    </div>
+                </form>
+                {% else %}
+                <p class="small text-muted mb-0">Log in to save workout completion, RPE, and notes.</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="text-muted mb-0">No scheduled workout for today.</p>
+            {% endif %}
+        </div>
+
+        <div class="panel-card mb-4">
+            <p class="panel-label">Upcoming 14 Days</p>
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Headline</th>
+                            <th>Main Work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for day in upcoming_plan %}
+                        <tr>
+                            <td>{{ day.date }}</td>
+                            <td>{{ day.location }}</td>
+                            <td>{{ day.headline }}</td>
+                            <td>
+                                {% for prescription in day.prescriptions %}
+                                <div>{{ prescription.summary }}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <p class="panel-label">Recent Ride Diagnostics</p>
+            {% if ride_cards.recent_rides %}
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Hours</th>
+                            <th>Miles</th>
+                            <th>Ascent</th>
+                            <th>Climb rpm</th>
+                            <th>Threshold min</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ride in ride_cards.recent_rides %}
+                        <tr>
+                            <td>{{ ride.start_time_display or '' }}</td>
+                            <td>{{ "%.2f"|format(ride.duration_hours or 0) }}</td>
+                            <td>{{ "%.1f"|format(ride.distance_miles or 0) }}</td>
+                            <td>{{ "%.0f"|format(ride.ascent_ft or 0) }}</td>
+                            <td>{{ "%.0f"|format(ride.climb_avg_cadence_rpm or 0) }}</td>
+                            <td>{{ "%.1f"|format((ride.time_threshold_flats_power_min or 0) + (ride.time_threshold_climbing_power_min or 0)) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="text-muted mb-0">No ride diagnostics found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="panel-card mb-4">
+            <p class="panel-label">Gym Session Log</p>
+            {% if session.user_id %}
+            <form method="POST" action="{{ url_for('log_gym') }}">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <label class="form-label">Date</label>
+                        <input class="form-control" type="date" name="session_date" value="{{ today }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Title</label>
+                        <input class="form-control" type="text" name="title" placeholder="Lower body strength">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Session Notes</label>
+                        <textarea class="form-control" rows="2" name="notes" placeholder="Anything notable about the session"></textarea>
+                    </div>
+                </div>
+
+                <div id="gymSetRows" class="mt-3">
+                    <div class="row g-2 gym-set-row">
+                        <div class="col-md-5">
+                            <input class="form-control" type="text" name="exercise_name[]" placeholder="Exercise">
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="number" name="set_number[]" placeholder="Set">
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="number" name="reps[]" placeholder="Reps">
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-control" type="number" step="0.5" name="weight[]" placeholder="Weight">
+                        </div>
+                        <div class="col-12">
+                            <input class="form-control" type="text" name="set_notes[]" placeholder="Optional set note">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3 d-flex gap-2">
+                    <button class="btn btn-outline-secondary btn-sm" type="button" onclick="addGymRow()">Add exercise row</button>
+                    <button class="btn btn-primary btn-sm" type="submit">Save gym session</button>
+                </div>
+            </form>
+            {% else %}
+            <p class="text-muted mb-0">Log in to save gym sessions with sets, reps, and weights.</p>
+            {% endif %}
+        </div>
+
+        <div class="panel-card">
+            <p class="panel-label">Recent Gym Sessions</p>
+            {% if recent_gym_sessions %}
+            {% for session_item in recent_gym_sessions %}
+            <div class="gym-session-card">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h4 class="mb-1">{{ session_item.title or "Gym session" }}</h4>
+                        <p class="text-muted mb-2">{{ session_item.session_date }}</p>
+                    </div>
+                </div>
+                {% if session_item.notes %}
+                <p class="small text-muted">{{ session_item.notes }}</p>
+                {% endif %}
+                {% if session_item.sets %}
+                <div class="small">
+                    {% for gym_set in session_item.sets %}
+                    <div>{{ gym_set.exercise_name }} · set {{ gym_set.set_number }} · {{ gym_set.reps or "-" }} reps · {{ gym_set.weight or "-" }} lb</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="text-muted mb-0">No saved gym sessions yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function addGymRow() {
+    const container = document.getElementById('gymSetRows');
+    const row = document.createElement('div');
+    row.className = 'row g-2 gym-set-row mt-2';
+    row.innerHTML = `
+        <div class="col-md-5">
+            <input class="form-control" type="text" name="exercise_name[]" placeholder="Exercise">
+        </div>
+        <div class="col-md-2">
+            <input class="form-control" type="number" name="set_number[]" placeholder="Set">
+        </div>
+        <div class="col-md-2">
+            <input class="form-control" type="number" name="reps[]" placeholder="Reps">
+        </div>
+        <div class="col-md-3">
+            <input class="form-control" type="number" step="0.5" name="weight[]" placeholder="Weight">
+        </div>
+        <div class="col-12">
+            <input class="form-control" type="text" name="set_notes[]" placeholder="Optional set note">
+        </div>
+    `;
+    container.appendChild(row);
+}
+</script>
+{% endblock %}

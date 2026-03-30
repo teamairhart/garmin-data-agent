@@ -7,6 +7,8 @@ An AI-powered web application for analyzing Garmin ride data with natural langua
 - **Upload Garmin .fit/.zip files** - Direct from Garmin Connect
 - **AI-Powered Analysis** - Ask natural language questions about your rides
 - **Detailed Metrics** - Speed, power, heart rate, elevation, TSS, and more
+- **Training Dashboard** - View today's prescribed workout, upcoming schedule, race countdowns, and recent ride stats
+- **Gym Logging** - Track exercises, weights, sets, reps, and notes
 - **Full FIT Export** - Batch-export every discovered FIT message type and field to CSV
 - **Climb Analysis** - Analyze performance on steep gradients
 - **Power Zone Distribution** - Training zone breakdowns
@@ -33,7 +35,25 @@ pip install -r requirements.txt
 python app.py
 
 # Visit http://127.0.0.1:5000
+# Training dashboard lives at http://127.0.0.1:5000/dashboard
 ```
+
+### Training Dashboard
+
+The dashboard combines:
+
+- the athlete profile and Dr. Testa zones in `config/athlete_profile.json`
+- the dated block plan in `config/training_calendar.json`
+- a tracked data snapshot in `data/`
+- user workout and gym logs stored in SQLite
+
+Current dashboard features:
+
+- today's prescribed workout
+- upcoming 14-day training view
+- latest recovery and load summary
+- recent ride diagnostics
+- gym session logging with exercises, sets, reps, and weight
 
 ### Batch Export Every FIT Field
 

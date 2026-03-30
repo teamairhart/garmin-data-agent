@@ -6,30 +6,156 @@
     <title>{% block title %}Garmin Data Agent{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --ink: #172026;
+            --muted: #5c6770;
+            --surface: #f4efe6;
+            --surface-2: #fffaf2;
+            --line: #d8cfc2;
+            --brand: #1f5f4a;
+            --brand-dark: #154334;
+            --accent: #c56a2d;
+        }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(197, 106, 45, 0.12), transparent 30%),
+                linear-gradient(180deg, var(--surface) 0%, #f7f4ee 100%);
+            color: var(--ink);
+        }
         .upload-area {
-            border: 2px dashed #007bff;
-            border-radius: 10px;
+            border: 2px dashed var(--brand);
+            border-radius: 18px;
             padding: 50px;
             text-align: center;
             margin: 20px 0;
             transition: all 0.3s ease;
+            background: rgba(255, 250, 242, 0.9);
         }
         .upload-area:hover {
-            background-color: #f8f9fa;
-            border-color: #0056b3;
+            background-color: #fffdf8;
+            border-color: var(--brand-dark);
         }
         .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1f5f4a 0%, #2f7f60 100%);
             color: white;
-            border-radius: 15px;
+            border-radius: 18px;
             padding: 20px;
             margin: 10px 0;
+            box-shadow: 0 12px 28px rgba(31, 95, 74, 0.18);
         }
         .query-box {
-            background-color: #f8f9fa;
-            border-radius: 10px;
+            background-color: var(--surface-2);
+            border-radius: 18px;
             padding: 20px;
             margin: 20px 0;
+            border: 1px solid var(--line);
+        }
+        .panel-card {
+            background: rgba(255, 250, 242, 0.92);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 12px 30px rgba(23, 32, 38, 0.05);
+        }
+        .panel-label, .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .dashboard-hero {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: start;
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: rgba(255, 250, 242, 0.9);
+        }
+        .hero-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .hero-badge, .pill {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(31, 95, 74, 0.12);
+            color: var(--brand-dark);
+        }
+        .hero-badge.secondary {
+            background: rgba(197, 106, 45, 0.12);
+            color: #7a431d;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 16px;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .stat-grid div {
+            padding: 12px;
+            border-radius: 14px;
+            background: rgba(31, 95, 74, 0.06);
+        }
+        .stat-grid strong {
+            display: block;
+            font-size: 1.2rem;
+        }
+        .stat-grid span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .prescription-card,
+        .gym-session-card {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 16px;
+            background: white;
+            margin-top: 14px;
+        }
+        .prescription-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: start;
+        }
+        .navbar.navbar-dark {
+            background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%) !important;
+        }
+        .btn-primary {
+            background-color: var(--brand);
+            border-color: var(--brand);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
+        }
+        .btn-outline-secondary {
+            color: var(--brand-dark);
+            border-color: var(--line);
+        }
+        .text-muted {
+            color: var(--muted) !important;
+        }
+        @media (max-width: 768px) {
+            .dashboard-hero,
+            .stat-row,
+            .prescription-header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -38,6 +164,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">🚴‍♂️ Garmin Data Agent</a>
             <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
                 <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                 {% if session.user_id %}
                     <span class="navbar-text me-3">Welcome, {{ session.user_name }}!</span>

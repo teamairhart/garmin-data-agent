@@ -5,11 +5,21 @@ import os
 
 auth_bp = Blueprint('auth', __name__)
 
-DATABASE = 'users.db'
+DATABASE = os.environ.get('DATABASE_PATH', 'users.db')
+
+
+def get_db_connection():
+    database_path = os.path.abspath(DATABASE)
+    database_dir = os.path.dirname(database_path)
+    if database_dir:
+        os.makedirs(database_dir, exist_ok=True)
+    conn = sqlite3.connect(database_path)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 def init_db():
     """Initialize the user database"""
-    conn = sqlite3.connect(DATABASE)
+    conn = get_db_connection()
     cursor = conn.cursor()
     
     # Users table
@@ -50,7 +60,7 @@ def create_user(email, password, name):
     password_hash = generate_password_hash(password)
     
     try:
-        conn = sqlite3.connect(DATABASE)
+        conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
             'INSERT INTO users (email, password_hash, name) VALUES (?, ?, ?)',
@@ -65,7 +75,7 @@ def create_user(email, password, name):
 
 def verify_user(email, password):
     """Verify user credentials"""
-    conn = sqlite3.connect(DATABASE)
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('SELECT id, password_hash, name FROM users WHERE email = ?', (email,))
     user = cursor.fetchone()

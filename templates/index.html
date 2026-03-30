@@ -4,7 +4,10 @@
 <div class="row">
     <div class="col-md-8 mx-auto">
         <h1 class="text-center mb-4">Welcome to Garmin Data Agent</h1>
-        <p class="text-center text-muted mb-5">Upload your Garmin ride data and ask intelligent questions about your performance</p>
+        <p class="text-center text-muted mb-4">Upload Garmin ride data, track your prescribed training, and keep your gym work in one place.</p>
+        <div class="text-center mb-5">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Open Training Dashboard</a>
+        </div>
 
         <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
             <div class="upload-area">
@@ -29,24 +32,24 @@
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h5 class="card-title">📈 Performance Metrics</h5>
-                        <p class="card-text">Get detailed insights about your speed, power, heart rate, and elevation data.</p>
+                        <h5 class="card-title">📅 Daily Prescription</h5>
+                        <p class="card-text">See the workout prescribed for today, the upcoming two weeks, and goal-race countdowns.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h5 class="card-title">🤖 AI-Powered Analysis</h5>
-                        <p class="card-text">Ask natural language questions about your ride data using GPT OSS.</p>
+                        <h5 class="card-title">🏋️ Gym Tracking</h5>
+                        <p class="card-text">Log exercises, sets, reps, and weights for your strength sessions.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h5 class="card-title">📊 Smart Insights</h5>
-                        <p class="card-text">Discover patterns and trends in your training with LangGraph agents.</p>
+                        <h5 class="card-title">📊 Recent Diagnostics</h5>
+                        <p class="card-text">Review recent ride metrics like climbing cadence, threshold time, and load trends.</p>
                     </div>
                 </div>
             </div>

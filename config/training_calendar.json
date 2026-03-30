@@ -1,0 +1,518 @@
+{
+  "blocks": [
+    {
+      "name": "Park City opening block",
+      "start_date": "2026-03-29",
+      "end_date": "2026-04-01",
+      "location": "Park City",
+      "days": [
+        {
+          "offset": 0,
+          "headline": "Easy altitude endurance",
+          "prescriptions": [
+            {
+              "name": "easy_altitude_endurance",
+              "type": "bike",
+              "summary": "1.5-2.0 h easy altitude endurance",
+              "targets": "HR <150-155, watts <220"
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "headline": "Heavy strength and easy spin",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Primary lower-body and posterior-chain lifts"
+            },
+            {
+              "name": "easy_spin_optional",
+              "type": "bike",
+              "summary": "60-90 min very easy spin",
+              "targets": "Recovery effort only"
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "headline": "Climbing intervals",
+          "prescriptions": [
+            {
+              "name": "climbing_intervals_altitude",
+              "type": "bike",
+              "summary": "20 min Z1-2, 10 min Z3, 4 x 4 min uphill, 20 min cooldown",
+              "targets": "4 x 4 min uphill at 230-240 W with 3 min recovery"
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "headline": "Altitude endurance",
+          "prescriptions": [
+            {
+              "name": "altitude_endurance_steady",
+              "type": "bike",
+              "summary": "2.0-3.0 h steady endurance",
+              "targets": "HR <150-155, watts <220"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Travel bodyweight bridge",
+      "start_date": "2026-04-02",
+      "end_date": "2026-04-05",
+      "location": "Travel",
+      "days": [
+        {
+          "offset": 0,
+          "headline": "Mobility and core",
+          "prescriptions": [
+            {
+              "name": "travel_mobility_core",
+              "type": "mobility",
+              "summary": "Bodyweight mobility and trunk session",
+              "targets": "Movement quality and core strength"
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "headline": "Bodyweight lower-body circuit",
+          "prescriptions": [
+            {
+              "name": "travel_bodyweight_strength",
+              "type": "strength",
+              "summary": "Bodyweight lower-body session plus walking lunges",
+              "targets": "Control and stiffness, not maximal fatigue"
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "headline": "Mobility reset",
+          "prescriptions": [
+            {
+              "name": "travel_mobility_reset",
+              "type": "mobility",
+              "summary": "Mobility and trunk work only",
+              "targets": "Stay loose while traveling"
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "headline": "Recovery day",
+          "prescriptions": [
+            {
+              "name": "travel_recovery_walk",
+              "type": "recovery",
+              "summary": "Optional walk, mobility, or full recovery",
+              "targets": "Recover before the Memphis block"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Memphis block one",
+      "start_date": "2026-04-06",
+      "end_date": "2026-04-13",
+      "location": "Memphis",
+      "days": [
+        {
+          "offset": 0,
+          "headline": "Strength and easy spin",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Primary lower-body and posterior-chain lifts"
+            },
+            {
+              "name": "easy_spin_optional",
+              "type": "bike",
+              "summary": "60-90 min easy spin",
+              "targets": "Very light recovery effort"
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "headline": "Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_zone_2_endurance",
+              "type": "bike",
+              "summary": "20-30 min easy, then 3 x 30 min with 5 min stop / fuel between",
+              "targets": "Warm-up <130 W, then 130-170 W and HR <135"
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "headline": "Aerobic threshold on flats",
+          "prescriptions": [
+            {
+              "name": "memphis_aerobic_threshold_flats",
+              "type": "bike",
+              "summary": "30 min Z1-2, 10 min Z3, then 4 x 8 min with 4-5 min easy between",
+              "targets": "230-250 W or 150-160 bpm, cadence 80-90 rpm"
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "headline": "Strength and recovery",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Keep bar speed clean and reps crisp"
+            },
+            {
+              "name": "off_or_easy_spin",
+              "type": "recovery",
+              "summary": "Off or very easy spin",
+              "targets": "Recover for the next endurance day"
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "headline": "Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_zone_2_endurance",
+              "type": "bike",
+              "summary": "20-30 min easy, then 3 x 30 min with 5 min stop / fuel between",
+              "targets": "Warm-up <130 W, then 130-170 W and HR <135"
+            }
+          ]
+        },
+        {
+          "offset": 5,
+          "headline": "Intermittent threshold",
+          "prescriptions": [
+            {
+              "name": "memphis_intermittent_threshold",
+              "type": "bike",
+              "summary": "30 min Z1-2, 10 min Z3, then 2 x 20 min as 4 x (3 min hard / 2 min easy)",
+              "targets": "Zone 4 work with a full 30 min easy ride between sets"
+            }
+          ]
+        },
+        {
+          "offset": 6,
+          "headline": "Long Zone 2 ride",
+          "prescriptions": [
+            {
+              "name": "memphis_long_zone_2",
+              "type": "bike",
+              "summary": "3.0-3.5 h long aerobic ride",
+              "targets": "Mostly 130-170 W with HR <135, plus fueling practice"
+            }
+          ]
+        },
+        {
+          "offset": 7,
+          "headline": "Recovery day",
+          "prescriptions": [
+            {
+              "name": "off_or_recovery_spin",
+              "type": "recovery",
+              "summary": "Recovery spin or full off day",
+              "targets": "Absorb the Memphis block"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Park City main block",
+      "start_date": "2026-04-14",
+      "end_date": "2026-04-22",
+      "location": "Park City",
+      "days": [
+        {
+          "offset": 0,
+          "headline": "Easy altitude endurance",
+          "prescriptions": [
+            {
+              "name": "easy_altitude_endurance",
+              "type": "bike",
+              "summary": "1.5-2.0 h easy altitude endurance",
+              "targets": "HR <150-155, watts <220"
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "headline": "Strength and easy spin",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Primary lower-body and posterior-chain lifts"
+            },
+            {
+              "name": "easy_spin_optional",
+              "type": "bike",
+              "summary": "60-90 min easy spin",
+              "targets": "Recovery effort only"
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "headline": "Climbing intervals",
+          "prescriptions": [
+            {
+              "name": "climbing_intervals_altitude",
+              "type": "bike",
+              "summary": "20 min Z1-2, 10 min Z3, 4 x 4 min uphill, 20 min cooldown",
+              "targets": "4 x 4 min uphill at 230-240 W with 3 min recovery"
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "headline": "Easy endurance",
+          "prescriptions": [
+            {
+              "name": "altitude_endurance_steady",
+              "type": "bike",
+              "summary": "2.0-2.5 h endurance ride",
+              "targets": "HR <150-155, watts <220"
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "headline": "Long climbing endurance",
+          "prescriptions": [
+            {
+              "name": "park_city_long_climbing_endurance",
+              "type": "bike",
+              "summary": "3.5-4.0 h long climbing endurance ride",
+              "targets": "Keep the day mostly aerobic and practice fueling"
+            }
+          ]
+        },
+        {
+          "offset": 5,
+          "headline": "Technical trail endurance",
+          "prescriptions": [
+            {
+              "name": "easy_technical_trail_endurance",
+              "type": "bike",
+              "summary": "1.5-2.0 h easy technical trail ride",
+              "targets": "Low stress, smooth technical execution"
+            }
+          ]
+        },
+        {
+          "offset": 6,
+          "headline": "Strength and recovery",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Keep total volume controlled"
+            },
+            {
+              "name": "off_or_easy_spin",
+              "type": "recovery",
+              "summary": "Easy spin or full rest",
+              "targets": "Recover for the next altitude endurance day"
+            }
+          ]
+        },
+        {
+          "offset": 7,
+          "headline": "Altitude endurance",
+          "prescriptions": [
+            {
+              "name": "altitude_endurance_steady",
+              "type": "bike",
+              "summary": "2.0-2.5 h steady altitude endurance",
+              "targets": "HR <150-155, watts <220"
+            }
+          ]
+        },
+        {
+          "offset": 8,
+          "headline": "Recovery day",
+          "prescriptions": [
+            {
+              "name": "recovery_spin_short",
+              "type": "recovery",
+              "summary": "Recovery spin or short easy trail ride",
+              "targets": "Freshen up before travel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Memphis block two",
+      "start_date": "2026-04-23",
+      "end_date": "2026-05-03",
+      "location": "Memphis",
+      "days": [
+        {
+          "offset": 0,
+          "headline": "Travel and reset",
+          "prescriptions": [
+            {
+              "name": "travel_or_easy_spin",
+              "type": "recovery",
+              "summary": "Travel day or easy spin only",
+              "targets": "Reset before the final Memphis block"
+            }
+          ]
+        },
+        {
+          "offset": 1,
+          "headline": "Strength and easy spin",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Primary lower-body and posterior-chain lifts"
+            },
+            {
+              "name": "easy_spin_optional",
+              "type": "bike",
+              "summary": "60-90 min easy spin",
+              "targets": "Recovery effort only"
+            }
+          ]
+        },
+        {
+          "offset": 2,
+          "headline": "Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_zone_2_endurance",
+              "type": "bike",
+              "summary": "20-30 min easy, then 3 x 30 min with 5 min stop / fuel between",
+              "targets": "Warm-up <130 W, then 130-170 W and HR <135"
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "headline": "Aerobic threshold progression",
+          "prescriptions": [
+            {
+              "name": "memphis_aerobic_threshold_progression",
+              "type": "bike",
+              "summary": "30 min Z1-2, 10 min Z3, then 4 x 9-10 min if the prior block felt controlled",
+              "targets": "230-250 W or 150-160 bpm, cadence 80-90 rpm"
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "headline": "Strength and recovery",
+          "prescriptions": [
+            {
+              "name": "heavy_strength_session",
+              "type": "strength",
+              "summary": "Heavy / low-rep gym session",
+              "targets": "Keep the volume controlled"
+            },
+            {
+              "name": "off_or_easy_spin",
+              "type": "recovery",
+              "summary": "Easy spin or full rest",
+              "targets": "Recover for the next endurance day"
+            }
+          ]
+        },
+        {
+          "offset": 5,
+          "headline": "Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_zone_2_endurance",
+              "type": "bike",
+              "summary": "20-30 min easy, then 3 x 30 min with 5 min stop / fuel between",
+              "targets": "Warm-up <130 W, then 130-170 W and HR <135"
+            }
+          ]
+        },
+        {
+          "offset": 6,
+          "headline": "Intermittent threshold",
+          "prescriptions": [
+            {
+              "name": "memphis_intermittent_threshold",
+              "type": "bike",
+              "summary": "30 min Z1-2, 10 min Z3, then 2 x 20 min as 4 x (3 min hard / 2 min easy)",
+              "targets": "Zone 4 work with a full 30 min easy ride between sets"
+            }
+          ]
+        },
+        {
+          "offset": 7,
+          "headline": "Long Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_long_zone_2",
+              "type": "bike",
+              "summary": "3.0-4.0 h long aerobic ride",
+              "targets": "Mostly 130-170 W with HR <135, plus fueling practice"
+            }
+          ]
+        },
+        {
+          "offset": 8,
+          "headline": "Recovery day",
+          "prescriptions": [
+            {
+              "name": "off_or_recovery_spin",
+              "type": "recovery",
+              "summary": "Recovery spin or full off day",
+              "targets": "Absorb the training"
+            }
+          ]
+        },
+        {
+          "offset": 9,
+          "headline": "Shorter Zone 2 endurance",
+          "prescriptions": [
+            {
+              "name": "memphis_zone_2_shorter",
+              "type": "bike",
+              "summary": "2.0-2.5 h aerobic ride",
+              "targets": "Stay in the prescribed Zone 2 range and finish feeling controlled"
+            }
+          ]
+        },
+        {
+          "offset": 10,
+          "headline": "Reset day",
+          "prescriptions": [
+            {
+              "name": "off_or_easy_reset",
+              "type": "recovery",
+              "summary": "Off day or very easy reset ride",
+              "targets": "Freshen up before the next planning cycle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

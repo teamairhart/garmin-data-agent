@@ -1,3 +1,4 @@
+from datetime import date
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, session
 import os
 from werkzeug.utils import secure_filename
@@ -6,6 +7,8 @@ import tempfile
 from src.agents.data_analyzer import ride_analyzer
 from src.agents.update_monitor import update_monitor
 from src.auth import auth_bp, init_db
+from src.dashboard_data import build_dashboard_context
+from src.training_log import create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions, upsert_workout_log
 from demo_data import generate_demo_ride_data
 from src.fit_parser import load_single_fit_activity
 
@@ -31,6 +34,7 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 
 # Initialize database
 init_db()
+init_training_tables()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -74,6 +78,22 @@ def extract_ride_metrics(df, session_data):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/dashboard')
+def dashboard():
+    context = build_dashboard_context(today=date.today())
+    workout_logs = {}
+    recent_gym_sessions = []
+    if session.get('user_id'):
+        workout_logs = get_workout_logs(int(session['user_id']))
+        recent_gym_sessions = list_recent_gym_sessions(int(session['user_id']))
+    return render_template(
+        'dashboard.html',
+        workout_logs=workout_logs,
+        recent_gym_sessions=recent_gym_sessions,
+        **context,
+    )
 
 @app.route('/demo')
 def demo():
@@ -223,6 +243,81 @@ def debug_llm():
         debug_info["test_result"] = "No token - cannot test"
     
     return f"<pre>{debug_info}</pre>"
+
+
+@app.route('/dashboard/log-workout', methods=['POST'])
+def log_workout():
+    if not session.get('user_id'):
+        flash('Please log in to save workout logs.', 'error')
+        return redirect(url_for('auth.login'))
+
+    planned_date = request.form.get('planned_date', '').strip()
+    workout_name = request.form.get('workout_name', '').strip()
+    workout_type = request.form.get('workout_type', '').strip() or None
+    location = request.form.get('location', '').strip() or None
+    status = request.form.get('status', 'completed').strip() or 'completed'
+    duration_minutes_raw = request.form.get('duration_minutes', '').strip()
+    rpe_raw = request.form.get('rpe', '').strip()
+    notes = request.form.get('notes', '').strip() or None
+
+    if not planned_date or not workout_name:
+        flash('Workout log is missing required fields.', 'error')
+        return redirect(url_for('dashboard'))
+
+    duration_minutes = int(duration_minutes_raw) if duration_minutes_raw else None
+    rpe = int(rpe_raw) if rpe_raw else None
+    upsert_workout_log(
+        user_id=int(session['user_id']),
+        planned_date=planned_date,
+        workout_name=workout_name,
+        workout_type=workout_type,
+        location=location,
+        status=status,
+        duration_minutes=duration_minutes,
+        rpe=rpe,
+        notes=notes,
+    )
+    flash(f'Saved workout log for {workout_name}.', 'success')
+    return redirect(url_for('dashboard'))
+
+
+@app.route('/dashboard/log-gym', methods=['POST'])
+def log_gym():
+    if not session.get('user_id'):
+        flash('Please log in to save gym sessions.', 'error')
+        return redirect(url_for('auth.login'))
+
+    session_date = request.form.get('session_date', '').strip() or date.today().isoformat()
+    title = request.form.get('title', '').strip() or None
+    notes = request.form.get('notes', '').strip() or None
+
+    exercise_names = request.form.getlist('exercise_name[]')
+    set_numbers = request.form.getlist('set_number[]')
+    reps = request.form.getlist('reps[]')
+    weights = request.form.getlist('weight[]')
+    set_notes = request.form.getlist('set_notes[]')
+
+    gym_sets = []
+    for index, exercise_name in enumerate(exercise_names):
+        gym_sets.append(
+            {
+                'exercise_name': exercise_name,
+                'set_number': int(set_numbers[index]) if index < len(set_numbers) and set_numbers[index] else None,
+                'reps': int(reps[index]) if index < len(reps) and reps[index] else None,
+                'weight': float(weights[index]) if index < len(weights) and weights[index] else None,
+                'notes': set_notes[index].strip() if index < len(set_notes) and set_notes[index].strip() else None,
+            }
+        )
+
+    create_gym_session(
+        user_id=int(session['user_id']),
+        session_date=session_date,
+        title=title,
+        notes=notes,
+        sets=gym_sets,
+    )
+    flash('Gym session saved.', 'success')
+    return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
     app.run(debug=True)
