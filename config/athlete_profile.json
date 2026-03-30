@@ -177,7 +177,39 @@
   ],
   "training_constraints": {
     "weekly_schedule_flexibility": "Very flexible schedule; can usually find 4-5 hours per day for long rides if needed.",
-    "default_assumption": "Training can be placed on any day of the week."
+    "default_assumption": "Training can be placed on any day of the week.",
+    "location_blocks": [
+      {
+        "start_date": "2026-03-29",
+        "end_date": "2026-04-01",
+        "location": "Park City",
+        "notes": "Altitude block"
+      },
+      {
+        "start_date": "2026-04-02",
+        "end_date": "2026-04-05",
+        "location": "Travel",
+        "notes": "Bodyweight and mobility only"
+      },
+      {
+        "start_date": "2026-04-06",
+        "end_date": "2026-04-13",
+        "location": "Memphis",
+        "notes": "Flat-road block"
+      },
+      {
+        "start_date": "2026-04-14",
+        "end_date": "2026-04-22",
+        "location": "Park City",
+        "notes": "Altitude block"
+      },
+      {
+        "start_date": "2026-04-23",
+        "end_date": "2026-05-03",
+        "location": "Memphis",
+        "notes": "Flat-road block"
+      }
+    ]
   },
   "fueling_preferences": {
     "long_ride_fueling": [

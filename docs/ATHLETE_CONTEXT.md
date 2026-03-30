@@ -5,6 +5,7 @@ This repository is being used to build race-specific analysis for Jonathan Airha
 ## Source Of Truth
 
 - Machine-readable profile: `config/athlete_profile.json`
+- Current dated block plan: `docs/TRAINING_BLOCK_2026-03-29_to_2026-05-03.md`
 - Recent merged daily dataset: `exports/training_dataset_recent/training_daily.csv`
 - Garmin recent record stream: `exports/edge840_recent/messages/record.csv`
 - Garmin recent event stream: `exports/edge840_recent/messages/event.csv`
