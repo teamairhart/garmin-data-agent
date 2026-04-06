@@ -11,6 +11,7 @@ Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for a
 
 ## Athlete Analysis Context
 
+Read `docs/TRAINING_MASTER_CONTEXT.md` first for the end-to-end project brief.
 Use `config/athlete_profile.json` as the machine-readable source of truth and `docs/ATHLETE_CONTEXT.md` as the narrative brief.
 
 Project-specific rules:
