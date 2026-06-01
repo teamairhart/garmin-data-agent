@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Race Plan — {{ plan.meta.athlete }}{% endblock %}
+
+{% block content %}
+<style>
+  .plan-day { border:1px solid var(--line); border-radius:16px; background:rgba(255,250,242,.92); padding:16px; margin-bottom:14px; }
+  .plan-day.today { border:2px solid var(--brand); box-shadow:0 8px 22px rgba(31,95,74,.15); }
+  .plan-day.done { opacity:.72; }
+  .day-head { display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .day-date { font-weight:700; color:var(--brand-dark); }
+  .day-loc { font-size:.8rem; color:var(--accent); text-transform:uppercase; letter-spacing:.06em; font-weight:700; }
+  .sess { display:flex; gap:12px; padding:10px 0; border-top:1px dashed var(--line); }
+  .sess:first-of-type { border-top:none; }
+  .sess input[type=checkbox]{ width:22px; height:22px; margin-top:3px; flex:0 0 auto; accent-color:var(--brand); }
+  .sess .body { flex:1; }
+  .sess .title { font-weight:600; }
+  .sess.checked .title { text-decoration:line-through; color:var(--muted); }
+  .sess .targets { font-size:.9rem; color:var(--brand-dark); background:rgba(31,95,74,.07); border-radius:8px; padding:3px 8px; display:inline-block; margin:4px 0; }
+  .sess ul { margin:.3rem 0 0; padding-left:1.1rem; font-size:.92rem; color:var(--muted); }
+  details { margin-top:6px; font-size:.9rem; }
+  details summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  .fuel-row { display:flex; gap:10px; padding:2px 0; }
+  .fuel-at { font-weight:700; min-width:46px; color:var(--brand-dark); }
+  .type-pill { font-size:.7rem; border-radius:999px; padding:2px 8px; font-weight:700; text-transform:uppercase; }
+  .type-bike{background:rgba(31,95,74,.14);color:var(--brand-dark);} .type-strength{background:rgba(197,106,45,.16);color:#7a431d;} .type-rest{background:#e7e2d8;color:var(--muted);}
+  .nutri { font-size:.9rem; }
+  .nutri .macros span { display:inline-block; margin-right:12px; font-weight:600; }
+  .progress-wrap { position:sticky; top:0; z-index:10; background:rgba(247,244,238,.96); padding:10px 0; }
+  .wk-head { margin:22px 0 8px; }
+</style>
+
+<div class="progress-wrap">
+  <div class="d-flex justify-content-between align-items-end">
+    <div>
+      <div class="panel-label">Training Plan</div>
+      <h2 class="mb-0">{{ plan.meta.athlete }}</h2>
+      <div class="text-muted">{{ plan.meta.subtitle }}</div>
+    </div>
+    <div class="text-end">
+      <div style="font-size:1.6rem;font-weight:800;color:var(--brand)" id="pct">{{ summary.pct }}%</div>
+      <div class="text-muted" id="ratio">{{ summary.done }}/{{ summary.total }} done</div>
+    </div>
+  </div>
+  <div class="progress mt-2" style="height:8px;">
+    <div class="progress-bar" id="bar" role="progressbar" style="width: {{ summary.pct }}%; background:var(--brand);"></div>
+  </div>
+</div>
+
+{% if not logged_in %}
+  <div class="alert alert-warning mt-3">You're viewing read-only. <a href="{{ url_for('auth.login') }}">Log in</a> to check items off and sync across devices.</div>
+{% endif %}
+
+<div class="panel-card mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <strong>🎯 Leadville:</strong> {{ plan.meta.goal_leadville }}<br>
+      <strong>🎯 P2P:</strong> {{ plan.meta.goal_p2p }}
+    </div>
+    <div class="col-md-6">
+      <details><summary>Principles & zones</summary>
+        <ul class="mt-2">{% for p in plan.meta.principles %}<li>{{ p }}</li>{% endfor %}</ul>
+        <table class="table table-sm"><thead><tr><th>Zone</th><th>HR</th><th>Power</th></tr></thead><tbody>
+        {% for z in plan.meta.zones %}<tr><td>{{ z.zone }}</td><td>{{ z.hr }}</td><td>{{ z.power }}</td></tr>{% endfor %}
+        </tbody></table>
+      </details>
+    </div>
+  </div>
+</div>
+
+{% for week in plan.weeks %}
+  <div class="wk-head">
+    <div class="panel-label">{{ week.phase }} · {{ week.location }} · {{ week.hours }} h
+      {% if week.id.startswith('tmpl-') %}<span class="badge bg-secondary ms-1">TEMPLATE — not yet dated</span>{% endif %}</div>
+    <h4 class="mb-1">{{ week.label }}</h4>
+    <div class="text-muted small">{{ week.focus }}</div>
+  </div>
+
+  {% for day in week.days %}
+    {% set day_done = day.sessions | selectattr('id') | rejectattr('type','equalto','rest') | list %}
+    <div class="plan-day {% if day.date == today %}today{% endif %}" id="day-{{ day.date }}">
+      <div class="day-head">
+        <div><span class="day-date">{{ day.weekday }} {{ day.date[5:] }}</span>
+          {% if day.date == today %}<span class="badge bg-success ms-1">TODAY</span>{% endif %}
+          &nbsp;{{ day.headline }}</div>
+        <span class="day-loc">{{ day.location }}</span>
+      </div>
+
+      {% for s in day.sessions %}
+        {% set comp = completions.get(s.id, {}) %}
+        <div class="sess {% if comp.completed %}checked{% endif %}" data-sess="{{ s.id }}">
+          {% if s.type != 'rest' %}
+            <input type="checkbox" class="sess-check" data-item-id="{{ s.id }}" {% if comp.completed %}checked{% endif %} {% if not logged_in %}disabled{% endif %}>
+          {% else %}<span style="width:22px"></span>{% endif %}
+          <div class="body">
+            <div><span class="type-pill type-{{ s.type }}">{{ s.type }}</span> <span class="title">{{ s.title }}</span>
+              {% if s.duration and s.duration != '—' %}<span class="text-muted small">· {{ s.duration }}</span>{% endif %}</div>
+            {% if s.targets %}<div class="targets">{{ s.targets }}</div>{% endif %}
+            {% if s.detail %}<ul>{% for d in s.detail %}<li>{{ d }}</li>{% endfor %}</ul>{% endif %}
+            {% if s.fueling %}
+              <details><summary>⛽ Fueling by the clock</summary>
+                {% for f in s.fueling %}<div class="fuel-row"><span class="fuel-at">{{ f.at }}</span><span>{{ f.do }}</span></div>{% endfor %}
+              </details>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+
+      {% if day.nutrition %}
+        <details class="nutri mt-2"><summary>🍽️ Nutrition — {{ day.nutrition.day_type }} day</summary>
+          <div class="macros mt-1"><span>{{ day.nutrition.kcal }} kcal</span><span>Carb {{ day.nutrition.carb_g }} g</span><span>Protein {{ day.nutrition.protein_g }} g</span><span>Fat {{ day.nutrition.fat_g }} g</span></div>
+          {% if day.nutrition.notes %}<div class="text-muted">{{ day.nutrition.notes }}</div>{% endif %}
+          {% if day.nutrition.sample_meals %}<ul>{% for m in day.nutrition.sample_meals %}<li>{{ m }}</li>{% endfor %}</ul>{% endif %}
+        </details>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endfor %}
+
+{% if plan.weeks | length == 0 %}
+  <div class="alert alert-info mt-4">Plan content is being generated — check back shortly.</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.sess-check').forEach(cb => {
+  cb.addEventListener('change', async (e) => {
+    const itemId = cb.dataset.itemId, completed = cb.checked;
+    cb.closest('.sess').classList.toggle('checked', completed);
+    try {
+      const r = await fetch("{{ url_for('plan_toggle') }}", {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({item_id: itemId, completed})
+      });
+      if (r.status === 401) { window.location = "{{ url_for('auth.login') }}"; return; }
+      const data = await r.json();
+      if (data.ok) {
+        document.getElementById('pct').textContent = data.summary.pct + '%';
+        document.getElementById('ratio').textContent = data.summary.done + '/' + data.summary.total + ' done';
+        document.getElementById('bar').style.width = data.summary.pct + '%';
+      }
+    } catch (err) { console.error(err); cb.checked = !completed; }
+  });
+});
+// jump to today on load
+const t = document.getElementById('day-{{ today }}');
+if (t) t.scrollIntoView({behavior:'smooth', block:'center'});
+</script>
+{% endblock %}

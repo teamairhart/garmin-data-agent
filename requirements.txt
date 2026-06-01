@@ -10,6 +10,7 @@ gunicorn
 pandas
 numpy
 fitparse
+fit-tool
 
 # AI/ML
 transformers

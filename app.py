@@ -9,6 +9,7 @@ from src.agents.update_monitor import update_monitor
 from src.auth import auth_bp, init_db
 from src.dashboard_data import build_dashboard_context
 from src.training_log import create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions, upsert_workout_log
+from src.plan_tracker import init_plan_tables, load_plan, get_completions, set_completion, progress_summary
 from demo_data import generate_demo_ride_data
 from src.fit_parser import load_single_fit_activity
 
@@ -35,6 +36,7 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 # Initialize database
 init_db()
 init_training_tables()
+init_plan_tables()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -94,6 +96,40 @@ def dashboard():
         recent_gym_sessions=recent_gym_sessions,
         **context,
     )
+
+@app.route('/plan')
+def plan():
+    """Interactive day-by-day race plan with check-offs."""
+    plan_data = load_plan()
+    completions = {}
+    if session.get('user_id'):
+        completions = get_completions(int(session['user_id']))
+    summary = progress_summary(plan_data, completions)
+    return render_template(
+        'plan.html',
+        plan=plan_data,
+        completions=completions,
+        summary=summary,
+        today=date.today().isoformat(),
+        logged_in=bool(session.get('user_id')),
+    )
+
+
+@app.route('/plan/toggle', methods=['POST'])
+def plan_toggle():
+    """Persist a single check-off (requires login)."""
+    if not session.get('user_id'):
+        return jsonify({'ok': False, 'error': 'login_required'}), 401
+    payload = request.get_json(silent=True) or {}
+    item_id = payload.get('item_id')
+    completed = bool(payload.get('completed'))
+    if not item_id:
+        return jsonify({'ok': False, 'error': 'missing item_id'}), 400
+    set_completion(int(session['user_id']), item_id, completed, payload.get('notes'))
+    plan_data = load_plan()
+    summary = progress_summary(plan_data, get_completions(int(session['user_id'])))
+    return jsonify({'ok': True, 'summary': summary})
+
 
 @app.route('/demo')
 def demo():

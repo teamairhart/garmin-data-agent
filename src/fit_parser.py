@@ -22,6 +22,43 @@ EXPORT_METADATA_COLUMNS = [
     "message_index_within_type",
 ]
 
+# FIT stores GPS coordinates in "semicircles"; degrees = semicircles * (180 / 2^31).
+SEMICIRCLE_TO_DEGREES = 180.0 / 2**31
+
+# Utah is (almost) a rectangle. Any ride that STARTS inside this box is classified as a
+# mountain-bike ride, because the Edge's default activity profile mislabels home rides in
+# Park City as "commuting"/"road". Rides outside Utah (e.g. Memphis road rides) keep their
+# recorded sub_sport. See ~/Vault/Fitness/Mountain_Biking/Data Pipeline.md.
+UTAH_BOUNDS = {"lat_min": 36.99, "lat_max": 42.01, "lon_min": -114.06, "lon_max": -109.03}
+
+
+def semicircles_to_degrees(value: Any) -> Optional[float]:
+    """Convert a FIT semicircle coordinate to decimal degrees (None if missing)."""
+    if value is None:
+        return None
+    try:
+        return float(value) * SEMICIRCLE_TO_DEGREES
+    except (TypeError, ValueError):
+        return None
+
+
+def classify_discipline(
+    sub_sport: Any,
+    start_lat_deg: Optional[float],
+    start_lon_deg: Optional[float],
+) -> Any:
+    """Return the corrected ride discipline.
+
+    Utah starts -> 'mountain'. Otherwise fall back to the device-recorded sub_sport.
+    """
+    if start_lat_deg is not None and start_lon_deg is not None:
+        if (
+            UTAH_BOUNDS["lat_min"] <= start_lat_deg <= UTAH_BOUNDS["lat_max"]
+            and UTAH_BOUNDS["lon_min"] <= start_lon_deg <= UTAH_BOUNDS["lon_max"]
+        ):
+            return "mountain"
+    return sub_sport
+
 
 @dataclass
 class FieldCatalog:
@@ -149,6 +186,10 @@ def build_file_summary_row(
     file_id_data: Dict[str, Any],
     parse_error: Optional[str] = None,
 ) -> Dict[str, Any]:
+    start_lat = semicircles_to_degrees(session_data.get("start_position_lat"))
+    start_lon = semicircles_to_degrees(session_data.get("start_position_long"))
+    sub_sport = session_data.get("sub_sport")
+    discipline = classify_discipline(sub_sport, start_lat, start_lon)
     return {
         "source_file": file_path.name,
         "source_path": str(file_path),
@@ -163,7 +204,10 @@ def build_file_summary_row(
         "serial_number": file_id_data.get("serial_number"),
         "start_time": session_data.get("start_time"),
         "sport": session_data.get("sport"),
-        "sub_sport": session_data.get("sub_sport"),
+        "sub_sport": sub_sport,
+        "discipline": discipline,
+        "start_lat": round(start_lat, 6) if start_lat is not None else None,
+        "start_lon": round(start_lon, 6) if start_lon is not None else None,
         "total_distance_m": session_data.get("total_distance"),
         "total_timer_time_s": session_data.get("total_timer_time"),
         "avg_speed_mps": session_data.get("enhanced_avg_speed", session_data.get("avg_speed")),
@@ -272,6 +316,9 @@ def _write_file_summaries(output_dir: Path, file_summaries: List[Dict[str, Any]]
         "start_time",
         "sport",
         "sub_sport",
+        "discipline",
+        "start_lat",
+        "start_lon",
         "total_distance_m",
         "total_timer_time_s",
         "avg_speed_mps",
