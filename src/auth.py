@@ -85,32 +85,51 @@ def verify_user(email, password):
         return {'id': user[0], 'email': email, 'name': user[2]}
     return None
 
+def _safe_next(target):
+    """Only allow same-site relative redirect targets (e.g. /plan)."""
+    if target and target.startswith('/') and not target.startswith('//'):
+        return target
+    return None
+
+
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'GET':
+        nxt = _safe_next(request.args.get('next'))
+        if nxt:
+            session['login_next'] = nxt
+        else:
+            session.pop('login_next', None)
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        
+
         user = verify_user(email, password)
         if user:
             session['user_id'] = user['id']
-            session['user_email'] = user['email'] 
+            session['user_email'] = user['email']
             session['user_name'] = user['name']
             flash(f'Welcome back, {user["name"]}!', 'success')
-            return redirect(url_for('index'))
+            return redirect(session.pop('login_next', None) or url_for('index'))
         else:
             flash('Invalid email or password', 'error')
-    
+
     return render_template('auth/login.html')
 
 @auth_bp.route('/signup', methods=['GET', 'POST'])
 def signup():
+    if request.method == 'GET':
+        nxt = _safe_next(request.args.get('next'))
+        if nxt:
+            session['login_next'] = nxt
+        else:
+            session.pop('login_next', None)
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
-        
+
         if password != confirm_password:
             flash('Passwords do not match', 'error')
         elif len(password) < 6:
@@ -122,10 +141,10 @@ def signup():
                 session['user_email'] = email
                 session['user_name'] = name
                 flash(f'Welcome to Garmin Data Agent, {name}!', 'success')
-                return redirect(url_for('index'))
+                return redirect(session.pop('login_next', None) or url_for('index'))
             else:
                 flash('Email already registered', 'error')
-    
+
     return render_template('auth/signup.html')
 
 @auth_bp.route('/logout')

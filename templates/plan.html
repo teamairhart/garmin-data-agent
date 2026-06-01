@@ -47,7 +47,13 @@
 </div>
 
 {% if not logged_in %}
-  <div class="alert alert-warning mt-3">You're viewing read-only. <a href="{{ url_for('auth.login') }}">Log in</a> to check items off and sync across devices.</div>
+  <div class="alert alert-warning mt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <span><strong>Read-only.</strong> Log in to check items off — your progress syncs across phone &amp; laptop.</span>
+    <span>
+      <a class="btn btn-success btn-sm" href="{{ url_for('auth.login', next='/plan') }}">Log in to check off</a>
+      <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('auth.signup', next='/plan') }}">Sign up</a>
+    </span>
+  </div>
 {% endif %}
 
 <div class="panel-card mt-3">
