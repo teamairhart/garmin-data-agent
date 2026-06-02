@@ -50,6 +50,8 @@ class FitParserTests(unittest.TestCase):
                 "start_time": "2026-03-28T21:00:00+00:00",
                 "sport": "cycling",
                 "sub_sport": "road",
+                "start_position_lat": int(40.7 / (180.0 / 2**31)),
+                "start_position_long": int(-111.5 / (180.0 / 2**31)),
                 "total_distance": 40234.5,
                 "total_timer_time": 3800,
                 "enhanced_avg_speed": 9.5,
@@ -67,6 +69,10 @@ class FitParserTests(unittest.TestCase):
         self.assertEqual(row["total_messages"], 11)
         self.assertEqual(row["message_type_count"], 2)
         self.assertEqual(row["sport"], "cycling")
+        self.assertEqual(row["sub_sport"], "road")
+        self.assertEqual(row["discipline"], "road")
+        self.assertAlmostEqual(row["start_lat"], 40.7, places=5)
+        self.assertAlmostEqual(row["start_lon"], -111.5, places=5)
         self.assertEqual(row["avg_speed_mps"], 9.5)
         self.assertEqual(row["training_stress_score"], 81.2)
         self.assertIsNone(row["threshold_power_w"])
