@@ -142,6 +142,19 @@ python scripts/trim_apple_health_export.py \
    - `SECRET_KEY=<random-secret-key>`
 4. **Deploy!**
 
+### Reset A Render User Password
+
+The Render deployment stores users and plan check-offs in the persistent SQLite database at
+`$DATABASE_PATH` (`/opt/render/project/src/storage/users.db`). If a login stops working, open a
+Render service shell and run:
+
+```bash
+python scripts/reset_user_password.py your@email.com --name "Your Name"
+```
+
+The script prompts for the new password without echoing it, then updates the existing user or
+creates one if it is missing.
+
 ## 📊 Usage Examples
 
 ### Upload & Analyze

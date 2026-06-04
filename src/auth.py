@@ -8,6 +8,11 @@ auth_bp = Blueprint('auth', __name__)
 DATABASE = os.environ.get('DATABASE_PATH', 'users.db')
 
 
+def normalize_email(email):
+    """Normalize email addresses before storage and lookup."""
+    return (email or '').strip().lower()
+
+
 def get_db_connection():
     database_path = os.path.abspath(DATABASE)
     database_dir = os.path.dirname(database_path)
@@ -57,11 +62,18 @@ def init_db():
 
 def create_user(email, password, name):
     """Create a new user"""
+    email = normalize_email(email)
+    name = (name or '').strip() or email
     password_hash = generate_password_hash(password)
     
+    conn = None
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
+        cursor.execute('SELECT id FROM users WHERE lower(email) = ?', (email,))
+        if cursor.fetchone():
+            conn.close()
+            return None
         cursor.execute(
             'INSERT INTO users (email, password_hash, name) VALUES (?, ?, ?)',
             (email, password_hash, name)
@@ -71,18 +83,21 @@ def create_user(email, password, name):
         conn.close()
         return user_id
     except sqlite3.IntegrityError:
+        if conn:
+            conn.close()
         return None  # Email already exists
 
 def verify_user(email, password):
     """Verify user credentials"""
+    email = normalize_email(email)
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute('SELECT id, password_hash, name FROM users WHERE email = ?', (email,))
+    cursor.execute('SELECT id, email, password_hash, name FROM users WHERE lower(email) = ?', (email,))
     user = cursor.fetchone()
     conn.close()
     
-    if user and check_password_hash(user[1], password):
-        return {'id': user[0], 'email': email, 'name': user[2]}
+    if user and check_password_hash(user['password_hash'], password):
+        return {'id': user['id'], 'email': user['email'], 'name': user['name']}
     return None
 
 def _safe_next(target):
@@ -101,7 +116,7 @@ def login():
         else:
             session.pop('login_next', None)
     if request.method == 'POST':
-        email = request.form['email']
+        email = normalize_email(request.form.get('email'))
         password = request.form['password']
 
         user = verify_user(email, password)
@@ -125,8 +140,8 @@ def signup():
         else:
             session.pop('login_next', None)
     if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
+        name = request.form['name'].strip()
+        email = normalize_email(request.form.get('email'))
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
