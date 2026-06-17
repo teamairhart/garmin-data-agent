@@ -25,12 +25,6 @@ EXPORT_METADATA_COLUMNS = [
 # FIT stores GPS coordinates in "semicircles"; degrees = semicircles * (180 / 2^31).
 SEMICIRCLE_TO_DEGREES = 180.0 / 2**31
 
-# Utah is (almost) a rectangle. Any ride that STARTS inside this box is classified as a
-# mountain-bike ride, because the Edge's default activity profile mislabels home rides in
-# Park City as "commuting"/"road". Rides outside Utah (e.g. Memphis road rides) keep their
-# recorded sub_sport. See ~/Vault/Fitness/Mountain_Biking/Data Pipeline.md.
-UTAH_BOUNDS = {"lat_min": 36.99, "lat_max": 42.01, "lon_min": -114.06, "lon_max": -109.03}
-
 
 def semicircles_to_degrees(value: Any) -> Optional[float]:
     """Convert a FIT semicircle coordinate to decimal degrees (None if missing)."""
@@ -42,22 +36,16 @@ def semicircles_to_degrees(value: Any) -> Optional[float]:
         return None
 
 
-def classify_discipline(
-    sub_sport: Any,
-    start_lat_deg: Optional[float],
-    start_lon_deg: Optional[float],
-) -> Any:
-    """Return the corrected ride discipline.
+def classify_discipline(sub_sport: Any, sport: Any = None) -> Any:
+    """Return the ride discipline from the Garmin-selected activity profile.
 
-    Utah starts -> 'mountain'. Otherwise fall back to the device-recorded sub_sport.
+    The Edge 840's profiles are the source of truth (the old Utah-start -> 'mountain'
+    GPS override was retired 2026-06-02 once the device profiles were corrected; see
+    ~/Vault/Fitness/Mountain_Biking/Data Pipeline.md). Use the recorded ``sub_sport``;
+    fall back to ``sport`` only when ``sub_sport`` is missing. ``start_lat``/``start_lon``
+    remain available for location analysis but never change the label.
     """
-    if start_lat_deg is not None and start_lon_deg is not None:
-        if (
-            UTAH_BOUNDS["lat_min"] <= start_lat_deg <= UTAH_BOUNDS["lat_max"]
-            and UTAH_BOUNDS["lon_min"] <= start_lon_deg <= UTAH_BOUNDS["lon_max"]
-        ):
-            return "mountain"
-    return sub_sport
+    return sub_sport if sub_sport else sport
 
 
 @dataclass
@@ -189,7 +177,7 @@ def build_file_summary_row(
     start_lat = semicircles_to_degrees(session_data.get("start_position_lat"))
     start_lon = semicircles_to_degrees(session_data.get("start_position_long"))
     sub_sport = session_data.get("sub_sport")
-    discipline = classify_discipline(sub_sport, start_lat, start_lon)
+    discipline = classify_discipline(sub_sport, session_data.get("sport"))
     return {
         "source_file": file_path.name,
         "source_path": str(file_path),
