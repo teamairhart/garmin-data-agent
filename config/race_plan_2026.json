@@ -951,7 +951,7 @@
           "date": "2026-06-16",
           "weekday": "Tue",
           "location": "Memphis",
-          "headline": "Quality #1 — OBLA 3×15 min sub-threshold",
+          "headline": "Quality #1 — OBLA (DEFERRED: no power → rode easy Z2)",
           "sessions": [
             {
               "id": "2026-06-16-ride",
@@ -960,6 +960,7 @@
               "duration": "2:00",
               "targets": "20 min WU → 3×15 min @ 215–228W (sub-threshold), HR 150–158, 90 RPM, 5 min easy between → cooldown",
               "detail": [
+                "DEFERRED 2026-06-16 — power-gated (pedals awaiting shoes): ridden as easy Z2 instead. Resume this OBLA session next week once power is on. Do NOT tick as quality completed.",
                 "True quality day. Sub-threshold blocks at 215–228W raise OBLA better than 240W reps — hold the lower end and let HR settle into 150–158.",
                 "Pace by power on the flat Memphis course; HR is the guardrail (don't let it run away above 158).",
                 "20 min easy warmup before the first block; 5 min very easy spin between reps; ~15 min cooldown.",
@@ -1010,16 +1011,16 @@
           "date": "2026-06-17",
           "weekday": "Wed",
           "location": "Memphis",
-          "headline": "Z2 + strength #2 (full)",
+          "headline": "LONG Z2 (priority — last road day before travel) + strength #2",
           "sessions": [
             {
               "id": "2026-06-17-ride",
               "type": "bike",
-              "title": "2:30 Z2",
-              "duration": "2:30",
-              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
+              "title": "Long Z2 2:30–3:00 (priority ride — last road day before travel)",
+              "duration": "2:30–3:00",
+              "targets": "HR ≤135 (truly easy) · 150–180W · 85–95 RPM · no coasting",
               "detail": [
-                "Easy aerobic day between the two quality sessions. Keep it genuinely Z2 — recovery for Thu's over-unders.",
+                "Priority ride this week — your last road day before travel. The two quality days are shelved (no power + travel), so make this a clean long aerobic ride; then let the weekend unload do its job.",
                 "Flat, steady, talk-test. Do NOT let it drift into tempo."
               ],
               "fueling": [
@@ -1085,7 +1086,7 @@
           "date": "2026-06-18",
           "weekday": "Thu",
           "location": "Memphis",
-          "headline": "Quality #2 — over-under 3×12 min",
+          "headline": "Quality #2 — over-under (DEFERRED: travel day)",
           "sessions": [
             {
               "id": "2026-06-18-ride",
@@ -1094,6 +1095,7 @@
               "duration": "1:45",
               "targets": "20 min WU → 3×12 min alternating 2 min @ 205W / 1 min @ 240W, HR floating 150–162, 90 RPM, easy spin between → cooldown",
               "detail": [
+                "DEFERRED 2026-06-18 — travel day; this power-based quality session moves to next week once the pedals are on. Do NOT tick as completed.",
                 "The ONE sanctioned 'middle' session — a specific lactate-clearance tool, not tempo creep. Run the unders at 205W to clear, the overs at 240W to load.",
                 "Each 12-min block = 4 rounds of (2 min @ 205W + 1 min @ 240W). Let HR float up to 162 on the overs; it should settle on the unders.",
                 "20 min easy warmup; 4–5 min very easy between blocks; ~15 min cooldown.",
