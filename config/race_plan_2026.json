@@ -1286,7 +1286,7 @@
       "phase": "Phase 1: Engine build (Jun 10–28) — final loaded week, month's longest ride",
       "location": "Memphis (travel home Mon Jun 22)",
       "hours": "12",
-      "focus": "Down-week unload closes Mon (full rest/travel), then resume the Memphis engine. Two quality days max, ~0 programmed tempo, strength only AFTER easy rides. Threshold progresses to the longest sustained sub-threshold yet (2×20 min). Long ride steps up to 4:00 — the month's longest — with a full fuel dress rehearsal at 70 g carb/hr. Easy = HR ≤138, no exceptions. Cut weight off-bike only; fuel hard/long days fully.",
+      "focus": "RESTRUCTURED 6/24 (recovery-first): Tue 6/23 was ridden as a hard 4×15 interval session instead of the easy re-entry, so it becomes the week's intensity day — pulled forward. To avoid two hard days back-to-back 2.5 wks out from Leadville (recovery is the limiter), Wed 6/24 is now an easy recovery Z2 (and the first ride on the new power pedals) and the separate 2×20 sub-threshold quality is DROPPED this week — that stimulus is covered by the Jun 29 OBLA sharpen. Net week = ONE hard day (Tue, done) + the Sat 4:00 long ride (month's longest + full fuel dress rehearsal), everything else genuinely easy (HR ≤138). Only one strength session this week (Thu, after the Z2 ride). Power comes online this week → validate the meter on easy rides first, then pace quality by watts from Jun 29. Cut weight off-bike only; fuel the long day fully.",
       "days": [
         {
           "id": "2026-06-22",
@@ -1328,18 +1328,19 @@
           "date": "2026-06-23",
           "weekday": "Tue",
           "location": "Memphis",
-          "headline": "Z2 re-entry + Strength #1",
+          "headline": "DONE — WU + 4×15 hard intervals (ridden in place of the easy re-entry)",
           "sessions": [
             {
               "id": "2026-06-23-ride",
               "type": "bike",
-              "title": "1:30 Z2 re-entry",
-              "duration": "1:30",
-              "targets": "HR ≤135 · 130–180W feel · 90 RPM · easy re-entry off the down week",
+              "title": "✓ Ridden hard: WU + 4×15 threshold/VO2 (avg HR ~169)",
+              "duration": "2:00",
+              "targets": "DONE as a hard interval day (not the planned easy re-entry): 15 min WU → 4× work blocks @ HR 165–175 (avg 169), ~5 min easy between. ~49 min above threshold. This was the week's intensity, pulled forward.",
               "detail": [
-                "First ride back after the unload — keep it genuinely easy, HR ≤135. Do NOT let fresh legs push it to tempo.",
-                "Flat, steady, smooth at 90 RPM. Re-grease the legs ahead of tomorrow's quality day.",
-                "Early AM to beat the heat."
+                "Ridden hard on purpose — first structured intensity of the block (Testa: the program is polarized, not Z2-only).",
+                "By time: WU 0–15 @ HR ~136 · INT1 15–30 avg 169 (full 15) · INT2 35–50 avg 168 (full 15) · INT3 ~9 min · INT4 ~10 min (reps 3–4 cut by street crossings) · ~35 min tempo home.",
+                "Coaching note: 167–171 HR sat above OBLA (VO2-leaning), so the 15-min reps faded. Next time pick a lane — 4×15 @ ~158–162 HR (true threshold) OR 4–5×4–5 min @ 170+ (VO2).",
+                "Still HR-only — power pedals install 6/24, so this is the last interval session without watts."
               ],
               "fueling": [
                 {
@@ -1363,9 +1364,9 @@
             {
               "id": "2026-06-23-strength",
               "type": "strength",
-              "title": "Strength #1 — Build phase (after the ride)",
+              "title": "Strength #1 — SKIP this week (Tue became a hard ride, not easy)",
               "duration": "~45 min",
-              "targets": "Lift AFTER the easy ride only. Build-phase loads, double-progression; add 5–10 lb only when reps are crisp. If 24 h soreness threatens the 130W Z2 floor, cut load 20% (bike wins).",
+              "targets": "Skipped: strength only goes AFTER an easy ride, and Tue turned into a hard interval day. The week's single strength session is Thu 6/25 (after the Z2 ride). Don't lift on top of hard legs this close to the race.",
               "detail": [
                 "Warmup (~8 min): leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15, 2 ramp sets.",
                 "Hex-bar deadlift 3×10 (add 5–10 lb only when crisp)",
@@ -1396,58 +1397,45 @@
           "date": "2026-06-24",
           "weekday": "Wed",
           "location": "Memphis",
-          "headline": "Quality #1 — 2×20 min sub-threshold (longest yet)",
+          "headline": "Easy recovery Z2 — first ride on power (absorb Tue's hard day)",
           "sessions": [
             {
               "id": "2026-06-24-ride",
               "type": "bike",
-              "title": "Quality #1 — 2×20 min @ 218–228W",
-              "duration": "2:00",
-              "targets": "20 min WU → 2×20 min @ 218–228W, HR 152–158, 90 RPM, 6 min easy between → cooldown (~2:00). Longest sustained sub-threshold yet.",
+              "title": "Easy recovery Z2, 1:15 — first ride on power",
+              "duration": "1:15",
+              "targets": "HR ≤135 · 130–170W feel · 90 RPM · genuinely easy recovery off Tuesday's hard intervals. First ride on the new power pedals — just spin and let it record; establish a baseline efficiency factor (NP ÷ HR), don't chase watts.",
               "detail": [
-                "20 min Z2 warmup, HR ≤138, building cadence to 90 RPM.",
-                "Main set: 2×20 min @ 218–228W, HR 152–158, 90 RPM — true quality, sub-threshold to raise OBLA. Sit at the bottom of the watt range early; only the back of rep 2 should approach 228W.",
-                "6 min very easy spin between reps.",
-                "This is a sanctioned threshold day — NOT tempo. Hold the band; don't grey-zone the recoveries.",
-                "Cooldown easy Z2 to fill out ~2:00."
+                "RESTRUCTURED: was the 2×20 quality day. Since Tue was ridden hard (4×15), this becomes the recovery day to absorb it — no two hard days back-to-back this close to Leadville. The sub-threshold work is covered by the Jun 29 OBLA sharpen.",
+                "Pure recovery — flat, smooth, conversational the whole way. HR ≤135; if it drifts up, ease off.",
+                "Calibrate/zero the pedals before rolling (cranks vertical, no weight) and set crank length in the Edge. First power data — accuracy matters more than the numbers today.",
+                "No intervals, no surges. The job is to flush yesterday and keep the legs turning into Saturday's long ride."
               ],
               "fueling": [
                 {
                   "at": "0:15",
-                  "do": "Start carb mix during warmup — fuel the quality work from the front"
+                  "do": "Start sips; light carb only — easy ride, modest fueling is fine"
                 },
                 {
-                  "at": "0:40",
-                  "do": "~30 g carb before rep 1 (top off the tank)"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~30 g carb in the recovery / start of rep 2"
-                },
-                {
-                  "at": "1:30",
-                  "do": "~30 g carb; hold 70 g/hr, 20–24 oz/hr fluid, 600–1000 mg sodium/hr in heat"
-                },
-                {
-                  "at": "1:55",
-                  "do": "Sip + finish fluid on cooldown"
+                  "at": "0:50",
+                  "do": "~20–25 g carb + electrolytes; 20–24 oz/hr fluid in the heat"
                 }
               ]
             }
           ],
           "nutrition": {
-            "day_type": "hard",
-            "kcal": "~3,300",
-            "carb_g": "~530",
+            "day_type": "easy",
+            "kcal": "~2,600–2,800",
+            "carb_g": "~300–350",
             "protein_g": "155–160",
-            "fat_g": "~70",
-            "notes": "Threshold day = hard day — full Woodruff, NO deficit. 6 g/kg carb (~533 g). Front-load carbs around the quality work and refill glycogen after; never under-fuel a build day.",
+            "fat_g": "~80",
+            "notes": "Easy recovery day — modest deficit (trim fat & evening carbs, never protein). This is a where-the-cut-is-earned day. Still take a 30–40 g protein feeding post-ride; protein across 4–5 feedings. Fuel Saturday's 4:00 fully later in the week, not today.",
             "sample_meals": [
-              "Pre: bagel + jam + coffee",
-              "On-bike: per fueling schedule (~70 g carb/hr)",
-              "Post: big rice + chicken bowl + 30 g whey",
-              "Snack: fruit + Greek yogurt",
-              "Dinner: pasta + lean protein + veg"
+              "Breakfast: 3-egg omelet + fruit + coffee",
+              "Post-ride: Greek yogurt + berries + whey",
+              "Lunch: grilled chicken + big salad w/ olive oil",
+              "Snack: cottage cheese",
+              "Dinner: salmon + veg, light on carbs"
             ]
           }
         },
