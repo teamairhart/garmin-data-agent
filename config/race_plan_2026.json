@@ -1530,7 +1530,7 @@
               "targets": "Z2 HR ≤135; include 6×1 min @ 105–110 RPM leg-speed, HR ≤135, full recovery between",
               "detail": [
                 "Pure neuromuscular spin-ups — NOT load. Keep HR easy (≤135); just spin fast and smooth at 105–110 RPM for each 1 min, full easy recovery between.",
-                "Rest of the ride is genuine Z2, HR ≤135 — kept light to protect tomorrow's 4:00 long ride. No strength today.",
+                "Rest of the ride is genuine Z2, HR ≤135 — kept light to protect this weekend's 4:00 long ride (now Sunday). No strength today.",
                 "Early AM."
               ],
               "fueling": [
@@ -1563,13 +1563,13 @@
             "carb_g": "~400",
             "protein_g": "155–160",
             "fat_g": "~80",
-            "notes": "Easy leg-speed day — modest deficit from fat & evening carbs. BUT carb-load through the day to fill the tank for tomorrow's 4:00 — never short the night before the month's longest ride. Bed early; protect sleep before a long Saturday.",
+            "notes": "Easy leg-speed day — modest deficit from fat & evening carbs. The 4:00 long ride is now Sunday, so Saturday is the big carb-load day, not tonight. Eat normally today and protect sleep through the weekend.",
             "sample_meals": [
               "Breakfast: 3-egg omelet + oats w/ berries + coffee",
               "Mid-AM: Greek yogurt + honey",
               "Lunch: chicken, rice, veg (top off carbs)",
               "Snack: rice cakes + jam",
-              "Dinner: pasta + lean protein + veg (carb-load for Sat)"
+              "Dinner: pasta + lean protein + veg (normal dinner — carb-load is Sat now)"
             ]
           }
         },
@@ -1578,15 +1578,58 @@
           "date": "2026-06-27",
           "weekday": "Sat",
           "location": "Memphis",
-          "headline": "LONG Z2 4:00 — month's longest + full fuel dress rehearsal",
+          "headline": "Working day — rest or easy spin; carb-load for Sun's 4:00",
           "sessions": [
             {
               "id": "2026-06-27-ride",
+              "type": "bike",
+              "title": "Rest or 1:15 easy spin",
+              "duration": "1:15",
+              "targets": "Work day — take it as full rest, or an easy HR ≤130 spin if time allows. Keep it light; tomorrow (Sun) is the 4:00 long ride.",
+              "detail": [
+                "You're working today, so this is rest or a light easy spin — your call by feel. If you ride, HR ≤130, no surges, nothing that bleeds into tomorrow's long ride.",
+                "Main job today is to carb-load and protect sleep: tomorrow is the month's longest ride (4:00). Fill the tank through the day and get to bed early.",
+                "No strength today — save the legs for the long ride."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Only if you ride: light sips + ~20 g carb if hungry (short spin — on-bike fueling optional under 75 min)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~3,000",
+            "carb_g": "~450 (carb-load)",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Carb-load day — fill the tank for tomorrow's 4:00, the month's longest ride. Don't run a deficit tonight; top off carbs through the day, hold protein, ease off fat. Bed early — protect sleep before the long Sunday ride.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg (top off carbs)",
+              "Snack: rice cakes + jam",
+              "Dinner: pasta + lean protein + veg (carb-load for Sun)"
+            ]
+          }
+        },
+        {
+          "id": "2026-06-28",
+          "date": "2026-06-28",
+          "weekday": "Sun",
+          "location": "Memphis",
+          "headline": "LONG Z2 4:00 — month's longest + full fuel dress rehearsal",
+          "sessions": [
+            {
+              "id": "2026-06-28-ride",
               "type": "bike",
               "title": "4:00 Z2 long ride — fuel dress rehearsal",
               "duration": "4:00",
               "targets": "HR ≤138 · 150–180W · 85–90 RPM · no coasting · month's longest ride. FULL fuel dress rehearsal: 70 g carb/hr, 600–1,000 mg sodium/hr, 20–24 oz fluid/hr in the heat.",
               "detail": [
+                "Moved from Saturday — you're riding this Sunday afternoon. In the Memphis heat, hydrate well through the morning before you roll and front-load electrolytes; an afternoon start lands in the hottest part of the day.",
                 "The month's longest ride — pure aerobic durability. Strict HR ≤138 the whole way; do NOT let it creep into the grey zone, especially in hours 3–4 when discipline slips.",
                 "This is a full fuel + hydration dress rehearsal for Leadville — pre-count and pre-pack every bottle/gel to hit 70 g carb/hr from minute 15. Practice exactly what you'll race.",
                 "Watch decoupling — aim <~8% drift. If HR climbs to hold the same watts late, that's tempo creep / under-fueling; ease off.",
@@ -1659,57 +1702,6 @@
               "Dinner: big carb + protein refill (salmon or beef, potatoes/rice, veg)"
             ]
           }
-        },
-        {
-          "id": "2026-06-28",
-          "date": "2026-06-28",
-          "weekday": "Sun",
-          "location": "Memphis",
-          "headline": "1:15 easy or rest — optional light strength",
-          "sessions": [
-            {
-              "id": "2026-06-28-ride",
-              "type": "bike",
-              "title": "1:15 easy (or rest)",
-              "duration": "1:15",
-              "targets": "HR ≤130 · very easy recovery spin · or take it as a full rest day if legs/sleep are flat off the 4:00",
-              "detail": [
-                "Genuine recovery spin the day after the long ride — HR ≤130, no surges. If RHR is up or sleep was short, just rest instead; the long ride was the point of the week.",
-                "Optional: take it fully off — your call by feel and the AM monitor."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Light sips + ~20 g carb if hungry (short recovery ride — fueling optional under 75 min, but easy to top up)"
-                }
-              ]
-            },
-            {
-              "id": "2026-06-28-strength",
-              "type": "strength",
-              "title": "Optional light strength",
-              "duration": "~30 min",
-              "targets": "Cut load 20–30% — maintenance only; skip entirely if legs aren't fresh or sleep was short. Only after the easy spin.",
-              "detail": [
-                "Same Build-phase lifts at reduced load: hex-bar DL light, walking lunges, box step-ups bodyweight/light, planks.",
-                "Optional — bike recovery wins any conflict. Skip without guilt heading into next week's sharpen block (Mon Jun 29 quality)."
-              ]
-            }
-          ],
-          "nutrition": {
-            "day_type": "easy",
-            "kcal": "~2,800–2,900",
-            "carb_g": "~350–400",
-            "protein_g": "155–160",
-            "fat_g": "~85",
-            "notes": "Recovery day — finish refilling from yesterday's 4:00, then lean toward a modest deficit (trim evening carbs/fat). If you take it as full rest, drop to rest-day target (~2,400–2,600 kcal). Hold protein either way.",
-            "sample_meals": [
-              "Breakfast: eggs + fruit + oats",
-              "Lunch: big salad w/ chicken + olive oil",
-              "Snack: Greek yogurt + berries",
-              "Dinner: fish + veg + small rice (lighter tonight)"
-            ]
-          }
         }
       ]
     },
@@ -1726,10 +1718,60 @@
           "date": "2026-06-29",
           "weekday": "Mon",
           "location": "Memphis",
-          "headline": "OBLA sharpen — 4×8 min @ 230–240W (first true OBLA reps)",
+          "headline": "Recovery — easy Z2 or rest (sets up Tue's OBLA)",
           "sessions": [
             {
               "id": "2026-06-29-ride",
+              "type": "bike",
+              "title": "1:15–1:30 easy Z2 (or rest by feel)",
+              "targets": "HR ≤130–135 · easy recovery spin to flush Sunday's 4:00 · or full rest if legs/sleep are flat. Keep it light — Tue is the OBLA quality day.",
+              "duration": "1:15–1:30",
+              "detail": [
+                "Recovery spin the day after the 4:00 long ride — HR ≤130–135, talk-test, no surges. If RHR is up or sleep was short off the long ride, take it as full rest; that's the better call before Tuesday's key session.",
+                "Banks a little easy aerobic time to close out June, but recovery wins any conflict — do NOT let it drift to tempo. Tomorrow's OBLA reps are the priority, so arrive fresh.",
+                "Early AM to beat the heat; protect sleep tonight before the quality day."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — easy day, but keep fueling. 600–1000 mg sodium/hr, 20–24 oz/hr in Memphis heat."
+                },
+                {
+                  "at": "0:45",
+                  "do": "~25 g carb"
+                },
+                {
+                  "at": "1:15",
+                  "do": "~25 g carb + electrolytes; finish fluid"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~420",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Recovery day — finish refilling glycogen from Sunday's 4:00, and keep carbs adequate to fuel tomorrow's OBLA quality. Don't run a hard deficit the day before a key session; trim fat/evening carbs only modestly. Protein in 4–5 feedings.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg",
+              "Snack: rice cakes + jam (top off for tomorrow)",
+              "Dinner: lean protein + potatoes/rice + veg (keep carbs up for the OBLA day)"
+            ]
+          }
+        },
+        {
+          "id": "2026-06-30",
+          "date": "2026-06-30",
+          "weekday": "Tue",
+          "location": "Memphis",
+          "headline": "OBLA sharpen — 4×8 min @ 230–240W (first true OBLA reps)",
+          "sessions": [
+            {
+              "id": "2026-06-30-ride",
               "type": "bike",
               "title": "Quality — 4×8 min @ 230–240W OBLA sharpen (~1:30)",
               "targets": "20 min WU → 4×8 min @ 230–240W, HR 155–160, 90 RPM, ~4 min easy between → cooldown",
@@ -1775,64 +1817,6 @@
               "Post-ride (≤45 min): rice bowl w/ chicken + 30 g whey shake",
               "Lunch: turkey & rice burrito bowl + fruit",
               "Dinner: lean beef, potatoes, big veg + side salad"
-            ]
-          }
-        },
-        {
-          "id": "2026-06-30",
-          "date": "2026-06-30",
-          "weekday": "Tue",
-          "location": "Memphis",
-          "headline": "2:00–2:30 Z2 — close the month aerobic",
-          "sessions": [
-            {
-              "id": "2026-06-30-ride",
-              "type": "bike",
-              "title": "2:00–2:30 Z2 base",
-              "targets": "HR ≤138 · 150–180W feel · 85–95 RPM · no coasting",
-              "duration": "2:00–2:30",
-              "detail": [
-                "Early AM to beat the heat — move bedtime earlier last night to protect sleep.",
-                "Pure aerobic discipline ride to close out June: talk-test the whole way, do NOT let it drift to tempo (yesterday was the only quality touch this week).",
-                "Flat, steady, smooth pedal stroke. This rebuilds nothing new — it just banks easy aerobic time before the taper drop."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips — fuel proactively. 600–1000 mg sodium/hr, 20–24 oz/hr in Memphis heat."
-                },
-                {
-                  "at": "0:40",
-                  "do": "~25 g carb"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~25 g carb + electrolytes"
-                },
-                {
-                  "at": "1:30",
-                  "do": "~25 g carb (real food OK — banana/bar)"
-                },
-                {
-                  "at": "2:00",
-                  "do": "~25 g carb; keep 70 g/hr cadence and 20–24 oz/hr fluid through to the end"
-                }
-              ]
-            }
-          ],
-          "nutrition": {
-            "day_type": "easy",
-            "kcal": "~2,900",
-            "carb_g": "~400",
-            "protein_g": "155–160",
-            "fat_g": "~80",
-            "notes": "Easy Z2 day — modest deficit from fat & evening carbs (this is a cut day, not a fuel-fully day). Keep pre/post-ride carbs intact; trim later. Protein in 4–5 feedings.",
-            "sample_meals": [
-              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
-              "Mid-AM: Greek yogurt + honey",
-              "Lunch: chicken, rice, veg",
-              "Snack: cottage cheese + fruit",
-              "Dinner: salmon, sweet potato, big salad (lighter on carbs tonight)"
             ]
           }
         },
