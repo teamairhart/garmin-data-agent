@@ -1520,56 +1520,56 @@
           "date": "2026-06-26",
           "weekday": "Fri",
           "location": "Memphis",
-          "headline": "2:00 Z2 + 6×1 min leg-speed",
+          "headline": "OBLA sharpen — 4×8 min @ 230–240W (first power-paced reps, pulled forward)",
           "sessions": [
             {
               "id": "2026-06-26-ride",
               "type": "bike",
-              "title": "2:00 Z2 + 6×1 min leg-speed",
-              "duration": "2:00",
-              "targets": "Z2 HR ≤135; include 6×1 min @ 105–110 RPM leg-speed, HR ≤135, full recovery between",
+              "title": "Quality — 4×8 min @ 230–240W OBLA sharpen (~1:30)",
+              "targets": "20 min WU → 4×8 min @ 230–240W, HR 155–160, 90 RPM, ~4 min easy between → cooldown",
+              "duration": "1:30",
               "detail": [
-                "Pure neuromuscular spin-ups — NOT load. Keep HR easy (≤135); just spin fast and smooth at 105–110 RPM for each 1 min, full easy recovery between.",
-                "Rest of the ride is genuine Z2, HR ≤135 — kept light to protect this weekend's 4:00 long ride (now Sunday). No strength today.",
-                "Early AM."
+                "Pulled forward to today — you're fresh off two easy ≤140 days and the pedals are finally on, so this is the FIRST true power-paced OBLA of the block. Bank it while you're fresh; rest tomorrow, long ride Sunday.",
+                "20 min Z2 warmup (HR ≤138), then 1–2 short 30 s primers (fold your leg-speed spin-ups in here) to open the legs before rep 1.",
+                "4×8 min @ 230–240W — hold HR 155–160. First power-paced reps on the new Assioma: treat rep 1 as a calibration check — settle into 230–235W and read the HR. If 235W sits well below 155 or above 160, trust your body and adjust the target rather than chasing the number. Do not start above 240W.",
+                "~4 min easy spin (HR ≤130) between reps — full enough recovery to hit target watts on every rep.",
+                "If watts sag below 228W or HR climbs over 160 before the rep is done, the day is done — stop the set. No value grinding into a hole 16 days out from Leadville.",
+                "Heat note: a Memphis afternoon is brutal for threshold work — do this early/cool, or on the trainer. A trainer actually gives the cleanest first-OBLA power data (steady watts, no coasting, no heat confound). ~10 min cooldown, total ~1:30.",
+                "This is the single quality day this week — everything else stays easy. No strength today."
               ],
               "fueling": [
                 {
                   "at": "0:15",
-                  "do": "Start carb mix + sips"
+                  "do": "Start carb mix during warmup — begin fueling proactively, don't wait for thirst. 600–1000 mg sodium/hr in Memphis heat, 20–24 oz fluid/hr."
                 },
                 {
-                  "at": "0:40",
-                  "do": "~30 g carb"
+                  "at": "0:35",
+                  "do": "~25 g carb + sips just before the rep set — top off the tank for the OBLA work"
                 },
                 {
-                  "at": "1:05",
-                  "do": "~30 g carb + electrolytes"
+                  "at": "0:55",
+                  "do": "~25 g carb between reps + electrolytes (pace to 70 g/hr — gut-training is locked at 70 now)"
                 },
                 {
-                  "at": "1:35",
-                  "do": "~30 g carb; hold 70 g/hr"
-                },
-                {
-                  "at": "1:55",
-                  "do": "Finish fluid; 20–24 oz/hr, 600–1000 mg sodium/hr in heat"
+                  "at": "1:15",
+                  "do": "~20 g carb + sips through the final rep and cooldown; finish 20–24 oz/hr fluid"
                 }
               ]
             }
           ],
           "nutrition": {
-            "day_type": "easy",
-            "kcal": "~2,900",
-            "carb_g": "~400",
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~530 (6 g/kg)",
             "protein_g": "155–160",
-            "fat_g": "~80",
-            "notes": "Easy leg-speed day — modest deficit from fat & evening carbs. The 4:00 long ride is now Sunday, so Saturday is the big carb-load day, not tonight. Eat normally today and protect sleep through the weekend.",
+            "fat_g": "~70",
+            "notes": "Quality OBLA day — fuel it FULLY, no deficit. Front-load carbs around the session; protein in 4–5 feedings of 30–40 g. This is the day NOT to be in a hole, so don't carry an easy-day deficit into it.",
             "sample_meals": [
-              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
-              "Mid-AM: Greek yogurt + honey",
-              "Lunch: chicken, rice, veg (top off carbs)",
-              "Snack: rice cakes + jam",
-              "Dinner: pasta + lean protein + veg (normal dinner — carb-load is Sat now)"
+              "Pre-ride: oats + banana + honey + coffee (~80 g carb)",
+              "On-bike: per fueling schedule (~70 g carb/hr)",
+              "Post-ride (≤45 min): rice bowl w/ chicken + 30 g whey shake",
+              "Lunch: turkey & rice burrito bowl + fruit",
+              "Dinner: lean beef, potatoes, big veg + side salad"
             ]
           }
         },
@@ -1587,7 +1587,7 @@
               "duration": "1:15",
               "targets": "Work day — take it as full rest, or an easy HR ≤130 spin if time allows. Keep it light; tomorrow (Sun) is the 4:00 long ride.",
               "detail": [
-                "You're working today, so this is rest or a light easy spin — your call by feel. If you ride, HR ≤130, no surges, nothing that bleeds into tomorrow's long ride.",
+                "You're working today, so this is rest or a light easy spin — your call by feel. If you ride, HR ≤130, no surges; it doubles as easy recovery from Friday's OBLA and keeps the legs loose for Sunday.",
                 "Main job today is to carb-load and protect sleep: tomorrow is the month's longest ride (4:00). Fill the tank through the day and get to bed early.",
                 "No strength today — save the legs for the long ride."
               ],
@@ -1718,18 +1718,18 @@
           "date": "2026-06-29",
           "weekday": "Mon",
           "location": "Memphis",
-          "headline": "Recovery — easy Z2 or rest (sets up Tue's OBLA)",
+          "headline": "Recovery — easy Z2 or rest (off Sunday's long ride)",
           "sessions": [
             {
               "id": "2026-06-29-ride",
               "type": "bike",
               "title": "1:15–1:30 easy Z2 (or rest by feel)",
-              "targets": "HR ≤130–135 · easy recovery spin to flush Sunday's 4:00 · or full rest if legs/sleep are flat. Keep it light — Tue is the OBLA quality day.",
+              "targets": "HR ≤130–135 · easy recovery spin to flush Sunday's 4:00 · or full rest if legs/sleep are flat. Keep it light.",
               "duration": "1:15–1:30",
               "detail": [
-                "Recovery spin the day after the 4:00 long ride — HR ≤130–135, talk-test, no surges. If RHR is up or sleep was short off the long ride, take it as full rest; that's the better call before Tuesday's key session.",
-                "Banks a little easy aerobic time to close out June, but recovery wins any conflict — do NOT let it drift to tempo. Tomorrow's OBLA reps are the priority, so arrive fresh.",
-                "Early AM to beat the heat; protect sleep tonight before the quality day."
+                "Recovery spin the day after the 4:00 long ride — HR ≤130–135, talk-test, no surges. If RHR is up or sleep was short off the long ride, take it as full rest.",
+                "Banks a little easy aerobic time to close out June, but recovery wins any conflict — do NOT let it drift to tempo. The quality this stretch was Friday's OBLA; this week is otherwise easy.",
+                "Early AM to beat the heat; protect sleep."
               ],
               "fueling": [
                 {
@@ -1753,13 +1753,13 @@
             "carb_g": "~420",
             "protein_g": "155–160",
             "fat_g": "~80",
-            "notes": "Recovery day — finish refilling glycogen from Sunday's 4:00, and keep carbs adequate to fuel tomorrow's OBLA quality. Don't run a hard deficit the day before a key session; trim fat/evening carbs only modestly. Protein in 4–5 feedings.",
+            "notes": "Recovery day — finish refilling glycogen from Sunday's 4:00, then lean to a modest deficit (trim fat/evening carbs). Hold protein in 4–5 feedings. If you take it as full rest, drop toward a rest-day target.",
             "sample_meals": [
               "Breakfast: 3-egg omelet + oats w/ berries + coffee",
               "Mid-AM: Greek yogurt + honey",
               "Lunch: chicken, rice, veg",
-              "Snack: rice cakes + jam (top off for tomorrow)",
-              "Dinner: lean protein + potatoes/rice + veg (keep carbs up for the OBLA day)"
+              "Snack: Greek yogurt + berries",
+              "Dinner: lean protein + potatoes/rice + veg"
             ]
           }
         },
@@ -1768,55 +1768,56 @@
           "date": "2026-06-30",
           "weekday": "Tue",
           "location": "Memphis",
-          "headline": "OBLA sharpen — 4×8 min @ 230–240W (first true OBLA reps)",
+          "headline": "2:00–2:30 Z2 — close the month aerobic",
           "sessions": [
             {
               "id": "2026-06-30-ride",
               "type": "bike",
-              "title": "Quality — 4×8 min @ 230–240W OBLA sharpen (~1:30)",
-              "targets": "20 min WU → 4×8 min @ 230–240W, HR 155–160, 90 RPM, ~4 min easy between → cooldown",
-              "duration": "1:30",
+              "title": "2:00–2:30 Z2 base",
+              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
+              "duration": "2:00–2:30",
               "detail": [
-                "20 min Z2 warmup (HR ≤138), then 1–2 short 30 s primers to open the legs before rep 1.",
-                "4×8 min @ 230–240W — hold HR 155–160. These are the FIRST true OBLA-power reps of the block; the base built Jun 10–28 earns them now. Do not start above 240W.",
-                "~4 min easy spin (HR ≤130) between reps — full enough recovery to hit target watts on every rep.",
-                "If watts sag below 228W or HR climbs over 160 before the rep is done, the day is done — stop the interval set, don't grind into a hole this close to the race.",
-                "~10 min easy cooldown. Total ~1:30.",
-                "This is the single quality day of the week — everything else is easy. No strength today (it's a quality day)."
+                "Early AM to beat the heat — move bedtime earlier the night before to protect sleep.",
+                "Pure aerobic discipline ride to close out June: talk-test the whole way, do NOT let it drift to tempo. This is an easy week — the OBLA quality was Friday, so keep this strictly Z2.",
+                "Flat, steady, smooth pedal stroke. This rebuilds nothing new — it just banks easy aerobic time before the taper drop."
               ],
               "fueling": [
                 {
                   "at": "0:15",
-                  "do": "Start carb mix during warmup — begin fueling proactively, don't wait for thirst. 600–1000 mg sodium/hr in Memphis heat, 20–24 oz fluid/hr."
+                  "do": "Start carb mix + sips — fuel proactively. 600–1000 mg sodium/hr, 20–24 oz/hr in Memphis heat."
                 },
                 {
-                  "at": "0:35",
-                  "do": "~25 g carb + sips just before the rep set — top off the tank for the OBLA work"
+                  "at": "0:40",
+                  "do": "~25 g carb"
                 },
                 {
-                  "at": "0:55",
-                  "do": "~25 g carb between reps + electrolytes (pace to 70 g/hr — gut-training is locked at 70 now)"
+                  "at": "1:05",
+                  "do": "~25 g carb + electrolytes"
                 },
                 {
-                  "at": "1:15",
-                  "do": "~20 g carb + sips through the final rep and cooldown; finish 20–24 oz/hr fluid"
+                  "at": "1:30",
+                  "do": "~25 g carb (real food OK — banana/bar)"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~25 g carb; keep 70 g/hr cadence and 20–24 oz/hr fluid through to the end"
                 }
               ]
             }
           ],
           "nutrition": {
-            "day_type": "hard",
-            "kcal": "~3,300",
-            "carb_g": "~530 (6 g/kg)",
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
             "protein_g": "155–160",
-            "fat_g": "~70",
-            "notes": "Quality OBLA day — fuel it FULLY, no deficit. Front-load carbs around the session; protein in 4–5 feedings of 30–40 g. This is the day NOT to be in a hole, so don't carry an easy-day deficit into it.",
+            "fat_g": "~80",
+            "notes": "Easy Z2 day — modest deficit from fat & evening carbs (this is a cut day, not a fuel-fully day). Keep pre/post-ride carbs intact; trim later. Protein in 4–5 feedings.",
             "sample_meals": [
-              "Pre-ride: oats + banana + honey + coffee (~80 g carb)",
-              "On-bike: per fueling schedule (~70 g carb/hr)",
-              "Post-ride (≤45 min): rice bowl w/ chicken + 30 g whey shake",
-              "Lunch: turkey & rice burrito bowl + fruit",
-              "Dinner: lean beef, potatoes, big veg + side salad"
+              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: salmon, sweet potato, big salad (lighter on carbs tonight)"
             ]
           }
         },
