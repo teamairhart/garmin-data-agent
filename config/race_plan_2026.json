@@ -2741,9 +2741,9 @@
     },
     {
       "id": "wk-2026-07-20",
-      "label": "Week of Jul 20 — Aerobic re-entry (Memphis, Z2 only)",
+      "label": "Week of Jul 20 — Aerobic re-entry (Memphis → Park City, Z2 only)",
       "phase": "Phase 3a: Aerobic re-entry",
-      "location": "Memphis",
+      "location": "Memphis → Park City",
       "hours": "8–9",
       "focus": "First full week back after Leadville. Z2 ONLY — re-grease the base; NO threshold this week. Every ride HR ≤138, no exceptions; polarized (~0 programmed tempo). Rebuild long Z2 to 4:00 (Sat). Strength only after easy rides. Gut-train at 70 g carb/hr (June ramp done); Memphis heat = 600–1,000 mg sodium/hr, 20–24 oz/hr. KPI gate governs the week: short openers ~Jul 23–24 are OPTIONAL and only happen if RHR <66 AND sleep ≥7 h — if not green, that day stays pure Z2. Resume the off-bike deficit (easy/rest days only) now that race week's full fueling is over.",
       "days": [
@@ -2953,43 +2953,18 @@
           "id": "2026-07-23",
           "date": "2026-07-23",
           "weekday": "Thu",
-          "location": "Memphis",
-          "headline": "Z2 base — optional short openers IF KPI gate green",
+          "location": "Memphis → Park City (travel)",
+          "headline": "Travel home to Park City — easy spin or travel (no quality)",
           "sessions": [
             {
               "id": "2026-07-23-ride",
               "type": "bike",
-              "title": "2:00 Z2 (optional 3×3 min openers only if green)",
-              "duration": "2:00",
-              "targets": "Base HR ≤138 · 150–180W. GATED openers (only if RHR <66 AND sleep ≥7 h): 3×3 min @ ~210–220W, HR ≤150, full recovery between",
+              "title": "Travel Memphis → Park City + optional easy spin",
+              "duration": "0:00–1:00",
+              "targets": "Travel home to Park City. Optional ≤1:00 very easy spin if time/energy allow; otherwise travel + hydrate. No quality — keep the legs fresh for Saturday's cool-altitude long ride.",
               "detail": [
-                "DEFAULT IS PURE Z2. No threshold this week — these are short neuromuscular/sub-threshold openers, NOT a quality session.",
-                "KPI GATE — check this morning's data BEFORE deciding: only add the 3×3 min openers if RHR is <66 AND last night's sleep was ≥7 h. If either fails, ride steady Z2 only and bank the recovery.",
-                "If green: 30 min Z2 WU → 3×3 min @ ~210–220W (HR ≤150, controlled — this is a light leg-opener, not OBLA work) with 3 min easy between → finish Z2 to 2:00.",
-                "If not green: 2:00 straight Z2, HR ≤138 — re-entry week means recovery wins ties.",
-                "Even with openers, keep total intensity time tiny; the week's job is base, not sharpening."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips"
-                },
-                {
-                  "at": "0:35",
-                  "do": "~30 g carb + electrolytes"
-                },
-                {
-                  "at": "0:55",
-                  "do": "~30 g carb"
-                },
-                {
-                  "at": "1:20",
-                  "do": "~30 g carb (extra ~10 g before openers if you run them)"
-                },
-                {
-                  "at": "1:45",
-                  "do": "~30 g carb; ~70 g carb/hr, 20–24 oz/hr, 600–1,000 mg sodium/hr in heat"
-                }
+                "Boundary day: in Memphis through the 22nd, back in Park City for the 23rd–28th — treat this as travel.",
+                "Sea level → ~6,900 ft: front-load fluids; pace anything you ride by HR/feel, not watts."
               ]
             }
           ],
@@ -3013,19 +2988,18 @@
           "id": "2026-07-24",
           "date": "2026-07-24",
           "weekday": "Fri",
-          "location": "Memphis",
-          "headline": "Easy Z2 — pre-long-ride day",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 at altitude — pre-long day (acclimation)",
           "sessions": [
             {
               "id": "2026-07-24-ride",
               "type": "bike",
               "title": "1:30 easy Z2",
               "duration": "1:30",
-              "targets": "HR ≤135 · 130–170W · 85–95 RPM · genuinely easy",
+              "targets": "HR ≤135 by feel at altitude (~6,900 ft) · genuinely easy · short and smooth",
               "detail": [
-                "Deliberately easy to set up tomorrow's 4:00 long ride. No openers today regardless of KPIs (any optional openers belong Thu, per gate).",
-                "Early AM. Smooth spin, no coasting.",
-                "Move bedtime earlier tonight — protect total sleep ahead of tomorrow's dawn long ride."
+                "Easy spin at altitude to set up Saturday's long ride. Pace by HR/feel — watts read low up high.",
+                "Conversational only; back off the moment breathing climbs."
               ],
               "fueling": [
                 {
@@ -3067,21 +3041,19 @@
           "id": "2026-07-25",
           "date": "2026-07-25",
           "weekday": "Sat",
-          "location": "Memphis",
-          "headline": "LONG Z2 4:00 — the week's anchor",
+          "location": "Park City (altitude)",
+          "headline": "LONG Z2 4:00 at altitude — cool-Utah anchor (pace by HR)",
           "sessions": [
             {
               "id": "2026-07-25-ride",
               "type": "bike",
               "title": "4:00 LONG Z2 + fuel rehearsal",
               "duration": "4:00",
-              "targets": "HR ≤138 the WHOLE ride · 150–180W · 85–90 RPM · no coasting · NO threshold",
+              "targets": "HR ≤138 by feel at altitude — watts read low / HR reads high up here, so pace strictly by HR & breathing · continue the fuel rehearsal (≈70 g carb/hr + sodium + fluid)",
               "detail": [
-                "The point of the week — rebuild long aerobic durability to 4:00 after the race + recovery dip. Strictly Z2; this is NOT a quality day.",
-                "Early AM start to beat the heat; carry/plan a refill stop for fluid and sodium over 4 h.",
-                "Discipline: HR ≤138 for all 4 hours even as fatigue makes power drift up — hold the watts down to hold HR. This re-greases the base, it doesn't test it.",
-                "Decoupling check: keep first-vs-second-half HR drift <~8% at matched power. If it blows past that, you came back too fast — shorten and rebuild slower.",
-                "Full fuel rehearsal at 70 g carb/hr — re-establish the gut after race week, ahead of the Jul 27 PC big-vert block."
+                "Your first cool-Utah long ride — and it's at altitude, so it doubles as bonus P2P altitude prep. Pace by HR, not watts.",
+                "Park City terrain rolls; some climbing is welcome, but keep the EFFORT aerobic (Z2). This is still only ~2 weeks post-Leadville — a re-entry endurance ride, NOT a big-vert day (that comes in the August build).",
+                "Re-run the fuel protocol that worked on 6/28 (≈70 g carb/hr from min 15 + sodium + fluid to thirst). In cool air you'll decouple far less than the 95 °F Memphis ride — watch how much flatter Pw:HR holds."
               ],
               "fueling": [
                 {
@@ -3139,8 +3111,8 @@
           "id": "2026-07-26",
           "date": "2026-07-26",
           "weekday": "Sun",
-          "location": "Memphis",
-          "headline": "Recovery — rest or ≤1:00 very easy",
+          "location": "Park City (altitude)",
+          "headline": "Recovery at altitude — rest or ≤1:00 very easy",
           "sessions": [
             {
               "id": "2026-07-26-ride",
@@ -3180,29 +3152,54 @@
     },
     {
       "id": "wk-2026-07-27",
-      "label": "Week of Jul 27 — P2P build: Memphis engine (sketch)",
+      "label": "Week of Jul 27 — P2P build: engine (Park City → Memphis)",
       "phase": "Phase 3b: P2P build (sketch)",
-      "location": "Memphis",
+      "location": "Park City → Memphis",
       "hours": "12–13",
-      "focus": "Memphis builds the engine — flat power work on a deep aerobic base. Polarized: 1–2 true quality days (OBLA), the rest TRULY easy (HR ≤138). Strength only after easy rides, never within 24 h before quality. Gut-train every ride >60 min at 70–75 g carb/hr (August: push toward 80 so 70 feels trivial). Memphis heat: 600–1,000 mg sodium/hr >80°F, 20–24 oz fluid/hr, ride early AM. Fuel hard/long days fully; deficit off-bike on easy/rest only. Sleep is the #1 KPI.  Rebuild OBLA intensity after re-entry; Sat 8/1 long 4–5 h flat fuel rehearsal. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "focus": "Memphis builds the engine — flat power work on a deep aerobic base. Polarized: 1–2 true quality days (OBLA), the rest TRULY easy (HR ≤138). Strength only after easy rides, never within 24 h before quality. Gut-train every ride >60 min at 70–75 g carb/hr (August: push toward 80 so 70 feels trivial). Memphis heat: 600–1,000 mg sodium/hr >80°F, 20–24 oz fluid/hr, ride early AM. Fuel hard/long days fully; deficit off-bike on easy/rest only. Sleep is the #1 KPI.  Rebuild OBLA intensity after re-entry; Sat 8/1 long 4–5 h flat fuel rehearsal. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.  TRAVEL-ADJUSTED: Mon 7/27 is your last Park City day (cool Z2 base at altitude); Tue 7/28 is the PC→Memphis travel day (easy only); the OBLA quality moves to Wed 7/29 in Memphis so it's not on the travel day. Long ride Sat 8/1 is flat Memphis.",
       "days": [
         {
           "id": "2026-07-27",
           "date": "2026-07-27",
           "weekday": "Mon",
-          "location": "Memphis",
-          "headline": "Rest / easy re-entry",
+          "location": "Park City (altitude)",
+          "headline": "Z2 base at altitude — cool-Utah aerobic volume (last PC day)",
           "sessions": [
             {
               "id": "2026-07-27-ride",
               "type": "bike",
-              "title": "Rest or ≤1:00 very easy spin",
-              "duration": "0:00–1:00",
-              "targets": "Full day off OR ≤60 min recovery spin, HR ≤130, flat, light",
+              "title": "2.5–3:00 Z2 base",
+              "duration": "2:30–3:00",
+              "targets": "HR ≤138 by feel at altitude · 2.5–3:00 steady Z2 · pace by HR (watts read low up high)",
               "detail": [
-                "Default to rest if the prior week was loaded — recovery is programmed, not optional.",
-                "If you spin: genuinely easy, no intervals, no tempo creep. Legs should feel better leaving than arriving.",
-                "Sleep is the assignment today — protect 7 h."
+                "Use your last full Park City day for cool aerobic volume before traveling. Steady Z2, pace by HR.",
+                "Rolling PC terrain is fine — keep the effort aerobic, not a climbing session."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~30 g carb (real food OK — banana/bar)"
+                },
+                {
+                  "at": "2:05",
+                  "do": "~30 g carb; 600–1,000 mg sodium/hr, 20–24 oz/hr in heat"
+                },
+                {
+                  "at": "2:40",
+                  "do": "~30 g carb if going to 3:00; aim 70–75 g carb/hr"
+                }
               ]
             }
           ],
@@ -3225,11 +3222,46 @@
           "id": "2026-07-28",
           "date": "2026-07-28",
           "weekday": "Tue",
-          "location": "Memphis",
-          "headline": "Quality #1 — OBLA 3×12 min @ 230–240W",
+          "location": "Park City → Memphis (travel)",
+          "headline": "Travel Park City → Memphis — easy spin or travel (OBLA moved to Wed)",
           "sessions": [
             {
               "id": "2026-07-28-ride",
+              "type": "bike",
+              "title": "Travel Park City → Memphis + optional easy spin",
+              "duration": "0:00–0:45",
+              "targets": "Travel PC → Memphis. Optional ≤45 min very easy spin only; no quality on the travel day — the OBLA session moved to Wed 7/29.",
+              "detail": [
+                "Boundary day: last Park City day → back to Memphis through Aug 2.",
+                "Keep it easy; the week's quality (OBLA 3×12) is Wednesday in Memphis."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~533",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Threshold day — full Woodruff, no deficit. Front-load carbs around the session; 6 g/kg carb. Protein feeding within 30–45 min post-ride.",
+            "sample_meals": [
+              "Pre: oats + banana + whey + coffee",
+              "On-bike: per fueling schedule (~70–75 g carb/hr)",
+              "Post: big rice + chicken bowl + 30 g whey shake",
+              "Lunch: turkey & rice burrito bowl",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-29",
+          "date": "2026-07-29",
+          "weekday": "Wed",
+          "location": "Memphis",
+          "headline": "Quality #1 — OBLA 3×12 min @ 230–240W (moved off the 7/28 travel day)",
+          "sessions": [
+            {
+              "id": "2026-07-29-ride",
               "type": "bike",
               "title": "OBLA intervals: 3×12 min @ 230–240W",
               "duration": "~2:00",
@@ -3260,68 +3292,6 @@
                 {
                   "at": "1:50",
                   "do": "~25–30 g carb on the cooldown; finish your bottles"
-                }
-              ]
-            }
-          ],
-          "nutrition": {
-            "day_type": "hard",
-            "kcal": "~3,300",
-            "carb_g": "~533",
-            "protein_g": "155–160",
-            "fat_g": "~75",
-            "notes": "Threshold day — full Woodruff, no deficit. Front-load carbs around the session; 6 g/kg carb. Protein feeding within 30–45 min post-ride.",
-            "sample_meals": [
-              "Pre: oats + banana + whey + coffee",
-              "On-bike: per fueling schedule (~70–75 g carb/hr)",
-              "Post: big rice + chicken bowl + 30 g whey shake",
-              "Lunch: turkey & rice burrito bowl",
-              "Dinner: pasta + lean protein + veg"
-            ]
-          }
-        },
-        {
-          "id": "2026-07-29",
-          "date": "2026-07-29",
-          "weekday": "Wed",
-          "location": "Memphis",
-          "headline": "Z2 aerobic base 2.5–3:00",
-          "sessions": [
-            {
-              "id": "2026-07-29-ride",
-              "type": "bike",
-              "title": "2.5–3:00 Z2 base",
-              "duration": "2:30–3:00",
-              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
-              "detail": [
-                "Bread-and-butter aerobic volume. Discipline ride — talk-test the whole way; if you can't talk, slow down.",
-                "Do NOT let it drift into the grey/tempo zone — this is where your 'easy' has historically leaked.",
-                "Early AM, flat, steady spin."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~30 g carb"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~30 g carb + electrolytes"
-                },
-                {
-                  "at": "1:35",
-                  "do": "~30 g carb (real food OK — banana/bar)"
-                },
-                {
-                  "at": "2:05",
-                  "do": "~30 g carb; 600–1,000 mg sodium/hr, 20–24 oz/hr in heat"
-                },
-                {
-                  "at": "2:40",
-                  "do": "~30 g carb if going to 3:00; aim 70–75 g carb/hr"
                 }
               ]
             }
@@ -3592,7 +3562,7 @@
       "phase": "Phase 3b: P2P build (sketch)",
       "location": "Park City (altitude)",
       "hours": "11–12",
-      "focus": "Race-specific big climbing (big vert #1): one 5.5–6 h / ~8,000 ft ride on the Epic, all climbs HR ≤145 (let watts fall ~150–165W up high) — PACE BY HR, NOT WATTS. Polarized: surround the big day with truly easy Z2 (HR ≤138) and one threshold-by-HR touch only if fresh. Strength cut to 30% load (altitude rule). Fuel 70 g/hr on every ride >60 min; altitude is dry (16–20 oz fluid/hr, 500–600 mg sodium/hr). Sleep is the #1 KPI; protect the long-ride day. Fuel the big/quality days fully, hold the deficit to easy/rest days for the −10 lb cut.  MARQUEE long ride #1: Fri 8/7 BIG VERT 5.5–6 h / ~8,000 ft on the Epic — race-specific climbing in cool Park City air, full fuel rehearsal (the protocol validated 6/28). SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "focus": "[AUGUST LOCATION PENDING YOUR SCHEDULE — placed in Park City per Dr. Testa's big-vert/peak intent; will lock when you send August.]  Race-specific big climbing (big vert #1): one 5.5–6 h / ~8,000 ft ride on the Epic, all climbs HR ≤145 (let watts fall ~150–165W up high) — PACE BY HR, NOT WATTS. Polarized: surround the big day with truly easy Z2 (HR ≤138) and one threshold-by-HR touch only if fresh. Strength cut to 30% load (altitude rule). Fuel 70 g/hr on every ride >60 min; altitude is dry (16–20 oz fluid/hr, 500–600 mg sodium/hr). Sleep is the #1 KPI; protect the long-ride day. Fuel the big/quality days fully, hold the deficit to easy/rest days for the −10 lb cut.  MARQUEE long ride #1: Fri 8/7 BIG VERT 5.5–6 h / ~8,000 ft on the Epic — race-specific climbing in cool Park City air, full fuel rehearsal (the protocol validated 6/28). SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
       "days": [
         {
           "id": "2026-08-03",
@@ -4412,7 +4382,7 @@
       "phase": "Phase 3b: P2P peak (sketch)",
       "location": "Park City (altitude)",
       "hours": "13 (peak) — gated down to ~9 if KPIs not green",
-      "focus": "PEAK / dress rehearsal (gated). The single biggest race-specific week before P2P taper: a 6–7 h / 9,000–10,000+ ft Epic ride with ALL climbs HR ≤145 (let watts fall ~150–170W) and full race fueling 80 g carb/hr so 70 feels trivial on race day. GATE (non-negotiable): if morning RHR is NOT <66 AND sleep is NOT ≥7 h by the night before the peak ride, CUT the peak ride to 5 h / less vert — do not force the dress rehearsal. Around the big day: 2× easy 90 min Z2 (HR ≤138), one 2×10 min threshold-by-HR opener, optionally 1 short VO2 touch (4×3 min @ 250–270W) early in the week to sharpen the punchy P2P finish. Strength 1× @ 30% (maintenance, after an easy ride only). Pace altitude climbs by HR, never watts. Sleep is the #1 KPI all week.  MARQUEE long ride #2 (peak): Sat 8/22 PEAK dress rehearsal 6–7 h / 9,000–10,000+ ft on the Epic — GATED on KPIs; all climbs HR ≤145, 80 g carb/hr. The full P2P rehearsal in cool altitude. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "focus": "[AUGUST LOCATION PENDING YOUR SCHEDULE — placed in Park City per Dr. Testa's big-vert/peak intent; will lock when you send August.]  PEAK / dress rehearsal (gated). The single biggest race-specific week before P2P taper: a 6–7 h / 9,000–10,000+ ft Epic ride with ALL climbs HR ≤145 (let watts fall ~150–170W) and full race fueling 80 g carb/hr so 70 feels trivial on race day. GATE (non-negotiable): if morning RHR is NOT <66 AND sleep is NOT ≥7 h by the night before the peak ride, CUT the peak ride to 5 h / less vert — do not force the dress rehearsal. Around the big day: 2× easy 90 min Z2 (HR ≤138), one 2×10 min threshold-by-HR opener, optionally 1 short VO2 touch (4×3 min @ 250–270W) early in the week to sharpen the punchy P2P finish. Strength 1× @ 30% (maintenance, after an easy ride only). Pace altitude climbs by HR, never watts. Sleep is the #1 KPI all week.  MARQUEE long ride #2 (peak): Sat 8/22 PEAK dress rehearsal 6–7 h / 9,000–10,000+ ft on the Epic — GATED on KPIs; all climbs HR ≤145, 80 g carb/hr. The full P2P rehearsal in cool altitude. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
       "days": [
         {
           "id": "2026-08-17",
