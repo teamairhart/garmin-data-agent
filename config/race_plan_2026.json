@@ -1707,11 +1707,11 @@
     },
     {
       "id": "wk-2026-06-29",
-      "label": "Week of Jun 29 — Pre-taper / sharpen (Memphis)",
+      "label": "Week of Jun 29 — Pre-taper / sharpen (Memphis → Park City)",
       "phase": "Phase 1b: Pre-taper",
-      "location": "Memphis",
+      "location": "Memphis → Park City",
       "hours": "8–9",
-      "focus": "Reduced sharpening week into the Leadville taper. ONE true quality day (Jun 29 OBLA sharpen — the first true OBLA-power reps, now the base is in), then drop volume and keep everything else genuinely easy. Polarized: ≈0 programmed tempo — days are either true quality or HR ≤135–138 easy. Gut-training now LOCKED at 70 g/hr on every ride >60 min (ramp is done). Strength is maintenance-only and only after easy rides — never within 24 h before the Mon quality day. Sleep is the #1 KPI this week: protect total sleep, move bedtime earlier on dawn rides. Cut weight off-bike on easy/rest days only — fuel the sharpen day fully.",
+      "focus": "Reduced sharpening week into the Leadville taper. ONE true quality day (Jun 29 OBLA sharpen — the first true OBLA-power reps, now the base is in), then drop volume and keep everything else genuinely easy. Polarized: ≈0 programmed tempo — days are either true quality or HR ≤135–138 easy. Gut-training now LOCKED at 70 g/hr on every ride >60 min (ramp is done). Strength is maintenance-only and only after easy rides — never within 24 h before the Mon quality day. Sleep is the #1 KPI this week: protect total sleep, move bedtime earlier on dawn rides. Cut weight off-bike on easy/rest days only — fuel the sharpen day fully. NOTE: travel home to Park City Thu Jul 2 (no ride — work AM, fly PM); Fri–Sun ride at altitude (~6,900 ft). This is a BONUS — 5+ days at Park City altitude pre-acclimates you for Leadville (10,200 ft) before you even arrive. At altitude, pace easy rides by HR/feel (watts read low, HR reads high); keep them genuinely easy.",
       "days": [
         {
           "id": "2026-06-29",
@@ -1894,20 +1894,18 @@
           "id": "2026-07-02",
           "date": "2026-07-02",
           "weekday": "Thu",
-          "location": "Memphis",
-          "headline": "Short opener — 40 min + 3×3 min @ 225–235W",
+          "location": "Memphis → Park City (travel)",
+          "headline": "Travel home to Park City — NO ride (work AM, fly PM)",
           "sessions": [
             {
-              "id": "2026-07-02-ride",
-              "type": "bike",
-              "title": "40 min + 3×3 min @ 225–235W opener",
-              "targets": "Easy spin w/ 3×3 min @ 225–235W, HR ~150–158, full recovery between · total ~40 min",
-              "duration": "0:40",
+              "id": "2026-07-02-travel",
+              "type": "travel",
+              "title": "Travel Memphis → Park City — no ride",
+              "duration": "—",
+              "targets": "No ride today: work in the morning, travel in the evening. Front-load fluids/electrolytes through the day; eat normally; sleep on arrival.",
               "detail": [
-                "Short sharpening opener — keeps the system primed without adding fatigue into the taper.",
-                "~12 min easy warmup, then 3×3 min @ 225–235W (sub-OBLA, controlled — NOT a hammer session), 90 RPM, with ~3 min full easy recovery between.",
-                "These are openers, not intervals: legs should feel snappy and you should finish wanting more, never emptied.",
-                "Short cooldown. Total ~40 min. (Under 60 min — fueling is light/optional; this is a primer, not a fuel rehearsal.)"
+                "Dropped the short Memphis opener — it's a travel day and freshness matters more 10 days out. You still have the 7/6 taper opener, the 7/9 Silver Rush terrain opener, and the 7/11 openers; one fewer short opener costs nothing in the taper.",
+                "Hydrate aggressively in transit — altitude + flying both dehydrate. Arrive into Park City already topped up."
               ]
             }
           ],
@@ -1930,19 +1928,18 @@
           "id": "2026-07-03",
           "date": "2026-07-03",
           "weekday": "Fri",
-          "location": "Memphis",
-          "headline": "Easy Z2",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 at altitude — acclimation day 1",
           "sessions": [
             {
               "id": "2026-07-03-ride",
               "type": "bike",
               "title": "1:30–2:00 easy Z2",
-              "targets": "HR ≤135 · 130–170W · 85–90 RPM · genuinely easy",
+              "targets": "HR ≤135 by feel · genuinely easy · altitude (~6,900 ft) — watts will read low and HR high, so pace by breathing/feel, not numbers",
               "duration": "1:30–2:00",
               "detail": [
-                "Second easy Z2 ride of the reduced week — HR ceiling 135. Pure aerobic maintenance.",
-                "Conversational pace start to finish; no leg-speed, no surges. The taper is about arriving fresh, not fit-er.",
-                "No strength today — Jul 1's lift was the maintenance touch; keep legs fresh into the weekend and the Jul 6 opener week."
+                "First spin at altitude after travel — keep it short and truly easy. Do NOT chase power or distance; let the body register the altitude.",
+                "Every easy day in Park City now doubles as Leadville altitude prep. Conversational pace only; back off the moment breathing climbs."
               ],
               "fueling": [
                 {
@@ -1984,8 +1981,8 @@
           "id": "2026-07-04",
           "date": "2026-07-04",
           "weekday": "Sat",
-          "location": "Memphis",
-          "headline": "REST — sleep priority",
+          "location": "Park City (altitude)",
+          "headline": "REST — sleep priority (altitude adaptation)",
           "sessions": [
             {
               "id": "2026-07-04-rest",
@@ -2019,19 +2016,18 @@
           "id": "2026-07-05",
           "date": "2026-07-05",
           "weekday": "Sun",
-          "location": "Memphis",
-          "headline": "Easy Z2 (short) — close the week fresh",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 at altitude — acclimation, close the week fresh",
           "sessions": [
             {
               "id": "2026-07-05-ride",
               "type": "bike",
               "title": "1:30 easy Z2",
-              "targets": "HR ≤135 · 130–170W · genuinely easy, smooth",
+              "targets": "HR ≤135 by feel · genuinely easy at altitude · smooth, short",
               "duration": "1:30",
               "detail": [
-                "Easy close-out spin before the Jul 6 taper-opener week begins. HR ceiling 135.",
-                "Keep it short and light — legs should feel fresh, not worked. The goal is freshness into Leadville, full stop.",
-                "Optional: a few smooth high-cadence spin-ups (no load) to keep the legs lively — only if you feel like it."
+                "Easy close-out spin at altitude before the taper-opener week. HR ceiling 135 by feel.",
+                "Keep it short — the goal is acclimation + freshness, not training load."
               ],
               "fueling": [
                 {
@@ -2068,9 +2064,9 @@
     },
     {
       "id": "wk-2026-07-06",
-      "label": "Week of Jul 6 — Leadville taper, acclimate + RACE",
+      "label": "Week of Jul 6 — Park City acclimate → Leadville taper + RACE",
       "phase": "Phase 2: Leadville taper + acclimate → R. RACE Jul 12",
-      "location": "Memphis → Leadville",
+      "location": "Park City → Leadville",
       "hours": "6–7",
       "focus": "Drop volume into the race, arrive Leadville Jul 8, acclimation spins (pace by HR — power lies up high), rehearse fueling, do the 32T swap, carbo-load 48h then 24h. Stop lifting after Jul 6. Climbs paced by HR 140–148 (ceiling 150), NOT watts. Race Jul 12: ride the first half like a recon, the second half like a race. Do not diet this week — hold protein, fuel the work; the cut is paused.",
       "days": [
@@ -2078,8 +2074,8 @@
           "id": "2026-07-06",
           "date": "2026-07-06",
           "weekday": "Mon",
-          "location": "Memphis",
-          "headline": "Taper opener — last real effort (then stop lifting)",
+          "location": "Park City (altitude)",
+          "headline": "Taper opener at altitude — last real effort (then stop lifting)",
           "sessions": [
             {
               "id": "2026-07-06-ride",
@@ -2088,11 +2084,8 @@
               "targets": "Z2 HR ≤138 base; 3×3 min @ 225–240W (HR drifts 150–160), full recovery between",
               "duration": "1:15",
               "detail": [
-                "Early AM to beat the heat.",
-                "20 min Z2 warmup, HR ≤138, 90 RPM.",
-                "3×3 min @ 225–240W with 3 min easy spin between — sharp, snappy, NOT a workout to fatigue. This is the LAST real effort before the race.",
-                "Easy spin to fill 75 min. You should finish feeling primed, not emptied.",
-                "STOP LIFTING after today — no more strength through race day. Last meaningful lift is already behind you (~7 days out rule)."
+                "At Park City altitude now — the 3×3 min openers will show higher HR for the same watts. Pace the efforts by POWER (225–240W) and let HR sit where it lands; keep the base genuinely easy by feel.",
+                "Last real effort before the race — prime the legs, do not dig. Stop lifting after this week."
               ],
               "fueling": [
                 {
@@ -2134,20 +2127,18 @@
           "id": "2026-07-07",
           "date": "2026-07-07",
           "weekday": "Tue",
-          "location": "Memphis (travel prep)",
-          "headline": "Travel/light — front-load hydration",
+          "location": "Park City → Leadville (drive)",
+          "headline": "Light spin — prep to drive Park City → Leadville",
           "sessions": [
             {
               "id": "2026-07-07-ride",
               "type": "bike",
               "title": "45 min very easy (or rest + travel)",
-              "targets": "HR ≤130 · genuinely easy recovery spin · OR skip entirely if travel/sleep needs it",
+              "targets": "HR ≤130 · genuinely easy recovery spin · OR skip if travel/sleep needs it · short PC→Leadville drive",
               "duration": "0:45",
               "detail": [
-                "Optional 45 min very easy spin OR just travel + sleep — bike is demoted to optional, recovery is the assignment.",
-                "Keep HR ≤130. No efforts. Legs should feel loose, not worked.",
-                "Front-load hydration HARD today — get ahead of altitude diuresis before you arrive. Carry water all day; add electrolytes.",
-                "No alcohol all week. Lay out travel kit; protect tonight's sleep."
+                "Optional 45 min very easy at altitude, then the short drive Park City → Leadville (you arrive already partly acclimated — a real advantage over a sea-level taper).",
+                "Front-load hydration for the drive and the bump from ~6,900 to ~10,200 ft."
               ]
             }
           ],
@@ -3184,6 +3175,2407 @@
               "Dinner: lean protein + veg, light on carbs"
             ]
           }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-07-27",
+      "label": "Week of Jul 27 — P2P build: Memphis engine (sketch)",
+      "phase": "Phase 3b: P2P build (sketch)",
+      "location": "Memphis",
+      "hours": "12–13",
+      "focus": "Memphis builds the engine — flat power work on a deep aerobic base. Polarized: 1–2 true quality days (OBLA), the rest TRULY easy (HR ≤138). Strength only after easy rides, never within 24 h before quality. Gut-train every ride >60 min at 70–75 g carb/hr (August: push toward 80 so 70 feels trivial). Memphis heat: 600–1,000 mg sodium/hr >80°F, 20–24 oz fluid/hr, ride early AM. Fuel hard/long days fully; deficit off-bike on easy/rest only. Sleep is the #1 KPI.  Rebuild OBLA intensity after re-entry; Sat 8/1 long 4–5 h flat fuel rehearsal. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-07-27",
+          "date": "2026-07-27",
+          "weekday": "Mon",
+          "location": "Memphis",
+          "headline": "Rest / easy re-entry",
+          "sessions": [
+            {
+              "id": "2026-07-27-ride",
+              "type": "bike",
+              "title": "Rest or ≤1:00 very easy spin",
+              "duration": "0:00–1:00",
+              "targets": "Full day off OR ≤60 min recovery spin, HR ≤130, flat, light",
+              "detail": [
+                "Default to rest if the prior week was loaded — recovery is programmed, not optional.",
+                "If you spin: genuinely easy, no intervals, no tempo creep. Legs should feel better leaving than arriving.",
+                "Sleep is the assignment today — protect 7 h."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,400–2,600",
+            "carb_g": "250–300",
+            "protein_g": "155–160",
+            "fat_g": "~90",
+            "notes": "Deficit day (your cut day toward 195 lb). Trim evening carbs and fat — never protein or pre/post-ride carbs. Protein held high in 4–5 feedings.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + fruit + coffee",
+              "Lunch: big salad w/ grilled chicken + olive oil",
+              "Snack: cottage cheese + berries",
+              "Dinner: salmon + veg + small sweet potato (light on carbs tonight)"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-28",
+          "date": "2026-07-28",
+          "weekday": "Tue",
+          "location": "Memphis",
+          "headline": "Quality #1 — OBLA 3×12 min @ 230–240W",
+          "sessions": [
+            {
+              "id": "2026-07-28-ride",
+              "type": "bike",
+              "title": "OBLA intervals: 3×12 min @ 230–240W",
+              "duration": "~2:00",
+              "targets": "20 min WU → 3×12 min @ 230–240W, HR 155–160, 90 RPM, 5 min easy between → cooldown",
+              "detail": [
+                "The week's sharp quality day — true OBLA-power reps now that the base is in.",
+                "Hold 230–240W steady; let HR settle to 155–160. If watts fade below 228W on the last rep, end it — don't grind into a hole.",
+                "Early AM to beat the heat. This is one of only 1–2 quality days — make it count, keep everything else easy.",
+                "No strength today and none yesterday — quality bike wins every conflict."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — begin fueling proactively from minute 15"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~30 g carb before the first rep; top off electrolytes"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~30 g carb between reps; aim 70–75 g carb/hr"
+                },
+                {
+                  "at": "1:25",
+                  "do": "~30 g carb; keep sodium 600–1,000 mg/hr in heat, 20–24 oz fluid/hr"
+                },
+                {
+                  "at": "1:50",
+                  "do": "~25–30 g carb on the cooldown; finish your bottles"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~533",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Threshold day — full Woodruff, no deficit. Front-load carbs around the session; 6 g/kg carb. Protein feeding within 30–45 min post-ride.",
+            "sample_meals": [
+              "Pre: oats + banana + whey + coffee",
+              "On-bike: per fueling schedule (~70–75 g carb/hr)",
+              "Post: big rice + chicken bowl + 30 g whey shake",
+              "Lunch: turkey & rice burrito bowl",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-29",
+          "date": "2026-07-29",
+          "weekday": "Wed",
+          "location": "Memphis",
+          "headline": "Z2 aerobic base 2.5–3:00",
+          "sessions": [
+            {
+              "id": "2026-07-29-ride",
+              "type": "bike",
+              "title": "2.5–3:00 Z2 base",
+              "duration": "2:30–3:00",
+              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
+              "detail": [
+                "Bread-and-butter aerobic volume. Discipline ride — talk-test the whole way; if you can't talk, slow down.",
+                "Do NOT let it drift into the grey/tempo zone — this is where your 'easy' has historically leaked.",
+                "Early AM, flat, steady spin."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~30 g carb (real food OK — banana/bar)"
+                },
+                {
+                  "at": "2:05",
+                  "do": "~30 g carb; 600–1,000 mg sodium/hr, 20–24 oz/hr in heat"
+                },
+                {
+                  "at": "2:40",
+                  "do": "~30 g carb if going to 3:00; aim 70–75 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~500",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "≥2.5 h ride = full fuel, no deficit. Periodize calories to the load.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: rice bowl w/ chicken + whey",
+              "Snack: Greek yogurt + honey",
+              "Dinner: lean beef, potatoes, veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-30",
+          "date": "2026-07-30",
+          "weekday": "Thu",
+          "location": "Memphis",
+          "headline": "Cadence: 2:00 Z2 + 8–10×3 min @ 100–110 RPM",
+          "sessions": [
+            {
+              "id": "2026-07-30-ride",
+              "type": "bike",
+              "title": "2:00 Z2 + 8–10×3 min leg-speed @ 100–110 RPM",
+              "duration": "2:00",
+              "targets": "Z2 HR ≤138; within it, 8–10×3 min @ 100–110 RPM, HR ≤138, full easy spin recovery between",
+              "detail": [
+                "Leg-speed / neuromuscular work — high cadence, NOT high load. Keep HR genuinely easy throughout; this is an easy day with a skills overlay.",
+                "Stay smooth and round at 100–110 RPM — no bouncing in the saddle. Back off RPM if HR climbs over 138.",
+                "Because this is an easy aerobic day, it's a safe day to lift after (see strength rules — never within 24 h before quality).",
+                "Early AM."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~25–30 g carb; aim 70–75 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy/short day — modest deficit from fat & evening carbs. If lifting after, add a post-lift protein feeding and don't cut pre/post-ride carbs.",
+            "sample_meals": [
+              "Breakfast: eggs + oats w/ berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: fish, veg, small rice (lighter tonight)"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-31",
+          "date": "2026-07-31",
+          "weekday": "Fri",
+          "location": "Memphis",
+          "headline": "Easy Z2 (pre-long-ride)",
+          "sessions": [
+            {
+              "id": "2026-07-31-ride",
+              "type": "bike",
+              "title": "2:00 Z2 easy",
+              "duration": "2:00",
+              "targets": "HR ≤135 · 130–170W · easy spin · no intervals",
+              "detail": [
+                "Genuinely easy — protects tomorrow's long ride. No strength today (legs fresh for Saturday).",
+                "Keep it conversational the entire ride; bleed off any urge to push.",
+                "Early AM."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:45",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:15",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:50",
+                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat; aim ~70 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — modest deficit, but start topping off carbs in the evening to load for tomorrow's long ride. Don't go to bed under-fueled.",
+            "sample_meals": [
+              "Breakfast: oats + banana + whey + coffee",
+              "Lunch: turkey & rice bowl",
+              "Snack: fruit + jerky",
+              "Dinner: pasta + lean protein + veg (carb-forward to prep the long ride)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-01",
+          "date": "2026-08-01",
+          "weekday": "Sat",
+          "location": "Memphis",
+          "headline": "Long flat Z2 4:00–5:00 + full fuel dress rehearsal",
+          "sessions": [
+            {
+              "id": "2026-08-01-ride",
+              "type": "bike",
+              "title": "Long Z2 4:00–5:00 (flat) — fuel dress rehearsal",
+              "duration": "4:00–5:00",
+              "targets": "HR ≤138 · 150–180W · 85–90 RPM · no coasting · −decoupling <~8%",
+              "detail": [
+                "The week's durability anchor — Memphis is flat, so this builds the long-duration engine (climbing-specific work is rehearsed in the PC weeks).",
+                "Hold HR ≤138 the entire ride even as it wants to drift up late — long-ride decoupling <~8% is the KPI. If decoupling exceeds ~8%, you've crept into tempo; pull back.",
+                "Full fuel dress rehearsal — rehearse race feeding and (in August) the caffeine hit so you never debut it on race day.",
+                "Early AM start; carry enough sodium for the heat."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — begin feeding from minute 15, set a 20-min alarm"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~35 g carb (2:1 glucose:fructose)"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~35 g carb + electrolytes; 600–1,000 mg sodium/hr in heat, 20–24 oz fluid/hr"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~35 g carb (real food OK — banana/bar/rice cake)"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~35 g carb; check you're hitting 70–75 g/hr (push 80 on Aug long rides)"
+                },
+                {
+                  "at": "2:30",
+                  "do": "~35 g carb + electrolytes; keep sodium 600–1,000 mg/hr, fluid 20–24 oz/hr"
+                },
+                {
+                  "at": "3:00",
+                  "do": "~35 g carb; never let the tank drop below half"
+                },
+                {
+                  "at": "3:30",
+                  "do": "~35 g carb; (Aug) rehearse caffeine here for the back half"
+                },
+                {
+                  "at": "4:00",
+                  "do": "~35 g carb; keep eating through the finish"
+                },
+                {
+                  "at": "4:30",
+                  "do": "~35 g carb if going to 5:00; finish hydration/sodium"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~533",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Longest ride of the week — full Woodruff, no deficit (6 g/kg carb). Front-load carbs pre-ride and refuel aggressively post-ride; this is not a day to cut.",
+            "sample_meals": [
+              "Pre: bagel + jam + banana + coffee",
+              "On-bike: per fueling schedule (~70–75 g carb/hr, race products)",
+              "Post: large rice + chicken bowl + 40 g whey shake",
+              "Snack: Greek yogurt + honey + fruit",
+              "Dinner: pasta + lean protein + veg + bread"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-02",
+          "date": "2026-08-02",
+          "weekday": "Sun",
+          "location": "Memphis",
+          "headline": "Recovery 60 min + strength",
+          "sessions": [
+            {
+              "id": "2026-08-02-ride",
+              "type": "bike",
+              "title": "1:00 recovery spin",
+              "duration": "1:00",
+              "targets": "HR ≤130 · very easy recovery · flat, light",
+              "detail": [
+                "Easy flush after the long ride — genuinely easy, no intervals.",
+                "Short ride (≤60 min) — light sips and only nibble carbs if hungry; full in-ride fueling not required here.",
+                "Spin the legs out, then lift."
+              ]
+            },
+            {
+              "id": "2026-08-02-strength",
+              "type": "strength",
+              "title": "Strength — full (after the easy ride)",
+              "duration": "~45 min",
+              "targets": "Build-phase loading via double-progression; box step-ups are your most race-specific lift. (Into race weeks, cut load 30% / maintenance only.)",
+              "detail": [
+                "Warmup (~8 min): leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15, 2 ramp sets.",
+                "Hex-bar deadlift 3×10 (add 5–10 lb only when crisp)",
+                "Walking-lunge overload 2×48 steps, loaded",
+                "Box step-ups 2×10/leg loaded — most race-specific lift, prioritize",
+                "RKC hardstyle plank 3×30 s + side plank 2×20 s/side",
+                "Lift only after this easy ride; if 24 h soreness threatens the 130W Z2 floor, cut load 20% (bike wins)."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy ride + lift — modest deficit off-bike, but include a post-lift protein feeding and keep pre/post-ride carbs. Trim evening fat/carbs only.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + berries + coffee (pre-ride)",
+              "Post-lift: 30–40 g whey shake + fruit",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: lean protein + veg + small rice (lighter tonight)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-08-03",
+      "label": "Week of Aug 3 — P2P build: Park City BIG VERT (sketch) · cool-Utah long #1",
+      "phase": "Phase 3b: P2P build (sketch)",
+      "location": "Park City (altitude)",
+      "hours": "11–12",
+      "focus": "Race-specific big climbing (big vert #1): one 5.5–6 h / ~8,000 ft ride on the Epic, all climbs HR ≤145 (let watts fall ~150–165W up high) — PACE BY HR, NOT WATTS. Polarized: surround the big day with truly easy Z2 (HR ≤138) and one threshold-by-HR touch only if fresh. Strength cut to 30% load (altitude rule). Fuel 70 g/hr on every ride >60 min; altitude is dry (16–20 oz fluid/hr, 500–600 mg sodium/hr). Sleep is the #1 KPI; protect the long-ride day. Fuel the big/quality days fully, hold the deficit to easy/rest days for the −10 lb cut.  MARQUEE long ride #1: Fri 8/7 BIG VERT 5.5–6 h / ~8,000 ft on the Epic — race-specific climbing in cool Park City air, full fuel rehearsal (the protocol validated 6/28). SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-08-03",
+          "date": "2026-08-03",
+          "weekday": "Mon",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 + strength @ 30% (altitude rule)",
+          "sessions": [
+            {
+              "id": "2026-08-03-ride",
+              "type": "bike",
+              "title": "75–90 min easy Z2",
+              "duration": "1:15–1:30",
+              "targets": "HR ≤138 · altitude: let watts sit low (130–160W) · spin smooth, no surges on rollers",
+              "detail": [
+                "Truly easy aerobic spin to open the week and prime for the big day — at altitude the watt number is a liar, so cap by HR ≤138, period.",
+                "Roll the gentle stuff; if a pitch pushes HR over 138, gear down or soft-pedal. Zero tempo creep.",
+                "Pre-ride the big-day fuel feel — sip carb mix from the gun to keep the gut trained."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — begin feeding proactively (don't wait for thirst); altitude blunts gastric emptying"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~25 g carb + sips; target ~70 g carb/hr"
+                },
+                {
+                  "at": "0:55",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "1:20",
+                  "do": "~25 g carb; hold fluid 16–20 oz/hr, 500–600 mg sodium/hr (dry altitude — thirst lies)"
+                }
+              ]
+            },
+            {
+              "id": "2026-08-03-strength",
+              "type": "strength",
+              "title": "Strength @ 30% load — maintenance (after the easy ride)",
+              "duration": "~40 min",
+              "targets": "Load cut 30% (race-block + altitude rule) — maintenance only, never chase a PR. Lift only AFTER the easy ride, never within 24 h before the big climbing day.",
+              "detail": [
+                "Warmup (~8 min): leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15, 2 ramp sets.",
+                "Hex-bar deadlift 3×10 @ 30% off your build top load (RPE 6, bar speed crisp)",
+                "Box step-ups 2×10/leg, light load — your most race-specific lift; cover the climbing muscular-endurance gap",
+                "Walking-lunge 2×40 steps, light DBs",
+                "RKC hardstyle plank 3×30 s + side plank 2×20 s/side",
+                "If 24 h soreness threatens the easy-ride floor, cut another 20% — bike quality wins every conflict."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy ride + light lift — modest deficit from fat & evening carbs (this is a cut day, not a fuel day). Protein in 4–5 feedings of 30–40 g, one within 30–45 min post-lift. Keep pre/post-ride carbs intact; trim only the evening.",
+            "sample_meals": [
+              "Breakfast: oats + berries + whey + coffee (pre-ride)",
+              "Post-lift: rice bowl w/ chicken + 30 g whey shake",
+              "Lunch: turkey & rice burrito bowl",
+              "Snack: Greek yogurt + honey",
+              "Dinner: salmon, sweet potato, big salad (lighter on evening carbs)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-04",
+          "date": "2026-08-04",
+          "weekday": "Tue",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 (recovery + leg-speed prime)",
+          "sessions": [
+            {
+              "id": "2026-08-04-ride",
+              "type": "bike",
+              "title": "75–90 min easy Z2",
+              "duration": "1:15–1:30",
+              "targets": "HR ≤138 · 85–95 RPM · altitude: watts fall, ignore the number · no coasting on the flats",
+              "detail": [
+                "Second truly easy day — discipline ride. ~78% of your past riding leaked into tempo; this is the #1 fix. Talk-test the whole ride.",
+                "Optional last 15 min: 6×30 s leg-speed @ 105–110 RPM, HR ≤135, full recovery — pure neuromuscular, NOT load. Skip if legs feel heavy ahead of the big day.",
+                "No strength today — protect the big climbing ride 24+ h out."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips proactively"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~25 g carb; target ~70 g carb/hr"
+                },
+                {
+                  "at": "0:55",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "1:20",
+                  "do": "~25 g carb; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry altitude)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — lean to a modest deficit (trim evening carbs/fat) for the −10 lb cut, but begin nudging carbs up tonight to top glycogen before tomorrow's threshold touch. Never cut pre/post-ride carbs or protein.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + fruit + coffee",
+              "Mid-AM: cottage cheese + berries",
+              "Lunch: chicken, rice, veg",
+              "Snack: fruit + jerky",
+              "Dinner: lean beef, potatoes, veg (carbs slightly up tonight)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-05",
+          "date": "2026-08-05",
+          "weekday": "Wed",
+          "location": "Park City (altitude)",
+          "headline": "Threshold-by-HR touch (2×12 min, HR 150–158) — only if fresh",
+          "sessions": [
+            {
+              "id": "2026-08-05-ride",
+              "type": "bike",
+              "title": "Threshold touch: 2×12 min @ HR 150–158 (~1:30)",
+              "duration": "1:30",
+              "targets": "Pace the blocks by HR 150–158 (NOT watts at altitude); ~90 RPM. Only run this if KPI-green — RHR <66, sleep ≥7 h. If under-recovered, swap to a flat Z2 HR ≤138 hour.",
+              "detail": [
+                "20 min Z2 warmup HR ≤138 → 2×12 min holding HR 150–158 (threshold/OBLA by HR), 6 min easy between → cooldown.",
+                "This is the ONLY sanctioned non-easy effort this week — polarized, ~0 programmed tempo. Don't add a third rep; the big climbing day is the real quality stimulus.",
+                "GATE: if RHR ≥+5 over baseline for 2 mornings, or sleep <6 h for 3+ nights, this becomes a flat Z2 HR ≤138 ride. Bike-quality conflicts always resolve toward freshness for the long day."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix during warmup; don't enter the blocks empty"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb before/between reps"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb + electrolytes after the second block"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~20 g carb on cooldown; target ~70 g carb/hr, 16–20 oz fluid/hr, 500–600 mg sodium/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~530",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Quality day (threshold block) — fuel fully, NO deficit. Front-load carbs around the session and keep topping glycogen toward Friday's big climbing day. Protein feeding within 30–45 min post-ride.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: big rice + chicken bowl + 30 g whey",
+              "Snack: Greek yogurt + honey",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-06",
+          "date": "2026-08-06",
+          "weekday": "Thu",
+          "location": "Park City (altitude)",
+          "headline": "REST — protect the big climbing day",
+          "sessions": [
+            {
+              "id": "2026-08-06-rest",
+              "type": "rest",
+              "title": "Full rest day",
+              "duration": "—",
+              "targets": "No bike, no gym. Sleep is the assignment (aim ≥7 h). Hydrate hard for altitude; no alcohol.",
+              "detail": [
+                "Programmed rest before the dress-rehearsal long climb — recovery is programmed, not optional.",
+                "Pre-count tomorrow's fuel: every bottle/gel mapped to 70 g carb/hr for 5.5–6 h. Lay out kit tonight.",
+                "Move bedtime earlier — protect total sleep ahead of an early big-ride start."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,400–2,600",
+            "carb_g": "250–300 (then nudge up in the evening to pre-load Friday)",
+            "protein_g": "155–160",
+            "fat_g": "~90",
+            "notes": "Rest = your deficit day for the −10 lb cut: trim fat and evening carbs, hold protein at 155–160 g. BUT begin pre-loading carbs at dinner — never start a 6 h / 8,000 ft ride glycogen-depleted. If weight stalls on short sleep, fix sleep before cutting harder.",
+            "sample_meals": [
+              "Breakfast: eggs + fruit",
+              "Lunch: grilled protein + big salad w/ olive oil",
+              "Snack: cottage cheese + fruit",
+              "Dinner: lean protein + rice/potatoes (carbs up to pre-load tomorrow), veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-07",
+          "date": "2026-08-07",
+          "weekday": "Fri",
+          "location": "Park City (Epic, altitude)",
+          "headline": "BIG VERT #1 — 5.5–6 h / ~8,000 ft on the Epic (race-specific)",
+          "sessions": [
+            {
+              "id": "2026-08-07-ride",
+              "type": "bike",
+              "title": "5.5–6 h / ~8,000 ft race-specific climbing (Epic)",
+              "duration": "5:30–6:00",
+              "targets": "ALL climbs HR ≤145 (hard ceiling 150) — let watts fall ~150–165W up high. PACE BY HR/RPE, NOT WATTS. Sustained, not coasting. Fuel 70 g/hr.",
+              "detail": [
+                "The week's key session and your race-specificity for P2P (Memphis can't build vert). Climb steady at HR ≤145 — should feel too easy early; the discipline IS the workout.",
+                "Watts read 25–30% low above 10k ft — the number is a liar up high. If you find yourself chasing watts on a climb, you're over-pacing; back off to HR.",
+                "Pedal the descents/flats steadily (don't coast, don't surge) — eat there. Rehearse the negative-split climbing that the P2P script demands; the finishing climbs should be your strongest.",
+                "Decoupling check: keep it <~8%. If it climbs, that's tempo creep — pull intensity back, you went out too hard.",
+                "Lean on the box step-ups you've banked to cover the muscular-endurance gap on the long climbs — protect this PC long ride; it's the plan's known weak point."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — set a 20-min alarm; fuel from minute 15 (gut blunted at altitude)"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~30 g carb (gel or mix); on pace for 70 g/hr"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~35 g carb + electrolytes; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry — thirst lies)"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~35 g carb (real food OK — banana/bar)"
+                },
+                {
+                  "at": "2:30",
+                  "do": "~35 g carb + electrolytes"
+                },
+                {
+                  "at": "3:00",
+                  "do": "~35 g carb; refill bottles, top sodium — never below half-tank, a bonk costs 30+ min"
+                },
+                {
+                  "at": "3:30",
+                  "do": "~35 g carb + electrolytes"
+                },
+                {
+                  "at": "4:00",
+                  "do": "~35 g carb; eat earlier/more than feels necessary — altitude blunts gastric emptying"
+                },
+                {
+                  "at": "4:30",
+                  "do": "~35 g carb + electrolytes"
+                },
+                {
+                  "at": "5:00",
+                  "do": "~35 g carb; hold 70 g/hr through the finishing climbs (negative-split fuel + effort)"
+                },
+                {
+                  "at": "5:30",
+                  "do": "~30 g carb to the finish; tally total — confirm you hit ~70 g/hr the whole ride"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300+",
+            "carb_g": "~533 (6 g/kg) — the full Woodruff long-day target",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Big/long day — fuel it FULLY, zero deficit (never under-fuel a 6 h / 8,000 ft ride). Front-load carbs at breakfast, hit 70 g/hr in-ride, then refuel aggressively post (carb + protein within 30–45 min). This is a fuel-the-work day, not a cut day.",
+            "sample_meals": [
+              "Pre (2–3 h): big bagel + jam + banana + coffee (~150 g carb)",
+              "On-bike: per fueling schedule (~70 g carb/hr)",
+              "Immediately post: rice + chicken bowl + 30 g whey shake",
+              "Afternoon: pasta + lean protein + veg",
+              "Dinner: salmon, sweet potato, salad; extra fluids + sodium to rehydrate from altitude"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-08",
+          "date": "2026-08-08",
+          "weekday": "Sat",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 recovery (post big-day)",
+          "sessions": [
+            {
+              "id": "2026-08-08-ride",
+              "type": "bike",
+              "title": "75–90 min easy Z2",
+              "duration": "1:15–1:30",
+              "targets": "HR ≤138 (really ≤130 today if legs are cooked) · altitude: watts fall, ignore the number · spin to flush, no efforts",
+              "detail": [
+                "Recovery flush after the big climbing day — keep it genuinely easy. If RHR is up or sleep was short, make this ≤1:00 or walk instead; recovery is programmed.",
+                "No threshold, no strength — let the big-day adaptation land. Talk-test throughout."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips proactively"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb; target ~70 g carb/hr (keep the gut trained even on easy days)"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb + electrolytes; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry altitude)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy recovery day — return to a modest deficit (trim fat/evening carbs) now that the big day is fueled and banked. Hold protein to support recovery from the long climb. Keep rehydrating from altitude.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + oats + berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: lean protein + big salad + small rice (lighter on evening carbs)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-09",
+          "date": "2026-08-09",
+          "weekday": "Sun",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 endurance (steady aerobic close)",
+          "sessions": [
+            {
+              "id": "2026-08-09-ride",
+              "type": "bike",
+              "title": "90 min easy Z2",
+              "duration": "1:30",
+              "targets": "HR ≤138 · 85–95 RPM · altitude: let watts fall, pace by HR · sustained, no coasting",
+              "detail": [
+                "Steady aerobic ride to close the week's volume (~11–12 h total) — still truly easy, HR ≤138. Polarized week: only Wed's touch and Fri's big climb carried intensity.",
+                "Bank a little more time-on-bike durability while protecting recovery; shorten or cut if KPIs are red (sleep <6 h for 3+ nights, RHR +5 for 2 mornings = drop the day)."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips proactively"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb; target ~70 g carb/hr"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~25 g carb; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry altitude)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy endurance day — modest deficit (trim evening carbs/fat) to keep the −10 lb cut progressing on the week's easy days. Fuel the ride itself adequately; the deficit is off-bike. Protein steady at 155–160 g across 4–5 feedings.",
+            "sample_meals": [
+              "Breakfast: oats + banana + whey + coffee (pre-ride)",
+              "Lunch: turkey & rice bowl",
+              "Snack: fruit + jerky",
+              "Dinner: fish + veg + small potato (lighter evening carbs)",
+              "Evening: cottage cheese before bed (protein, low carb)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-08-10",
+      "label": "Week of Aug 10 — P2P build: Memphis engine (sketch)",
+      "phase": "Phase 3b: P2P build (sketch)",
+      "location": "Memphis",
+      "hours": "12–13",
+      "focus": "Memphis builds the engine — flat power work on a deep aerobic base. Polarized: 1–2 true quality days (OBLA), the rest TRULY easy (HR ≤138). Strength only after easy rides, never within 24 h before quality. Gut-train every ride >60 min at 70–75 g carb/hr (August: push toward 80 so 70 feels trivial). Memphis heat: 600–1,000 mg sodium/hr >80°F, 20–24 oz fluid/hr, ride early AM. Fuel hard/long days fully; deficit off-bike on easy/rest only. Sleep is the #1 KPI.  Recover the legs from altitude vert, hold the engine; Sat 8/15 long 4–5 h flat. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-08-10",
+          "date": "2026-08-10",
+          "weekday": "Mon",
+          "location": "Memphis",
+          "headline": "Rest / easy re-entry",
+          "sessions": [
+            {
+              "id": "2026-08-10-ride",
+              "type": "bike",
+              "title": "Rest or ≤1:00 very easy spin",
+              "duration": "0:00–1:00",
+              "targets": "Full day off OR ≤60 min recovery spin, HR ≤130, flat, light",
+              "detail": [
+                "Default to rest if the prior week was loaded — recovery is programmed, not optional.",
+                "If you spin: genuinely easy, no intervals, no tempo creep. Legs should feel better leaving than arriving.",
+                "Sleep is the assignment today — protect 7 h."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,400–2,600",
+            "carb_g": "250–300",
+            "protein_g": "155–160",
+            "fat_g": "~90",
+            "notes": "Deficit day (your cut day toward 195 lb). Trim evening carbs and fat — never protein or pre/post-ride carbs. Protein held high in 4–5 feedings.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + fruit + coffee",
+              "Lunch: big salad w/ grilled chicken + olive oil",
+              "Snack: cottage cheese + berries",
+              "Dinner: salmon + veg + small sweet potato (light on carbs tonight)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-11",
+          "date": "2026-08-11",
+          "weekday": "Tue",
+          "location": "Memphis",
+          "headline": "Quality #1 — OBLA 3×12 min @ 230–240W",
+          "sessions": [
+            {
+              "id": "2026-08-11-ride",
+              "type": "bike",
+              "title": "OBLA intervals: 3×12 min @ 230–240W",
+              "duration": "~2:00",
+              "targets": "20 min WU → 3×12 min @ 230–240W, HR 155–160, 90 RPM, 5 min easy between → cooldown",
+              "detail": [
+                "The week's sharp quality day — true OBLA-power reps now that the base is in.",
+                "Hold 230–240W steady; let HR settle to 155–160. If watts fade below 228W on the last rep, end it — don't grind into a hole.",
+                "Early AM to beat the heat. This is one of only 1–2 quality days — make it count, keep everything else easy.",
+                "No strength today and none yesterday — quality bike wins every conflict."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — begin fueling proactively from minute 15"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~30 g carb before the first rep; top off electrolytes"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~30 g carb between reps; aim 70–75 g carb/hr"
+                },
+                {
+                  "at": "1:25",
+                  "do": "~30 g carb; keep sodium 600–1,000 mg/hr in heat, 20–24 oz fluid/hr"
+                },
+                {
+                  "at": "1:50",
+                  "do": "~25–30 g carb on the cooldown; finish your bottles"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~533",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Threshold day — full Woodruff, no deficit. Front-load carbs around the session; 6 g/kg carb. Protein feeding within 30–45 min post-ride.",
+            "sample_meals": [
+              "Pre: oats + banana + whey + coffee",
+              "On-bike: per fueling schedule (~70–75 g carb/hr)",
+              "Post: big rice + chicken bowl + 30 g whey shake",
+              "Lunch: turkey & rice burrito bowl",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-12",
+          "date": "2026-08-12",
+          "weekday": "Wed",
+          "location": "Memphis",
+          "headline": "Z2 aerobic base 2.5–3:00",
+          "sessions": [
+            {
+              "id": "2026-08-12-ride",
+              "type": "bike",
+              "title": "2.5–3:00 Z2 base",
+              "duration": "2:30–3:00",
+              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
+              "detail": [
+                "Bread-and-butter aerobic volume. Discipline ride — talk-test the whole way; if you can't talk, slow down.",
+                "Do NOT let it drift into the grey/tempo zone — this is where your 'easy' has historically leaked.",
+                "Early AM, flat, steady spin."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~30 g carb (real food OK — banana/bar)"
+                },
+                {
+                  "at": "2:05",
+                  "do": "~30 g carb; 600–1,000 mg sodium/hr, 20–24 oz/hr in heat"
+                },
+                {
+                  "at": "2:40",
+                  "do": "~30 g carb if going to 3:00; aim 70–75 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~500",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "≥2.5 h ride = full fuel, no deficit. Periodize calories to the load.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: rice bowl w/ chicken + whey",
+              "Snack: Greek yogurt + honey",
+              "Dinner: lean beef, potatoes, veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-13",
+          "date": "2026-08-13",
+          "weekday": "Thu",
+          "location": "Memphis",
+          "headline": "Cadence: 2:00 Z2 + 8–10×3 min @ 100–110 RPM",
+          "sessions": [
+            {
+              "id": "2026-08-13-ride",
+              "type": "bike",
+              "title": "2:00 Z2 + 8–10×3 min leg-speed @ 100–110 RPM",
+              "duration": "2:00",
+              "targets": "Z2 HR ≤138; within it, 8–10×3 min @ 100–110 RPM, HR ≤138, full easy spin recovery between",
+              "detail": [
+                "Leg-speed / neuromuscular work — high cadence, NOT high load. Keep HR genuinely easy throughout; this is an easy day with a skills overlay.",
+                "Stay smooth and round at 100–110 RPM — no bouncing in the saddle. Back off RPM if HR climbs over 138.",
+                "Because this is an easy aerobic day, it's a safe day to lift after (see strength rules — never within 24 h before quality).",
+                "Early AM."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~25–30 g carb; aim 70–75 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy/short day — modest deficit from fat & evening carbs. If lifting after, add a post-lift protein feeding and don't cut pre/post-ride carbs.",
+            "sample_meals": [
+              "Breakfast: eggs + oats w/ berries + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: fish, veg, small rice (lighter tonight)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-14",
+          "date": "2026-08-14",
+          "weekday": "Fri",
+          "location": "Memphis",
+          "headline": "Easy Z2 (pre-long-ride)",
+          "sessions": [
+            {
+              "id": "2026-08-14-ride",
+              "type": "bike",
+              "title": "2:00 Z2 easy",
+              "duration": "2:00",
+              "targets": "HR ≤135 · 130–170W · easy spin · no intervals",
+              "detail": [
+                "Genuinely easy — protects tomorrow's long ride. No strength today (legs fresh for Saturday).",
+                "Keep it conversational the entire ride; bleed off any urge to push.",
+                "Early AM."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:45",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:15",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:50",
+                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat; aim ~70 g carb/hr"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — modest deficit, but start topping off carbs in the evening to load for tomorrow's long ride. Don't go to bed under-fueled.",
+            "sample_meals": [
+              "Breakfast: oats + banana + whey + coffee",
+              "Lunch: turkey & rice bowl",
+              "Snack: fruit + jerky",
+              "Dinner: pasta + lean protein + veg (carb-forward to prep the long ride)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-15",
+          "date": "2026-08-15",
+          "weekday": "Sat",
+          "location": "Memphis",
+          "headline": "Long flat Z2 4:00–5:00 + full fuel dress rehearsal",
+          "sessions": [
+            {
+              "id": "2026-08-15-ride",
+              "type": "bike",
+              "title": "Long Z2 4:00–5:00 (flat) — fuel dress rehearsal",
+              "duration": "4:00–5:00",
+              "targets": "HR ≤138 · 150–180W · 85–90 RPM · no coasting · −decoupling <~8%",
+              "detail": [
+                "The week's durability anchor — Memphis is flat, so this builds the long-duration engine (climbing-specific work is rehearsed in the PC weeks).",
+                "Hold HR ≤138 the entire ride even as it wants to drift up late — long-ride decoupling <~8% is the KPI. If decoupling exceeds ~8%, you've crept into tempo; pull back.",
+                "Full fuel dress rehearsal — rehearse race feeding and (in August) the caffeine hit so you never debut it on race day.",
+                "Early AM start; carry enough sodium for the heat."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — begin feeding from minute 15, set a 20-min alarm"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~35 g carb (2:1 glucose:fructose)"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~35 g carb + electrolytes; 600–1,000 mg sodium/hr in heat, 20–24 oz fluid/hr"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~35 g carb (real food OK — banana/bar/rice cake)"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~35 g carb; check you're hitting 70–75 g/hr (push 80 on Aug long rides)"
+                },
+                {
+                  "at": "2:30",
+                  "do": "~35 g carb + electrolytes; keep sodium 600–1,000 mg/hr, fluid 20–24 oz/hr"
+                },
+                {
+                  "at": "3:00",
+                  "do": "~35 g carb; never let the tank drop below half"
+                },
+                {
+                  "at": "3:30",
+                  "do": "~35 g carb; (Aug) rehearse caffeine here for the back half"
+                },
+                {
+                  "at": "4:00",
+                  "do": "~35 g carb; keep eating through the finish"
+                },
+                {
+                  "at": "4:30",
+                  "do": "~35 g carb if going to 5:00; finish hydration/sodium"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~533",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Longest ride of the week — full Woodruff, no deficit (6 g/kg carb). Front-load carbs pre-ride and refuel aggressively post-ride; this is not a day to cut.",
+            "sample_meals": [
+              "Pre: bagel + jam + banana + coffee",
+              "On-bike: per fueling schedule (~70–75 g carb/hr, race products)",
+              "Post: large rice + chicken bowl + 40 g whey shake",
+              "Snack: Greek yogurt + honey + fruit",
+              "Dinner: pasta + lean protein + veg + bread"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-16",
+          "date": "2026-08-16",
+          "weekday": "Sun",
+          "location": "Memphis",
+          "headline": "Recovery 60 min + strength",
+          "sessions": [
+            {
+              "id": "2026-08-16-ride",
+              "type": "bike",
+              "title": "1:00 recovery spin",
+              "duration": "1:00",
+              "targets": "HR ≤130 · very easy recovery · flat, light",
+              "detail": [
+                "Easy flush after the long ride — genuinely easy, no intervals.",
+                "Short ride (≤60 min) — light sips and only nibble carbs if hungry; full in-ride fueling not required here.",
+                "Spin the legs out, then lift."
+              ]
+            },
+            {
+              "id": "2026-08-16-strength",
+              "type": "strength",
+              "title": "Strength — full (after the easy ride)",
+              "duration": "~45 min",
+              "targets": "Build-phase loading via double-progression; box step-ups are your most race-specific lift. (Into race weeks, cut load 30% / maintenance only.)",
+              "detail": [
+                "Warmup (~8 min): leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15, 2 ramp sets.",
+                "Hex-bar deadlift 3×10 (add 5–10 lb only when crisp)",
+                "Walking-lunge overload 2×48 steps, loaded",
+                "Box step-ups 2×10/leg loaded — most race-specific lift, prioritize",
+                "RKC hardstyle plank 3×30 s + side plank 2×20 s/side",
+                "Lift only after this easy ride; if 24 h soreness threatens the 130W Z2 floor, cut load 20% (bike wins)."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy ride + lift — modest deficit off-bike, but include a post-lift protein feeding and keep pre/post-ride carbs. Trim evening fat/carbs only.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + berries + coffee (pre-ride)",
+              "Post-lift: 30–40 g whey shake + fruit",
+              "Lunch: chicken, rice, veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: lean protein + veg + small rice (lighter tonight)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-08-17",
+      "label": "Week of Aug 17 — P2P PEAK: Park City dress rehearsal (sketch) · cool-Utah long #2 (the big one)",
+      "phase": "Phase 3b: P2P peak (sketch)",
+      "location": "Park City (altitude)",
+      "hours": "13 (peak) — gated down to ~9 if KPIs not green",
+      "focus": "PEAK / dress rehearsal (gated). The single biggest race-specific week before P2P taper: a 6–7 h / 9,000–10,000+ ft Epic ride with ALL climbs HR ≤145 (let watts fall ~150–170W) and full race fueling 80 g carb/hr so 70 feels trivial on race day. GATE (non-negotiable): if morning RHR is NOT <66 AND sleep is NOT ≥7 h by the night before the peak ride, CUT the peak ride to 5 h / less vert — do not force the dress rehearsal. Around the big day: 2× easy 90 min Z2 (HR ≤138), one 2×10 min threshold-by-HR opener, optionally 1 short VO2 touch (4×3 min @ 250–270W) early in the week to sharpen the punchy P2P finish. Strength 1× @ 30% (maintenance, after an easy ride only). Pace altitude climbs by HR, never watts. Sleep is the #1 KPI all week.  MARQUEE long ride #2 (peak): Sat 8/22 PEAK dress rehearsal 6–7 h / 9,000–10,000+ ft on the Epic — GATED on KPIs; all climbs HR ≤145, 80 g carb/hr. The full P2P rehearsal in cool altitude. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-08-17",
+          "date": "2026-08-17",
+          "weekday": "Mon",
+          "location": "Park City (altitude)",
+          "headline": "Easy Z2 + strength @ 30% (re-grease, lift only after easy)",
+          "sessions": [
+            {
+              "id": "2026-08-17-ride",
+              "type": "bike",
+              "title": "1:30 easy Z2",
+              "targets": "HR ≤138 · let watts sit ~130–165W at altitude · 85–90 RPM · no coasting",
+              "detail": [
+                "True easy spin to open the peak week — DO NOT drift into the grey zone.",
+                "Altitude: pace by HR, not watts (power reads ~25–30% low up high).",
+                "Smooth, conversational the whole ride. Talk-test enforces the ≤138 ceiling."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — begin fueling proactively from minute 15 (don't wait for thirst)"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~20 g carb + sips; altitude is dry, 16–20 oz/hr, 500–600 mg sodium/hr"
+                },
+                {
+                  "at": "0:55",
+                  "do": "~20 g carb + electrolytes"
+                },
+                {
+                  "at": "1:20",
+                  "do": "~20 g carb; finish fluid at 16–20 oz/hr"
+                }
+              ]
+            },
+            {
+              "id": "2026-08-17-strength",
+              "type": "strength",
+              "title": "Strength 1× @ 30% load (after the easy ride only)",
+              "targets": "Maintenance only — cut load 30% into the peak/race build; never within 24 h before the peak ride. If 24 h soreness threatens the 130W Z2 floor, cut another 20% (bike wins).",
+              "detail": [
+                "Warmup (~8 min): leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15, 2 ramp sets.",
+                "Hex-bar deadlift 3×10 @ 30%-reduced load (crisp reps only)",
+                "Box step-ups 2×10/leg loaded — your MOST race-specific lift, protect it for the climbing gap",
+                "Walking-lunge overload 2×48 steps, light DBs",
+                "RKC hardstyle plank 3×30 s + side plank 2×20 s/side"
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — modest off-bike deficit from fat & evening carbs (chipping at the −10 lb to P2P). Hold protein; one feeding within 30–45 min post-lift. Never trim pre/post-ride carbs.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + oats w/ berries + coffee (pre-ride)",
+              "Post-lift: 30–40 g whey shake + banana",
+              "Lunch: chicken, rice, veg",
+              "Snack: Greek yogurt + honey",
+              "Dinner: salmon, sweet potato, big salad (lighter on evening carbs)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-18",
+          "date": "2026-08-18",
+          "weekday": "Tue",
+          "location": "Park City (altitude)",
+          "headline": "Optional VO2 touch — 4×3 min @ 250–270W (sharpen the P2P punch)",
+          "sessions": [
+            {
+              "id": "2026-08-18-ride",
+              "type": "bike",
+              "title": "VO2 touch: 4×3 min @ 250–270W (optional, only if fresh)",
+              "targets": "20 min Z2 WU → 4×3 min @ 250–270W (HR drifting 160+), 3 min easy between → cooldown (~1:30 total). ONE short VO2 touch only — sharpens the punchy finishing climbs at P2P. Skip entirely if KPIs aren't green or legs aren't snappy.",
+              "detail": [
+                "This is the ONLY VO2 work in the plan (1–2 short touches late in the P2P build only) — keep it brief and sharp, not a smashfest.",
+                "Place it early in the week so it never compromises the peak long ride (no quality within 24 h before it).",
+                "On flat terrain or a steady grade where you can hold the watts cleanly; back off if power craters before the rep count.",
+                "If RHR >70 or sleep <6 h: downgrade to plain Z2 (HR ≤138) — do not add intensity to an under-recovered system."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix before the intervals — fuel from minute 15"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb during WU; rinse before the first rep"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb between reps + electrolytes; 16–20 oz/hr, 500–600 mg sodium/hr (altitude dry)"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~25 g carb on cooldown; finish fluid"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "533 (6 g/kg)",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Quality (threshold/VO2) day — full Woodruff fuel, NO deficit. Front-load carbs around the session; protein feeding post-ride.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: big rice + chicken bowl + 30 g whey",
+              "Snack: fruit + jerky",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-19",
+          "date": "2026-08-19",
+          "weekday": "Wed",
+          "location": "Park City (altitude)",
+          "headline": "Easy 90 min Z2 (recover into the long ride)",
+          "sessions": [
+            {
+              "id": "2026-08-19-ride",
+              "type": "bike",
+              "title": "1:30 easy Z2",
+              "targets": "HR ≤138 · ~130–165W at altitude · 85–90 RPM · no coasting",
+              "detail": [
+                "Recovery-paced aerobic ride between quality and the peak long ride — keep it genuinely easy.",
+                "Pace by HR (altitude suppresses watts). Conversational throughout.",
+                "Sleep is the assignment this week — protect total sleep over any urge to extend this ride."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix from minute 15"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~20 g carb + sips; 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~20 g carb + electrolytes"
+                },
+                {
+                  "at": "1:25",
+                  "do": "~15 g carb; finish fluid"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — small off-bike deficit (trim fat/evening carbs). Hold protein 4–5 feedings. Begin nudging carbs up tomorrow ahead of the peak ride.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + fruit + coffee",
+              "Mid-AM: Greek yogurt + honey",
+              "Lunch: turkey & rice bowl",
+              "Snack: cottage cheese + fruit",
+              "Dinner: fish + veg + small rice (lighter evening carbs)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-20",
+          "date": "2026-08-20",
+          "weekday": "Thu",
+          "location": "Park City (altitude)",
+          "headline": "Threshold opener — 2×10 min by HR (prime the legs, don't dig)",
+          "sessions": [
+            {
+              "id": "2026-08-20-ride",
+              "type": "bike",
+              "title": "2×10 min threshold opener (by HR)",
+              "targets": "20 min Z2 WU → 2×10 min @ HR 150–158 (sub-threshold, ~215–228W at sea level — let watts fall at altitude), 5 min easy between → cooldown (~1:30 total). An OPENER, not a workout — prime the legs, leave the dress rehearsal fully fueled.",
+              "detail": [
+                "Threshold paced BY HR (150–158), not by a watt target — altitude makes the watt number a liar.",
+                "Polarized plan: this is true quality, the only sanctioned 'middle' is over-unders/altitude climbs. No tempo drift on the recoveries — go genuinely easy between reps.",
+                "Keep it controlled — the peak long ride is the priority; do not arrive at it pre-fatigued.",
+                "Last quality before the peak ride — respect the 24 h rule (nothing hard the day before the big day)."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix from minute 15, before the reps"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb during WU; rinse before rep 1"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb between/after reps + electrolytes; 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                },
+                {
+                  "at": "1:25",
+                  "do": "~20 g carb on cooldown; finish fluid"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "533 (6 g/kg)",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Quality (threshold) day — full fuel, NO deficit. Top off carbs through the evening to load glycogen ahead of tomorrow's 6–7 h dress rehearsal.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: big rice + chicken bowl + 30 g whey",
+              "Dinner: pasta + lean protein + veg (carb-forward — fueling tomorrow's long ride)",
+              "Evening: oats + honey or rice pudding to top glycogen"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-21",
+          "date": "2026-08-21",
+          "weekday": "Fri",
+          "location": "Park City (altitude)",
+          "headline": "Easy 90 min Z2 + pre-ride glycogen load (set up the dress rehearsal)",
+          "sessions": [
+            {
+              "id": "2026-08-21-ride",
+              "type": "bike",
+              "title": "1:30 easy Z2 (pre-long-ride primer)",
+              "targets": "HR ≤138 · ~130–165W at altitude · 85–90 RPM · no coasting",
+              "detail": [
+                "Genuinely easy spin the day before the peak ride — open the legs, do not dig.",
+                "Lay out and PRE-COUNT every bottle/gel for tomorrow to 80 g carb/hr (full race fueling rehearsal).",
+                "Hydrate hard today (altitude diuresis); start the glycogen load. Bed early — protect sleep for the big day.",
+                "GATE CHECK tonight: log morning RHR and last night's sleep. If RHR is NOT <66 AND sleep is NOT ≥7 h, plan to CUT tomorrow to 5 h / less vert."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix from minute 15"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~20 g carb + sips; 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~20 g carb + electrolytes"
+                },
+                {
+                  "at": "1:25",
+                  "do": "~15 g carb; finish fluid"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "533+ (6 g/kg — loading for the long ride)",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Pre-long-ride: fuel fully and carb-forward (NO deficit — this sets up the dress rehearsal). Low-ish fiber at dinner to sit well on the early start. Hydrate aggressively for altitude.",
+            "sample_meals": [
+              "Breakfast: oats + banana + whey + coffee",
+              "Lunch: rice bowl w/ chicken + veg",
+              "Snack: bagel + jam, fruit",
+              "Dinner: white pasta + lean protein (lower fiber/fat — sits well tomorrow)",
+              "Evening: rice pudding or honey toast + extra fluids/electrolytes"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-22",
+          "date": "2026-08-22",
+          "weekday": "Sat",
+          "location": "Park City (Epic, altitude)",
+          "headline": "PEAK dress rehearsal — 6–7 h / 9,000–10,000+ ft (GATED) · all climbs HR ≤145 · 80 g carb/hr",
+          "sessions": [
+            {
+              "id": "2026-08-22-ride",
+              "type": "bike",
+              "title": "6–7 h / 9,000–10,000+ ft on the Epic — full race rehearsal (GATED)",
+              "targets": "ALL climbs HR ≤145 (hard ceiling 150 — let watts FALL ~150–170W up high), pace by HR not watts, sustained not coasting. GATE: if RHR not <66 AND sleep not ≥7 h by this morning → CUT to 5 h / less vert (do not force the dress rehearsal). Full race fueling 80 g carb/hr so 70 feels trivial on race day.",
+              "detail": [
+                "THE GATE (apply at wake-up, non-negotiable): only ride the full 6–7 h / 9–10k ft if morning RHR is <66 AND last night's sleep was ≥7 h. If either fails → cut to 5 h and less vert. Two recovery red flags (RHR ≥+5 over baseline 2 mornings, HRV >1 SD down, subjective ≤2) = mandatory cut. Do NOT force the rehearsal on an under-recovered system.",
+                "This is the race-specific climbing rehearsal — your plan's known weak point is climbing durability (Memphis is flat). Maximize this PC big-climb day.",
+                "Pace EVERY climb by HR ≤145, ceiling 150. Let the watts crater up high (~150–170W) — the watt number lies above 10k ft. This is the discipline that makes the 2025 P2P blow-up structurally impossible.",
+                "Pedal the descents and flats steadily (don't coast) — that's where durability is built and where race time is found.",
+                "Rehearse the FULL race fuel: 80 g carb/hr (2:1 glucose:fructose, trained product). Pre-count every bottle/gel. Practice the August caffeine hit late in the ride (3–6 mg/kg) — debut it here, NOT on race day.",
+                "Watch long-ride decoupling: target <~8%. If it blows past that, intensity/tempo has crept in — pull back."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — set the 20-min alarm. Begin 80 g carb/hr from minute 15 (full race rate)"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~25 g carb + sips; lock in 16–20 oz fluid/hr + 500–600 mg sodium/hr (altitude is dry — thirst lies)"
+                },
+                {
+                  "at": "1:00",
+                  "do": "~30 g carb (gel or mix) — hit ~80 g for hour 1"
+                },
+                {
+                  "at": "1:30",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "2:00",
+                  "do": "~30 g carb (real food OK — banana/rice cake) — ~80 g for hour 2"
+                },
+                {
+                  "at": "2:30",
+                  "do": "~25 g carb + sodium check"
+                },
+                {
+                  "at": "3:00",
+                  "do": "~30 g carb — ~80 g for hour 3; reassess fluid/sodium in the dry air"
+                },
+                {
+                  "at": "3:30",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "4:00",
+                  "do": "~30 g carb — ~80 g for hour 4; eat earlier than feels necessary (altitude blunts gastric emptying)"
+                },
+                {
+                  "at": "4:30",
+                  "do": "~25 g carb + sodium"
+                },
+                {
+                  "at": "5:00",
+                  "do": "~30 g carb — ~80 g for hour 5; take caffeine ~3–6 mg/kg now (rehearse the final-third hit)"
+                },
+                {
+                  "at": "5:30",
+                  "do": "~25 g carb + electrolytes; keep pedaling, don't coast"
+                },
+                {
+                  "at": "6:00",
+                  "do": "~30 g carb — ~80 g for hour 6; finish strong, fuel to the line (if going 7 h, continue ~80 g/hr to the end)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,800–4,200 (matched to 6–7 h at altitude)",
+            "carb_g": "600+ (well above 6 g/kg — replace what the long ride burned)",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Peak long day — fuel FULLY, absolutely NO deficit (never under-fuel a long ride; this is the deepest training stress of the build). Aggressive carb + sodium + fluid replacement during and after. Big post-ride recovery feeding within 30–45 min.",
+            "sample_meals": [
+              "Pre (2–3 h): big bowl of oats + banana + honey + whey + coffee",
+              "On-bike: per fueling schedule — 80 g carb/hr, 16–20 oz/hr, 500–600 mg sodium/hr",
+              "Immediately post: recovery shake (40 g whey + 60–80 g carb) + salty snack",
+              "Lunch: large rice + chicken bowl + avocado",
+              "Dinner: pasta or potatoes + lean beef/salmon + veg; salt to taste, extra fluids"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-23",
+          "date": "2026-08-23",
+          "weekday": "Sun",
+          "location": "Park City (altitude)",
+          "headline": "Recovery — rest or ≤1:00 very easy spin (sleep is the KPI)",
+          "sessions": [
+            {
+              "id": "2026-08-23-rest",
+              "type": "rest",
+              "title": "Recovery day — full rest OR ≤1:00 very easy spin",
+              "targets": "If you ride at all: ≤1:00, HR ≤120, flat, pure recovery. Otherwise full rest. Sleep ≥7 h is the master KPI — bank it after the peak ride.",
+              "detail": [
+                "Big stress yesterday — prioritize sleep, hydration, and protein. No intervals, no strength.",
+                "Log morning RHR/HRV/subjective — this is the data that gates the taper. If RHR is still elevated, take the full rest.",
+                "Gentle mobility/walk is fine; keep any spin genuinely easy (HR ≤120)."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,500–2,700",
+            "carb_g": "~300–350 (still replenishing from the long ride)",
+            "protein_g": "155–160",
+            "fat_g": "~90",
+            "notes": "Recovery/deficit day, but keep carbs a touch higher than a normal rest day to finish refilling glycogen from the peak ride. Hold protein 4–5 feedings. Trim alcohol/extra fat to keep the −10 lb trend alive without compromising recovery — if weight stalls on short sleep, fix sleep before cutting harder.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + fruit + coffee",
+              "Lunch: chicken + rice + veg (carb-forward to top off glycogen)",
+              "Snack: Greek yogurt + berries",
+              "Dinner: lean protein + sweet potato + big salad (lighter on fat/alcohol)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-08-24",
+      "label": "Week of Aug 24 — P2P taper week (sketch)",
+      "phase": "Phase 4: P2P taper + race (sketch)",
+      "location": "Memphis → Park City (P2P)",
+      "hours": "~8–9 (taper wk) → ~5–6 (race wk)",
+      "focus": "Bring freshness without losing fitness. Cut volume to ~60% (taper week) then ~40% (race week), keep ONE quality touch early then only short openers, and lock in pacing + fueling. Sleep is the #1 taper KPI — RHR should fall to the low 60s. Strength tapers to 40% then STOPS. Carbo-load the final 48 h. Do NOT diet in race week. Race goal: SUB-10 (from 12:03) — won by pacing + fueling, not watts: first-half climbs HR ≤145 (sit low-140s, \"too easy through hour 4\"), fuel 80 g/hr from minute 15, negative-split the climbing, caffeine final third only, midpoint checkpoint ≥50% of target.  Taper week — volume down, one short quality touch, last longer ride 2.5–3 h Sat 8/29. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-08-24",
+          "date": "2026-08-24",
+          "weekday": "Mon",
+          "location": "Memphis",
+          "headline": "Easy Z2 + last meaningful strength @ 40%",
+          "sessions": [
+            {
+              "id": "2026-08-24-ride",
+              "type": "bike",
+              "title": "1:00 easy Z2",
+              "duration": "1:00",
+              "targets": "HR ≤138 · 130–180W feel · 85–95 RPM · no coasting",
+              "detail": [
+                "Taper week opens here — volume is ~60% of build. Keep it genuinely easy; the work is already done, do NOT chase watts.",
+                "Early AM to beat the heat.",
+                "Smooth, relaxed legs — set up a quality Tue."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — feed even on short rides this week to keep gut trained"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb (1 gel or half-bottle mix)"
+                },
+                {
+                  "at": "0:55",
+                  "do": "Sips to finish ~20–24 oz fluid/hr, 600–1000 mg sodium/hr (Memphis heat)"
+                }
+              ]
+            },
+            {
+              "id": "2026-08-24-strength",
+              "type": "strength",
+              "title": "Strength @ 40% — last meaningful lift, then stop",
+              "duration": "~35 min",
+              "targets": "Load cut to ~40% — maintenance only, RPE ≤6. This is the LAST real lift before the race; none in race week.",
+              "detail": [
+                "After the easy ride only (never within 24 h before Tue quality — but Mon easy → Tue quality is fine since this is the easy day).",
+                "Warmup: leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15.",
+                "Hex-bar deadlift 2×8 @ 40% (crisp, no grind)",
+                "Box step-ups 2×8/leg light — your most race-specific lift, keep the pattern",
+                "Walking-lunge 2×20 steps, bodyweight or very light",
+                "RKC plank 2×20–30 s + side plank 2×15 s/side",
+                "Stop here — no lifting the rest of the block."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy/short day — modest deficit from fat & evening carbs (the −10 lb is nearly banked by now; do NOT cut aggressively into the taper). Hold protein 155–160 g in 4–5 feedings, one within 30–45 min post-lift.",
+            "sample_meals": [
+              "Breakfast: 3-egg omelet + oats w/ berries + coffee",
+              "Post-lift: 30–40 g whey shake + banana",
+              "Lunch: chicken, rice, veg",
+              "Snack: Greek yogurt + honey",
+              "Dinner: salmon, sweet potato, big salad (lighter on evening carbs)"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-25",
+          "date": "2026-08-25",
+          "weekday": "Tue",
+          "location": "Memphis",
+          "headline": "Quality — 3×6 min @ 230–240W (the one sharpening session)",
+          "sessions": [
+            {
+              "id": "2026-08-25-ride",
+              "type": "bike",
+              "title": "1:15 incl. 3×6 min @ 230–240W",
+              "duration": "1:15",
+              "targets": "Reps @ 230–240W, HR 155–160, 90 RPM; 4–5 min easy between. Sharpen, do NOT bury yourself.",
+              "detail": [
+                "The ONLY quality of the taper week — keep it crisp, not exhausting. If a rep feels grindy, take the watts to the low end (230W).",
+                "20 min Z2 WU (HR ≤138) including 2–3 short build-ups.",
+                "3×6 min @ 230–240W (HR 155–160), 4–5 min easy spin recovery between.",
+                "10–15 min Z2 cooldown.",
+                "This is taper sharpening: enough to keep the top end awake, short enough to leave you fresh."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix during WU — feed from min 15 (keep the race habit grooved)"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb + electrolytes (between reps)"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb; finish 20–24 oz fluid/hr, 600–1000 mg sodium/hr in heat"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~500",
+            "protein_g": "155–160",
+            "fat_g": "~75",
+            "notes": "Quality day — fuel it fully, no deficit. Carbs around the session to support the only hard effort of the week.",
+            "sample_meals": [
+              "Pre-ride: oats + banana + whey + coffee",
+              "Post-ride: rice bowl w/ chicken + 30 g whey",
+              "Lunch: turkey & rice burrito bowl",
+              "Snack: fruit + jerky",
+              "Dinner: lean beef, potatoes, veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-26",
+          "date": "2026-08-26",
+          "weekday": "Wed",
+          "location": "Memphis",
+          "headline": "Easy Z2 recovery",
+          "sessions": [
+            {
+              "id": "2026-08-26-ride",
+              "type": "bike",
+              "title": "1:15 easy Z2",
+              "duration": "1:15",
+              "targets": "HR ≤135 · 130–170W · 85–95 RPM · genuinely easy",
+              "detail": [
+                "One of the two easy 60–75 min spins this week. Recover from Tue's quality.",
+                "No strength — lifting is done for the block.",
+                "Talk-test the whole ride; do NOT let it drift to tempo."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~25 g carb; 20–24 oz fluid/hr, 600–1000 mg sodium/hr in heat"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — modest deficit (trim evening carbs/fat). Protein held 155–160 g across 4–5 feedings.",
+            "sample_meals": [
+              "Breakfast: eggs + fruit + coffee",
+              "Lunch: chicken + rice + veg",
+              "Snack: cottage cheese + fruit",
+              "Dinner: fish + sweet potato + salad"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-27",
+          "date": "2026-08-27",
+          "weekday": "Thu",
+          "location": "Memphis",
+          "headline": "Easy Z2 (second easy spin)",
+          "sessions": [
+            {
+              "id": "2026-08-27-ride",
+              "type": "bike",
+              "title": "1:00 easy Z2",
+              "duration": "1:00",
+              "targets": "HR ≤135 · 130–170W · 90 RPM · easy",
+              "detail": [
+                "Second of the two easy 60–75 min spins. Legs should start to feel springy as fatigue sheds.",
+                "Keep it short and light — resist the taper urge to 'test the legs'."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb"
+                },
+                {
+                  "at": "0:55",
+                  "do": "Finish fluid 20–24 oz/hr, 600–1000 mg sodium/hr in heat"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day — modest deficit. Hold protein; trim fat and evening carbs.",
+            "sample_meals": [
+              "Breakfast: oats + berries + whey",
+              "Lunch: big salad w/ chicken + olive oil",
+              "Snack: jerky + fruit",
+              "Dinner: lean protein + veg + small rice"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-28",
+          "date": "2026-08-28",
+          "weekday": "Fri",
+          "location": "Memphis",
+          "headline": "Rest or 30-min spin",
+          "sessions": [
+            {
+              "id": "2026-08-28-rest",
+              "type": "rest",
+              "title": "Rest (or ≤30 min very easy spin)",
+              "duration": "—",
+              "targets": "Full day off, or a 30 min HR ≤130 leg-loosener if restless",
+              "detail": [
+                "Sleep is the assignment — taper KPI #1. Aim for a 7.5 h opportunity.",
+                "If you spin: 30 min flat, HR ≤130, no fueling needed (short ride).",
+                "Set up Sat's longer Z2."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,500",
+            "carb_g": "~300",
+            "protein_g": "155–160",
+            "fat_g": "~85",
+            "notes": "Rest/deficit day — trim fat & evening carbs, hold protein. Do NOT over-restrict; the taper needs glycogen.",
+            "sample_meals": [
+              "Breakfast: eggs + fruit",
+              "Lunch: grilled protein + salad",
+              "Snack: Greek yogurt",
+              "Dinner: lean protein + veg, light carbs"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-29",
+          "date": "2026-08-29",
+          "weekday": "Sat",
+          "location": "Memphis",
+          "headline": "2.5–3 h pure Z2 (last longer ride)",
+          "sessions": [
+            {
+              "id": "2026-08-29-ride",
+              "type": "bike",
+              "title": "2.5–3:00 pure Z2",
+              "duration": "2:30–3:00",
+              "targets": "HR ≤138 · 150–180W feel · 85–90 RPM · no coasting · ZERO intensity",
+              "detail": [
+                "The last longer ride before race week — pure aerobic, no surges, no tempo creep.",
+                "Keeps the engine warm without adding fatigue. Decoupling should be <~6% — confirm freshness.",
+                "Final dress-rehearsal of race fueling cadence — feed by the clock as you will on race day."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix — feed from minute 15 (the race habit)"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~30 g carb + electrolytes"
+                },
+                {
+                  "at": "1:05",
+                  "do": "~35 g carb (real food OK — banana/rice cake)"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~35 g carb; aim ~70 g carb/hr"
+                },
+                {
+                  "at": "2:05",
+                  "do": "~35 g carb + electrolytes"
+                },
+                {
+                  "at": "2:35",
+                  "do": "~35 g carb; maintain 20–24 oz fluid/hr, 600–1000 mg sodium/hr (Memphis heat)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~530",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "Longer day — fuel fully, no deficit. Front-load carbs around the ride; this is not a cut day.",
+            "sample_meals": [
+              "Pre: bagel + jam + coffee",
+              "On-bike: per fueling schedule",
+              "Post: big rice + chicken bowl + whey",
+              "Snack: fruit + yogurt",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-08-30",
+          "date": "2026-08-30",
+          "weekday": "Sun",
+          "location": "Memphis",
+          "headline": "Rest — close the taper week",
+          "sessions": [
+            {
+              "id": "2026-08-30-rest",
+              "type": "rest",
+              "title": "Rest day",
+              "duration": "—",
+              "targets": "Full day off. Sleep, hydrate, eat to rest-day target.",
+              "detail": [
+                "Taper week #1 closes here at ~60% volume. Race week begins tomorrow at ~40%.",
+                "No bike, no gym. Protect sleep — RHR should be trending into the low 60s."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~2,500",
+            "carb_g": "~300",
+            "protein_g": "155–160",
+            "fat_g": "~85",
+            "notes": "Rest/deficit day. Hold protein, trim fat & evening carbs. Last modest-deficit day before carbo-load begins later in race week.",
+            "sample_meals": [
+              "Breakfast: eggs + fruit",
+              "Lunch: chicken + salad",
+              "Snack: cottage cheese",
+              "Dinner: fish + veg + small rice"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-08-31",
+      "label": "Week of Aug 31 — P2P RACE week (sketch) · Park City Point 2 Point Sat Sep 5",
+      "phase": "Phase 4: P2P taper + race (sketch)",
+      "location": "Memphis → Park City (P2P)",
+      "hours": "~8–9 (taper wk) → ~5–6 (race wk)",
+      "focus": "Bring freshness without losing fitness. Cut volume to ~60% (taper week) then ~40% (race week), keep ONE quality touch early then only short openers, and lock in pacing + fueling. Sleep is the #1 taper KPI — RHR should fall to the low 60s. Strength tapers to 40% then STOPS. Carbo-load the final 48 h. Do NOT diet in race week. Race goal: SUB-10 (from 12:03) — won by pacing + fueling, not watts: first-half climbs HR ≤145 (sit low-140s, \"too easy through hour 4\"), fuel 80 g/hr from minute 15, negative-split the climbing, caffeine final third only, midpoint checkpoint ≥50% of target.  Race week — openers, carbo-load, RACE Sat 9/5. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "days": [
+        {
+          "id": "2026-08-31",
+          "date": "2026-08-31",
+          "weekday": "Mon",
+          "location": "Memphis",
+          "headline": "Short opener — 4×90 s @ 230W",
+          "sessions": [
+            {
+              "id": "2026-08-31-ride",
+              "type": "bike",
+              "title": "0:50 incl. 4×90 s @ 230W",
+              "duration": "0:50",
+              "targets": "4×90 s @ 230W, HR settling 150–158, 90 RPM; 2–3 min easy between. Keep the legs sharp, NOT tired.",
+              "detail": [
+                "Race week begins — ~40% volume, short daily openers only.",
+                "20 min Z2 WU, HR ≤138.",
+                "4×90 s @ 230W, full easy recovery between (2–3 min). These wake the legs without cost.",
+                "10 min easy cooldown.",
+                "No strength this week and the rest of the block — lifting is done."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — keep the gut trained right into race week"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb; finish 20–24 oz fluid/hr, 600–1000 mg sodium/hr in heat"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~420",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy/short day. Stop dieting now — race week is NOT a cut. Eat to maintenance, hold protein, keep carbs steady to top off glycogen.",
+            "sample_meals": [
+              "Breakfast: oats + banana + whey + coffee",
+              "Lunch: chicken + rice + veg",
+              "Snack: yogurt + fruit",
+              "Dinner: salmon + potato + salad"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-01",
+          "date": "2026-09-01",
+          "weekday": "Tue",
+          "location": "Memphis → Park City (travel)",
+          "headline": "Short opener + travel; front-load altitude hydration",
+          "sessions": [
+            {
+              "id": "2026-09-01-ride",
+              "type": "bike",
+              "title": "0:45 incl. 3×90 s @ 230W (or travel-day spin)",
+              "duration": "0:45",
+              "targets": "3×90 s @ 230W, HR 150–158, full recovery; otherwise short flat spin if traveling early",
+              "detail": [
+                "Short opener before/around travel to PC. If the travel day is tight, ride 30–40 min very easy with a couple of 90 s pickups.",
+                "Begin aggressive hydration for altitude (altitude diuresis) — no alcohol from here to the race.",
+                "Arrive PC; ease into the elevation."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb; finish fluid — then keep sipping all travel day for altitude"
+                }
+              ]
+            },
+            {
+              "id": "2026-09-01-travel",
+              "type": "travel",
+              "title": "Travel Memphis → Park City",
+              "duration": "—",
+              "targets": "Hydrate hard, move/stretch in transit, protect sleep on arrival",
+              "detail": [
+                "Front-load fluids + electrolytes (altitude is dry and diuretic).",
+                "No alcohol. Walk/stretch during layovers.",
+                "Bed early on arrival — sleep is the #1 taper KPI."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~420",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy/travel day — eat to maintenance, NOT a deficit. Extra fluids + sodium for altitude. Steady carbs to keep topping off glycogen ahead of the load.",
+            "sample_meals": [
+              "Breakfast: eggs + oats + fruit",
+              "Travel: rice bowl / sandwich + electrolyte drink",
+              "Snack: pretzels + jerky (sodium)",
+              "Dinner: lean protein + rice + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-02",
+          "date": "2026-09-02",
+          "weekday": "Wed",
+          "location": "Park City",
+          "headline": "Altitude acclimation spin (HR-paced)",
+          "sessions": [
+            {
+              "id": "2026-09-02-ride",
+              "type": "bike",
+              "title": "0:45–1:00 easy at altitude",
+              "duration": "0:45–1:00",
+              "targets": "HR ≤138, PACE BY HR not watts (power reads ~25–30% low up high) · let watts fall · no climbing tests",
+              "detail": [
+                "First full day at PC altitude — easy spin only. Do NOT test a climb.",
+                "Pace strictly by HR/RPE; the watt number lies up high.",
+                "Loosen the legs, let the body start adapting. Hydrate hard.",
+                "Pre-ride the start area / logistics if convenient."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips — altitude blunts gastric emptying, so practice eating early"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~25 g carb; fluid 16–20 oz/hr, 500–600 mg sodium/hr (altitude, dry)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~430",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Easy day at altitude — eat to maintenance. Keep carbs steady (glycogen + altitude adaptation). Hydrate aggressively with electrolytes.",
+            "sample_meals": [
+              "Breakfast: oats + banana + eggs",
+              "Lunch: chicken + rice + veg",
+              "Snack: pretzels + electrolyte drink",
+              "Dinner: pasta + lean protein + veg"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-03",
+          "date": "2026-09-03",
+          "weekday": "Thu",
+          "location": "Park City",
+          "headline": "Short opener + START 48 h carbo-load (≥200 g)",
+          "sessions": [
+            {
+              "id": "2026-09-03-ride",
+              "type": "bike",
+              "title": "0:40 incl. 3×90 s building to HR 145",
+              "duration": "0:40",
+              "targets": "3×90 s building to HR 145 on a gentle grade (PACE BY HR), full recovery; everything else easy ≤138",
+              "detail": [
+                "Short terrain opener at altitude — calibrate effort on a real grade, HR-capped at 145.",
+                "Let watts fall; the climb feel matters, not the number.",
+                "Keep total time short — freshness is the job now.",
+                "Lay out and pre-count race nutrition tonight (gels/bottles to 80 g carb/hr)."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Start carb mix + sips; fluid 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                },
+                {
+                  "at": "0:40",
+                  "do": "~20 g carb to finish (short ride)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~3,300",
+            "carb_g": "≥200 g COMPLEX carb (CARBO-LOAD begins) — push toward 500+ total",
+            "protein_g": "155–160",
+            "fat_g": "~70",
+            "notes": "48-h carbo-load starts today: deliberately ≥200 g complex carb on top of normal eating, building glycogen stores. NOT a deficit day — eat up. Keep fiber moderate. Hold protein.",
+            "sample_meals": [
+              "Breakfast: big oats + banana + honey + eggs",
+              "Lunch: rice bowl w/ chicken + extra rice",
+              "Afternoon: bagel + jam, pretzels",
+              "Dinner: pasta w/ lean protein + bread",
+              "Evening: rice pudding or fruit"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-04",
+          "date": "2026-09-04",
+          "weekday": "Fri",
+          "location": "Park City",
+          "headline": "Tiny opener + 24 h load (700 g, low fiber/fat); the sleep that matters",
+          "sessions": [
+            {
+              "id": "2026-09-04-ride",
+              "type": "bike",
+              "title": "0:30 easy + 3×60 s @ 230W",
+              "duration": "0:30",
+              "targets": "3×60 s @ 230W feel (HR-paced ~145–150 at altitude), full recovery; rest very easy",
+              "detail": [
+                "Last spin before the race — tiny, just to keep the legs awake. Do NOT add fatigue.",
+                "Pace by HR; watts irrelevant at altitude.",
+                "Pre-count EVERY bottle/gel to 80 g carb/hr; lay out the cold-start kit.",
+                "This is the night that matters for race sleep — eat dinner early, screens off 45 min before bed, bedtime early."
+              ],
+              "fueling": [
+                {
+                  "at": "0:15",
+                  "do": "Sips + ~20 g carb (very short ride — keep it minimal)"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "rest",
+            "kcal": "~3,500 (max-glycogen day, NOT a deficit)",
+            "carb_g": "~700 g, LOW fiber & fat",
+            "protein_g": "155–160 (moderate; carbs are the priority)",
+            "fat_g": "~50 (kept low to fit the carb volume + ease digestion)",
+            "notes": "24-h carbo-load: ~700 g carb, LOW fiber and LOW fat to top off glycogen and keep the gut settled for race morning. Easily-digested carbs all day; stop heavy eating early evening. Hydrate + electrolytes. This is a fueling day, not a training day.",
+            "sample_meals": [
+              "Breakfast: white-rice porridge + banana + honey",
+              "Mid-AM: bagels + jam, sports drink",
+              "Lunch: white rice + skinless chicken (low fat/fiber)",
+              "Afternoon: pretzels, gummies, sports drink, ripe banana",
+              "Dinner (early): white pasta + marinara + small lean protein"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-05",
+          "date": "2026-09-05",
+          "weekday": "Sat",
+          "location": "Park City — P2P (~78 mi / 12,000 ft)",
+          "headline": "P2P SUB-10 — ride the first half like a recon, the second half like a race",
+          "sessions": [
+            {
+              "id": "2026-09-05-ride",
+              "type": "bike",
+              "title": "RACE — Park City Point 2 Point (sub-10 execution)",
+              "duration": "~9:30–10:00 target",
+              "targets": "FIRST HALF: climbs HR ≤145, sit LOW-140s for ~3 h — must feel TOO EASY through hour 4. Watts are a ceiling not a target (cap NP ~160–175W on early climbs; altitude-suppressed). NEGATIVE-SPLIT the climbing. Midpoint checkpoint: elapsed ≥50% of target. Caffeine final third ONLY.",
+              "detail": [
+                "RACE MANTRA: 'Too easy through hour 4. Eat from minute 15. The race starts at hour 7.' This is the antidote to 2025 (first half HR 161 → bonk hr 7, −24% decoupling, 12:03).",
+                "PRE (2–4 h before): 270 g carb breakfast (white rice/oats + banana + honey + sports drink, low fiber/fat). Easy 10–15 min spin to warm up; do NOT do hard openers.",
+                "FIRST THIRD (start → ~mi 26): everyone sprints off the line — LET THEM. Settle to HR low-140s within 5 min; HARD cap climbs at 145. Sit-and-spin the steep pitches, gear DOWN rather than spike watts. You should feel like you haven't started racing. Correct.",
+                "MIDDLE THIRD (~mi 26–52): HR ≤145 on climbs; PEDAL the descents and flats steadily (don't coast, don't surge) and EAT there — this is where time is gained vs the field, not by climbing harder. Watts a ceiling (~160–175W on climbs, altitude-suppressed).",
+                "MIDPOINT CHECKPOINT (~mi 39): elapsed should be ≥50% of target time. If you're AHEAD of half-time, you went out too hard — ease off NOW. This single check prevents the 2025 blow-up.",
+                "LAST THIRD (~mi 52–78): NOW race. If the legs are there (and after fueling all day they should be), let climbing HR drift to 150–155 and negative-split — the finishing climbs should be your STRONGEST (2025 fell −31% here; flip that). Caffeine kicks in for these climbs back toward the finish. Empty the tank on the final descent.",
+                "Never go below half-tank on fuel — a bonk costs 30+ minutes. Eat earlier and more than feels necessary (altitude blunts gastric emptying — exactly why you gut-trained all spring).",
+                "Math: sub-10 is ~10–11% faster than 12:03 — bought by NOT bonking at hour 7 and NOT losing 31% of climbing power, NOT by new watts. A-goal sub-10; ~10:30 floor is still a massive win."
+              ],
+              "fueling": [
+                {
+                  "at": "0:00",
+                  "do": "Start with 2 full bottles (one carb mix, one electrolyte). 270 g carb breakfast already in 2–4 h ago."
+                },
+                {
+                  "at": "0:15",
+                  "do": "FIRST fuel — set a timer. Begin 80 g carb/hr from minute 15 (do NOT wait): ~20 g carb (1 gel or chews) + drink"
+                },
+                {
+                  "at": "0:35",
+                  "do": "~20 g carb + sips — 500–600 mg sodium/hr, 16–24 oz fluid/hr (altitude is dry — thirst lies)"
+                },
+                {
+                  "at": "0:55",
+                  "do": "~20 g carb + electrolytes; ~80 g carb in for hour 1 — confirm you're on pace"
+                },
+                {
+                  "at": "1:15",
+                  "do": "~20 g carb + drink"
+                },
+                {
+                  "at": "1:35",
+                  "do": "~20 g carb + sips; sodium 500–600 mg/hr, stay ahead of thirst"
+                },
+                {
+                  "at": "1:55",
+                  "do": "~20 g carb + electrolytes (real food OK — banana/rice cake on a flat)"
+                },
+                {
+                  "at": "2:20",
+                  "do": "~25 g carb + drink — eat on the descents/flats, not mid-steep-climb"
+                },
+                {
+                  "at": "2:45",
+                  "do": "~25 g carb + sips"
+                },
+                {
+                  "at": "3:10",
+                  "do": "~25 g carb + electrolytes; refill bottles at aid — pre-counted to 80 g/hr"
+                },
+                {
+                  "at": "3:35",
+                  "do": "~25 g carb + drink (you should still feel too easy here — keep eating)"
+                },
+                {
+                  "at": "4:00",
+                  "do": "~25 g carb + sips; sodium check 500–600 mg/hr (1000 if unusually hot)"
+                },
+                {
+                  "at": "4:30",
+                  "do": "~25 g carb + electrolytes — MIDPOINT zone: confirm elapsed ≥50% of target; if ahead, ease off"
+                },
+                {
+                  "at": "5:00",
+                  "do": "~25 g carb + drink; refill bottles, top off sodium"
+                },
+                {
+                  "at": "5:30",
+                  "do": "~25 g carb + sips — never below half-tank"
+                },
+                {
+                  "at": "6:00",
+                  "do": "~25 g carb + electrolytes"
+                },
+                {
+                  "at": "6:30",
+                  "do": "~25 g carb + drink; FINAL THIRD approaching — take CAFFEINE now (~270–530 mg total, 3–6 mg/kg, saved for here)"
+                },
+                {
+                  "at": "7:00",
+                  "do": "~25 g carb + sips — 'the race starts at hour 7' — now let HR drift to 150–155 on climbs"
+                },
+                {
+                  "at": "7:30",
+                  "do": "~25 g carb + electrolytes; keep fueling — bonk prevention to the line"
+                },
+                {
+                  "at": "8:00",
+                  "do": "~25 g carb + drink; sodium top-off, push the finishing climbs"
+                },
+                {
+                  "at": "8:30",
+                  "do": "~20 g carb + sips — negative-split the climbing, empty the tank"
+                },
+                {
+                  "at": "9:00",
+                  "do": "Final gel + drink if stomach allows; pedal the last descent hard to the finish"
+                }
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "hard",
+            "kcal": "~4,500+ (race day — massive fuel demand)",
+            "carb_g": "270 g breakfast + ~80 g/hr in-race (~720–800 g on-bike) + recovery carbs",
+            "protein_g": "155–160 (post-race recovery feeding emphasized)",
+            "fat_g": "~60 (low pre/in-race for digestion; normal post-race)",
+            "notes": "RACE DAY — do NOT diet. 270 g carb breakfast 2–4 h pre (low fiber/fat). In-race: 80 g carb/hr from minute 15, 500–600 mg sodium/hr (1000 if hot), 16–24 oz fluid/hr. Caffeine 3–6 mg/kg in the FINAL THIRD only. Post-race: aggressive carb + protein refeed for recovery.",
+            "sample_meals": [
+              "Pre (2–4 h): white rice/oats + banana + honey + sports drink = 270 g carb, low fiber/fat",
+              "In-race: gels/chews/drink mix per fueling schedule = ~80 g carb/hr",
+              "Final third: caffeinated gel/drink (~270–530 mg total caffeine)",
+              "Immediately post: recovery shake (carb + 30–40 g protein) + banana",
+              "Dinner: big mixed plate — rice/pasta + protein + veg, rehydrate w/ electrolytes"
+            ]
+          }
+        },
+        {
+          "id": "2026-09-06",
+          "date": "2026-09-06",
+          "weekday": "Sun",
+          "location": "Park City",
+          "headline": "Day-after-race — walk or tiny spin (recovery flush)",
+          "sessions": [
+            {
+              "id": "2026-09-06-spin",
+              "type": "bike",
+              "title": "≤30 min walk or easy spin",
+              "duration": "0:00–0:30",
+              "targets": "Full rest default; optional ≤30 min very easy flush. Celebrate — A-race done.",
+              "detail": [
+                "Recovery flush only. Eat, hydrate, sleep."
+              ]
+            }
+          ]
         }
       ]
     },
