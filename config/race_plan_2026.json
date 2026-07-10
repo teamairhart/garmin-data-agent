@@ -1,8 +1,8 @@
 {
   "meta": {
     "athlete": "Jonathan Airhart",
-    "subtitle": "Leadville Silver Rush 50 (Jul 12) → Park City P2P (~Sep 5)",
-    "goal_leadville": "Realistic 7:00–7:45 · A-goal ~6:45 (pace by HR 140–148 on climbs, not watts)",
+    "subtitle": "Leadville Silver Rush 50 CANCELED (wildfires) → P2P Recon Jul 13 → Park City P2P (~Sep 5)",
+    "goal_leadville": "CANCELED — 2026 wildfires. The taper's fitness cashes in Mon Jul 13 instead: P2P Recon (legs 1–2 of the course) ridden at full race protocol — nutrition timing + pacing.",
     "goal_p2p": "Sub-10 (from 12:03) — a pacing + fueling win: first-half HR ≤145, fuel from min 15",
     "principles": [
       "Ride easy days TRULY easy — HR ≤138, no exceptions.",
@@ -2064,11 +2064,11 @@
     },
     {
       "id": "wk-2026-07-06",
-      "label": "Week of Jul 6 — Park City acclimate → Leadville taper + RACE",
-      "phase": "Phase 2: Leadville taper + acclimate → R. RACE Jul 12",
-      "location": "Park City → Leadville",
+      "label": "Week of Jul 6 — Leadville CANCELED (wildfires) → pivot to P2P Recon",
+      "phase": "Phase 2 (pivot): taper redirected → P2P Recon Mon Jul 13",
+      "location": "Park City → Bear Lake → Park City",
       "hours": "6–7",
-      "focus": "Drop volume into the race, arrive Leadville Jul 8, acclimation spins (pace by HR — power lies up high), rehearse fueling, do the 32T swap, carbo-load 48h then 24h. Stop lifting after Jul 6. Climbs paced by HR 140–148 (ceiling 150), NOT watts. Race Jul 12: ride the first half like a recon, the second half like a race. Do not diet this week — hold protein, fuel the work; the cut is paused.",
+      "focus": "Silver Rush was canceled mid-week by wildfires. The fitness doesn't evaporate — it gets a better test: Mon Jul 13, ride legs 1–2 of the actual P2P course as a full race-protocol rehearsal (nutrition timing + pacing). The taper logic is unchanged, just shifted one day: Thursday's Bear Lake MTB was the last real effort; Fri–Sat genuinely easy, carbo-load Sat (complex) → Sun (24h, low fiber/fat), openers Sunday, bottles pre-counted to 70 g/hr. Monday is paced like race day: first-half HR ≤145, climbs 140–148 (ceiling 150). Do not diet this week — the cut stays paused.",
       "days": [
         {
           "id": "2026-07-06",
@@ -2252,20 +2252,57 @@
           "id": "2026-07-10",
           "date": "2026-07-10",
           "weekday": "Fri",
-          "location": "Leadville",
-          "headline": "Easy 40 min flat + carbo-load starts (48h, ≥200 g complex carb)",
+          "location": "Bear Lake",
+          "headline": "Easy ≤40 min spin (or rest) — absorb Thursday's hot ride; Monday is the event now",
           "sessions": [
             {
               "id": "2026-07-10-ride",
               "type": "bike",
-              "title": "40 min easy, flat",
-              "targets": "HR ≤130 · flat · genuinely easy, just keep the legs awake",
+              "title": "≤40 min very easy (or rest)",
+              "targets": "HR ≤130 · flat/mellow · genuinely easy — or skip it entirely",
               "duration": "0:40",
               "detail": [
-                "40 min easy flat spin. Nothing more — keep the legs ticking over without adding fatigue.",
+                "Leadville is canceled; the event is now Monday's P2P Recon. Nothing you do today makes Monday better — but a hard ride makes it worse.",
+                "Thursday's Bear Lake MTB ran hot (avg HR 146 in 89 °F, 13% over threshold) — treat today as absorption. Noodle spin or full rest, either is correct.",
+                "No climbs, no surges, nothing above HR 130. If the family ride turns spicy, sit it out.",
+                "Hydrate well — Bear Lake sits at ~5,900 ft and Monday is ridden at 7,000–9,000 ft."
+              ]
+            }
+          ],
+          "nutrition": {
+            "day_type": "easy",
+            "kcal": "~2,900",
+            "carb_g": "~400",
+            "protein_g": "155–160",
+            "fat_g": "~80",
+            "notes": "Normal easy-day fueling — the carbo-load now starts TOMORROW (Sat complex-carb day, Sun 24h low-fiber load) for Monday's recon. No deficit; the cut stays paused through the event.",
+            "sample_meals": [
+              "Breakfast: oatmeal + banana + eggs + coffee",
+              "Lunch: rice bowl w/ chicken + veg",
+              "Snack: pretzels + electrolyte drink",
+              "Dinner: pasta + lean protein + veg",
+              "Evening: extra water + electrolytes (no alcohol)"
+            ]
+          }
+        },
+        {
+          "id": "2026-07-11",
+          "date": "2026-07-11",
+          "weekday": "Sat",
+          "location": "Bear Lake → Park City",
+          "headline": "Travel/easy day + carbo-load day 1 (≥200 g complex carb)",
+          "sessions": [
+            {
+              "id": "2026-07-11-ride",
+              "type": "bike",
+              "title": "≤45 min very easy spin (optional)",
+              "targets": "HR ≤130 · optional — travel day; rest is just as good",
+              "duration": "0:45",
+              "detail": [
+                "Optional leg-turner only — if travel back to Park City eats the day, skip it without a second thought.",
                 "CARBO-LOAD BEGINS (48 h window): today is the COMPLEX-carb day — ≥200 g complex carb (rice, potatoes, oats, pasta) on top of normal intake.",
-                "Keep hydrating for altitude; sip electrolytes through the day.",
-                "Bed early — sleep is the #1 KPI heading into race night."
+                "Start staging Monday's kit: bike checked, bottles/gels inventoried, course files for P2P legs 1–2 loaded on the Edge.",
+                "Hydrate through the day; sleep matters from tonight on."
               ]
             }
           ],
@@ -2275,7 +2312,7 @@
             "carb_g": "≥450 (load day 1 — ≥200 g COMPLEX carb)",
             "protein_g": "155–160",
             "fat_g": "~70",
-            "notes": "CARBO-LOAD DAY 1 of 2. Push complex carbs (≥200 g of complex on top of base): rice, oats, potatoes, pasta. NO deficit — the cut is fully paused. Keep fat moderate so carbs land. Protein held. Hydrate + sodium for altitude.",
+            "notes": "CARBO-LOAD DAY 1 of 2 for Monday. Push complex carbs (≥200 g complex on top of base): rice, oats, potatoes, pasta. NO deficit. Keep fat moderate so carbs land. Hydrate + sodium.",
             "sample_meals": [
               "Breakfast: large bowl oats + banana + honey + eggs",
               "Lunch: big rice bowl w/ chicken + veg",
@@ -2286,25 +2323,24 @@
           }
         },
         {
-          "id": "2026-07-11",
-          "date": "2026-07-11",
-          "weekday": "Sat",
-          "location": "Leadville",
-          "headline": "Openers + 24h load (~700 g low fiber/fat) — pre-count bottles to 70 g/hr",
+          "id": "2026-07-12",
+          "date": "2026-07-12",
+          "weekday": "Sun",
+          "location": "Park City",
+          "headline": "Openers + 24h load (~700 g low fiber/fat) — pre-count bottles to 70 g/hr for Monday",
           "sessions": [
             {
-              "id": "2026-07-11-ride",
+              "id": "2026-07-12-ride",
               "type": "bike",
               "title": "30 min easy + 3×2 min building to HR 148",
               "targets": "Easy base; 3×2 min building to HR 148 then FULL recovery — wake the system, do not fatigue it",
               "duration": "0:30",
               "detail": [
-                "Short opener: easy spin + 3×2 min building to HR 148, full recovery between. Snap the legs open — these are NOT a workout, just primers.",
-                "Pace by HR; let watts be whatever they are at altitude.",
+                "Silver Rush would have been today. Instead: short openers — easy spin + 3×2 min building to HR 148, full recovery between. Primers, NOT a workout.",
                 "24-HOUR CARBO-LOAD: ~700 g carb today, LOW fiber/fat (white rice, white bread, bananas, sports drink, gels, jam — easy to digest, no GI surprises tomorrow).",
-                "PRE-COUNT every bottle and gel to exactly 70 g carb/hr for race duration — do the arithmetic tonight, lay it all out, label start-line bottles.",
-                "Lay out the cold-start kit (gun goes at 10,200 ft, it's cold): vest/arm warmers, gloves, what comes off and when.",
-                "THIS is the night that matters for race sleep — bed early, dark/cold room, no screens 45 min prior. Protect total sleep over everything."
+                "PRE-COUNT every bottle and gel to exactly 70 g carb/hr for the expected recon duration — do the arithmetic tonight, lay it all out, label the bottles. Monday's #1 objective is rehearsing this exact protocol.",
+                "Agree on the plan with your ride partner(s) tonight: leg boundaries as lap points, HR discipline outranks group pace.",
+                "THIS is the night that matters for event sleep — bed early, dark/cold room, no screens 45 min prior."
               ]
             }
           ],
@@ -2314,7 +2350,7 @@
             "carb_g": "~700 (24h load — LOW fiber/fat)",
             "protein_g": "155–160",
             "fat_g": "~50 (kept low for load)",
-            "notes": "24-HOUR CARBO-LOAD, ~700 g carb, deliberately LOW fiber/fat to avoid race-morning GI issues. Spread across the whole day. Keep protein at target but lean. Hydrate + sodium for altitude; absolutely no alcohol. The cut is paused — this is a fuel day, not a diet day.",
+            "notes": "24-HOUR CARBO-LOAD, ~700 g carb, deliberately LOW fiber/fat to avoid morning GI issues. Spread across the whole day. Keep protein at target but lean. Hydrate + sodium; absolutely no alcohol. This is a fuel day, not a diet day.",
             "sample_meals": [
               "Breakfast: white rice + honey + banana + eggs (low-fiber)",
               "Lunch: white-bread sandwich (lean turkey) + sports drink + pretzels",
@@ -2323,38 +2359,47 @@
               "Evening: white toast + honey; sip electrolytes; bed early"
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "wk-2026-07-13",
+      "label": "Week of Jul 13 — P2P RECON (legs 1–2) → real recovery",
+      "phase": "Phase 2R: P2P Recon (Leadville replacement) + recover",
+      "location": "Park City → home",
+      "hours": "7–9",
+      "focus": "Monday IS the event: P2P Recon — legs 1–2 of the Point 2 Point course, ridden as a full dress rehearsal for Sep 5. Two objectives, in order: (1) NUTRITION — the exact race protocol, 70 g carb/hr from min 15, 500–600 mg sodium/hr, bottles pre-counted; (2) PACING — first-half discipline, HR ≤145 between climbs, climbs 140–148 (ceiling 150), pace by HR not watts. Then recover for real: it wasn't a 50-mile race, but a 4–5 h big-vert day at altitude off a taper is still a real dent — Tue–Wed rest, two easy 60–75 min Z2 rides Thu/Sat, one light 30%-load lift Fri. NO quality all week. KPI gate unchanged and overrides everything: no programmed quality until morning RHR is back under 66 AND sleep is ≥7 h.",
+      "days": [
         {
-          "id": "2026-07-12",
-          "date": "2026-07-12",
-          "weekday": "Sun",
-          "location": "Leadville",
-          "headline": "RACE — Silver Rush 50. Ride the first half like a recon, the second like a race.",
+          "id": "2026-07-13",
+          "date": "2026-07-13",
+          "weekday": "Mon",
+          "location": "Park City",
+          "headline": "P2P RECON — legs 1+2. Ride it like Sep 5: fuel from min 15, first half like a recon.",
           "sessions": [
             {
-              "id": "2026-07-12-race",
+              "id": "2026-07-13-ride",
               "type": "bike",
-              "title": "Leadville Silver Rush 50 — RACE (~50 mi / ~7,200 ft)",
-              "targets": "PACE BY HR, NOT watts. Climbs HR 140–148, hard ceiling 150. Let watts fall (~150–170W). Fuel 70 g/hr from min 15. Negative split.",
-              "duration": "Target 7:00–7:45 (A-goal ~6:45)",
+              "title": "P2P Recon — legs 1–2 of the Point 2 Point course (long, big vert)",
+              "targets": "PACE BY HR: ≤145 between climbs, climbs 140–148, HARD CEILING 150 · Fuel 70 g/hr from min 15 · 500–600 mg sodium/hr · 16–20 oz fluid/hr",
+              "duration": "~4:00–5:00 (ride the course, not the clock)",
               "detail": [
-                "PRE-RACE (2–4 h before): 270 g carb breakfast (oatmeal + banana + honey + white toast/jam + sports drink — low fiber). Sip electrolytes. Then an easy 10–15 min spin in the cold to open the legs.",
-                "PACE BY HR, NOT WATTS — power reads 25–30% low above 10k ft; the watt number is a liar up high. Climbs HR 140–148, HARD CEILING 150. Let watts fall to ~150–170W on the climbs.",
-                "FIRST THIRD (start → ~mi 17): gun goes at 10,200 ft and everyone sprints — LET THEM. Settle to HR 140–145 within 5 min; cap climbs at 148. Sit-and-spin steep pitches (32T earns its keep here). You should feel like you haven't started racing yet — that is CORRECT. Adrenaline makes 148 feel too easy in hour 1; let it.",
-                "MIDDLE THIRD (~mi 17–33): HR 145–148 on climbs. PEDAL the descents and flats steadily (HR ≤145 — don't surge, don't coast). THIS is where you gain time vs recon — by pedaling everything with purpose, NOT by climbing harder. Fuel religiously.",
-                "TURNAROUND CHECKPOINT: at the turnaround, elapsed should be ≥50% of target time. If you're AHEAD of half-time, you went out too hard — EASE OFF NOW. (This is the antidote to the 2025 P2P first-half over-pace.)",
-                "LAST THIRD (~mi 33–50): NOW race. If the legs are there, let climbing HR drift to 150–155 and empty the tank on the final descent. Negative-split → A-goal ~6:45.",
-                "Eat earlier and more than feels necessary — altitude blunts gastric emptying (exactly why you gut-trained all spring). Never let the tank drop below half.",
-                "Race by one sentence: ride the first half like a recon and the second half like a race."
+                "This is the Leadville replacement — same engine, better specificity: it's the actual course you race Sep 5. Two objectives, in order: NUTRITION TIMING and PACING. Finishing fast is not on the list.",
+                "NUTRITION (objective #1): run the full race protocol — first carbs at minute 15 (set a timer), ~70 g carb/hr, 500–600 mg sodium/hr, 16–20 oz fluid/hr. Note what the gut does under sustained climb effort at altitude; tonight, write the Sep 5 run sheet from what you learn today.",
+                "PACING (objective #2): the sub-10 P2P is won in the first half. HR ≤145 between climbs no matter how good the legs feel; climbs 140–148, HARD CEILING 150. The 2025 race was lost to a first-half over-pace — today is the antidote rehearsal.",
+                "Lap the leg boundaries and major climbs (lap button) so the analysis can score pacing leg-by-leg against Sep 5 splits.",
+                "7,000–9,000 ft: watts read low — pace by HR/RPE and let the watt number be whatever it is.",
+                "Riding with partners: agree before rolling that HR discipline outranks group pace — ride your own climbs, regroup at leg boundaries.",
+                "OPTIONAL late-ride caffeine rehearsal (~200 mg around hour 3): better to test it today than debut it Sep 5. Skip if the gut is already working hard."
               ],
               "fueling": [
                 {
-                  "at": "-3:00",
-                  "do": "Race breakfast: 270 g carb, 2–4 h pre-start (low fiber). Sip electrolytes."
+                  "at": "-2:30",
+                  "do": "Rehearsal race breakfast: ~250 g carb, 2–3 h pre-start (oatmeal + banana + honey + white toast/jam + sports drink — low fiber)."
                 },
                 {
                   "at": "-0:15",
-                  "do": "Easy 10–15 min spin in the cold; final sips; confirm pre-counted 70 g/hr bottles/gels on the bike."
+                  "do": "Confirm pre-counted 70 g/hr bottles/gels on the bike; easy 10–15 min spin to open the legs."
                 },
                 {
                   "at": "0:15",
@@ -2362,11 +2407,11 @@
                 },
                 {
                   "at": "0:35",
-                  "do": "~25 g carb + electrolytes — 500–600 mg sodium/hr; 16–20 oz fluid/hr (altitude is dry, thirst lies)."
+                  "do": "~25 g carb + electrolytes — 500–600 mg sodium/hr; 16–20 oz fluid/hr."
                 },
                 {
                   "at": "0:55",
-                  "do": "~25 g carb + sips; keep cadence high on climbs, HR 140–148."
+                  "do": "~25 g carb + sips; cadence high on climbs, HR 140–148."
                 },
                 {
                   "at": "1:20",
@@ -2378,110 +2423,44 @@
                 },
                 {
                   "at": "2:15",
-                  "do": "~25 g carb + sodium; eat earlier/more than feels necessary (altitude blunts gastric emptying)."
+                  "do": "~25 g carb + sodium; eat earlier/more than feels necessary — altitude blunts gastric emptying."
                 },
                 {
                   "at": "2:40",
-                  "do": "~25 g carb + sips. Approaching turnaround — verify elapsed ≥50% of target; if ahead, ease off."
+                  "do": "~25 g carb + sips; check pacing — still ≤145 between climbs?"
                 },
                 {
-                  "at": "3:10",
-                  "do": "~25 g carb + sodium; middle third — pedal descents/flats steadily, fuel religiously."
+                  "at": "3:00",
+                  "do": "OPTIONAL: caffeine rehearsal ~200 mg. Log gut + perceived-effort response."
                 },
                 {
-                  "at": "3:35",
-                  "do": "~25 g carb + 16–20 oz fluid this hour."
+                  "at": "3:30",
+                  "do": "~25 g carb + sodium; never below half-tank."
                 },
                 {
-                  "at": "4:05",
-                  "do": "~25 g carb + sodium; never below half-tank — a bonk costs 30+ min."
+                  "at": "4:00",
+                  "do": "~25 g carb + fluid; hold the protocol to the end — the last hour is where race-day fueling usually falls apart."
                 },
                 {
-                  "at": "4:30",
-                  "do": "~25 g carb + sips."
-                },
-                {
-                  "at": "4:45",
-                  "do": "FINAL THIRD begins (~mi 33+): take caffeine ~270 mg (3 mg/kg) now — saved for the climbs back toward town. (Rehearsed on an August long ride, not debuted here... but for Leadville this is the plan.)"
-                },
-                {
-                  "at": "5:00",
-                  "do": "~25 g carb + sodium; now race — let climbing HR drift 150–155 if legs are there."
-                },
-                {
-                  "at": "5:30",
-                  "do": "~25 g carb + fluid; keep eating even as effort rises."
-                },
-                {
-                  "at": "6:00",
-                  "do": "~20 g carb + sips; empty the tank on the final descent — negative split."
-                },
-                {
-                  "at": "6:30+",
-                  "do": "Final gel if still out there; finish fluids. Hold 70 g/hr until the line."
+                  "at": "4:30+",
+                  "do": "Final gel if still out there. Immediately post: 30 g whey + rice + banana, then a full meal."
                 }
               ]
             }
           ],
           "nutrition": {
             "day_type": "hard",
-            "kcal": "~4,000+ (race day — eat to perform + replace)",
-            "carb_g": "~270 g breakfast + ~70 g/hr in-race + post-race replenish",
+            "kcal": "~4,000 (event-day rehearsal — eat to perform + replace)",
+            "carb_g": "~250 g breakfast + ~70 g/hr on-bike + post-ride replenish",
             "protein_g": "155–160",
-            "fat_g": "low pre/in-race, normal post",
-            "notes": "RACE DAY. 270 g carb breakfast 2–4 h pre. In-race: 70 g/hr from min 15, 500–600 mg sodium/hr, 16–20 oz fluid/hr, caffeine ~270 mg final third. Post-race: immediate carb + protein (rice + whey), then a full meal. No deficit — fuel to perform and recover.",
+            "fat_g": "low pre/in-ride, normal post",
+            "notes": "EVENT-DAY REHEARSAL. ~250 g carb breakfast 2–3 h pre. On-bike: 70 g/hr from min 15, 500–600 mg sodium/hr, 16–20 oz fluid/hr. Post: immediate carb + protein (rice + whey), then a full meal. No deficit — fuel to perform and recover. Everything you eat today is data for Sep 5.",
             "sample_meals": [
-              "Pre (2–4 h): oatmeal + banana + honey + white toast/jam + sports drink (270 g carb, low fiber)",
-              "In-race: pre-counted gels/mix to 70 g/hr + electrolytes",
+              "Pre (2–3 h): oatmeal + banana + honey + white toast/jam + sports drink (~250 g carb, low fiber)",
+              "On-bike: pre-counted gels/mix to 70 g/hr + electrolytes",
               "Immediately post: 30 g whey + rice + banana",
               "Recovery meal: burger + fries + a big drink (replace glycogen & sodium)",
-              "Evening: full balanced dinner + plenty of fluids (still no alcohol if any soreness/altitude lingers)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "wk-2026-07-13",
-      "label": "Week of Jul 13 — Post-Leadville DEEP recovery",
-      "phase": "Phase R: Leadville + recover (extended recovery)",
-      "location": "Leadville → home (Memphis)",
-      "hours": "3–4",
-      "focus": "You just raced 50 mi at 12k ft — this is real, programmed recovery, not a feel-it-out week. Jul 13 ≤30 min only; Jul 14–15 full rest or ≤45 min spin HR ≤120; Jul 16 & 18 two easy 60–75 min Z2 (HR ≤138); Jul 17 one light strength session at 30% load. NO quality, NO threshold, NO leg-speed all week — none of it. KPI gate (overrides everything): do not program any quality until morning RHR is back under 66 AND sleep is ≥7 h. Sleep is the assignment; rides are demoted to optional. Eat to recover early-week, ease back toward an easy-day deficit only once you feel restored.",
-      "days": [
-        {
-          "id": "2026-07-13",
-          "date": "2026-07-13",
-          "weekday": "Mon",
-          "location": "Leadville",
-          "headline": "Day-after-race — walk or tiny spin",
-          "sessions": [
-            {
-              "id": "2026-07-13-spin",
-              "type": "bike",
-              "title": "≤30 min walk or easy spin (recovery flush)",
-              "targets": "HR ≤120 · noodle pace · flat only",
-              "detail": [
-                "You raced 50 mi at altitude yesterday. The ONLY goal today is gentle blood flow and to feel a little less wrecked — not training.",
-                "A 20–30 min walk counts and is preferred if legs are trashed; a flat easy spin is the max.",
-                "Absolutely no climbs, no pushing, no testing the legs. If it feels like effort, stop.",
-                "Still at altitude: keep hydrating hard (altitude diuresis), no alcohol. Big focus on a long sleep tonight."
-              ]
-            }
-          ],
-          "nutrition": {
-            "day_type": "easy",
-            "kcal": "~3,000",
-            "carb_g": "~400",
-            "protein_g": "155–160",
-            "fat_g": "~85",
-            "notes": "Recovery day, NOT a deficit day — refill glycogen and rebuild after the race effort. This is one of the days you fuel fully even though there's barely any training. Protein in 4–5 feedings; carbs spread through the day.",
-            "sample_meals": [
-              "Breakfast: oats + banana + berries + 2 eggs + coffee",
-              "Mid-AM: Greek yogurt + honey + granola",
-              "Lunch: chicken + rice bowl + veg",
-              "Snack: chocolate milk + fruit (replenish)",
-              "Dinner: salmon, sweet potato, big salad"
+              "Evening: full balanced dinner + plenty of fluids"
             ]
           }
         },
@@ -2489,19 +2468,20 @@
           "id": "2026-07-14",
           "date": "2026-07-14",
           "weekday": "Tue",
-          "location": "Leadville → travel home",
-          "headline": "Full rest (or ≤45 min very easy spin)",
+          "location": "Park City (→ home if traveling)",
+          "headline": "Day-after — full rest (or ≤30 min noodle spin)",
           "sessions": [
             {
               "id": "2026-07-14-rest",
               "type": "rest",
               "title": "Full rest — default to nothing",
-              "targets": "Sleep, hydrate, eat to recover. Travel day.",
+              "targets": "Sleep, hydrate, eat to recover.",
               "detail": [
-                "Default is a complete day off the bike. If you genuinely feel restless, an OPTIONAL ≤45 min very easy spin at HR ≤120 is the absolute ceiling — but rest is the better choice this close to the race.",
-                "Travel home from altitude today; front-load hydration around the flight.",
-                "No strength, no intervals, no testing legs. Two days post-50-miler your body is still repairing.",
-                "Sleep is the #1 KPI this week — protect a full 7+ h tonight."
+                "Yesterday was a 4–5 h big-vert day at altitude off a taper — a real dent even without a number plate. Default is a complete day off the bike.",
+                "If you genuinely feel restless, an OPTIONAL ≤30 min noodle spin at HR ≤120, flat only, is the absolute ceiling — rest is the better choice.",
+                "If today's a travel day, front-load hydration.",
+                "No strength, no intervals, no testing legs. Sleep is the #1 KPI this week — protect a full 7+ h tonight.",
+                "Tonight or tomorrow: write up the recon's nutrition + pacing findings while they're fresh — that run sheet IS the deliverable of yesterday's ride."
               ]
             }
           ],
