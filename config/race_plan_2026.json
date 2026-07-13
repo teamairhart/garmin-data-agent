@@ -2380,17 +2380,19 @@
             {
               "id": "2026-07-13-ride",
               "type": "bike",
-              "title": "P2P Recon — first 2/3 of the Point 2 Point course (long, big vert)",
+              "title": "P2P Recon — first 2/3 in two legs (start→Deer Valley, DV→PCMR Guest Services)",
               "targets": "PACE BY HR: ≤145 between climbs, climbs 140–148, HARD CEILING 150 · Fuel 70 g/hr from min 15 · 500–600 mg sodium/hr · 16–20 oz fluid/hr",
-              "duration": "~5:30–7:00 (ride the course, not the clock)",
+              "duration": "~7:00 elapsed (leg 1 ~4:00–4:30 to Deer Valley · car refill · leg 2 ~2:30–3:00 to PCMR)",
               "detail": [
-                "This is the Leadville replacement — same engine, better specificity: the first 2/3 of the actual course you race Sep 5. Two objectives, in order: NUTRITION TIMING and PACING. Finishing fast is not on the list.",
-                "NUTRITION (objective #1): run the full race protocol — first carbs at minute 15 (set a timer), ~70 g carb/hr, 500–600 mg sodium/hr, 16–20 oz fluid/hr. Note what the gut does under sustained climb effort at altitude; tonight, write the Sep 5 run sheet from what you learn today.",
-                "PACING (objective #2): the sub-10 P2P is won in the first half. HR ≤145 between climbs no matter how good the legs feel; climbs 140–148, HARD CEILING 150. The 2025 race was lost to a first-half over-pace — today is the antidote rehearsal.",
-                "Lap the leg boundaries and major climbs (lap button) so the analysis can score pacing leg-by-leg against Sep 5 splits.",
-                "7,000–9,000 ft: watts read low — pace by HR/RPE and let the watt number be whatever it is.",
-                "Riding with partners: agree before rolling that HR discipline outranks group pace — ride your own climbs, regroup at leg boundaries.",
-                "OPTIONAL late-ride caffeine rehearsal (~200 mg around hour 3): better to test it today than debut it Sep 5. Skip if the gut is already working hard."
+                "Two legs, car staged at Deer Valley for the refill. Last year's race hit the PCMR point at ~7 h — plan fuel for 7–7.5 h of riding.",
+                "LEG 1 loadout: 2×1L bottles @ 4 scoops CarboRocket 333 each (112 g carb/bottle) + 2L bladder @ 2 scoops Re-Lyte. Bottle 1 done by 2:00, bottle 2 by 4:00. Gels (Maurten 160) at ~1:45 and ~3:15 — they bridge the bottle gap on the long leg (~72 g/hr total).",
+                "DEER VALLEY CAR (10–15 min max, rehearse it like an aid station): swap in 2 PRE-MIXED cold bottles from a cooler (mix tonight), refill bladder 2L + 2 scoops Re-Lyte (2.5–3 scoops if hot — leg 2 is the hot leg), restock 2 gels. Optional banana/rice bites eaten at the car.",
+                "LEG 2: fresh bottles alone ≈ 75–80 g/hr for 2.5–3 h — no gels unless it stretches past 3 h. Bladder ad lib; sodium scales with heat toward 1,000 mg/hr.",
+                "Caffeine: the 333 bag is the caffeinated version (50 mg/serving) — both legs ≈ 270 mg total ≈ 3 mg/kg = bottom of the Woodruff race band. This IS the caffeine rehearsal; no caffeinated gels on top.",
+                "PACING (objective #2): HR ≤145 between climbs, 140–148 on climbs, HARD CEILING 150 — leg 1 is where the 2025 race was lost; ride it like the recon it is. Steep-ramp spikes are terrain — settle back under 145 immediately after.",
+                "Lap the leg boundaries and major climbs. 7,000–9,000 ft: watts read low — pace by HR/RPE.",
+                "Partners: agree before rolling that HR discipline outranks group pace; regroup at leg boundaries.",
+                "Tonight, write the Sep 5 run sheet from what today teaches — nutrition timing, gut response, pacing splits. That run sheet is the deliverable."
               ],
               "fueling": [
                 {
