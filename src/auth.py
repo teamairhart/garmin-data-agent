@@ -125,7 +125,7 @@ def login():
             session['user_email'] = user['email']
             session['user_name'] = user['name']
             flash(f'Welcome back, {user["name"]}!', 'success')
-            return redirect(session.pop('login_next', None) or url_for('index'))
+            return redirect(session.pop('login_next', None) or '/board')
         else:
             flash('Invalid email or password', 'error')
 
@@ -156,7 +156,7 @@ def signup():
                 session['user_email'] = email
                 session['user_name'] = name
                 flash(f'Welcome to Garmin Data Agent, {name}!', 'success')
-                return redirect(session.pop('login_next', None) or url_for('index'))
+                return redirect(session.pop('login_next', None) or '/board')
             else:
                 flash('Email already registered', 'error')
 
