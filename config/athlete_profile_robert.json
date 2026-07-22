@@ -1,0 +1,45 @@
+{
+  "athlete": {
+    "name": "Robert Raff",
+    "role": "training partner",
+    "age": 60,
+    "weight_kg": 95
+  },
+  "devices": {
+    "wearable": "Garmin Fenix 8 (product 4533)",
+    "power_meter": "Favero Assioma pedals (first rides 2026-07-19/20; same model as Jonathan's)",
+    "notes": [
+      "Rides before 2026-07-19 are HR-only.",
+      "Fenix-computed TSS/IF use the watch's configured FTP (~260 W as of Jul 2026) — WRONG for Robert; recompute against 190 W or ignore in favor of HR + kJ."
+    ]
+  },
+  "lab_profile": {
+    "source": "Dr. Max Testa",
+    "test_date": "2025-12-27",
+    "authoritative": true,
+    "anchors": {
+      "lt1": { "power_w": 100, "heart_rate_bpm": 118 },
+      "two_mmol": { "power_w": 130, "heart_rate_bpm": 132 },
+      "lt2_ftp": { "power_w": 190, "heart_rate_bpm": 145 },
+      "at_210w": { "heart_rate_bpm": 153 }
+    },
+    "hr_zones": {
+      "P1": "<118",
+      "P2": "119-133",
+      "P3": "134-138",
+      "P4": "139-145",
+      "P5": ">145"
+    },
+    "notes": [
+      "W/kg at LT2: 2.0 — power-to-weight is the limiter, not durability.",
+      "Compressed HR range (118-145 = 27 bpm): tempo is a 4-bpm window; power now available for pacing.",
+      "Lab FTP 190 (Dec 2025) may be stale-low vs Jul 2026 fitness — first Assioma rides show NP near 190 at P2 heart rates. Re-baseline with a field test or accumulate matched-HR power data before trusting TSS."
+    ]
+  },
+  "analysis_rules": [
+    "Analyze Robert's rides ONLY against this profile — never Jonathan's anchors, Training Log, or ride_metrics.csv trend.",
+    "Data folder: Partner_Garmin. Vault home: 'Robert Raff - Athlete Profile.md' (+ Ride_Analyses notes labeled '(Robert)').",
+    "Primary read is HR-in-his-zones + total work (kJ); treat MTB NP with caution (surging at 95 kg inflates it, VI 1.3+).",
+    "Wrist-vs-strap: verify HR spikes before trusting max HR (68-bpm jump artifact seen 2026-07-19)."
+  ]
+}

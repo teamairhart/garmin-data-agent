@@ -10,6 +10,8 @@ from src.auth import auth_bp, init_db
 from src.dashboard_data import build_dashboard_context
 from src.training_log import create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions, upsert_workout_log
 from src.plan_tracker import init_plan_tables, load_plan, get_completions, set_completion, progress_summary
+from src.board import (init_board_tables, get_calendar, set_calendar_day, list_reports,
+                       upsert_report, record_upload, list_uploads, get_upload, upload_dir)
 from demo_data import generate_demo_ride_data
 from src.fit_parser import load_single_fit_activity
 
@@ -37,6 +39,7 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 init_db()
 init_training_tables()
 init_plan_tables()
+init_board_tables()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -129,6 +132,100 @@ def plan_toggle():
     plan_data = load_plan()
     summary = progress_summary(plan_data, get_completions(int(session['user_id'])))
     return jsonify({'ok': True, 'summary': summary})
+
+
+# ---------------- P2P accountability board ----------------
+
+from datetime import datetime as _dt
+
+
+def _board_login_required_json():
+    if not session.get('user_id'):
+        return jsonify({'ok': False, 'error': 'login_required'}), 401
+    return None
+
+
+@app.route('/board')
+def board():
+    """Shared Airhart × Raff accountability board."""
+    if not session.get('user_id'):
+        return redirect(url_for('auth.login', next='/board'))
+    reports = list_reports()
+    for r in reports:
+        r['label'] = _dt.strptime(r['day'], '%Y-%m-%d').strftime('%a %b %d').replace(' 0', ' ')
+    return render_template('board.html', reports=reports, cal_state=get_calendar())
+
+
+@app.route('/board/calendar', methods=['GET', 'POST'])
+def board_calendar():
+    err = _board_login_required_json()
+    if err:
+        return err
+    if request.method == 'GET':
+        return jsonify({'ok': True, 'calendar': get_calendar()})
+    payload = request.get_json(silent=True) or {}
+    try:
+        result = set_calendar_day(
+            payload.get('athlete', ''), payload.get('day', ''),
+            loc=payload.get('loc'), ex=payload.get('ex'),
+            user_id=int(session['user_id']),
+        )
+    except ValueError as exc:
+        return jsonify({'ok': False, 'error': str(exc)}), 400
+    return jsonify({'ok': True, 'day': result})
+
+
+@app.route('/board/upload', methods=['POST'])
+def board_upload():
+    err = _board_login_required_json()
+    if err:
+        return err
+    f = request.files.get('file')
+    if f is None or not f.filename:
+        return jsonify({'ok': False, 'error': 'no file'}), 400
+    if not allowed_file(f.filename):
+        return jsonify({'ok': False, 'error': f.filename + ': .zip or .fit only'}), 400
+    safe = secure_filename(f.filename)
+    dest = upload_dir() / ('%s_%s' % (_dt.now().strftime('%Y%m%d%H%M%S'), safe))
+    f.save(str(dest))
+    uid = record_upload(safe, str(dest), dest.stat().st_size, int(session['user_id']))
+    return jsonify({'ok': True, 'id': uid, 'filename': safe, 'size': dest.stat().st_size})
+
+
+@app.route('/board/uploads')
+def board_uploads():
+    err = _board_login_required_json()
+    if err:
+        return err
+    return jsonify({'ok': True, 'uploads': list_uploads()})
+
+
+@app.route('/board/uploads/<int:uid>/download')
+def board_upload_download(uid):
+    err = _board_login_required_json()
+    if err:
+        return err
+    rec = get_upload(uid)
+    if not rec or not os.path.exists(rec['stored_path']):
+        return jsonify({'ok': False, 'error': 'not found'}), 404
+    from flask import send_file
+    return send_file(rec['stored_path'], as_attachment=True, download_name=rec['filename'])
+
+
+@app.route('/board/reports', methods=['POST'])
+def board_reports_post():
+    """Publish/update a coached ride report (used by the Mac-side pipeline)."""
+    err = _board_login_required_json()
+    if err:
+        return err
+    payload = request.get_json(silent=True) or {}
+    try:
+        upsert_report(payload.get('athlete', ''), payload.get('day', ''),
+                      payload.get('title', ''), payload.get('subline', ''),
+                      payload.get('body_html', ''))
+    except ValueError as exc:
+        return jsonify({'ok': False, 'error': str(exc)}), 400
+    return jsonify({'ok': True})
 
 
 @app.route('/demo')

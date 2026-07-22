@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2P Mission Control — Airhart / Raff</title>
+<style>
+  :root{
+    --bg:#111110; --surface:#1a1a19; --panel:#222220; --line:#33332f;
+    --ink:#ffffff; --ink2:#c3c2b7; --ink3:#8a897f;
+    --ja:#3987e5; --rr:#d95926; --ok:#199e70; --warn:#c98500;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.5 "SF Mono",ui-monospace,Menlo,Consolas,monospace;padding:24px}
+  .wrap{max-width:1180px;margin:0 auto}
+  header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--line);padding-bottom:14px;flex-wrap:wrap;gap:8px}
+  h1{font-size:20px;letter-spacing:2px;text-transform:uppercase}
+  .count{font-size:34px;color:var(--warn);font-weight:700}
+  .count small{font-size:13px;color:var(--ink3);letter-spacing:1px}
+  h2{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin:28px 0 12px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .athlete{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .athlete .name{padding:10px 16px;font-size:16px;letter-spacing:1px;font-weight:700}
+  .ja .name{background:linear-gradient(90deg,rgba(57,135,229,.25),transparent);color:var(--ja);border-left:4px solid var(--ja)}
+  .rr .name{background:linear-gradient(90deg,rgba(217,89,38,.25),transparent);color:var(--rr);border-left:4px solid var(--rr)}
+  .mode{padding:12px 16px;border-top:1px solid var(--line)}
+  .mode h3{font-size:11px;letter-spacing:2px;color:var(--ink2);text-transform:uppercase;margin-bottom:10px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .tile{background:var(--panel);border-radius:4px;padding:10px}
+  .tile .v{font-size:20px;font-weight:700}
+  .tile .l{font-size:10px;letter-spacing:1px;color:var(--ink3);text-transform:uppercase;margin-top:2px}
+  .tile .n{font-size:10.5px;color:var(--ink2);margin-top:6px;line-height:1.35}
+  .anchor{padding:8px 16px;font-size:11px;color:var(--ink3);border-top:1px dashed var(--line)}
+  .fuel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 18px;display:flex;gap:26px;flex-wrap:wrap}
+  .fuel div{min-width:140px}
+  .fuel .v{font-size:19px;font-weight:700;color:var(--ok)}
+  .fuel .l{font-size:10px;letter-spacing:1px;color:var(--ink3);text-transform:uppercase}
+  .fuel .n{font-size:11px;color:var(--ink2);margin-top:4px}
+  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:12.5px}
+  th{background:var(--panel);color:var(--ink3);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left}
+  td{padding:10px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+  td.wk{white-space:nowrap;color:var(--ink);font-weight:700}
+  td .tag{display:inline-block;font-size:9.5px;letter-spacing:1px;padding:1px 7px;border-radius:3px;margin-bottom:5px;text-transform:uppercase}
+  .t-build{background:rgba(57,135,229,.18);color:var(--ja)} .t-down{background:rgba(25,158,112,.18);color:var(--ok)}
+  .t-peak{background:rgba(201,133,0,.2);color:var(--warn)} .t-race{background:rgba(230,103,103,.2);color:#e66767}
+  td.jaCell{border-left:3px solid var(--ja)} td.rrCell{border-left:3px solid var(--rr)}
+  .foot{margin-top:22px;font-size:11px;color:var(--ink3)}
+  .pact{color:var(--warn)}
+</style></head><body><div class="wrap">
+
+<header>
+  <div><h1>⛰ P2P Mission Control</h1><div style="color:var(--ink3);font-size:12px">Airhart / Raff · Park City Point 2 Point · Sat Sep 5 2026</div></div>
+  <div class="count"><span id="days">—</span> <small>DAYS TO RACE</small></div>
+</header>
+
+<h2>Honesty Board — the numbers we hold each other to</h2>
+<div class="grid">
+  <div class="athlete ja">
+    <div class="name">JONATHAN</div>
+    <div class="mode"><h3>Flat Z2 / engine day (Memphis)</h3>
+      <div class="tiles">
+        <div class="tile"><div class="v">≤138</div><div class="l">HR cap</div><div class="n">sweet spot 128–135 · talk-test all ride</div></div>
+        <div class="tile"><div class="v">130–170<span style="font-size:12px">W</span></div><div class="l">Power</div><div class="n">heat rule: HR wins, let watts fall</div></div>
+        <div class="tile"><div class="v">85–95</div><div class="l">Cadence</div><div class="n">no coasting on the flats</div></div>
+      </div></div>
+    <div class="mode"><h3>Big climbing day (Park City)</h3>
+      <div class="tiles">
+        <div class="tile"><div class="v">140–148</div><div class="l">Climb HR</div><div class="n">ceiling 150 · ≤145 between climbs</div></div>
+        <div class="tile"><div class="v">150–170<span style="font-size:12px">W</span></div><div class="l">Climb power</div><div class="n">altitude: pace by HR, watts read low</div></div>
+        <div class="tile"><div class="v">85–90</div><div class="l">Cadence</div><div class="n">gear-pinned on steeps (32T) — that's fine</div></div>
+      </div></div>
+    <div class="anchor">Anchors (Testa 3/18): LT1 138 bpm / 190 W · OBLA 156 / 240 · quality only when prescribed: 2×12 @ HR 150–158</div>
+  </div>
+
+  <div class="athlete rr">
+    <div class="name">ROBERT</div>
+    <div class="mode"><h3>Flat Z2 / base day</h3>
+      <div class="tiles">
+        <div class="tile"><div class="v">119–128</div><div class="l">HR band</div><div class="n">bulk &lt;125 — raising LT1 is the mission</div></div>
+        <div class="tile"><div class="v">110–140<span style="font-size:12px">W</span></div><div class="l">Power</div><div class="n">provisional — FTP re-test pending</div></div>
+        <div class="tile"><div class="v">75–80</div><div class="l">Cadence</div><div class="n">lift it here, not on the steeps</div></div>
+      </div></div>
+    <div class="mode"><h3>Big climbing day (Park City)</h3>
+      <div class="tiles">
+        <div class="tile"><div class="v">≤135</div><div class="l">Climb HR</div><div class="n">ceiling 140 · never chase anyone uphill</div></div>
+        <div class="tile"><div class="v">165–180<span style="font-size:12px">W</span></div><div class="l">Climb power</div><div class="n">proven: 58 min @ 180 W on Pinecone</div></div>
+        <div class="tile"><div class="v">&lt;5/hr</div><div class="l">Punches</div><div class="n">surges ≥247 W are matches — don't burn them</div></div>
+      </div></div>
+    <div class="anchor">Anchors (Testa 12/27): LT1 118 / 100 W · lab LT2 145 / 190 W — <span style="color:var(--warn)">STALE: real FTP ~210–220, field test week 1</span></div>
+  </div>
+</div>
+
+<h2>Shared fueling protocol — Woodruff (both athletes, every ride ≥90 min)</h2>
+<div class="fuel">
+  <div><div class="v">60–80g</div><div class="l">Carb / hr</div><div class="n">start min 15 · 20-min timer · JA target 70</div></div>
+  <div><div class="v">600–1000<span style="font-size:12px">mg</span></div><div class="l">Sodium / hr</div><div class="n">high end in heat</div></div>
+  <div><div class="v">20–24<span style="font-size:12px">oz</span></div><div class="l">Fluid / hr</div><div class="n">front-load at altitude</div></div>
+  <div><div class="v">0</div><div class="l">Deficit on long days</div><div class="n">cut only on easy/rest days · protein every meal · carb-up the night before long rides</div></div>
+</div>
+
+<h2>The 7 weeks — Jul 21 → race day</h2>
+<table>
+  <tr><th style="width:110px">Week</th><th>Jonathan</th><th>Robert</th></tr>
+  <tr><td class="wk">Jul 20–26<br><span class="tag t-down">RE-ENTRY</span></td>
+    <td class="jaCell">Z2 ONLY, no threshold. Rebuild long to 4:00 Sat (PC, by HR). 2 lifts (Wed full). Gate: RHR &lt;66 + sleep ≥7h.</td>
+    <td class="rrCell">Recover from PC block. Base &lt;128, long 3.5–4h &lt;133. <b>FTP field test if fresh</b> — else next week. Fix Fenix FTP setting.</td></tr>
+  <tr><td class="wk">Jul 27–Aug 2<br><span class="tag t-build">BUILD 1</span></td>
+    <td class="jaCell">PC big vert #1: 5.5–6h / ~8k ft, climbs HR ≤145. One threshold touch (2×12 @ 150–158) only if fresh. Strength 1×.</td>
+    <td class="rrCell"><b>FTP re-test.</b> Tempo 1× (3–4×8–10 min @ 138–144). Long 4.5–5h &lt;133, fuel on timer. Base fills the week.</td></tr>
+  <tr><td class="wk">Aug 3–9<br><span class="tag t-build">BUILD 2</span></td>
+    <td class="jaCell">PC big-vert; cool-Utah long #1. Climbing durability at race band, fuel rehearsal every long ride.</td>
+    <td class="rrCell">Long climbing ride 5–6h aerobic (his superpower — lean in). Punch-budget drill on climbs: &lt;5/hr. Weight trend check.</td></tr>
+  <tr><td class="wk">Aug 10–16<br><span class="tag t-down">DOWN</span></td>
+    <td class="jaCell">Down week — Memphis engine, reduced volume, all easy. Bank recovery for the peak.</td>
+    <td class="rrCell">Recovery week (the every-3rd, age-60 gate). Easy spins only. Sleep is the workout.</td></tr>
+  <tr><td class="wk">Aug 17–23<br><span class="tag t-peak">PEAK</span></td>
+    <td class="jaCell">Dress rehearsal + cool-Utah long #2 (the big one). Full race protocol: pacing bands, 70 g/hr, aid-swap rehearsal.</td>
+    <td class="rrCell"><b>Joint dress rehearsal.</b> Race band 165–180 W on every climb, fuel 60–80 g/hr on the timer, HR ceiling honored all day.</td></tr>
+  <tr><td class="wk">Aug 24–30<br><span class="tag t-down">TAPER</span></td>
+    <td class="jaCell">Cut load ~40%. Short openers, no new fitness available — only freshness. Last lift ~7 days out.</td>
+    <td class="rrCell">Taper: volume down, keep 2–3 short climb touches. Protect sleep; no weight-cutting this week.</td></tr>
+  <tr><td class="wk">Aug 31–Sep 6<br><span class="tag t-race">RACE</span></td>
+    <td class="jaCell">Openers Tue/Thu · carb-load Thu–Fri (~700g Fri) · <b>RACE Sat Sep 5</b>: first-half climbs 165–180 W, HR ≤145, fuel from min 15.</td>
+    <td class="rrCell">Openers light · same carb-load · <b>RACE</b>: climbs ≤135 (ceiling 140), 165–180 W, &lt;5 punches/hr, ride his own race — finish strong.</td></tr>
+</table>
+
+<div class="foot"><span class="pact">■ THE PACT:</span> easy days truly easy · fuel from minute 15, every ride · neither of us chases the other uphill · call it out when the other's screen shows a busted cap.</div>
+</div>
+<script>document.getElementById('days').textContent=Math.max(0,Math.ceil((new Date('2026-09-05T07:00:00-06:00')-new Date())/86400000));</script>
+</body></html>

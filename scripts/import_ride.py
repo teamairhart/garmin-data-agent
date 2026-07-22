@@ -55,13 +55,24 @@ SEMICIRCLE_TO_DEGREES = 180.0 / 2**31
 M_TO_MI = 0.000621371
 M_TO_FT = 3.28084
 
-# Testa anchors
-LT1_HR = 138
-OBLA_HR = 156
-SUPRA_HR = 165  # practical "over threshold" line used in the Training Log
+# Testa anchors, PER ATHLETE. The four output bands keep the same keys for both
+# athletes but the edges differ:
+#   below_lt1 (<= lt1) | aero_tempo (lt1..obla) | threshold (obla..supra) | supra (> supra)
+# jonathan (tested 2026-03-18): LT1 138 / OBLA 156 / practical over-threshold line 165.
+# partner = Robert Raff (tested 2025-12-27): LT1 118 bpm/100 W; his P2+P3 span 119-138;
+#   threshold band = his P4 139-145 (LT2 145 bpm/190 W); supra = his P5 >145.
+ANCHORS = {
+    "jonathan": {"lt1_hr": 138, "obla_hr": 156, "supra_hr": 165, "ftp_w": 240},
+    "partner": {"lt1_hr": 118, "obla_hr": 138, "supra_hr": 145, "ftp_w": 190},
+}
+LT1_HR = ANCHORS["jonathan"]["lt1_hr"]
+OBLA_HR = ANCHORS["jonathan"]["obla_hr"]
+SUPRA_HR = ANCHORS["jonathan"]["supra_hr"]
 
 # Garmin product id for Jonathan's head unit (Edge 840). Routes to Garmin_Data.
 EDGE_840_PRODUCT = 4062
+# Robert's Fenix 8 (first seen 2026-07-19, with Favero Assioma pedals). Routes to Partner_Garmin.
+PARTNER_FENIX_PRODUCT = 4533
 
 # Coarse start-location boxes -> base location label. Anything outside these is
 # flagged for the skill to confirm/label (e.g. travel rides, new trailheads).
@@ -263,6 +274,18 @@ def parse_ride(fit_path: Path) -> dict[str, Any]:
         d["_dt"] = dt
         records.append(d)
 
+    # Owner (from recording device) decides which athlete's anchors band the HR.
+    product = file_id.get("garmin_product")
+    if product is None:
+        product = file_id.get("product")
+    if product == EDGE_840_PRODUCT:
+        owner_guess = "jonathan"
+    elif product == PARTNER_FENIX_PRODUCT:
+        owner_guess = "partner"
+    else:
+        owner_guess = "unknown"
+    anchors = ANCHORS["partner" if owner_guess == "partner" else "jonathan"]
+
     hr_pairs = [(float(r["heart_rate"]), r["_dt"]) for r in records
                 if r.get("heart_rate") is not None and r["_dt"] > 0]
     total_w = sum(w for _, w in hr_pairs)
@@ -275,10 +298,10 @@ def parse_ride(fit_path: Path) -> dict[str, Any]:
         return round(100.0 * s / total_w, 1)
 
     hr_zones = {
-        "below_lt1_pct": band_pct(None, LT1_HR),       # <=138
-        "aero_tempo_pct": band_pct(LT1_HR, OBLA_HR),    # 139-156
-        "threshold_pct": band_pct(OBLA_HR, SUPRA_HR),   # 157-165
-        "supra_pct": band_pct(SUPRA_HR, None),          # >165
+        "below_lt1_pct": band_pct(None, anchors["lt1_hr"]),
+        "aero_tempo_pct": band_pct(anchors["lt1_hr"], anchors["obla_hr"]),
+        "threshold_pct": band_pct(anchors["obla_hr"], anchors["supra_hr"]),
+        "supra_pct": band_pct(anchors["supra_hr"], None),
     } if hr_pairs else None
 
     # HR drift: split moving time in half, compare weighted-avg HR each half.
@@ -338,12 +361,6 @@ def parse_ride(fit_path: Path) -> dict[str, Any]:
             if e1 and e2:
                 decoupling_pct = round((e2 - e1) / e1 * 100.0, 1)
 
-    # ---- owner guess from head unit ----
-    product = file_id.get("garmin_product")
-    if product is None:
-        product = file_id.get("product")
-    owner_guess = "jonathan" if product == EDGE_840_PRODUCT else "unknown"
-
     dist_round = round(dist_mi)
     location_label = region
     type_final = type_label
@@ -370,6 +387,7 @@ def parse_ride(fit_path: Path) -> dict[str, Any]:
     return {
         "fit_name_original": fit_path.name,
         "owner_guess": owner_guess,
+        "anchors_athlete": "partner" if owner_guess == "partner" else "jonathan",
         "device_product": product,
         "date_local": date_local,
         "utc_start": utc_start.isoformat() if utc_start else None,

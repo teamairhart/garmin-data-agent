@@ -1,0 +1,99 @@
+{
+  "reports": [
+    {
+      "athlete": "JA",
+      "day": "2026-07-21",
+      "title": "Memphis Road 30 mi \u2014 the body called the fatigue the schedule created",
+      "subline": "2:15 \u00b7 avg 100 W / NP 128 \u00b7 avg HR 141, max 182 \u00b7 86 \u00b0F \u00b7 verdict: off-profile (ticked with note)",
+      "body_file": "JA-2026-07-21.html"
+    },
+    {
+      "athlete": "RR",
+      "day": "2026-07-20",
+      "title": "Armstrong/Pinecone 23 mi \u2014 managed the engine beautifully on a bad-legs day",
+      "subline": "3.3 h \u00b7 3,448 ft \u00b7 avg HR 122, 0% over threshold \u00b7 NP 180 \u00b7 verdict: off-profile (big day on a rest day)",
+      "body_file": "RR-2026-07-20.html"
+    },
+    {
+      "athlete": "RR",
+      "day": "2026-07-19",
+      "title": "PC MTB 20 mi \u2014 first power ride: the lab FTP is stale",
+      "subline": "2.6 h \u00b7 2,182 ft \u00b7 avg HR 126 (P2), zero drift \u00b7 NP 185 \u00b7 verdict: on-profile",
+      "body_file": "RR-2026-07-19.html"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-20",
+      "title": "Peloton 34 min \u2014 the heat experiment: +21 bpm at constant power",
+      "subline": "avg 138 W / NP 167 \u00b7 avg HR 147 \u00b7 82 \u00b0F still air \u00b7 verdict: off-profile (deliberate experiment, unticked)",
+      "body_file": "JA-2026-07-20.html"
+    }
+  ],
+  "calendar": [
+    {
+      "athlete": "JA",
+      "day": "2026-07-19",
+      "loc": "MEM",
+      "ex": "off"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-20",
+      "loc": "MEM",
+      "ex": "off"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-21",
+      "loc": "MEM",
+      "ex": "off"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-22",
+      "loc": "MEM"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-23",
+      "loc": "PC"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-24",
+      "loc": "PC"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-25",
+      "loc": "PC"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-26",
+      "loc": "PC"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-27",
+      "loc": "PC"
+    },
+    {
+      "athlete": "JA",
+      "day": "2026-07-28",
+      "loc": "PC"
+    },
+    {
+      "athlete": "RR",
+      "day": "2026-07-19",
+      "loc": "PC",
+      "ex": "plan"
+    },
+    {
+      "athlete": "RR",
+      "day": "2026-07-20",
+      "loc": "PC",
+      "ex": "off"
+    }
+  ]
+}

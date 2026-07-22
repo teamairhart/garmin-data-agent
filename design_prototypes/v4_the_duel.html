@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIRHART × RAFF — Road to P2P</title>
+<style>
+  :root{--bg:#0e0e0d;--ink:#fff;--ink2:#c3c2b7;--ink3:#7c7b72;
+        --ja:#3987e5;--ja-deep:#123c6e;--rr:#d95926;--rr-deep:#6e2a10;--gold:#c98500;--line:#2c2c29}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.45 "Avenir Next Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif}
+  .hero{text-align:center;padding:40px 16px 26px;background:
+    linear-gradient(105deg,rgba(57,135,229,.28) 0 49.7%,transparent 49.7% 50.3%,rgba(217,89,38,.28) 50.3% 100%)}
+  .hero .vs{font-size:clamp(30px,6vw,54px);font-weight:800;letter-spacing:3px;text-transform:uppercase}
+  .hero .vs .j{color:var(--ja)} .hero .vs .r{color:var(--rr)} .hero .vs .x{color:var(--gold);font-style:italic}
+  .hero .sub{letter-spacing:5px;font-size:13px;color:var(--ink2);text-transform:uppercase;margin-top:6px}
+  .count{font-size:clamp(54px,10vw,96px);font-weight:800;color:var(--gold);line-height:1;margin-top:14px}
+  .count small{display:block;font-size:13px;letter-spacing:6px;color:var(--ink3)}
+  .split{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto}
+  @media(max-width:760px){.split{grid-template-columns:1fr}}
+  .side{padding:28px 26px}
+  .sideJA{border-right:1px solid var(--line)}
+  @media(max-width:760px){.sideJA{border-right:none;border-bottom:1px solid var(--line)}}
+  .side h2{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+  .sideJA h2{color:var(--ja)} .sideRR h2{color:var(--rr)}
+  .side .anch{font-size:12px;color:var(--ink3);letter-spacing:1px;margin:2px 0 18px}
+  .day{margin-bottom:20px}
+  .day .lbl{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--line);padding-bottom:4px;margin-bottom:10px}
+  .stats{display:flex;gap:8px;flex-wrap:wrap}
+  .st{flex:1;min-width:96px;border-radius:8px;padding:10px 12px;text-align:center}
+  .sideJA .st{background:linear-gradient(180deg,var(--ja-deep),#0d2340)}
+  .sideRR .st{background:linear-gradient(180deg,var(--rr-deep),#3a1608)}
+  .st .v{font-size:26px;font-weight:800}
+  .st .u{font-size:10px;letter-spacing:2px;color:var(--ink2);text-transform:uppercase}
+  .st .n{font-size:11px;color:var(--ink2);margin-top:4px;line-height:1.3}
+  .fuel{max-width:1200px;margin:0 auto;padding:18px 26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+        display:flex;gap:14px;justify-content:center;flex-wrap:wrap;text-align:center}
+  .fuel h3{width:100%;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+  .fuel .f{padding:0 18px}
+  .fuel .v{font-size:24px;font-weight:800}
+  .fuel .l{font-size:11px;color:var(--ink2);letter-spacing:1px;text-transform:uppercase}
+  .ladder{max-width:860px;margin:30px auto;padding:0 16px}
+  .ladder h2{text-align:center;font-size:14px;letter-spacing:5px;text-transform:uppercase;color:var(--ink3);margin-bottom:22px}
+  .rung{display:grid;grid-template-columns:1fr 120px 1fr;gap:12px;align-items:start;margin-bottom:6px}
+  .rung .mid{text-align:center;position:relative;padding:10px 0 30px}
+  .rung .mid::after{content:"";position:absolute;left:50%;bottom:0;top:38px;border-left:2px solid var(--line)}
+  .rung:last-child .mid::after{display:none}
+  .rung .wkd{font-size:15px;font-weight:800}
+  .rung .ph{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .cell{border-radius:8px;padding:10px 13px;font-size:13.5px;color:var(--ink2);margin-top:6px}
+  .cellJA{background:rgba(57,135,229,.12);border-left:3px solid var(--ja);text-align:right}
+  .cellRR{background:rgba(217,89,38,.12);border-left:3px solid var(--rr)}
+  .cell b{color:var(--ink)}
+  .rungRACE .wkd{color:#e66767}
+  .pact{max-width:860px;margin:10px auto 40px;text-align:center;padding:16px;border:1px solid var(--gold);border-radius:10px;color:var(--ink2);font-size:14px;letter-spacing:1px}
+  .pact b{color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+</style></head><body>
+
+<div class="hero">
+  <div class="vs"><span class="j">AIRHART</span> <span class="x">×</span> <span class="r">RAFF</span></div>
+  <div class="sub">Road to the Park City Point 2 Point · Sat · Sep 5 · 2026</div>
+  <div class="count"><span id="days">—</span><small>DAYS</small></div>
+</div>
+
+<div class="split">
+  <div class="side sideJA">
+    <h2>Jonathan</h2>
+    <div class="anch">LT1 138 / 190 W · OBLA 156 / 240 W · Testa 3/18</div>
+    <div class="day"><div class="lbl">Flat Z2 · Engine Day</div>
+      <div class="stats">
+        <div class="st"><div class="v">≤138</div><div class="u">HR cap</div><div class="n">ride 128–135 · talk-test</div></div>
+        <div class="st"><div class="v">130–170</div><div class="u">Watts</div><div class="n">heat: HR wins, watts fall</div></div>
+        <div class="st"><div class="v">85–95</div><div class="u">RPM</div><div class="n">no coasting</div></div>
+      </div></div>
+    <div class="day"><div class="lbl">Big Climb Day · Park City</div>
+      <div class="stats">
+        <div class="st"><div class="v">140–148</div><div class="u">Climb HR</div><div class="n">ceiling 150 · ≤145 between</div></div>
+        <div class="st"><div class="v">150–170</div><div class="u">Climb W</div><div class="n">altitude → pace by HR</div></div>
+        <div class="st"><div class="v">2×12</div><div class="u">Quality</div><div class="n">@150–158 · only when prescribed</div></div>
+      </div></div>
+  </div>
+  <div class="side sideRR">
+    <h2>Robert</h2>
+    <div class="anch">LT1 118 / 100 W · real FTP ≈210–220 (test wk 1) · Testa 12/27</div>
+    <div class="day"><div class="lbl">Flat Base Day</div>
+      <div class="stats">
+        <div class="st"><div class="v">119–128</div><div class="u">HR band</div><div class="n">bulk &lt;125 · raise LT1</div></div>
+        <div class="st"><div class="v">110–140</div><div class="u">Watts</div><div class="n">provisional pending test</div></div>
+        <div class="st"><div class="v">75–80</div><div class="u">RPM</div><div class="n">lift it on the flats</div></div>
+      </div></div>
+    <div class="day"><div class="lbl">Big Climb Day · Park City</div>
+      <div class="stats">
+        <div class="st"><div class="v">≤135</div><div class="u">Climb HR</div><div class="n">ceiling 140 · chase no one</div></div>
+        <div class="st"><div class="v">165–180</div><div class="u">Climb W</div><div class="n">proven 58 min @ 180</div></div>
+        <div class="st"><div class="v">&lt;5/hr</div><div class="u">Punches</div><div class="n">≥247 W = a match burned</div></div>
+      </div></div>
+  </div>
+</div>
+
+<div class="fuel">
+  <h3>Shared Fuel Protocol — Woodruff</h3>
+  <div class="f"><div class="v">60–80g</div><div class="l">carb/hr · from min 15</div></div>
+  <div class="f"><div class="v">600–1000mg</div><div class="l">sodium/hr</div></div>
+  <div class="f"><div class="v">20–24oz</div><div class="l">fluid/hr</div></div>
+  <div class="f"><div class="v">ZERO</div><div class="l">deficit on long days</div></div>
+</div>
+
+<div class="ladder">
+  <h2>The Ladder — 7 Weeks</h2>
+  <div class="rung"><div class="cell cellJA">Z2 ONLY, zero threshold · long → <b>4:00 Sat</b> · gate: RHR&lt;66, sleep≥7h</div>
+    <div class="mid"><div class="wkd">JUL 20–26</div><div class="ph">Re-entry</div></div>
+    <div class="cell cellRR">recover the block · base &lt;128 · long 3.5–4h · <b>FTP test if fresh</b></div></div>
+  <div class="rung"><div class="cell cellJA"><b>Big vert #1:</b> 5.5–6h / ~8k ft, climbs ≤145 · threshold touch only if fresh</div>
+    <div class="mid"><div class="wkd">JUL 27–AUG 2</div><div class="ph">Build 1</div></div>
+    <div class="cell cellRR"><b>FTP re-test</b> · tempo 3–4×8–10' @138–144 · long 4.5–5h on the timer</div></div>
+  <div class="rung"><div class="cell cellJA">cool-Utah long #1 · race-band climbing · full fuel rehearsal</div>
+    <div class="mid"><div class="wkd">AUG 3–9</div><div class="ph">Build 2</div></div>
+    <div class="cell cellRR">long climb ride <b>5–6h aerobic</b> · punch budget &lt;5/hr · weight check</div></div>
+  <div class="rung"><div class="cell cellJA">Memphis engine, reduced · everything easy</div>
+    <div class="mid"><div class="wkd">AUG 10–16</div><div class="ph">Down</div></div>
+    <div class="cell cellRR">every-3rd recovery week · <b>sleep is the workout</b></div></div>
+  <div class="rung"><div class="cell cellJA">cool-Utah long #2 — <b>the big one</b> · pacing bands + aid-swap rehearsal</div>
+    <div class="mid"><div class="wkd">AUG 17–23</div><div class="ph">Peak</div></div>
+    <div class="cell cellRR"><b>joint dress rehearsal</b> · 165–180 W every climb · timer fueling all day</div></div>
+  <div class="rung"><div class="cell cellJA">load −40% · openers · last lift 7 days out</div>
+    <div class="mid"><div class="wkd">AUG 24–30</div><div class="ph">Taper</div></div>
+    <div class="cell cellRR">volume down · 2–3 climb touches · no weight-cutting now</div></div>
+  <div class="rung rungRACE"><div class="cell cellJA">first half <b>165–180 W, HR ≤145</b> · fuel from min 15</div>
+    <div class="mid"><div class="wkd">SEP 5</div><div class="ph" style="color:#e66767">RACE DAY</div></div>
+    <div class="cell cellRR">climbs <b>≤135</b> · &lt;5 punches/hr · his own race · strong finish</div></div>
+</div>
+
+<div class="pact"><b>The Pact</b><br>Easy days truly easy · fuel from minute 15 · neither man chases the other uphill ·<br>when your partner's screen shows a busted cap — you say so.</div>
+<script>document.getElementById('days').textContent=Math.max(0,Math.ceil((new Date('2026-09-05T07:00:00-06:00')-new Date())/86400000));</script>
+</body></html>

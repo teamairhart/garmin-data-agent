@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Airhart × Raff — Road to P2P</title>
+<style>
+  :root{--bg:#f4f4f1;--card:#ffffff;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a897f;--line:#e6e4dc;
+        --ja:#2a78d6;--ja-t:#e3edfa;--rr:#eb6834;--rr-t:#fdeae1;
+        --ok:#1baf7a;--ok-t:#e0f5ec;--warn:#eda100;--warn-t:#fdf3dd;--race:#e34948;--race-t:#fce7e7;
+        --vio:#4a3aa7;--vio-t:#eae7f9;
+        --hero-bg:#0e0e0d;--hero-ja:#3987e5;--hero-rr:#d95926;--gold:#c98500}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 18px 40px}
+
+  /* ---- HERO (V4) ---- */
+  .hero{text-align:center;padding:34px 16px 24px;color:#fff;background:
+    linear-gradient(105deg,rgba(57,135,229,.30) 0 49.7%,transparent 49.7% 50.3%,rgba(217,89,38,.30) 50.3% 100%),var(--hero-bg)}
+  .hero .vs{font-size:clamp(26px,5vw,44px);font-weight:800;letter-spacing:3px;text-transform:uppercase}
+  .hero .vs .j{color:var(--hero-ja)} .hero .vs .r{color:var(--hero-rr)} .hero .vs .x{color:var(--gold);font-style:italic}
+  .hero .sub{letter-spacing:4px;font-size:12px;color:#c3c2b7;text-transform:uppercase;margin-top:4px}
+  .count{font-size:clamp(44px,8vw,76px);font-weight:800;color:var(--gold);line-height:1.05;margin-top:10px}
+  .count small{display:block;font-size:12px;letter-spacing:6px;color:#7c7b72}
+
+  h2.sec{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin:30px 0 12px}
+
+  /* ---- DROP ZONE ---- */
+  .drop{margin-top:20px;background:var(--card);border:2px dashed var(--ink3);border-radius:16px;
+        padding:18px 22px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:all .15s}
+  .drop:hover{border-color:var(--ja)}
+  .drop.armed{border-color:var(--gold);background:var(--warn-t);transform:scale(1.005)}
+  .drop .ico{font-size:30px}
+  .drop .t{font-weight:800;font-size:15px}
+  .drop .d{font-size:12.5px;color:var(--ink3);margin-top:2px}
+  .drop .status{margin-left:auto;font-size:13px;font-weight:700;text-align:right;max-width:40%}
+  .drop .status.ok{color:#008300}.drop .status.err{color:#b02a2a}
+
+  /* ---- CALENDARS ---- */
+  .cals{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:900px){.cals{grid-template-columns:1fr}}
+  .cal{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:16px 18px}
+  .cal h3{font-size:15px;font-weight:800;margin-bottom:2px}
+  .calJA h3{color:var(--ja)} .calRR h3{color:var(--rr)}
+  .cal .hint{font-size:12px;color:var(--ink3);margin-bottom:10px}
+  .dow{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
+  .dow div{font-size:10px;letter-spacing:1px;color:var(--ink3);text-align:center;text-transform:uppercase}
+  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .day{position:relative;border:1px solid var(--line);border-radius:8px;min-height:44px;cursor:pointer;
+       padding:3px 5px;font-size:11px;color:var(--ink2);user-select:none;transition:transform .05s}
+  .day:active{transform:scale(.94)}
+  .day .dn{font-weight:700;font-size:11px}
+  .day .st{position:absolute;right:4px;bottom:2px;font-size:10.5px;font-weight:800;letter-spacing:.5px}
+  .day.today{outline:2px solid var(--ink);outline-offset:1px}
+  .day.race{box-shadow:inset 0 0 0 2px var(--race)}
+  .day.past{opacity:.55}
+  .day.mo1{border-top-width:3px}
+  .s-MEM{background:var(--ok-t)} .s-MEM .st{color:#0c7c54}
+  .s-PC{background:var(--vio-t)} .s-PC .st{color:var(--vio)}
+  .s-OTH{background:var(--warn-t)} .s-OTH .st{color:#8a5d00}
+  .s-TRV{background:#fae6ef} .s-TRV .st{color:#b3487c}
+  .s-OFF{background:repeating-linear-gradient(45deg,#eeede8 0 6px,#e3e2db 6px 12px)} .s-OFF .st{color:var(--ink3)}
+  .ex{position:absolute;top:2px;right:3px;width:15px;height:15px;border-radius:50%;background:#fff;
+      display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;
+      box-shadow:0 0 0 1px var(--line)}
+  .ex-plan{color:#008300;box-shadow:0 0 0 1.5px #008300}
+  .ex-off{color:#8a5d00;box-shadow:0 0 0 1.5px var(--warn)}
+  .ex-miss{color:#b02a2a;box-shadow:0 0 0 1.5px var(--race)}
+  .ex-none{color:var(--ink3)}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--ink2);align-items:center}
+  #tip{position:fixed;z-index:99;max-width:300px;background:var(--card);border:1px solid var(--line);
+       border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:10px 12px;font-size:12.5px;
+       line-height:1.45;color:var(--ink2);pointer-events:none;display:none}
+  #tip .th{font-weight:800;color:var(--ink);margin-bottom:4px}
+  #tip .pr b{color:var(--ink)}
+  #tip .ac{margin-top:4px}
+  #tip .vd{margin-top:5px;font-weight:700;padding-top:5px;border-top:1px dashed var(--line)}
+  #tip .vd.v-plan{color:#008300}#tip .vd.v-off{color:#8a5d00}#tip .vd.v-miss{color:#b02a2a}#tip .vd.v-none{color:var(--ink3)}
+  .exsw{display:inline-flex;width:15px;height:15px;border-radius:50%;background:#fff;align-items:center;justify-content:center;font-size:10px;font-weight:800;vertical-align:-3px;margin-right:4px;box-shadow:0 0 0 1px var(--line)}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--line);vertical-align:-2px;margin-right:4px}
+  .counts{margin-top:8px;font-size:12.5px;color:var(--ink2)}
+  .counts b{color:var(--ink)}
+
+  /* ---- HONEST NUMBERS (V3) ---- */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:20px}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:2px}
+  .card .sub{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
+  .ja-card{border-top:5px solid var(--ja)} .rr-card{border-top:5px solid var(--rr)}
+  .row{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border-radius:10px;padding:10px 12px;margin-bottom:10px}
+  .row .ico{font-size:20px;line-height:1.3}
+  .row .t{font-weight:700;font-size:14px}
+  .row .big{font-size:17px;font-weight:800}
+  .row .d{font-size:13px;color:var(--ink2)}
+
+  /* ---- FUEL (V3) ---- */
+  .fuelbar{background:linear-gradient(90deg,var(--ok-t),var(--warn-t));border:1px solid var(--line);border-radius:16px;
+           padding:14px 22px;margin:20px 0;display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+  .fuelbar .f .v{font-size:19px;font-weight:800}
+  .fuelbar .f .l{font-size:11.5px;color:var(--ink2)}
+
+  /* ---- WEEK ROWS (V1 density, light skin) ---- */
+  table.weeks{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:12.5px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+  .weeks th{background:#efeee9;color:var(--ink3);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 12px;text-align:left}
+  .weeks td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2);line-height:1.45}
+  .weeks td.wk{white-space:nowrap;color:var(--ink);font-weight:700}
+  .weeks td.jaCell{border-left:3px solid var(--ja)} .weeks td.rrCell{border-left:3px solid var(--rr)}
+  .tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:1px;padding:1px 8px;border-radius:999px;margin-top:4px;text-transform:uppercase}
+  .t-build{background:var(--ja-t);color:#1c5aa8}.t-down{background:var(--ok-t);color:#0c7c54}
+  .t-peak{background:var(--warn-t);color:#8a5d00}.t-race{background:var(--race-t);color:#b02a2a}
+  .weeks b{color:var(--ink)}
+
+  .pact{background:var(--card);border:2px dashed var(--warn);border-radius:14px;padding:14px 20px;margin-top:24px;font-size:14px}
+
+  /* ---- RIDE REPORTS (coach's log) ---- */
+  .repfilter{display:flex;gap:8px;margin-bottom:12px}
+  .repfilter button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 14px;
+    font-size:12.5px;font-weight:700;cursor:pointer;color:var(--ink2)}
+  .repfilter button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  details.rep{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;
+    box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden}
+  details.rep.repJA{border-left:5px solid var(--ja)} details.rep.repRR{border-left:5px solid var(--rr)}
+  details.rep summary{cursor:pointer;padding:12px 16px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;list-style:none}
+  details.rep summary::-webkit-details-marker{display:none}
+  details.rep summary .dt{font-weight:800;white-space:nowrap}
+  .repJA summary .dt{color:var(--ja)} .repRR summary .dt{color:var(--rr)}
+  details.rep summary .hl{font-weight:700;color:var(--ink)}
+  details.rep summary .sub{font-size:12.5px;color:var(--ink3);width:100%}
+  details.rep summary .caret{margin-left:auto;color:var(--ink3);transition:transform .15s}
+  details.rep[open] summary .caret{transform:rotate(90deg)}
+  .rep-body{padding:2px 18px 16px;font-size:13.5px;color:var(--ink2);line-height:1.55;border-top:1px dashed var(--line)}
+  .rep-body h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin:14px 0 6px}
+  .rep-body ul{margin:4px 0 4px 18px}
+  .rep-body li{margin-bottom:4px}
+  .rep-body b{color:var(--ink)}
+  .rep-body table{border-collapse:collapse;font-size:12.5px;margin:6px 0}
+  .rep-body th{text-align:left;color:var(--ink3);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 14px 3px 0;border-bottom:1px solid var(--line)}
+  .rep-body td{padding:4px 14px 4px 0;border-bottom:1px solid var(--line)}
+  .day .rp{position:absolute;left:3px;bottom:2px;font-size:9px;cursor:pointer}
+
+  /* ---- NEXT 7 DAYS (calendar-aware) ---- */
+  .n7wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:14px}
+  .n7{display:grid;grid-template-columns:64px repeat(7,minmax(128px,1fr));gap:6px;min-width:980px}
+  .n7 .hd{text-align:center;font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;padding:4px 2px}
+  .n7 .hd b{display:block;font-size:14px;color:var(--ink);letter-spacing:0}
+  .n7 .hd.today b{color:var(--race)}
+  .n7 .who{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-weight:800;font-size:12px;letter-spacing:2px;border-radius:8px;padding:4px 2px}
+  .n7 .whoJA{color:var(--ja);background:var(--ja-t)} .n7 .whoRR{color:var(--rr);background:var(--rr-t)}
+  .dcell{border:1px solid var(--line);border-radius:10px;padding:8px 9px;font-size:12px;line-height:1.4;color:var(--ink2);background:var(--bg)}
+  .dcell .loc{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1px;padding:1px 7px;border-radius:999px;margin-bottom:5px;text-transform:uppercase}
+  .loc-MEM{background:var(--ok-t);color:#0c7c54}.loc-PC{background:var(--vio-t);color:var(--vio)}
+  .loc-OTH{background:var(--warn-t);color:#8a5d00}.loc-TRV{background:#fae6ef;color:#b3487c}
+  .loc-OFF{background:#eeede8;color:var(--ink3)}
+  .dcell .s{font-weight:700;color:var(--ink);font-size:12.5px}
+  .dcell .d{margin-top:2px}
+  .dcell.bigday{background:var(--warn-t);border-color:var(--warn)}
+  .dcell.raceday{background:var(--race-t);border-color:var(--race)}
+  .dcell.offday{background:repeating-linear-gradient(45deg,#f2f1ec 0 6px,#e9e8e1 6px 12px)}
+  .dcell.past{opacity:.5}
+</style></head><body>
+
+<div class="hero">
+  <div class="vs"><span class="j">AIRHART</span> <span class="x">×</span> <span class="r">RAFF</span></div>
+  <div class="sub">Road to the Park City Point 2 Point · Sat Sep 5 2026</div>
+  <div class="count"><span id="days">—</span><small>DAYS</small></div>
+</div>
+
+<div class="wrap">
+
+<div class="drop" id="drop">
+  <div class="ico">📤</div>
+  <div>
+    <div class="t">Drop a ride here — .zip or .fit (or tap to browse)</div>
+    <div class="d">Straight from Garmin Connect's export or your email. Owner auto-detected from the file (Edge 840 = Jonathan · Fenix 8 = Robert) · analyzed on upload · calendar badge fills itself in.</div>
+  </div>
+  <div class="status" id="dropStatus"></div>
+  <input type="file" id="dropInput" accept=".zip,.fit" multiple style="display:none">
+</div>
+
+<h2 class="sec">📍 Where we are — tap a day to cycle it</h2>
+<div class="cals">
+  <div class="cal calJA">
+    <h3>Jonathan</h3>
+    <div class="hint">Tap to cycle: Memphis → Park City → Travel → Off. <b>Hover any day</b> for prescribed vs. actual. <b>Past days:</b> tap cycles the ride badge (✓ / ! / ✕); double-tap changes location. Saved in this browser (server-side + auto-filled from uploaded rides when deployed).</div>
+    <div class="dow"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="grid7" id="calJA"></div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--ok-t)"></span>Memphis (M)</span>
+      <span><span class="sw" style="background:var(--vio-t)"></span>Park City (PC)</span>
+      <span><span class="sw" style="background:#fae6ef"></span>Travel — hotel bike / bodyweight (T)</span>
+      <span><span class="sw" style="background:repeating-linear-gradient(45deg,#eeede8 0 4px,#e3e2db 4px 8px)"></span>Fully off (✕)</span>
+    </div>
+    <div class="legend">
+      <span><span class="exsw ex-plan">✓</span>rode, on-profile</span>
+      <span><span class="exsw ex-off">!</span>rode, off-profile</span>
+      <span><span class="exsw ex-miss">✕</span>no workout</span>
+      <span><span class="exsw ex-none">·</span>not recorded</span>
+    </div>
+    <div class="counts" id="cntJA"></div>
+  </div>
+  <div class="cal calRR">
+    <h3>Robert</h3>
+    <div class="hint">Tap to cycle: Park City → Other → Travel → Off. <b>Hover any day</b> for prescribed vs. actual. <b>Past days:</b> tap cycles the ride badge (✓ / ! / ✕); double-tap changes location. Saved in this browser (server-side + auto-filled from uploaded rides when deployed).</div>
+    <div class="dow"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="grid7" id="calRR"></div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--vio-t)"></span>Park City (PC)</span>
+      <span><span class="sw" style="background:var(--warn-t)"></span>Other (O)</span>
+      <span><span class="sw" style="background:#fae6ef"></span>Travel — hotel bike / bodyweight (T)</span>
+      <span><span class="sw" style="background:repeating-linear-gradient(45deg,#eeede8 0 4px,#e3e2db 4px 8px)"></span>Fully off (✕)</span>
+    </div>
+    <div class="legend">
+      <span><span class="exsw ex-plan">✓</span>rode, on-profile</span>
+      <span><span class="exsw ex-off">!</span>rode, off-profile</span>
+      <span><span class="exsw ex-miss">✕</span>no workout</span>
+      <span><span class="exsw ex-none">·</span>not recorded</span>
+    </div>
+    <div class="counts" id="cntRR"></div>
+  </div>
+</div>
+
+<h2 class="sec">🎯 The honest numbers</h2>
+<div class="cards">
+  <div class="card ja-card">
+    <h3>Jonathan</h3>
+    <div class="sub">Testa 3/18 · LT1 138 bpm / 190 W · OBLA 156 / 240 W</div>
+    <div class="row"><div class="ico">🛣️</div><div><div class="t">Flat Z2 day — <span class="big">HR ≤138</span> (ride 128–135)</div>
+      <div class="d">130–170 W · cadence 85–95 · talk-test all ride · heat rule: HR wins, watts fall</div></div></div>
+    <div class="row"><div class="ico">⛰️</div><div><div class="t">Big climb day — <span class="big">HR 140–148</span> (ceiling 150)</div>
+      <div class="d">climbs 150–170 W at altitude (pace by HR up high) · ≤145 between climbs · quality only when prescribed: 2×12 @ 150–158</div></div></div>
+  </div>
+  <div class="card rr-card">
+    <h3>Robert</h3>
+    <div class="sub">Testa 12/27 · LT1 118 / 100 W · lab FTP 190 stale → real ≈210–220 (field test wk 1)</div>
+    <div class="row"><div class="ico">🛣️</div><div><div class="t">Flat base day — <span class="big">HR 119–128</span> (bulk &lt;125)</div>
+      <div class="d">110–140 W provisional · cadence 75–80 · mission: raise LT1 with easy volume</div></div></div>
+    <div class="row"><div class="ico">⛰️</div><div><div class="t">Big climb day — <span class="big">HR ≤135</span> (ceiling 140)</div>
+      <div class="d">long climbs 165–180 W (proven: 58 min @ 180 on Pinecone) · &lt;5 punches ≥247 W/hr · never chase anyone uphill</div></div></div>
+  </div>
+</div>
+
+<div class="fuelbar">
+  <div style="font-size:24px">🥤</div>
+  <div class="f"><div class="v">60–80 g/hr</div><div class="l">carbs from min 15 · 20-min timer</div></div>
+  <div class="f"><div class="v">600–1,000 mg/hr</div><div class="l">sodium (high end in heat)</div></div>
+  <div class="f"><div class="v">20–24 oz/hr</div><div class="l">fluid</div></div>
+  <div class="f"><div class="v">No deficit on long days</div><div class="l">cut on easy/rest days only · protein every meal · carb-up night before long rides (Woodruff, both)</div></div>
+</div>
+
+<h2 class="sec">📆 This week, Sunday → Saturday — reads your calendars above; tap a day up there and this adapts</h2>
+<div class="n7wrap"><div class="n7" id="next7"></div></div>
+
+<h2 class="sec">🗓 Seven weeks to race day</h2>
+<table class="weeks">
+  <tr><th style="width:112px">Week</th><th>Jonathan</th><th>Robert</th></tr>
+  <tr><td class="wk">Jul 19–25<br><span class="tag t-down">Re-entry</span></td>
+    <td class="jaCell"><b>Z2 ONLY, no threshold.</b> Long rebuilds to <b>4:00 Sat</b> (PC, by HR). 2 lifts (Wed full, hex −20%). Gate: RHR &lt;66 + sleep ≥7 h — openers Thu/Fri only if green.</td>
+    <td class="rrCell">Recover the back-to-back block. Base &lt;128 · long 3.5–4 h &lt;133 · <b>FTP field test if fresh</b> (else next wk) · fix Fenix FTP setting (190 not 260).</td></tr>
+  <tr><td class="wk">Jul 26–Aug 1<br><span class="tag t-build">Build 1</span></td>
+    <td class="jaCell"><b>PC big vert #1:</b> 5.5–6 h / ~8,000 ft, climbs HR ≤145 (150–165 W up high), fuel 70 g/hr. 2 easy 75–90′ Z2 around it · one threshold touch 2×12 @ 150–158 <b>only if fresh</b> · strength 1× @30%.</td>
+    <td class="rrCell"><b>FTP re-test.</b> Tempo 1×: 3–4×8–10′ @ 138–144 · long 4.5–5 h &lt;133, fueled on the timer · base fills the week · weight trend check-in.</td></tr>
+  <tr><td class="wk">Aug 2–8<br><span class="tag t-build">Build 2</span></td>
+    <td class="jaCell">PC big-vert · <b>cool-Utah long #1</b> · race-band climbing, sustained not coasting · full fuel rehearsal every long ride.</td>
+    <td class="rrCell">Long climbing ride stretches to <b>5–6 h aerobic</b> — durability is the gift, lean in · punch budget drilled: &lt;5/hr ≥247 W · cadence 75–80 on moderate grades.</td></tr>
+  <tr><td class="wk">Aug 9–15<br><span class="tag t-down">Down</span></td>
+    <td class="jaCell">Down week — Memphis engine, reduced volume, <b>everything easy</b>. Bank recovery for the peak.</td>
+    <td class="rrCell"><b>Scheduled recovery week</b> (every 3rd — the age-60 gate). Easy spins only. Sleep is the workout.</td></tr>
+  <tr><td class="wk">Aug 16–22<br><span class="tag t-peak">Peak</span></td>
+    <td class="jaCell"><b>Dress rehearsal + cool-Utah long #2 (the big one).</b> Full race protocol: pacing bands, 70 g/hr, 10–15′ aid-swap rehearsal at DV.</td>
+    <td class="rrCell"><b>Joint dress rehearsal.</b> 165–180 W on every climb · fuel 60–80 g/hr on the timer · HR ceiling honored first mile to last.</td></tr>
+  <tr><td class="wk">Aug 23–29<br><span class="tag t-down">Taper</span></td>
+    <td class="jaCell">Load −40% · short openers only — <b>no new fitness available, only freshness</b> · last lift ~7 days out.</td>
+    <td class="rrCell">Volume down · 2–3 short climb touches to stay sharp · sleep protected · <b>no weight-cutting</b> in the final fortnight.</td></tr>
+  <tr><td class="wk">Aug 30–Sep 5<br><span class="tag t-race">Race</span></td>
+    <td class="jaCell">Openers Tue/Thu · <b>carb-load Thu–Fri (~700 g Fri)</b> · <b>RACE Sat Sep 5:</b> first half 165–180 W, HR ≤145, fuel from min 15, caffeine via the 333.</td>
+    <td class="rrCell">Light openers · same carb-load · <b>RACE:</b> climbs ≤135 (ceiling 140) · 165–180 W · &lt;5 punches/hr · his own race — <b>finish strong</b>.</td></tr>
+</table>
+
+<h2 class="sec">📖 Ride reports — the coach's log (newest first; auto-written after each upload when deployed)</h2>
+<div class="repfilter" id="repfilter">
+  <button class="on" data-f="all">All</button>
+  <button data-f="JA" style="color:var(--ja)">Jonathan</button>
+  <button data-f="RR" style="color:var(--rr)">Robert</button>
+</div>
+
+<details class="rep repJA" id="rep-JA-2026-07-21">
+  <summary><span class="dt">Tue Jul 21 · Jonathan</span><span class="hl">Memphis Road 30 mi — the body called the fatigue the schedule created</span><span class="caret">▶</span>
+  <span class="sub">2:15 · avg 100 W / NP 128 · avg HR 141, max 182 · 86 °F · verdict: off-profile (ticked with note)</span></summary>
+  <div class="rep-body">
+    <h4>What the ride actually was</h4>
+    Prescribed: 2:00 Z2, HR ≤138, ride by the cap and let watts fall in the heat. Executed: 2:15:46, 29.7 mi, 42% true Z2 / 51% upper-aero / 7% at-or-over threshold, in 86 °F rising to 93. The first 2:06 was ridden at just <b>94 W — and HR still couldn't hold the cap</b>. The quarter-by-quarter tells it plainly:
+    <table><tr><th>Quarter</th><th>Power</th><th>HR</th></tr>
+    <tr><td>1st</td><td>99 W</td><td>136</td></tr><tr><td>2nd</td><td>95 W</td><td>139</td></tr>
+    <tr><td>3rd</td><td>88 W</td><td>140</td></tr><tr><td>4th</td><td>94 W</td><td>140</td></tr></table>
+    Power <i>falling</i> while HR climbs at trivial wattage is the fatigue signature, not a heat story: five days ago in identical 86 °F, the same roads gave <b>123 W at HR 134</b>. Today ~30 W less bought 6 bpm more.
+    <h4>The trend markers — worst of the entire log</h4>
+    <ul><li><b>HR@120W: 141</b> — the hot-Memphis band runs 131–142, and this tops it (previous worst 142 came at higher intensity on a harder day).</li>
+    <li><b>EF 0.91</b> — lowest recorded; <b>matched-power decoupling 12.5%</b> — highest recorded.</li>
+    <li>A subtlety worth knowing: the simple first-half/second-half decoupling read <b>2.0% and looks clean — it's misleading</b>. The hard finish raised second-half power together with HR, flattering the ratio. The matched-power method (comparing HR at the <i>same</i> wattage early vs late) shows the honest 12.5%. When the two disagree, trust matched-power.</li></ul>
+    Verdict: not fitness loss — Sunday's 15-set leg session plus Monday's tempo experiment, presented as data. This is the KPI gate (RHR &lt;66, sleep ≥7 h) doing exactly what it exists to do, one day late.
+    <h4>What to work on</h4>
+    <ul><li>Every second above HR 165 sat in the final 9 minutes: four bursts, closing with 5 min at 162 W and a <b>600 W sprint to HR 182</b> — on legs that had refused 94 W all morning, in a week whose single rule is no threshold. The fatigue wasn't controllable today; the finish was.</li>
+    <li>The morning brief said "wrap early if HR won't stay down at ~120 W." That condition was met by minute 40. The honest move was 90 minutes and done — duration is not the metric that matters in a re-entry week, aerobic time under the cap is.</li></ul>
+    <h4>What went well</h4>
+    <ul><li>Duration delivered (2:15 vs 2:00) and the ride was genuinely easy by power (IF 0.54, TSS 66) — the aerobic cost of the day was modest, which is why this stays an off-profile note rather than a real setback.</li>
+    <li>Riding at 94 W instead of forcing 130+ was the right instinct — the body set the ceiling and the watts respected it. That's the heat/fatigue protocol working.</li></ul>
+    <h4>Next</h4>
+    Wednesday hinges entirely on the morning numbers. <b>Gate red</b> (RHR ≥66 or sleep &lt;7 h): 60–75′ truly easy, lift drops to the 30% version or skips. <b>Gate green:</b> 2:00 Z2 + full Strength #2, hex-bar starting 20% below pre-Leadville loads. Either way the Thu/Fri optional openers are off the table after two consecutive off-profile days — and Saturday's 4:00 in Park City is the week's one non-negotiable. Everything before it serves it.
+  </div>
+</details>
+
+<details class="rep repRR" id="rep-RR-2026-07-20">
+  <summary><span class="dt">Mon Jul 20 · Robert</span><span class="hl">Armstrong/Pinecone 23 mi — managed the engine beautifully on a bad-legs day</span><span class="caret">▶</span>
+  <span class="sub">3.3 h · 3,448 ft · avg HR 122, 0% over threshold · NP 180 · verdict: off-profile (big day on a rest day)</span></summary>
+  <div class="rep-body">
+    <h4>How the day was spent</h4>
+    <b>56% of the ride was climbing</b> — 112 minutes at 194 W average — against 39 min descending and 34 min flat. Total work 1,603 kJ on 3,448 ft of gain. For context, that's more time-at-climbing-power than most riders log in a week, done the day after a 1,228 kJ mountain ride.
+    <h4>HR × grade × power × cadence</h4>
+    <table><tr><th>Grade</th><th>Power</th><th>W/kg</th><th>HR</th><th>Cadence</th></tr>
+    <tr><td>Flat-ish (±2.5%)</td><td>126 W</td><td>1.33</td><td>120</td><td>69</td></tr>
+    <tr><td>Moderate up (2.5–6%)</td><td>177 W</td><td>1.86</td><td>132</td><td>69</td></tr>
+    <tr><td>Steep up (6–9%)</td><td>198 W</td><td>2.08</td><td>133</td><td>70</td></tr>
+    <tr><td>Very steep (&gt;9%)</td><td>217 W</td><td>2.29</td><td>133</td><td>66</td></tr></table>
+    Textbook diesel: power climbs smoothly with gradient while HR barely moves. Read that middle column again — <b>a 60 W spread maps to ~3 heartbeats</b>. His compressed HR zones (118–145 is the whole range) physically cannot resolve climbing effort, which is exactly why the new pedals change his racing: HR could never tell him the difference between sustainable and too hot on a climb. Watts can.
+    <h4>The two big climbs — race-sim material</h4>
+    <table><tr><th>Climb</th><th>Duration</th><th>Gain</th><th>Grade</th><th>Power</th><th>HR start→end</th><th>VAM</th></tr>
+    <tr><td>#2 (main)</td><td>39.9 min</td><td>1,023 ft</td><td>6.1%</td><td>190 W</td><td>121→136</td><td>469 m/h</td></tr>
+    <tr><td>#5 (Pinecone)</td><td>57.6 min</td><td>1,451 ft</td><td>7.1%</td><td>180 W</td><td>114→133</td><td>461 m/h</td></tr></table>
+    Nearly 100 minutes of continuous climbing, both ending with HR still <i>rising toward</i> — never through — his 135 target, <b>on a day he reported feeling bad</b>. The 57.6-minute Pinecone effort at 1.89 W/kg is the single best proof yet that a 165–180 W race band is sustainable for him over a long day.
+    <h4>What went well</h4>
+    <ul><li><b>Zero seconds over threshold</b> across 3.3 hours; max HR 142. On a bad day, the discipline never cracked.</li>
+    <li>Descents 76% coasted with HR dropping to ~100 — he uses every descent as genuine recovery, which over a 9-hour race is worth real minutes.</li>
+    <li>The cross-day fatigue check is the quiet headline: climbing HR at a matched 120–170 W was <b>134.4 Sunday → 133.1 Monday</b>. Back-to-back 1,200+ kJ mountain days at age 60 and the cardiovascular system showed <i>no</i> strain carryover. The engine is durable; whatever felt bad, it wasn't the heart.</li></ul>
+    <h4>What to work on</h4>
+    <ul><li><b>8 punches ≥247 W.</b> At his profile each surge over ~130% of threshold is deep anaerobic — a match burned that the diesel then has to pay back. They cluster at pitch changes and technical moves; the fixes are pre-shifting before the pitch, carrying momentum into it, and letting speed sag rather than stomping. Race target: <b>fewer than 5 per hour in the first half</b>.</li>
+    <li><b>Bad legs + healthy engine = the under-fueling picture.</b> When HR stays available but the legs go flat, glycogen is the usual culprit — and fueling was already priority #1 from the recon. 60–80 g carb/hr from minute 15, on a 20-minute timer, every ride past 90 minutes. His durability <i>masks</i> under-fueling until it's late; that's precisely why it needs the timer, not feel.</li>
+    <li><b>Steep-climb cadence (63–70 rpm) is gear-pinned, not a habit.</b> Median development on ≥6% pitches was 1.3–1.5 m per crank revolution — bottom-gear territory at his 3.7–4.4 mph climbing speeds. "Spin more" isn't available without easier gearing or more watts, so: check the cassette (one easier gear ≈ +7 rpm on the steeps), and do cadence work on moderate grades where 75–80 rpm is actually attainable.</li></ul>
+    <h4>Next</h4>
+    Re-test FTP — the December lab figure of 190 W is provably stale (see Sunday's report), and the watch's ~260 W setting makes its TSS numbers garbage in the other direction; set it to 190 now, update after the field test. Then race-pace by power: <b>165–180 W on long climbs, HR ceiling 140 as backstop only</b>. And one more number for motivation: at his ~2.2 W/kg and ~460 m/h, each kg off is worth ~5 m/h of climbing speed — roughly <b>10–12 minutes across P2P's 10,000 ft</b>, free of any training.
+  </div>
+</details>
+
+<details class="rep repRR" id="rep-RR-2026-07-19">
+  <summary><span class="dt">Sun Jul 19 · Robert</span><span class="hl">PC MTB 20 mi — first power ride: the lab FTP is stale</span><span class="caret">▶</span>
+  <span class="sub">2.6 h · 2,182 ft · avg HR 126 (P2), zero drift · NP 185 · verdict: on-profile</span></summary>
+  <div class="rep-body">
+    <h4>The headline — the lab FTP can't survive this file</h4>
+    First ride ever on the Assioma pedals, and it immediately re-rates him. Across 63 minutes of accumulated climbing he averaged <b>207 W at HR 134</b> — eleven beats <i>under</i> his lab threshold HR — including a 10-minute climb at <b>219 W (2.30 W/kg), his hardest sustained effort on record</b>. Holding 97–115% of your FTP for that long at sub-threshold heart rate is physiologically impossible; the December figure of 190 W is stale. The real number is likely <b>210–220 W, which moves him from 2.0 to ~2.2+ W/kg</b> — seven months of training, now measurable.
+    <h4>By grade — where the power comes from</h4>
+    <table><tr><th>Grade</th><th>Power</th><th>W/kg</th><th>HR</th><th>Cadence</th></tr>
+    <tr><td>Flat-ish (±2.5%)</td><td>125 W</td><td>1.32</td><td>125</td><td>75</td></tr>
+    <tr><td>Moderate up (2.5–6%)</td><td>185 W</td><td>1.95</td><td>133</td><td>74</td></tr>
+    <tr><td>Steep up (6–9%)</td><td>223 W</td><td>2.35</td><td>136</td><td>72</td></tr>
+    <tr><td>Very steep (&gt;9%)</td><td>248 W</td><td>2.61</td><td>134</td><td>69</td></tr></table>
+    Same diesel signature as Monday: 123 W of power range, ~11 bpm of HR range. Note the very-steep row — <b>2.61 W/kg on the steepest pitches</b> — the strength is there when the grade demands it.
+    <h4>What went well</h4>
+    <ul><li>Disciplined base day where it counted: avg HR 126 (mid-P2), <b>fourth consecutive ride with zero HR drift</b> (126→126 across 2.6 h). The durability that finished P2P 2025 without cramping is fully intact.</li>
+    <li>Long climbs (≥10 min) averaged <b>194 W vs 164 W on short ones</b> — he's <i>stronger</i> long than short, the reverse of most riders and exactly the profile P2P rewards.</li></ul>
+    <h4>What to work on</h4>
+    <ul><li><b>14 punches ≥247 W</b> plus 15% of ride time in P4 — hotter than a base day needs, and nearly double Monday's punch count on a shorter ride. Same prescription: pre-shift, momentum, let speed sag on pitch changes.</li>
+    <li>Recorded max HR 175 is a <b>sensor artifact</b> — a 68-bpm jump inside one minute at minute 70, physiologically impossible at any age. True max on the day was ~151. Worth checking whether the watch was reading wrist HR (notoriously spiky on rough MTB descents) vs. a chest strap; if there's no strap in the loop, one would clean up his HR data considerably.</li></ul>
+    <h4>Next</h4>
+    Baseline formally established for the power era: <b>PC mountain days at avg HR low-120s ≈ NP 180–185, ~480 kJ/h, VAM ~420–500 m/h on sustained climbs</b>. Every ride from here has something concrete to move against — and the first thing to move is the FTP number itself, via a 20-minute field test on a Park City climb once the legs are fresh.
+  </div>
+</details>
+
+<details class="rep repJA" id="rep-JA-2026-07-20">
+  <summary><span class="dt">Mon Jul 20 · Jonathan</span><span class="hl">Peloton 34 min — the heat experiment: +21 bpm at constant power</span><span class="caret">▶</span>
+  <span class="sub">avg 138 W / NP 167 · avg HR 147 · 82 °F still air · verdict: off-profile (deliberate experiment, unticked)</span></summary>
+  <div class="rep-body">
+    <h4>The experiment</h4>
+    Brief deliberately inverted: instead of capping HR and watching power, hold <b>~150 W at ≥90 rpm and watch what HR does</b> in a hot room (82 °F, ceiling fan only), time-boxed to ~30 minutes. Execution matched intent — 52% of the ride (17.3 min) sat inside 140–160 W, cadence held 88–91 in every block, one finishing sprint (427 W), short cooldown. A controlled test, not a class ridden hot.
+    <h4>What HR did at constant work (lag-corrected, 146–152 W)</h4>
+    <table><tr><th>Minutes</th><th>Power in band</th><th>HR</th></tr>
+    <tr><td>0–5</td><td>146 W</td><td><b>138</b> — dead in the outdoor band</td></tr>
+    <tr><td>10–15</td><td>152 W</td><td>150</td></tr>
+    <tr><td>15–25</td><td>147–149 W</td><td>~152</td></tr>
+    <tr><td>25–30</td><td>150 W</td><td><b>159, still climbing</b></td></tr></table>
+    Because power <i>and</i> cadence were both flat while HR rose 21 bpm, the drift can't be attributed to either — it's <b>pure thermal load</b>. The ride started exactly where outdoor Memphis rides sit at 150 W (HR 136–142) and then heat storage took over: no steady state was ever reached.
+    <h4>The findings</h4>
+    <ul><li><b>Airflow, not air temperature, is the dominant variable.</b> 82 °F of still air produced more drift in 30 minutes than the 95 °F outdoor ride on 6/28 produced per hour (+7 bpm over 3.1 h). Moving at 14 mph outdoors is what makes evaporative cooling work; a ceiling fan doesn't come close.</li>
+    <li><b>Peloton calibration:</b> its meter read 163 W avg / 320 kJ against the Assiomas' 138 W / 277 kJ — <b>~15–18% high</b>. All comparisons use pedal numbers from here.</li>
+    <li>Cadence transfer: the 7/17 leg-speed gains held indoors (median 89, 89% of pedaling ≥85) — and at matched power the 90 rpm target cost ~nothing, consistent with the standing finding (~0.3 bpm per 10 rpm).</li></ul>
+    <h4>Next</h4>
+    Two rules for all future indoor work: <b>(1)</b> a strong direct fan (blower at torso height) is the prerequisite for HR-capped indoor Z2 — under a ceiling fan, "HR ≤138" caps power near ~120 W by minute 15 and the session trains almost nothing; <b>(2)</b> until the fan exists, pace indoor rides by power (Z2 = 130–170 W on the pedals), talk-test as backstop, and treat indoor HR as thermally inflated past minute ~10. Honest scheduling note: good data, wrong week — a tempo-range effort on the Z2-only re-entry week, 24 h after a 15-set leg session, is why this stayed unticked.
+  </div>
+</details>
+
+<div class="pact">🤝 <b>The pact:</b> easy days truly easy · fuel from minute 15, every ride · neither of us chases the other uphill · when your partner's screen shows a busted cap — say so. That's the job.</div>
+
+</div>
+<div id="tip"></div>
+<script>
+document.getElementById('days').textContent=Math.max(0,Math.ceil((new Date('2026-09-05T07:00:00-06:00')-new Date())/86400000));
+
+// ---- location calendars ----
+const CFG={
+  JA:{states:["MEM","PC","TRV","OFF"],labels:{MEM:"M",PC:"PC",TRV:"T",OFF:"✕"},
+      def:d=>{ if(d<="2026-07-22")return"MEM"; if(d<="2026-07-28")return"PC"; return"MEM"; },
+      names:{MEM:"Memphis",PC:"Park City",TRV:"Travel",OFF:"Off"}},
+  RR:{states:["PC","OTH","TRV","OFF"],labels:{PC:"PC",OTH:"O",TRV:"T",OFF:"✕"},
+      def:d=>"PC",
+      names:{PC:"Park City",OTH:"Other",TRV:"Travel",OFF:"Off"}}
+};
+const START=new Date('2026-07-19T12:00:00'), END=new Date('2026-09-05T12:00:00');
+const iso=d=>d.toISOString().slice(0,10);
+const todayIso=iso(new Date(Date.now()-0));
+// Execution status for elapsed days: did we ride, and did we follow the profile?
+// Deployed version auto-fills this from uploaded rides + the plan-adherence analysis.
+const EX_STATES=['none','plan','off','miss'];
+const EX_GLYPH={plan:'✓',off:'!',miss:'✕',none:'·'};
+const EX_PREFILL={
+  JA:{'2026-07-19':'off',   // strength done, but 2 days late & beyond the 30% brief
+      '2026-07-20':'off',   // Peloton tempo experiment on the Z2-only day
+      '2026-07-21':'off'},  // 2:15 ridden, HR over cap + hard finish (ticked w/ note)
+  RR:{'2026-07-19':'plan',  // 2.6 h MTB, avg 126 — disciplined
+      '2026-07-20':'off'}   // big climb day on a rest/easy template day, felt bad
+};
+function exOf(who,ds){
+  return localStorage.getItem('p2p-ex-'+who+'-'+ds) || (EX_PREFILL[who]&&EX_PREFILL[who][ds]) || 'none';
+}
+function paintEx(cell){
+  const who=cell.dataset.who, ds=cell.dataset.date;
+  let b=cell.querySelector('.ex');
+  if(ds>todayIso){ if(b)b.remove(); return; }
+  if(!b){ b=document.createElement('div'); b.className='ex'; cell.appendChild(b); }
+  const st=exOf(who,ds);
+  b.className='ex ex-'+st; b.textContent=EX_GLYPH[st];
+}
+function cycleEx(cell){
+  const who=cell.dataset.who, ds=cell.dataset.date;
+  const i=EX_STATES.indexOf(exOf(who,ds));
+  localStorage.setItem('p2p-ex-'+who+'-'+ds,EX_STATES[(i+1)%EX_STATES.length]);
+  paintEx(cell); counts(who);
+}
+function cycleLoc(cell){
+  const cfg=CFG[cell.dataset.who];
+  const i=cfg.states.indexOf(cell.dataset.st);
+  cell.dataset.st=cfg.states[(i+1)%cfg.states.length];
+  localStorage.setItem('p2p-'+cell.dataset.who+'-'+cell.dataset.date,cell.dataset.st);
+  paint(cell); counts(cell.dataset.who);
+}
+function build(who){
+  const cfg=CFG[who], el=document.getElementById('cal'+who);
+  for(let d=new Date(START); d<=END; d.setDate(d.getDate()+1)){
+    const ds=iso(d);
+    const cell=document.createElement('div');
+    cell.className='day'; cell.dataset.date=ds; cell.dataset.who=who;
+    const saved=localStorage.getItem('p2p-'+who+'-'+ds);
+    cell.dataset.st=saved||cfg.def(ds);
+    if(ds===todayIso)cell.classList.add('today');
+    if(ds<todayIso)cell.classList.add('past');
+    if(ds==='2026-09-05')cell.classList.add('race');
+    if(d.getDate()===1)cell.classList.add('mo1');
+    cell.innerHTML='<div class="dn">'+(d.getDate()===1||ds===iso(START)?(d.toLocaleString('en',{month:'short'})+' '):'')+d.getDate()+ (ds==='2026-09-05'?' 🏁':'') +'</div><div class="st"></div>';
+    // Elapsed days: tap cycles the ride/adherence badge; double-tap still fixes location.
+    // Today & future: tap cycles location; double-tap sets today's badge early.
+    let clickTimer=null;
+    cell.addEventListener('click',()=>{
+      if(clickTimer)return;
+      clickTimer=setTimeout(()=>{ clickTimer=null;
+        (ds<todayIso)?cycleEx(cell):cycleLoc(cell);
+      },250);
+    });
+    cell.addEventListener('dblclick',()=>{
+      if(clickTimer){clearTimeout(clickTimer);clickTimer=null;}
+      (ds<todayIso)?cycleLoc(cell):(ds===todayIso?cycleEx(cell):cycleLoc(cell));
+    });
+    cell.addEventListener('mouseenter',e=>showTip(cell,e));
+    cell.addEventListener('mousemove',e=>moveTip(e));
+    cell.addEventListener('mouseleave',hideTip);
+    paint(cell); paintEx(cell);
+    if(document.getElementById('rep-'+who+'-'+ds)){
+      const rp=document.createElement('div'); rp.className='rp'; rp.textContent='📖'; rp.title='Open ride report';
+      rp.addEventListener('click',e=>{e.stopPropagation();
+        const r=document.getElementById('rep-'+who+'-'+ds); r.open=true;
+        r.scrollIntoView({behavior:'smooth',block:'start'});});
+      cell.appendChild(rp);
+    }
+    el.appendChild(cell);
+  }
+  counts(who);
+}
+
+// ---- hover readout: prescribed vs. actual (why the badge is what it is) ----
+// Deployed version generates ACTUAL from each uploaded ride's analysis.
+const DETAIL={
+  JA:{
+    '2026-07-19':{ac:'49:35 gym strength — RDL / DL / leg press ~5 sets each + backward sled 3×50 yd @ 200 lb, avg HR 117.',
+                  vd:'OFF-PROFILE — recovery week prescribed ONE light lift @ ~30% load (Fri). This was full volume, 2 days late. Re-slotted as Strength #1; Monday\'s lift dropped to compensate.'},
+    '2026-07-20':{ac:'34-min Peloton: NP 167 W (IF 0.71), avg HR 147, 12% at/over threshold, one 427 W sprint.',
+                  vd:'OFF-PROFILE — prescribed 1:30 Z2 ≤135. Deliberate constant-power heat experiment (good data: +21 bpm drift in still air), but tempo on a Z2-only day. Session left unticked.'},
+    '2026-07-21':{ac:'2:15 ridden @ 94 W avg — HR still 139–141 (worst HR-for-power of the log) — plus a hard finish: 600 W sprint, HR 182.',
+                  vd:'OFF-PROFILE — duration ✓ (2:15 vs 2:00) but HR over cap at trivial watts = fatigue flag, and the finish broke the week\'s no-threshold rule. Ticked with a note.'}
+  },
+  RR:{
+    '2026-07-19':{ac:'2.6 h PC MTB, 2,182 ft — avg HR 126 (P2), zero drift. First Assioma power ride: NP 185.',
+                  vd:'ON-PROFILE — base day ridden disciplined and under control. Slightly long, 15% in P4 on climbs — noted, not a miss.'},
+    '2026-07-20':{ac:'3.3 h Armstrong/Pinecone, 3,448 ft — avg HR 122, 0% over threshold, NP 180. Reported feeling bad.',
+                  vd:'OFF-PROFILE — template Monday is rest/easy; this was a big climbing day stacked on Sunday (back-to-back 1,200+ kJ at 60). HR discipline itself: excellent. Likely culprit for the bad legs: fueling.'}
+  }
+};
+const tip=document.getElementById('tip');
+function showTip(cell,e){
+  const who=cell.dataset.who, ds=cell.dataset.date, loc=cell.dataset.st;
+  const d=new Date(ds+'T12:00:00');
+  const p=(who==='JA'?jaPlan:rrPlan)(ds,loc,d.getDay());
+  const det=(DETAIL[who]&&DETAIL[who][ds]);
+  const ex=exOf(who,ds);
+  let h='<div class="th">'+d.toLocaleString('en',{weekday:'long',month:'short',day:'numeric'})+' · '+CFG[who].names[loc]+'</div>';
+  h+='<div class="pr"><b>Prescribed:</b> '+p.s+(p.d?' — '+p.d:'')+'</div>';
+  if(ds<=todayIso){
+    if(det){ h+='<div class="ac"><b>Actual:</b> '+det.ac+'</div><div class="vd v-'+ex+'">'+det.vd+'</div>'; }
+    else if(ex==='miss'){ h+='<div class="vd v-miss">NO WORKOUT — the prescription above went unridden.</div>'; }
+    else if(ex==='plan'){ h+='<div class="vd v-plan">ON-PROFILE — ridden as prescribed.</div>'; }
+    else if(ex==='off'){ h+='<div class="vd v-off">OFF-PROFILE — ridden, but not to the prescription.</div>'; }
+    else { h+='<div class="vd v-none">No ride data recorded yet — tap the day to set its badge (auto-filled from uploads when deployed).</div>'; }
+    if(document.getElementById('rep-'+who+'-'+ds))
+      h+='<div style="margin-top:5px;color:var(--ink3)">📖 Full coach\'s report below — click the 📖 on this day to jump to it.</div>';
+  }
+  tip.innerHTML=h; tip.style.display='block'; moveTip(e);
+}
+function moveTip(e){
+  const pad=14, w=tip.offsetWidth, hh=tip.offsetHeight;
+  let x=e.clientX+pad, y=e.clientY+pad;
+  if(x+w>window.innerWidth-8)x=e.clientX-w-pad;
+  if(y+hh>window.innerHeight-8)y=e.clientY-hh-pad;
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+function hideTip(){tip.style.display='none';}
+function paint(cell){
+  const cfg=CFG[cell.dataset.who];
+  cell.classList.remove('s-MEM','s-PC','s-OTH','s-OFF');
+  cell.classList.add('s-'+cell.dataset.st);
+  cell.querySelector('.st').textContent=cfg.labels[cell.dataset.st];
+}
+function counts(who){
+  const cfg=CFG[who], tally={}, ex={plan:0,off:0,miss:0};
+  document.querySelectorAll('#cal'+who+' .day').forEach(c=>{
+    if(c.dataset.date>=todayIso) tally[c.dataset.st]=(tally[c.dataset.st]||0)+1;
+    else { const s=exOf(who,c.dataset.date); if(ex[s]!==undefined)ex[s]++; }
+  });
+  document.getElementById('cnt'+who).innerHTML='Remaining before race: '+
+    cfg.states.map(s=>'<b>'+(tally[s]||0)+'</b> '+cfg.names[s]).join(' · ')+
+    '<br>Elapsed so far: <b style="color:#008300">'+ex.plan+'</b> on-profile · <b style="color:#8a5d00">'+ex.off+'</b> off-profile · <b style="color:#b02a2a">'+ex.miss+'</b> missed';
+}
+build('JA'); build('RR');
+
+// ---- next-7-days rolling plan (calendar-aware) ----
+function locOf(who,ds){
+  return localStorage.getItem('p2p-'+who+'-'+ds) || CFG[who].def(ds);
+}
+function phaseOf(ds){
+  if(ds<='2026-07-25')return'reentry';
+  if(ds<='2026-08-08')return'build';
+  if(ds<='2026-08-15')return'down';
+  if(ds<='2026-08-22')return'peak';
+  if(ds<='2026-08-29')return'taper';
+  return'race';
+}
+// Exact sessions for the current (re-entry) week, from the live race plan.
+const JA_EXACT={
+  '2026-07-21':{s:'2:00 Z2 base',d:'HR ≤138 · watts fall in heat · 85–95 rpm · no coasting'},
+  '2026-07-22':{s:'2:00 Z2 + Strength #2',d:'HR ≤138 · lift AFTER the ride, hex −20%'},
+  '2026-07-23':{s:'Travel → PC · optional ≤1:00 easy',d:'front-load fluids · openers only if gate green'},
+  '2026-07-24':{s:'1:30 easy Z2 (altitude)',d:'HR ≤135 by feel · watts read low up high'},
+  '2026-07-25':{s:'LONG 4:00 Z2 ⭐',d:'HR ≤138 by feel · full fuel rehearsal 70 g/hr',big:1},
+  '2026-07-26':{s:'Rest or ≤1:00 spin',d:'HR ≤125 · sleep is the assignment'}
+};
+function jaPlan(ds,loc,dow){
+  const ph=phaseOf(ds);
+  if(ph==='race'){
+    if(ds>'2026-09-05')return{s:'Recover',d:'you earned it'};
+    const m={0:{s:'Easy spin ≤1:00',d:'race week begins — nothing hard from here'},
+      1:{s:'Easy 1:00',d:'race week — nothing hard'},2:{s:'Openers',d:'3×2′ builds, full recovery'},
+      3:{s:'Easy ≤1:00',d:'hydrate, sleep'},4:{s:'Rest · carb-load starts',d:'≥200 g complex carb'},
+      5:{s:'Openers + load',d:'~700 g carb · low fiber · bottles pre-counted'},
+      6:{s:'RACE — P2P 🏁',d:'first half 165–180 W · HR ≤145 · fuel min 15',race:1}};
+    return m[dow];
+  }
+  if(loc==='OFF')return{s:'Fully off',d:'rest is the session · mobility + protein · deficit day',off:1};
+  if(loc==='TRV'){
+    if(dow===6)return{s:'Travel long: hotel bike 60–90′ Z2',d:'HR ≤135 by feel · bike quality varies, HR is the truth · + loaded step-ups 3×10/leg if a gym exists'};
+    if(dow===0)return{s:'Travel: rest or hotel spin ≤45′',d:'HR ≤125 · walking counts'};
+    return{s:'Travel: hotel bike 45–60′ Z2',d:'HR ≤135 by feel · OR bodyweight circuit ×3: step-ups, squats, lunges, planks · keep the fuel habits'};
+  }
+  if(JA_EXACT[ds])return JA_EXACT[ds];
+  const down=ph==='down', taper=ph==='taper';
+  const inPC=loc==='PC';
+  switch(dow){
+    case 1: return taper?{s:'Easy 1:00',d:'taper — freshness only'}:{s:'Easy 1:00 + strength',d:down?'30% load only':'lift after the spin'};
+    case 2: return {s:down||taper?'Z2 1:30':'Z2 2:00',d:inPC?'by HR at altitude ≤138':'≤138 · 130–170 W · 85–95 rpm'};
+    case 3: return taper?{s:'Openers 3×2′',d:'short, crisp, done'}:{s:(down?'Z2 1:30':'Z2 2:00')+(down?'':' + strength'),d:inPC?'by HR at altitude':'≤138 · 130–170 W'};
+    case 4: return {s:'Easy 1:00 or travel',d:'keep legs fresh for the weekend'};
+    case 5: return {s:'Easy 1:30 (pre-long)',d:'carb up tonight for tomorrow'};
+    case 6:
+      if(taper)return{s:'Openers + easy 1:30',d:'no long ride — race is next week'};
+      if(down)return{s:'Z2 2:30 easy',d:'down week — resist the big day'};
+      if(ph==='peak')return{s:'DRESS REHEARSAL — the big one ⭐',d:'full race protocol · pacing bands · aid-swap rehearsal',big:1};
+      return inPC?{s:'BIG VERT 5.5–6:00 / ~8k ft ⭐',d:'climbs HR ≤145 · 150–165 W up high · 70 g/hr',big:1}
+                 :{s:'LONG flat Z2 3:30–4:00 ⭐',d:'≤138 · 140–170 W · full fuel rehearsal',big:1};
+    default:return {s:'Rest or ≤1:00 recovery',d:'HR ≤125 · default to rest if RHR up'};
+  }
+}
+function rrPlan(ds,loc,dow){
+  const ph=phaseOf(ds);
+  if(loc==='OFF')return{s:'Fully off',d:'rest is the session · mobility · protein · sleep',off:1};
+  if(loc==='TRV'){
+    if(dow===6)return{s:'Travel long: hotel bike 60–90′',d:'HR <128 · steady, by feel · + step-ups 3×8/leg if a gym exists'};
+    if(dow===1)return{s:'Travel: rest or easy walk',d:'the Monday stays easy on the road too'};
+    return{s:'Travel: hotel bike 45–60′',d:'HR <128 · OR bodyweight ×3: step-ups, chair squats, calf raises, planks · fuel habits unchanged'};
+  }
+  if(ph==='race'){
+    if(ds>'2026-09-05')return{s:'Recover',d:'strong finish banked'};
+    const m={0:{s:'Easy spin ≤1:00',d:'race week begins'},
+      1:{s:'Rest',d:''},2:{s:'Easy spin 1:00',d:''},3:{s:'Easy ≤1:00',d:''},
+      4:{s:'Rest · carb-load starts',d:'≥200 g carb'},5:{s:'Light openers + load',d:'~600+ g carb'},
+      6:{s:'RACE — P2P 🏁',d:'climbs ≤135 (cap 140) · 165–180 W · <5 punches/hr · own race',race:1}};
+    return m[dow];
+  }
+  const down=ph==='down', taper=ph==='taper', reentry=ph==='reentry';
+  const other=loc==='OTH'?' (wherever you are — by HR)':'';
+  switch(dow){
+    case 1: return {s:'Rest / easy',d:'the age-60 gate starts the week'};
+    case 2: return (down||reentry)?{s:reentry?'FTP field test if fresh — else easy':'Easy 1:00',d:reentry?'20-min test sets the real number':''}
+                  :taper?{s:'Short climb touch 2–3×4′',d:'@ 138–144 · stay sharp'}
+                  :{s:'Tempo 3–4×8–10′ @ 138–144',d:'recover fully between'+other};
+    case 3: return {s:down?'Easy 1:00':'Base 1.5–2:00',d:'HR <128'+other};
+    case 4: return {s:down?'Rest':'Base 1:30 + strength',d:'HR <125 · bodyweight work after'+other};
+    case 5: return {s:'Easy or rest',d:'set up the long day'};
+    case 6:
+      if(taper)return{s:'Easy 1:30–2:00',d:'no long ride — race is next week'};
+      if(down)return{s:'Base 2:00 easy',d:'recovery week — sleep > miles'};
+      if(ph==='peak')return{s:'JOINT DRESS REHEARSAL ⭐',d:'165–180 W every climb · timer fueling all day',big:1};
+      const dur=reentry?'3.5–4:00':(ds<='2026-08-02'?'4.5–5:00':'5–6:00');
+      return{s:'LONG climbing '+dur+' ⭐',d:'HR <133 · fuel 60–80 g/hr on the timer'+other,big:1};
+    default:return {s:'Base 1.5–2:00',d:'HR <128'+other};
+  }
+}
+function renderNext7(){
+  const el=document.getElementById('next7'); el.innerHTML='';
+  const days=[]; const t=new Date(); t.setHours(12,0,0,0);
+  t.setDate(t.getDate()-t.getDay());   // back up to this week's Sunday
+  for(let i=0;i<7;i++){const d=new Date(t); d.setDate(d.getDate()+i); days.push(d);}
+  el.appendChild(Object.assign(document.createElement('div'),{className:'hd'}));
+  days.forEach(d=>{const h=document.createElement('div');h.className='hd'+(iso(d)===todayIso?' today':'');
+    h.innerHTML=d.toLocaleString('en',{weekday:'short'})+'<b>'+d.toLocaleString('en',{month:'short',day:'numeric'})+'</b>';el.appendChild(h);});
+  [['JA',jaPlan],['RR',rrPlan]].forEach(([who,fn])=>{
+    const w=document.createElement('div');w.className='who who'+who;w.textContent=who==='JA'?'JONATHAN':'ROBERT';el.appendChild(w);
+    days.forEach(d=>{
+      const ds=iso(d), loc=locOf(who,ds), p=fn(ds,loc,d.getDay());
+      const c=document.createElement('div');
+      c.className='dcell'+(p.big?' bigday':'')+(p.race?' raceday':'')+(p.off?' offday':'')+(ds<todayIso?' past':'');
+      c.innerHTML='<span class="loc loc-'+loc+'">'+CFG[who].names[loc]+'</span><div class="s">'+p.s+'</div><div class="d">'+(p.d||'')+'</div>';
+      el.appendChild(c);
+    });
+  });
+}
+renderNext7();
+document.querySelectorAll('.day').forEach(c=>c.addEventListener('click',renderNext7));
+
+// ---- drag & drop upload (UI prototype — deployed version POSTs to /upload) ----
+const drop=document.getElementById('drop'), dropInput=document.getElementById('dropInput'),
+      dropStatus=document.getElementById('dropStatus');
+drop.addEventListener('click',()=>dropInput.click());
+['dragenter','dragover'].forEach(ev=>document.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('armed');}));
+['dragleave','drop'].forEach(ev=>document.addEventListener(ev,e=>{e.preventDefault();if(ev==='drop'||e.target===document.documentElement)drop.classList.remove('armed');}));
+drop.addEventListener('drop',e=>{e.preventDefault();handleFiles(e.dataTransfer.files);});
+document.addEventListener('drop',e=>{e.preventDefault();if(e.target.closest('#drop'))return;handleFiles(e.dataTransfer.files);});
+dropInput.addEventListener('change',()=>handleFiles(dropInput.files));
+// ---- ride-report filter ----
+document.querySelectorAll('#repfilter button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#repfilter button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const f=b.dataset.f;
+  document.querySelectorAll('details.rep').forEach(r=>{
+    r.style.display=(f==='all'||r.classList.contains('rep'+f))?'':'none';
+  });
+}));
+
+function handleFiles(files){
+  const names=[...files].map(f=>f.name);
+  const bad=names.filter(n=>!/\.(zip|fit)$/i.test(n));
+  if(bad.length){dropStatus.className='status err';
+    dropStatus.textContent='✕ '+bad.join(', ')+' — .zip or .fit only';return;}
+  if(!names.length)return;
+  dropStatus.className='status ok';
+  dropStatus.innerHTML='✓ '+names.join(', ')+' received<br><span style="font-weight:400;color:var(--ink3)">prototype only — on the live site this uploads &amp; the analysis appears below in seconds</span>';
+}
+</script>
+</body></html>
