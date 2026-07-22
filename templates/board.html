@@ -452,7 +452,7 @@ function moveTip(e){
 function hideTip(){tip.style.display='none';}
 function paint(cell){
   const cfg=CFG[cell.dataset.who];
-  cell.classList.remove('s-MEM','s-PC','s-OTH','s-OFF');
+  cell.classList.remove('s-MEM','s-PC','s-OTH','s-TRV','s-OFF');
   cell.classList.add('s-'+cell.dataset.st);
   cell.querySelector('.st').textContent=cfg.labels[cell.dataset.st];
 }
