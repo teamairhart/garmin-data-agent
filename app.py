@@ -101,9 +101,12 @@ def dashboard():
     )
 
 @app.route('/plan')
-def plan():
-    """Interactive day-by-day race plan with check-offs."""
-    plan_data = load_plan()
+@app.route('/plan/<athlete>')
+def plan(athlete='jonathan'):
+    """Interactive day-by-day race plan with check-offs (per athlete)."""
+    if athlete not in ('jonathan', 'robert'):
+        return redirect(url_for('plan'))
+    plan_data = load_plan(athlete)
     completions = {}
     if session.get('user_id'):
         completions = get_completions(int(session['user_id']))

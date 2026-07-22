@@ -14,6 +14,10 @@ from typing import Any
 from src.auth import get_db_connection
 
 PLAN_PATH = Path(__file__).resolve().parents[1] / "config" / "race_plan_2026.json"
+PLAN_PATHS = {
+    "jonathan": PLAN_PATH,
+    "robert": Path(__file__).resolve().parents[1] / "config" / "race_plan_2026_robert.json",
+}
 
 
 def init_plan_tables() -> None:
@@ -37,11 +41,12 @@ def init_plan_tables() -> None:
     conn.close()
 
 
-def load_plan() -> dict[str, Any]:
-    """Load the structured plan JSON (empty skeleton if missing)."""
-    if not PLAN_PATH.exists():
+def load_plan(athlete: str = "jonathan") -> dict[str, Any]:
+    """Load the structured plan JSON for an athlete (empty skeleton if missing)."""
+    path = PLAN_PATHS.get(athlete, PLAN_PATH)
+    if not path.exists():
         return {"meta": {}, "weeks": [], "templates": {}}
-    with PLAN_PATH.open(encoding="utf-8") as fh:
+    with path.open(encoding="utf-8") as fh:
         return json.load(fh)
 
 

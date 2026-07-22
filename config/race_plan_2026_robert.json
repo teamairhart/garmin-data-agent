@@ -1,0 +1,1786 @@
+{
+ "meta": {
+  "athlete": "Robert Raff",
+  "subtitle": "Park City Point 2 Point (~Sep 5) — first season with power (Assioma pedals since Jul 19)",
+  "goal_leadville": "Leadville Silver Rush 50 (Jul 12) CANCELED — wildfires. The base built for it rolls straight into the P2P build.",
+  "goal_p2p": "Finish strong & smart — durability is the weapon. Climbs ≤135 (cap 140) at 165–180 W, <5 punches/hr, fueled 60–80 g/hr on a timer from min 15.",
+  "principles": [
+   "HR caps are LAW — the whole usable range is 27 bpm (118–145), so a few beats matter. Never chase anyone uphill. Including Jonathan. Especially Jonathan.",
+   "Pace climbs by POWER now: 165–180 W sustained (proven 58 min @ 180 on Pinecone 7/20). HR ceiling 140 is the backstop, not the target.",
+   "Punches ≥247 W are matches — <5/hr. Pre-shift before pitches, carry momentum, let speed sag.",
+   "Fuel on a 20-min timer from min 15, every ride ≥90 min — durability MASKS under-fueling until it's late (the 7/20 lesson).",
+   "Body composition is the biggest lever: each kg ≈ 5 m/h of VAM ≈ 10–12 min across P2P. Deficit on easy/rest days only; never cut in the final fortnight.",
+   "At 60, recovery gates everything: every 3rd week is a recovery week, sleep is a session, Mondays stay easy.",
+   "Most hours should feel EASY (HR <128) — raising LT1 (100 W lab) is the aerobic mission."
+  ],
+  "zones": [
+   {
+    "zone": "P1 recovery",
+    "hr": "<118",
+    "power": "<100 W",
+    "use": "Recovery spins, Mondays"
+   },
+   {
+    "zone": "P2 base",
+    "hr": "119–133",
+    "power": "~110–140 W (provisional)",
+    "use": "The bulk — LT1-raising volume"
+   },
+   {
+    "zone": "P3 tempo",
+    "hr": "134–138",
+    "power": "~150–175 W (provisional)",
+    "use": "Happens on climbs; don't live here"
+   },
+   {
+    "zone": "P4 threshold",
+    "hr": "139–145",
+    "power": "~180–200 W (provisional)",
+    "use": "Tempo intervals 1×/week only"
+   },
+   {
+    "zone": "Race climbs",
+    "hr": "≤135 (cap 140)",
+    "power": "165–180 W",
+    "use": "PACE BY POWER — HR can't resolve climb effort"
+   },
+   {
+    "zone": "FTP",
+    "hr": "—",
+    "power": "lab 190 W STALE → test wk of Jul 20 (expect 210–220)",
+    "use": "Re-baselines everything above"
+   }
+  ]
+ },
+ "weeks": [
+  {
+   "id": "rr-wk-2026-07-20",
+   "label": "Week of Jul 20 — Absorb the double block → FTP field test",
+   "phase": "Re-entry / test",
+   "location": "Park City",
+   "hours": "7–9",
+   "focus": "Recover from the Jul 19–20 back-to-back (2,800+ kJ). The week's one quality item is the FTP FIELD TEST once legs are fresh — the Dec lab 190 W is stale (40 min @ 190 at sub-threshold HR on 7/20 says ~210–220). Everything else stays P1/P2. Fix the Fenix FTP setting to 190 today; update after the test.",
+   "days": [
+    {
+     "id": "2026-07-20",
+     "date": "2026-07-20",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Big climb day ridden (Armstrong/Pinecone) — logged",
+     "sessions": [
+      {
+       "id": "rr-2026-07-20-ride",
+       "type": "bike",
+       "title": "(ridden) 3.3 h / 3,448 ft",
+       "duration": "3:20",
+       "targets": "avg HR 122 · NP 180 · 0% over threshold",
+       "detail": [
+        "Ridden before this plan was published — see the ride report on the board. Template Monday is rest; the recovery it displaced moves to Tue/Wed."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-07-21",
+     "date": "2026-07-21",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Recovery spin",
+     "sessions": [
+      {
+       "id": "rr-2026-07-21-ride",
+       "type": "bike",
+       "title": "Easy spin 1:00",
+       "duration": "1:00",
+       "targets": "HR <125 · flat/gentle · genuinely easy",
+       "detail": [
+        "Flush day after the double block. Walking counts. No strength."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-22",
+     "date": "2026-07-22",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "FTP FIELD TEST (if fresh) ⭐",
+     "sessions": [
+      {
+       "id": "rr-2026-07-22-test",
+       "type": "bike",
+       "title": "20-min FTP field test — or push to Friday if legs aren't fresh",
+       "duration": "1:30 total",
+       "targets": "20-min max steady effort on a consistent climb · FTP = 95% of 20-min power",
+       "detail": [
+        "Warm up 20–25 min easy + 3×1 min builds. Then 20 min at the hardest pace you can hold STEADY — start conservative (~200 W), lift after minute 10 if it feels sustainable.",
+        "Use one continuous climb (Royal St / American Flag style grade) — steady gradient beats rollers for pacing.",
+        "This sets every training number: expect ~210–220 W. Update the Fenix and the board's bands after.",
+        "Not fresh today? Swap with Friday and ride 1.5 h base <128 instead."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-23",
+     "date": "2026-07-23",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-07-23-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125 · conversational throughout",
+       "detail": [
+        "Easy aerobic volume — the LT1-raising work. Bulk of the week lives here."
+       ]
+      },
+      {
+       "id": "rr-2026-07-23-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after the ride",
+       "duration": "~25 min",
+       "targets": "RPE 5–6 · quality of movement",
+       "detail": [
+        "Step-ups 3×10/leg · chair squats 3×12 · calf raises 3×15 · planks 3×30 s. Nothing that leaves soreness for Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-24",
+     "date": "2026-07-24",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest (test day if Wednesday was skipped)",
+     "sessions": [
+      {
+       "id": "rr-2026-07-24-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120 if riding",
+       "detail": [
+        "Set up Saturday. If the FTP test hasn't happened yet, it happens today — fresh."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-07-25",
+     "date": "2026-07-25",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "LONG 3.5–4 h — first re-entry long ⭐",
+     "sessions": [
+      {
+       "id": "rr-2026-07-25-ride",
+       "type": "bike",
+       "title": "Long aerobic 3.5–4 h",
+       "duration": "3:30–4:00",
+       "targets": "HR <133 all day · climbs ≤135 by feel · fuel on the 20-min timer",
+       "detail": [
+        "Jonathan rides his 4:00 in Park City today — a joint long ride works perfectly; his cap is HR ≤138, yours ≤133, both genuinely easy.",
+        "Practice the race fueling exactly: 60–80 g/hr from min 15. Durability masks under-fueling — the timer, not feel.",
+        "Punch budget applies even easy: pre-shift before pitches, <5 surges ≥247 W per hour."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        },
+        {
+         "at": "2:00",
+         "do": "~30 g carb; refill bottles + sodium"
+        },
+        {
+         "at": "2:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:30",
+         "do": "~30 g carb"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-07-26",
+     "date": "2026-07-26",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base close-out",
+     "sessions": [
+      {
+       "id": "rr-2026-07-26-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · easy",
+       "detail": [
+        "Close the week aerobic. If Saturday left real fatigue, cut to 1:00 — at 60, recovery gates everything."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-07-27",
+   "label": "Week of Jul 27 — Build 1: tempo returns",
+   "phase": "P2P build 1",
+   "location": "Park City",
+   "hours": "9–11",
+   "focus": "First full build week. One tempo session (the only intensity), one long ride at 4.5–5 h, everything else P1/P2. If the FTP test still hasn't happened, it replaces Tuesday's tempo. Weight trend check Sunday.",
+   "days": [
+    {
+     "id": "2026-07-27",
+     "date": "2026-07-27",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest / easy",
+     "sessions": [
+      {
+       "id": "rr-2026-07-27-ride",
+       "type": "bike",
+       "title": "Rest or easy walk/spin ≤45 min",
+       "duration": "0:00–0:45",
+       "targets": "HR <115 if anything",
+       "detail": [
+        "The Monday stays easy. Sleep long."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-07-28",
+     "date": "2026-07-28",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Tempo-threshold intervals",
+     "sessions": [
+      {
+       "id": "rr-2026-07-28-ride",
+       "type": "bike",
+       "title": "Climb intervals 3×8–10 min @ HR 138–144",
+       "duration": "1:45",
+       "targets": "HR 138–144 (~180–200 W) · full recovery between",
+       "detail": [
+        "On a steady climb. Start at 8-min reps; these lift LT1/LT2 over time.",
+        "HR ceiling is law — 144 means 144. Power will tell you if you're drifting hot once the FTP is set."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-29",
+     "date": "2026-07-29",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-07-29-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · conversational",
+       "detail": [
+        "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-30",
+     "date": "2026-07-30",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-07-30-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125",
+       "detail": [
+        "Truly easy — LT1 work."
+       ]
+      },
+      {
+       "id": "rr-2026-07-30-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after",
+       "duration": "~25 min",
+       "targets": "RPE 6",
+       "detail": [
+        "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-07-31",
+     "date": "2026-07-31",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest",
+     "sessions": [
+      {
+       "id": "rr-2026-07-31-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Carb up tonight for the long day."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-01",
+     "date": "2026-08-01",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "LONG 4.5–5 h ⭐",
+     "sessions": [
+      {
+       "id": "rr-2026-08-01-ride",
+       "type": "bike",
+       "title": "Long aerobic climbing 4.5–5 h",
+       "duration": "4:30–5:00",
+       "targets": "HR <133 · climbs ≤135 · 165–180 W on sustained climbs · fuel on the timer",
+       "detail": [
+        "Building toward the 6-h race-sim. Practice the race band on every long climb.",
+        "Punch budget: <5 surges ≥247 W per hour — pre-shift, carry momentum."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        },
+        {
+         "at": "2:00",
+         "do": "~30 g carb; refill bottles + sodium"
+        },
+        {
+         "at": "2:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "4:00",
+         "do": "~30 g carb; check total vs 60–80 g/hr"
+        },
+        {
+         "at": "4:30",
+         "do": "~30 g carb"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-08-02",
+     "date": "2026-08-02",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-02-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "Aerobic close-out; cut it if the long day left damage."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-08-03",
+   "label": "Week of Aug 3 — Build 2: the long climbing week",
+   "phase": "P2P build 2",
+   "location": "Park City",
+   "hours": "10–12",
+   "focus": "Biggest volume week. The Saturday ride reaches 5–6 h with race-band climbing — durability is the gift, this week leans into it. Tempo 4×10. Weight check: every kg ≈ 10–12 min across P2P's 10k ft.",
+   "days": [
+    {
+     "id": "2026-08-03",
+     "date": "2026-08-03",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest / easy",
+     "sessions": [
+      {
+       "id": "rr-2026-08-03-ride",
+       "type": "bike",
+       "title": "Rest or easy walk/spin ≤45 min",
+       "duration": "0:00–0:45",
+       "targets": "HR <115 if anything",
+       "detail": [
+        "The Monday stays easy. Sleep long."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-08-04",
+     "date": "2026-08-04",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Tempo-threshold intervals",
+     "sessions": [
+      {
+       "id": "rr-2026-08-04-ride",
+       "type": "bike",
+       "title": "Climb intervals 4×10 min @ HR 138–144",
+       "duration": "2:00",
+       "targets": "HR 138–144 · steady climb · full recovery",
+       "detail": [
+        "Fourth rep only if the third was clean (HR inside band, power steady)."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-05",
+     "date": "2026-08-05",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-05-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · conversational",
+       "detail": [
+        "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-06",
+     "date": "2026-08-06",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-08-06-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125",
+       "detail": [
+        "Truly easy — LT1 work."
+       ]
+      },
+      {
+       "id": "rr-2026-08-06-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after",
+       "duration": "~25 min",
+       "targets": "RPE 6",
+       "detail": [
+        "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-07",
+     "date": "2026-08-07",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest",
+     "sessions": [
+      {
+       "id": "rr-2026-08-07-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Carb up tonight for the long day."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-08",
+     "date": "2026-08-08",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "LONG CLIMBING 5–6 h ⭐",
+     "sessions": [
+      {
+       "id": "rr-2026-08-08-ride",
+       "type": "bike",
+       "title": "Long climbing ride 5–6 h",
+       "duration": "5:00–6:00",
+       "targets": "HR <133 · every sustained climb at 165–180 W · <5 punches/hr · full fuel protocol",
+       "detail": [
+        "Race-specific: repeated long climbs, descents used as recovery (coast, HR <110).",
+        "This is the week the fueling habit must be automatic — 60–80 g/hr on the timer for 6 h."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        },
+        {
+         "at": "2:00",
+         "do": "~30 g carb; refill bottles + sodium"
+        },
+        {
+         "at": "2:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "4:00",
+         "do": "~30 g carb; check total vs 60–80 g/hr"
+        },
+        {
+         "at": "4:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:30",
+         "do": "~30 g carb"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-08-09",
+     "date": "2026-08-09",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-09-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "Aerobic close-out; cut it if the long day left damage."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-08-10",
+   "label": "Week of Aug 10 — RECOVERY week (the age-60 gate)",
+   "phase": "Recovery",
+   "location": "Park City",
+   "hours": "5–6",
+   "focus": "The scheduled every-3rd recovery week. Volume ~60%, NO tempo, nothing over HR 128 all week. Sleep is the workout — this is where the last three weeks become fitness. Do not add rides.",
+   "days": [
+    {
+     "id": "2026-08-10",
+     "date": "2026-08-10",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest / easy",
+     "sessions": [
+      {
+       "id": "rr-2026-08-10-ride",
+       "type": "bike",
+       "title": "Rest or easy walk/spin ≤45 min",
+       "duration": "0:00–0:45",
+       "targets": "HR <115 if anything",
+       "detail": [
+        "The Monday stays easy. Sleep long."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-08-11",
+     "date": "2026-08-11",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Easy week — no tempo",
+     "sessions": [
+      {
+       "id": "rr-2026-08-11-ride",
+       "type": "bike",
+       "title": "Easy spin 1:00",
+       "duration": "1:00",
+       "targets": "HR <120",
+       "detail": [
+        "No intervals this week. That's the point."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-12",
+     "date": "2026-08-12",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-12-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · conversational",
+       "detail": [
+        "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-13",
+     "date": "2026-08-13",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-08-13-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125",
+       "detail": [
+        "Truly easy — LT1 work."
+       ]
+      },
+      {
+       "id": "rr-2026-08-13-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after",
+       "duration": "~25 min",
+       "targets": "RPE 6",
+       "detail": [
+        "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-14",
+     "date": "2026-08-14",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest",
+     "sessions": [
+      {
+       "id": "rr-2026-08-14-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Carb up tonight for the long day."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-15",
+     "date": "2026-08-15",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "Base 2 h easy",
+     "sessions": [
+      {
+       "id": "rr-2026-08-15-ride",
+       "type": "bike",
+       "title": "Base ride 2:00 easy",
+       "duration": "2:00",
+       "targets": "HR <128 · genuinely conversational",
+       "detail": [
+        "No long ride this week — resist it. Fuel normally anyway to keep the habit."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-08-16",
+     "date": "2026-08-16",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-16-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "Aerobic close-out; cut it if the long day left damage."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-08-17",
+   "label": "Week of Aug 17 — PEAK: joint dress rehearsal",
+   "phase": "Peak",
+   "location": "Park City",
+   "hours": "9–11",
+   "focus": "The year's key Saturday: full race-protocol dress rehearsal with Jonathan — race fueling, race pacing bands, race-morning timing. Short tempo touch Tuesday keeps the top end awake; everything else protects Saturday.",
+   "days": [
+    {
+     "id": "2026-08-17",
+     "date": "2026-08-17",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest / easy",
+     "sessions": [
+      {
+       "id": "rr-2026-08-17-ride",
+       "type": "bike",
+       "title": "Rest or easy walk/spin ≤45 min",
+       "duration": "0:00–0:45",
+       "targets": "HR <115 if anything",
+       "detail": [
+        "The Monday stays easy. Sleep long."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-08-18",
+     "date": "2026-08-18",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Tempo touch",
+     "sessions": [
+      {
+       "id": "rr-2026-08-18-ride",
+       "type": "bike",
+       "title": "Climb intervals 3×6 min @ HR 138–144",
+       "duration": "1:30",
+       "targets": "HR 138–144 · crisp not heroic",
+       "detail": [
+        "Short reps — sharpening, not building."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-19",
+     "date": "2026-08-19",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-19-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · conversational",
+       "detail": [
+        "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-20",
+     "date": "2026-08-20",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-08-20-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125",
+       "detail": [
+        "Truly easy — LT1 work."
+       ]
+      },
+      {
+       "id": "rr-2026-08-20-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after",
+       "duration": "~25 min",
+       "targets": "RPE 6",
+       "detail": [
+        "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-21",
+     "date": "2026-08-21",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest",
+     "sessions": [
+      {
+       "id": "rr-2026-08-21-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Carb up tonight for the long day."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-22",
+     "date": "2026-08-22",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "DRESS REHEARSAL 6 h ⭐",
+     "sessions": [
+      {
+       "id": "rr-2026-08-22-ride",
+       "type": "bike",
+       "title": "Joint race-sim: ~6 h race protocol",
+       "duration": "5:30–6:30",
+       "targets": "Climbs ≤135 (cap 140) at 165–180 W · <5 punches/hr · fuel 60–80 g/hr from min 15 · race-morning breakfast + timing",
+       "detail": [
+        "Ride it exactly as Sep 5: same breakfast, same bottles, same feed alarm, same pacing discipline first mile to last.",
+        "Rehearse the aid-station swap with Jonathan (10–15 min, not an hour).",
+        "The goal is zero surprises on race day — equipment, gut, pacing all proven today."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        },
+        {
+         "at": "2:00",
+         "do": "~30 g carb; refill bottles + sodium"
+        },
+        {
+         "at": "2:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "4:00",
+         "do": "~30 g carb; check total vs 60–80 g/hr"
+        },
+        {
+         "at": "4:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:30",
+         "do": "~30 g carb"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-08-23",
+     "date": "2026-08-23",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-23-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "Aerobic close-out; cut it if the long day left damage."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-08-24",
+   "label": "Week of Aug 24 — Taper",
+   "phase": "Taper",
+   "location": "Park City",
+   "hours": "5–7",
+   "focus": "Freshness only — no fitness is available this week. Volume down ~45%, two short climb touches to stay sharp, sleep protected. NO weight-cutting in the final fortnight — fuel the taper.",
+   "days": [
+    {
+     "id": "2026-08-24",
+     "date": "2026-08-24",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest / easy",
+     "sessions": [
+      {
+       "id": "rr-2026-08-24-ride",
+       "type": "bike",
+       "title": "Rest or easy walk/spin ≤45 min",
+       "duration": "0:00–0:45",
+       "targets": "HR <115 if anything",
+       "detail": [
+        "The Monday stays easy. Sleep long."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-08-25",
+     "date": "2026-08-25",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Climb touches",
+     "sessions": [
+      {
+       "id": "rr-2026-08-25-ride",
+       "type": "bike",
+       "title": "2–3×4 min @ HR 138–144",
+       "duration": "1:15",
+       "targets": "HR 138–144 · full recovery",
+       "detail": [
+        "Stay sharp, nothing more. Second touch Thursday only if fresh."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-26",
+     "date": "2026-08-26",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-26-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128 · conversational",
+       "detail": [
+        "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-27",
+     "date": "2026-08-27",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Base + strength",
+     "sessions": [
+      {
+       "id": "rr-2026-08-27-ride",
+       "type": "bike",
+       "title": "Base 1.5 h",
+       "duration": "1:30",
+       "targets": "HR <125",
+       "detail": [
+        "Truly easy — LT1 work."
+       ]
+      },
+      {
+       "id": "rr-2026-08-27-strength",
+       "type": "strength",
+       "title": "Bodyweight strength after",
+       "duration": "~25 min",
+       "targets": "RPE 6",
+       "detail": [
+        "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-28",
+     "date": "2026-08-28",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Easy or rest",
+     "sessions": [
+      {
+       "id": "rr-2026-08-28-ride",
+       "type": "bike",
+       "title": "Easy 1:00 or rest",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Carb up tonight for the long day."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-08-29",
+     "date": "2026-08-29",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "Easy 1.5–2 h",
+     "sessions": [
+      {
+       "id": "rr-2026-08-29-ride",
+       "type": "bike",
+       "title": "Easy ride 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "No long ride — the race is next Saturday. Keep the fuel habit."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-08-30",
+     "date": "2026-08-30",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Base",
+     "sessions": [
+      {
+       "id": "rr-2026-08-30-ride",
+       "type": "bike",
+       "title": "Base 1.5–2 h",
+       "duration": "1:30–2:00",
+       "targets": "HR <128",
+       "detail": [
+        "Aerobic close-out; cut it if the long day left damage."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rr-wk-2026-08-31",
+   "label": "Week of Aug 31 — RACE: Park City Point 2 Point, Sat Sep 5",
+   "phase": "Race",
+   "location": "Park City",
+   "hours": "4–5 + race",
+   "focus": "Execution only. Carb-load Thu–Fri, openers light, sleep banked Thursday night (that's the night that matters). Race: climbs ≤135 (ceiling 140) at 165–180 W, <5 punches/hr, fuel from min 15, ride YOUR race — built to finish strong.",
+   "days": [
+    {
+     "id": "2026-08-31",
+     "date": "2026-08-31",
+     "weekday": "Mon",
+     "location": "Park City",
+     "headline": "Rest",
+     "sessions": [
+      {
+       "id": "rr-2026-08-31-ride",
+       "type": "bike",
+       "title": "Rest",
+       "duration": "—",
+       "targets": "Full rest · hydrate",
+       "detail": [
+        "Nothing to gain this week except freshness."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    },
+    {
+     "id": "2026-09-01",
+     "date": "2026-09-01",
+     "weekday": "Tue",
+     "location": "Park City",
+     "headline": "Openers",
+     "sessions": [
+      {
+       "id": "rr-2026-09-01-ride",
+       "type": "bike",
+       "title": "Easy 45–60 min + 2×2 min builds",
+       "duration": "0:45–1:00",
+       "targets": "Builds to HR ~135, full recovery",
+       "detail": [
+        "Legs awake, nothing spent."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-09-02",
+     "date": "2026-09-02",
+     "weekday": "Wed",
+     "location": "Park City",
+     "headline": "Easy",
+     "sessions": [
+      {
+       "id": "rr-2026-09-02-ride",
+       "type": "bike",
+       "title": "Easy ≤1:00",
+       "duration": "0:00–1:00",
+       "targets": "HR <120",
+       "detail": [
+        "Hydrate hard. Kit check."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,400–2,600",
+      "carb_g": "300–350",
+      "protein_g": "170–180",
+      "fat_g": "~80",
+      "notes": "Body-comp phase: modest deficit on easy/rest days ONLY. Protein every meal (95 kg → keep it high). On-bike protocol identical to Jonathan's Woodruff plan; daily macros are starting guidance pending Robert's own numbers."
+     }
+    },
+    {
+     "id": "2026-09-03",
+     "date": "2026-09-03",
+     "weekday": "Thu",
+     "location": "Park City",
+     "headline": "Rest + carb-load begins",
+     "sessions": [
+      {
+       "id": "rr-2026-09-03-ride",
+       "type": "bike",
+       "title": "Rest",
+       "duration": "—",
+       "targets": "≥200 g complex carb today",
+       "detail": [
+        "Tonight is the sleep that matters for Saturday. Bed early."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-09-04",
+     "date": "2026-09-04",
+     "weekday": "Fri",
+     "location": "Park City",
+     "headline": "Light openers + full load",
+     "sessions": [
+      {
+       "id": "rr-2026-09-04-ride",
+       "type": "bike",
+       "title": "30 min easy + 2×2 min to HR ~135",
+       "duration": "0:30",
+       "targets": "~600+ g carb · low fiber/fat",
+       "detail": [
+        "Pre-count every bottle/gel against 60–80 g/hr. Lay out the cold-start kit."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-09-05",
+     "date": "2026-09-05",
+     "weekday": "Sat",
+     "location": "Park City",
+     "headline": "RACE — Park City Point 2 Point 🏁",
+     "sessions": [
+      {
+       "id": "rr-2026-09-05-ride",
+       "type": "bike",
+       "title": "RACE: P2P",
+       "duration": "~9–10 h",
+       "targets": "Climbs ≤135 (cap 140) · 165–180 W sustained climbs · <5 punches/hr · fuel from min 15 · 500–800 mg sodium/hr",
+       "detail": [
+        "2–3 h pre: big carb breakfast (as rehearsed Aug 22). Easy 10–15 min spin before the start.",
+        "First half is discipline: let groups go on every climb. The field comes back to the diesel after hour six — that's YOUR race.",
+        "Feed alarm every 20 min, first feed at min 15, no skipped feeds ever — the 7/20 lesson: the engine outlasts unfueled legs.",
+        "Descents: coast, recover, eat. Finish strong — that's the goal, and it's built."
+       ],
+       "fueling": [
+        {
+         "at": "0:15",
+         "do": "Start carb mix + sips — feed from min 15 on a 20-min timer, every ride, no exceptions"
+        },
+        {
+         "at": "0:35",
+         "do": "~30 g carb + electrolytes (target 60–80 g/hr · 500–800 mg sodium/hr · 20–24 oz fluid/hr)"
+        },
+        {
+         "at": "1:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "1:30",
+         "do": "~30 g carb (real food OK)"
+        },
+        {
+         "at": "2:00",
+         "do": "~30 g carb; refill bottles + sodium"
+        },
+        {
+         "at": "2:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "3:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "4:00",
+         "do": "~30 g carb; check total vs 60–80 g/hr"
+        },
+        {
+         "at": "4:30",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:00",
+         "do": "~30 g carb"
+        },
+        {
+         "at": "5:30",
+         "do": "~30 g carb"
+        }
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "hard",
+      "kcal": "~3,000–3,200",
+      "carb_g": "450–500",
+      "protein_g": "170–180",
+      "fat_g": "~75",
+      "notes": "Long/hard day — NO deficit. Fuel the ride fully (60–80 g/hr on the timer), refeed after, carb-up the evening before the long day."
+     }
+    },
+    {
+     "id": "2026-09-06",
+     "date": "2026-09-06",
+     "weekday": "Sun",
+     "location": "Park City",
+     "headline": "Recover 🎉",
+     "sessions": [
+      {
+       "id": "rr-2026-09-06-ride",
+       "type": "bike",
+       "title": "Walk / celebrate",
+       "duration": "—",
+       "targets": "—",
+       "detail": [
+        "Strong finish banked. Season review this week."
+       ]
+      }
+     ],
+     "nutrition": {
+      "day_type": "rest",
+      "kcal": "~2,200–2,400",
+      "carb_g": "250–300",
+      "protein_g": "170–180",
+      "fat_g": "~85",
+      "notes": "Rest day — the main weekly cut lives here. Never cut protein. If weight stalls on short sleep, fix sleep before cutting harder."
+     }
+    }
+   ]
+  }
+ ],
+ "templates": {}
+}
