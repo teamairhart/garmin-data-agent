@@ -11,6 +11,15 @@
   body{background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
   .wrap{max-width:1150px;margin:0 auto;padding:0 18px 40px}
 
+  /* ---- NAV ---- */
+  .nav{position:sticky;top:0;z-index:50;background:var(--hero-bg);border-bottom:1px solid #2c2c29;
+       display:flex;align-items:center;gap:4px;padding:10px 18px;flex-wrap:wrap}
+  .nav .brand{font-weight:800;letter-spacing:2px;font-size:13px;margin-right:14px}
+  .nav .brand .j{color:var(--hero-ja)} .nav .brand .r{color:var(--hero-rr)} .nav .brand .x{color:var(--gold)}
+  .nav a{color:#c3c2b7;text-decoration:none;font-size:13px;font-weight:700;padding:6px 11px;border-radius:8px}
+  .nav a:hover{background:#262623;color:#fff}
+  .nav a.out{margin-left:auto;color:#8a897f}
+
   /* ---- HERO (V4) ---- */
   .hero{text-align:center;padding:34px 16px 24px;color:#fff;background:
     linear-gradient(105deg,rgba(57,135,229,.30) 0 49.7%,transparent 49.7% 50.3%,rgba(217,89,38,.30) 50.3% 100%),var(--hero-bg)}
@@ -20,7 +29,7 @@
   .count{font-size:clamp(44px,8vw,76px);font-weight:800;color:var(--gold);line-height:1.05;margin-top:10px}
   .count small{display:block;font-size:12px;letter-spacing:6px;color:#7c7b72}
 
-  h2.sec{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin:30px 0 12px}
+  h2.sec{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin:30px 0 12px;scroll-margin-top:58px}
 
   /* ---- DROP ZONE ---- */
   .drop{margin-top:20px;background:var(--card);border:2px dashed var(--ink3);border-radius:16px;
@@ -157,11 +166,21 @@
   .dcell.past{opacity:.5}
 </style></head><body>
 
+<div class="nav">
+  <span class="brand"><span class="j">AIRHART</span> <span class="x">×</span> <span class="r">RAFF</span></span>
+  <a href="#calendars">📍 Calendars</a>
+  <a href="#thisweek">📆 This Week</a>
+  <a href="#weeks7">🗓 7 Weeks</a>
+  <a href="#reports">📖 Ride Reports</a>
+  <a href="/plan">Jonathan's Race Plan</a>
+  <a href="/dashboard">Dashboard</a>
+  <a class="out" href="/auth/logout">Log out</a>
+</div>
+
 <div class="hero">
   <div class="vs"><span class="j">AIRHART</span> <span class="x">×</span> <span class="r">RAFF</span></div>
   <div class="sub">Road to the Park City Point 2 Point · Sat Sep 5 2026</div>
   <div class="count"><span id="days">—</span><small>DAYS</small></div>
-  <div style="margin-top:10px;font-size:12px;letter-spacing:1px"><a href="/plan" style="color:#c3c2b7">Race Plan</a> · <a href="/auth/logout" style="color:#c3c2b7">Log out</a></div>
 </div>
 
 <div class="wrap">
@@ -176,7 +195,7 @@
   <input type="file" id="dropInput" accept=".zip,.fit" multiple style="display:none">
 </div>
 
-<h2 class="sec">📍 Where we are — tap a day to cycle it</h2>
+<h2 class="sec" id="calendars">📍 Where we are — tap a day to cycle it</h2>
 <div class="cals">
   <div class="cal calJA">
     <h3>Jonathan</h3>
@@ -246,10 +265,10 @@
   <div class="f"><div class="v">No deficit on long days</div><div class="l">cut on easy/rest days only · protein every meal · carb-up night before long rides (Woodruff, both)</div></div>
 </div>
 
-<h2 class="sec">📆 This week, Sunday → Saturday — reads your calendars above; tap a day up there and this adapts</h2>
+<h2 class="sec" id="thisweek">📆 This week, Sunday → Saturday — reads your calendars above; tap a day up there and this adapts</h2>
 <div class="n7wrap"><div class="n7" id="next7"></div></div>
 
-<h2 class="sec">🗓 Seven weeks to race day</h2>
+<h2 class="sec" id="weeks7">🗓 Seven weeks to race day</h2>
 <table class="weeks">
   <tr><th style="width:112px">Week</th><th>Jonathan</th><th>Robert</th></tr>
   <tr><td class="wk">Jul 19–25<br><span class="tag t-down">Re-entry</span></td>
@@ -275,7 +294,7 @@
     <td class="rrCell">Light openers · same carb-load · <b>RACE:</b> climbs ≤135 (ceiling 140) · 165–180 W · &lt;5 punches/hr · his own race — <b>finish strong</b>.</td></tr>
 </table>
 
-<h2 class="sec">📖 Ride reports — the coach's log (newest first — a new report lands after each uploaded ride)</h2>
+<h2 class="sec" id="reports">📖 Ride reports — the coach's log (newest first — a new report lands after each uploaded ride)</h2>
 <div class="repfilter" id="repfilter">
   <button class="on" data-f="all">All</button>
   <button data-f="JA" style="color:var(--ja)">Jonathan</button>
@@ -312,7 +331,10 @@ function svrSet(who,ds,patch){SERVER_STATE[who]=SERVER_STATE[who]||{};SERVER_STA
 function postCal(who,ds,patch){fetch('/board/calendar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({athlete:who,day:ds},patch))}).then(r=>r.json()).then(j=>{if(!j.ok)alert('Save failed — are you still logged in?');}).catch(()=>alert('Save failed — connection?'));}
 const START=new Date('2026-07-19T12:00:00'), END=new Date('2026-09-05T12:00:00');
 const iso=d=>d.toISOString().slice(0,10);
-const todayIso=iso(new Date(Date.now()-0));
+// Local calendar date — NOT toISOString(), which is UTC and rolls "today" a day
+// early every evening in US timezones.
+const todayIso=(()=>{const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');})();
 // Execution status for elapsed days: did we ride, and did we follow the profile?
 // Deployed version auto-fills this from uploaded rides + the plan-adherence analysis.
 const EX_STATES=['none','plan','off','miss'];
