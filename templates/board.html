@@ -147,6 +147,14 @@
 
   /* ---- NEXT 7 DAYS (calendar-aware) ---- */
   .n7wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:14px}
+  .n7ctl{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px}
+  .n7ctl button{border:1px solid var(--line);background:var(--bg);border-radius:999px;cursor:pointer;
+    font-size:16px;font-weight:800;width:34px;height:34px;line-height:1;color:var(--ink)}
+  .n7ctl button:hover:not(:disabled){background:var(--ja-t);border-color:var(--ja)}
+  .n7ctl button:disabled{opacity:.3;cursor:default}
+  .n7ctl button.n7tw{width:auto;padding:0 14px;font-size:12px;border-radius:999px}
+  .n7ctl .n7lbl{font-weight:800;font-size:14px;min-width:190px;text-align:center}
+  .n7ctl .n7lbl small{display:block;font-weight:700;font-size:10.5px;color:var(--ink3);letter-spacing:1px;text-transform:uppercase}
   .n7{display:grid;grid-template-columns:64px repeat(7,minmax(128px,1fr));gap:6px;min-width:980px}
   .n7 .hd{text-align:center;font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;padding:4px 2px}
   .n7 .hd b{display:block;font-size:14px;color:var(--ink);letter-spacing:0}
@@ -266,8 +274,16 @@
   <div class="f"><div class="v">No deficit on long days</div><div class="l">cut on easy/rest days only · protein every meal · carb-up night before long rides (Woodruff, both)</div></div>
 </div>
 
-<h2 class="sec" id="thisweek">📆 This week, Sunday → Saturday — reads your calendars above; tap a day up there and this adapts</h2>
-<div class="n7wrap"><div class="n7" id="next7"></div></div>
+<h2 class="sec" id="thisweek">📆 Week by week, Sunday → Saturday — reads your calendars above; tap a day up there and this adapts</h2>
+<div class="n7wrap">
+  <div class="n7ctl">
+    <button id="n7prev" title="Previous week">‹</button>
+    <span class="n7lbl" id="n7label"></span>
+    <button id="n7next" title="Next week">›</button>
+    <button class="n7tw" id="n7today">This week</button>
+  </div>
+  <div class="n7" id="next7"></div>
+</div>
 
 <h2 class="sec" id="weeks7">🗓 Seven weeks to race day</h2>
 <table class="weeks">
@@ -559,11 +575,33 @@ function rrPlan(ds,loc,dow){
     default:return {s:'Base 1.5–2:00',d:'HR <128'+other};
   }
 }
+// Week paging: 0 = current week; clamped to the plan's span (Jul 19 -> race week).
+let n7offset=0;
+const N7_MIN='2026-07-19', N7_MAX='2026-08-30';
+function n7Sunday(){
+  const t=new Date(); t.setHours(12,0,0,0);
+  t.setDate(t.getDate()-t.getDay()+n7offset*7);
+  return t;
+}
+function n7Shift(dw){
+  const t=n7Sunday(); t.setDate(t.getDate()+dw*7);
+  const s=iso(t);
+  if(s<N7_MIN||s>N7_MAX)return;
+  n7offset+=dw; renderNext7();
+}
+document.getElementById('n7prev').addEventListener('click',()=>n7Shift(-1));
+document.getElementById('n7next').addEventListener('click',()=>n7Shift(1));
+document.getElementById('n7today').addEventListener('click',()=>{n7offset=0;renderNext7();});
 function renderNext7(){
   const el=document.getElementById('next7'); el.innerHTML='';
-  const days=[]; const t=new Date(); t.setHours(12,0,0,0);
-  t.setDate(t.getDate()-t.getDay());   // back up to this week's Sunday
+  const days=[]; const t=n7Sunday();
   for(let i=0;i<7;i++){const d=new Date(t); d.setDate(d.getDate()+i); days.push(d);}
+  const sat=days[6], fmt=d=>d.toLocaleString('en',{month:'short',day:'numeric'});
+  const ph={reentry:'Re-entry',build:'Build',down:'Down week',peak:'Peak',taper:'Taper',race:'RACE WEEK'}[phaseOf(iso(sat))]||'';
+  document.getElementById('n7label').innerHTML=fmt(t)+' – '+fmt(sat)+
+    '<small>'+(n7offset===0?'this week · ':'')+ph+'</small>';
+  document.getElementById('n7prev').disabled=iso(t)<=N7_MIN;
+  document.getElementById('n7next').disabled=iso(t)>=N7_MAX;
   el.appendChild(Object.assign(document.createElement('div'),{className:'hd'}));
   days.forEach(d=>{const h=document.createElement('div');h.className='hd'+(iso(d)===todayIso?' today':'');
     h.innerHTML=d.toLocaleString('en',{weekday:'short'})+'<b>'+d.toLocaleString('en',{month:'short',day:'numeric'})+'</b>';el.appendChild(h);});
