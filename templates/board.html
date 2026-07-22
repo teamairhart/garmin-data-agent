@@ -361,6 +361,7 @@ function cycleLoc(cell){
   const nxt=cfg.states[(cfg.states.indexOf(cell.dataset.st)+1)%cfg.states.length];
   cell.dataset.st=nxt; svrSet(who,cell.dataset.date,{loc:nxt}); postCal(who,cell.dataset.date,{loc:nxt});
   paint(cell); counts(who);
+  renderNext7();   // re-plan the week strip AFTER the state change (not before — the old bug)
 }
 function build(who){
   const cfg=CFG[who], el=document.getElementById('cal'+who);
@@ -578,7 +579,6 @@ function renderNext7(){
   });
 }
 renderNext7();
-document.querySelectorAll('.day').forEach(c=>c.addEventListener('click',renderNext7));
 
 // ---- drag & drop upload (UI prototype — deployed version POSTs to /upload) ----
 const drop=document.getElementById('drop'), dropInput=document.getElementById('dropInput'),
