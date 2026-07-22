@@ -1,6 +1,9 @@
 {
   "athlete": {
-    "name": "Jonathan Airhart"
+    "name": "Jonathan Airhart",
+    "weight_kg": 91.2,
+    "weight_lb": 201,
+    "weight_measured": "2026-07-21"
   },
   "analysis_window": {
     "start_date": "2025-07-01",

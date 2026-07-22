@@ -11,7 +11,7 @@ comparison, and punch count. With 2+ rides: matched-power climbing HR comparison
 across days (fatigue read).
 
 Assumes ~1 Hz records (Garmin smart recording off). Weight default 95 kg (Robert);
-pass --weight-kg 79 for Jonathan.
+pass --weight-kg 91 for Jonathan (201 lb, 2026-07-21).
 """
 from __future__ import annotations
 
