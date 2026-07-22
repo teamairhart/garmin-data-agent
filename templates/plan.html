@@ -3,8 +3,8 @@
 
 {% block content %}
 <style>
-  .plan-day { border:1px solid var(--line); border-radius:16px; background:rgba(255,250,242,.92); padding:16px; margin-bottom:14px; }
-  .plan-day.today { border:2px solid var(--brand); box-shadow:0 8px 22px rgba(31,95,74,.15); }
+  .plan-day { border:1px solid var(--line); border-radius:16px; background:#ffffff; padding:16px; margin-bottom:14px; }
+  .plan-day.today { border:2px solid var(--brand); box-shadow:0 8px 22px rgba(42,120,214,.15); }
   .plan-day.done { opacity:.72; }
   .day-head { display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
   .day-date { font-weight:700; color:var(--brand-dark); }
@@ -15,14 +15,14 @@
   .sess .body { flex:1; }
   .sess .title { font-weight:600; }
   .sess.checked .title { text-decoration:line-through; color:var(--muted); }
-  .sess .targets { font-size:.9rem; color:var(--brand-dark); background:rgba(31,95,74,.07); border-radius:8px; padding:3px 8px; display:inline-block; margin:4px 0; }
+  .sess .targets { font-size:.9rem; color:var(--brand-dark); background:rgba(42,120,214,.07); border-radius:8px; padding:3px 8px; display:inline-block; margin:4px 0; }
   .sess ul { margin:.3rem 0 0; padding-left:1.1rem; font-size:.92rem; color:var(--muted); }
   details { margin-top:6px; font-size:.9rem; }
   details summary { cursor:pointer; color:var(--accent); font-weight:600; }
   .fuel-row { display:flex; gap:10px; padding:2px 0; }
   .fuel-at { font-weight:700; min-width:46px; color:var(--brand-dark); }
   .type-pill { font-size:.7rem; border-radius:999px; padding:2px 8px; font-weight:700; text-transform:uppercase; }
-  .type-bike{background:rgba(31,95,74,.14);color:var(--brand-dark);} .type-strength{background:rgba(197,106,45,.16);color:#7a431d;} .type-rest{background:#e7e2d8;color:var(--muted);}
+  .type-bike{background:rgba(42,120,214,.14);color:var(--brand-dark);} .type-strength{background:rgba(235,104,52,.16);color:#7a431d;} .type-rest{background:#e7e2d8;color:var(--muted);}
   .nutri { font-size:.9rem; }
   .nutri .macros span { display:inline-block; margin-right:12px; font-weight:600; }
   .progress-wrap { position:sticky; top:0; z-index:10; background:rgba(247,244,238,.96); padding:10px 0; }
