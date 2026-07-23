@@ -208,7 +208,7 @@
   {% for u in uploads %}
   <span>{{ '✅' if u.status == 'analyzed' else ('⚠️' if u.status == 'error' else '📥') }}
     {{ u.filename }} · {{ u.who }} · {{ u.when }} UTC ·
-    <b>{{ 'analyzed — see Ride Reports' if u.status == 'analyzed' else ('error — re-drop or ping Jonathan' if u.status == 'error' else 'received, awaiting analysis') }}</b></span>
+    <b>{{ 'analyzed — see Ride Reports' if u.status == 'analyzed' else ('error — re-drop or ping Jonathan' if u.status == 'error' else 'received — auto-analysis within ~15 min') }}</b></span>
   {% endfor %}{% endif %}
 </div>
 
@@ -659,7 +659,7 @@ function handleFiles(files){
     dropStatus.innerHTML=(ok.length?
       '✅ <b>Ride accepted &amp; stored safely.</b><br>'+
       '<span style="font-weight:400;color:var(--ink2)">What happens next: it shows 📥 in Recent drops below → '+
-      'Jonathan runs the analysis pass (usually same day) → your coached report appears in 📖 Ride Reports '+
+      'the Mac-Mini watcher analyzes it automatically (~10–15 min) → your report appears in 📖 Ride Reports '+
       'and the day\'s calendar badge fills in. Nothing else for you to do.</span>':'')+
       (er.length?'<br>✕ '+er.map(r=>r.error||'upload failed').join(', '):'');
     if(ok.length)refreshDrops();});
@@ -670,7 +670,7 @@ function refreshDrops(){
     const el=document.getElementById('dropsList');
     const rows=j.uploads.slice(0,6).map(u=>{
       const ic=u.status==='analyzed'?'✅':(u.status==='error'?'⚠️':'📥');
-      const st=u.status==='analyzed'?'analyzed — see Ride Reports':(u.status==='error'?'error — re-drop or ping Jonathan':'received, awaiting analysis');
+      const st=u.status==='analyzed'?'analyzed — see Ride Reports':(u.status==='error'?'error — re-drop or ping Jonathan':'received — auto-analysis within ~15 min');
       return '<span>'+ic+' '+u.filename+' · '+(u.who||'?')+' · '+(u.uploaded_at||'').slice(0,16).replace('T',' ')+' UTC · <b>'+st+'</b></span>';
     }).join('');
     el.innerHTML='<b style="color:var(--ink2)">Recent drops:</b>'+rows;
