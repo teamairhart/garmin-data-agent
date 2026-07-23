@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 """Mac-Mini watcher: poll the board for dropped rides, analyze, publish.
 
-Runs every 10 min via launchd (com.airhart.boardwatch). For each upload with
-status 'received':
+Runs as a long-lived launchd KeepAlive service (com.airhart.boardwatch) via
+`--loop` (internal 600 s timer; BOARDWATCH_INTERVAL_S overrides), backed by a
+cron line that kickstarts the job every 10 min (no-op while running, revives
+after crash/reboot). Do NOT schedule this with StartInterval on the Mini —
+its gui launchd domain pends nondemand spawns (observed 2026-07-23).
+For each upload with status 'received':
   1. download the zip/fit, parse with the owner-aware engine (parse_ride),
   2. write a coached report — via headless `claude -p` when logged in,
      falling back to a clean auto-generated quantitative report when not,
@@ -29,6 +33,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -45,6 +50,10 @@ CLAUDE_TIMEOUT = 240
 
 PLAN_FILES = {"JA": "race_plan_2026.json", "RR": "race_plan_2026_robert.json"}
 ATHLETE_NAMES = {"JA": "Jonathan", "RR": "Robert"}
+
+
+class TransientError(Exception):
+    """Failure that should NOT permanently error the upload (retry next cycle)."""
 
 
 def log(msg: str) -> None:
@@ -127,10 +136,12 @@ coached report for this ride in the board's established house style.
 
 ATHLETE: {ATHLETE_NAMES[athlete]}"""
     if athlete == "RR":
-        prompt += """ (Robert Raff, 60, 95 kg. Anchors: LT1 118 bpm/100 W; lab LT2 145 bpm/190 W is
-STALE — real FTP ~210-220 pending a field test. HR bands: P1<118, P2 119-133, P3 134-138,
-P4 139-145, P5 146+. Diesel profile: elite zero-drift durability; limiters = W/kg and fueling;
-punch threshold 247 W, budget <5/hr; race band 165-180 W, climbs HR<=135 cap 140.)"""
+        prompt += """ (Robert Raff, 60, 95 kg. Anchors: LT1 118 bpm/100 W; FTP 230 W / 2.4 W/kg
+(field test 2026-07-23: 243 W for 20:01 at HR 151 avg / 157 max — Dec lab 145 bpm/190 W retired).
+Threshold HR ~152. HR bands: P1<118, P2 119-133, P3 134-138, P4 139-145, P5 146+ (pre-test
+bands, pending re-draw against threshold HR 152). Diesel profile: elite zero-drift durability;
+limiters = W/kg and fueling; punch threshold 247 W (~107% FTP), budget <5/hr; race band
+165-180 W (72-78% FTP), climbs HR<=135 cap 140.)"""
     else:
         prompt += """ (Jonathan Airhart, 91 kg / 199.8 lb targeting 195. Anchors: LT1 138 bpm/190 W,
 OBLA 156/240 W, max HR 186. Limiter = riding easy days truly easy; heat inflates HR ~10-20 bpm;
@@ -229,7 +240,7 @@ def run() -> int:
                 "athlete": athlete, "day": day, "title": rep["title"],
                 "subline": rep["subline"], "body_html": rep["body_html"]}, timeout=30)
             if r.status_code != 200 or not r.json().get("ok"):
-                raise RuntimeError(f"publish failed: {r.status_code} {r.text[:120]}")
+                raise TransientError(f"publish failed: {r.status_code} {r.text[:120]}")
             cal = s.get(f"{base}/board/calendar", timeout=30).json().get("calendar", {})
             if not (cal.get(athlete, {}).get(day, {}) or {}).get("ex"):
                 s.post(f"{base}/board/calendar",
@@ -237,6 +248,10 @@ def run() -> int:
             s.post(f"{base}/board/uploads/{uid}/status", json={"status": "analyzed"}, timeout=30)
             board_html += f"rep-{athlete}-{day}"  # dedupe within this run
             log(f"published {athlete} {day}: {rep['title'][:70]}")
+        except (requests.RequestException, TransientError) as exc:
+            # Network hiccup / server 5xx / Render cold start: leave the upload
+            # 'received' so the next cycle retries instead of dead-ending it.
+            log(f"upload {uid} deferred (transient, retry next cycle): {exc}")
         except Exception as exc:
             log(f"upload {uid} FAILED: {exc}")
             try:
@@ -247,4 +262,18 @@ def run() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # --loop: run as a long-lived KeepAlive service with an internal timer.
+    # StartInterval spawns wedge in "pended" state on the Mini's gui domain
+    # (observed 2026-07-23: runs=1 forever); every agent that works on that
+    # box is RunAtLoad+KeepAlive, so the schedule lives here instead.
+    if "--loop" in sys.argv:
+        interval = int(os.environ.get("BOARDWATCH_INTERVAL_S", "600"))
+        log(f"loop mode: polling every {interval}s")
+        while True:
+            try:
+                main()
+            except Exception as exc:
+                log(f"loop iteration failed: {exc}")
+            time.sleep(interval)
+    else:
+        sys.exit(main())

@@ -206,9 +206,9 @@
 <div id="dropsList" style="margin-top:8px;font-size:12.5px;color:var(--ink3);display:flex;gap:14px;flex-wrap:wrap;align-items:center">
   {% if uploads %}<b style="color:var(--ink2)">Recent drops:</b>
   {% for u in uploads %}
-  <span>{{ '✅' if u.status == 'analyzed' else ('⚠️' if u.status == 'error' else '📥') }}
+  <span>{{ '✅' if u.status == 'analyzed' else ('⚠️' if u.status == 'error' else ('⏳' if u.stale else '📥')) }}
     {{ u.filename }} · {{ u.who }} · {{ u.when }} UTC ·
-    <b>{{ 'analyzed — see Ride Reports' if u.status == 'analyzed' else ('error — re-drop or ping Jonathan' if u.status == 'error' else 'received — auto-analysis within ~15 min') }}</b></span>
+    <b>{{ 'analyzed — see Ride Reports' if u.status == 'analyzed' else ('error — re-drop or ping Jonathan' if u.status == 'error' else ('delayed — analyzer may be down, ping Jonathan' if u.stale else 'received — auto-analysis within ~15 min')) }}</b></span>
   {% endfor %}{% endif %}
 </div>
 
@@ -669,8 +669,9 @@ function refreshDrops(){
     if(!j.ok)return;
     const el=document.getElementById('dropsList');
     const rows=j.uploads.slice(0,6).map(u=>{
-      const ic=u.status==='analyzed'?'✅':(u.status==='error'?'⚠️':'📥');
-      const st=u.status==='analyzed'?'analyzed — see Ride Reports':(u.status==='error'?'error — re-drop or ping Jonathan':'received — auto-analysis within ~15 min');
+      const stale=u.status==='received'&&u.uploaded_at&&(Date.now()-Date.parse(u.uploaded_at))>30*60*1000;
+      const ic=u.status==='analyzed'?'✅':(u.status==='error'?'⚠️':(stale?'⏳':'📥'));
+      const st=u.status==='analyzed'?'analyzed — see Ride Reports':(u.status==='error'?'error — re-drop or ping Jonathan':(stale?'delayed — analyzer may be down, ping Jonathan':'received — auto-analysis within ~15 min'));
       return '<span>'+ic+' '+u.filename+' · '+(u.who||'?')+' · '+(u.uploaded_at||'').slice(0,16).replace('T',' ')+' UTC · <b>'+st+'</b></span>';
     }).join('');
     el.innerHTML='<b style="color:var(--ink2)">Recent drops:</b>'+rows;

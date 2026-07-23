@@ -139,7 +139,7 @@ def plan_toggle():
 
 # ---------------- P2P accountability board ----------------
 
-from datetime import datetime as _dt
+from datetime import datetime as _dt, timezone
 
 
 def _board_login_required_json():
@@ -159,6 +159,13 @@ def board():
     uploads = list_uploads()[:6]
     for u in uploads:
         u['when'] = (u['uploaded_at'] or '')[:16].replace('T', ' ')
+        u['stale'] = False
+        if u['status'] == 'received' and u.get('uploaded_at'):
+            try:
+                age_s = (_dt.now(timezone.utc) - _dt.fromisoformat(u['uploaded_at'])).total_seconds()
+                u['stale'] = age_s > 30 * 60
+            except ValueError:
+                pass
     return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads)
 
 
