@@ -156,13 +156,8 @@ def board():
     reports = list_reports()
     for r in reports:
         r['label'] = _dt.strptime(r['day'], '%Y-%m-%d').strftime('%a %b %d').replace(' 0', ' ')
-    from src.auth import get_db_connection as _gdb
-    conn = _gdb()
-    names = {r['id']: r['name'] for r in conn.execute('SELECT id, name FROM users').fetchall()}
-    conn.close()
     uploads = list_uploads()[:6]
     for u in uploads:
-        u['who'] = names.get(u['uploaded_by'], '?')
         u['when'] = (u['uploaded_at'] or '')[:16].replace('T', ' ')
     return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads)
 

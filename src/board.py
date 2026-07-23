@@ -190,7 +190,10 @@ def record_upload(filename: str, stored_path: str, size_bytes: int, user_id: int
 def list_uploads() -> list[dict]:
     conn = get_db_connection()
     rows = conn.execute(
-        "SELECT id, filename, size_bytes, uploaded_by, uploaded_at, status FROM board_uploads ORDER BY id DESC"
+        "SELECT bu.id, bu.filename, bu.size_bytes, bu.uploaded_by, bu.uploaded_at, bu.status,"
+        " COALESCE(u.name, '?') AS who"
+        " FROM board_uploads bu LEFT JOIN users u ON u.id = bu.uploaded_by"
+        " ORDER BY bu.id DESC"
     ).fetchall()
     conn.close()
     return [dict(r) for r in rows]
