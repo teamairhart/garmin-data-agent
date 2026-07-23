@@ -156,7 +156,15 @@ def board():
     reports = list_reports()
     for r in reports:
         r['label'] = _dt.strptime(r['day'], '%Y-%m-%d').strftime('%a %b %d').replace(' 0', ' ')
-    return render_template('board.html', reports=reports, cal_state=get_calendar())
+    from src.auth import get_db_connection as _gdb
+    conn = _gdb()
+    names = {r['id']: r['name'] for r in conn.execute('SELECT id, name FROM users').fetchall()}
+    conn.close()
+    uploads = list_uploads()[:6]
+    for u in uploads:
+        u['who'] = names.get(u['uploaded_by'], '?')
+        u['when'] = (u['uploaded_at'] or '')[:16].replace('T', ' ')
+    return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads)
 
 
 @app.route('/board/calendar', methods=['GET', 'POST'])
@@ -201,6 +209,20 @@ def board_uploads():
     if err:
         return err
     return jsonify({'ok': True, 'uploads': list_uploads()})
+
+
+@app.route('/board/uploads/<int:uid>/status', methods=['POST'])
+def board_upload_status(uid):
+    """Mark an upload's pipeline status (used by the Mac-side import pass)."""
+    err = _board_login_required_json()
+    if err:
+        return err
+    status = (request.get_json(silent=True) or {}).get('status', '')
+    if status not in ('received', 'analyzed', 'error'):
+        return jsonify({'ok': False, 'error': 'bad status'}), 400
+    from src.board import set_upload_status
+    set_upload_status(uid, status)
+    return jsonify({'ok': True})
 
 
 @app.route('/board/uploads/<int:uid>/download')

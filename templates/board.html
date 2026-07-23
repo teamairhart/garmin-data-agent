@@ -203,6 +203,16 @@
   <div class="status" id="dropStatus"></div>
   <input type="file" id="dropInput" accept=".zip,.fit" multiple style="display:none">
 </div>
+{% if uploads %}
+<div style="margin-top:8px;font-size:12.5px;color:var(--ink3);display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+  <b style="color:var(--ink2)">Recent drops:</b>
+  {% for u in uploads %}
+  <span>{{ '✅' if u.status == 'analyzed' else ('⚠️' if u.status == 'error' else '📥') }}
+    {{ u.filename }} · {{ u.who }} · {{ u.when }} UTC ·
+    <b>{{ 'analyzed — see Ride Reports' if u.status == 'analyzed' else ('error — re-drop or ping Jonathan' if u.status == 'error' else 'received, awaiting analysis') }}</b></span>
+  {% endfor %}
+</div>
+{% endif %}
 
 <h2 class="sec" id="calendars">📍 Where we are — tap a day to cycle it</h2>
 <div class="cals">
