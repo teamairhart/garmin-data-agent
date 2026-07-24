@@ -2983,71 +2983,19 @@
      "date": "2026-07-24",
      "weekday": "Fri",
      "location": "Park City (altitude)",
-     "headline": "Easy Z2 at altitude — pre-long day (acclimation)",
+     "headline": "LONG Z2 3:00–3:30 at altitude — moved up from Sat (schedule change)",
      "sessions": [
       {
        "id": "2026-07-24-ride",
        "type": "bike",
-       "title": "1:30 easy Z2",
-       "duration": "1:30",
-       "targets": "HR ≤135 by feel at altitude (~6,900 ft) · genuinely easy · short and smooth",
+       "title": "3:00–3:30 LONG Z2 — Armstrong/Pinecone + fuel rehearsal",
+       "duration": "3:15",
+       "targets": "Rolling/flats HR ≤138 · sustained climbs HR 140–148, hard cap 150 · power is a ceiling only: ≤~180 W sustained on the climbs, never a target (watts read low at altitude) · ≈70 g carb/hr + sodium + fluid",
        "detail": [
-        "Easy spin at altitude to set up Saturday's long ride. Pace by HR/feel — watts read low up high.",
-        "Conversational only; back off the moment breathing climbs."
-       ],
-       "fueling": [
-        {
-         "at": "0:15",
-         "do": "Start carb mix + sips"
-        },
-        {
-         "at": "0:35",
-         "do": "~30 g carb + electrolytes"
-        },
-        {
-         "at": "1:00",
-         "do": "~30 g carb"
-        },
-        {
-         "at": "1:25",
-         "do": "~15–20 g carb to finish; ~70 g carb/hr, 20–24 oz/hr, 600–1,000 mg sodium/hr in heat"
-        }
-       ]
-      }
-     ],
-     "nutrition": {
-      "day_type": "easy",
-      "kcal": "~2,900",
-      "carb_g": "~430",
-      "protein_g": "155–160",
-      "fat_g": "~80",
-      "notes": "Easy day but begin topping carbs in the evening to fuel tomorrow's 4:00 long ride — don't run a deep deficit the night before the week's key session.",
-      "sample_meals": [
-       "Breakfast: eggs + oats + fruit + coffee",
-       "Lunch: turkey & rice bowl",
-       "Snack: cottage cheese + fruit",
-       "Dinner: pasta + lean protein + veg (carb up for tomorrow)",
-       "Evening: rice cakes + honey if hungry"
-      ]
-     }
-    },
-    {
-     "id": "2026-07-25",
-     "date": "2026-07-25",
-     "weekday": "Sat",
-     "location": "Park City (altitude)",
-     "headline": "LONG Z2 4:00 at altitude — cool-Utah anchor (pace by HR)",
-     "sessions": [
-      {
-       "id": "2026-07-25-ride",
-       "type": "bike",
-       "title": "4:00 LONG Z2 + fuel rehearsal",
-       "duration": "4:00",
-       "targets": "HR ≤138 by feel at altitude — watts read low / HR reads high up here, so pace strictly by HR & breathing · continue the fuel rehearsal (≈70 g carb/hr + sodium + fluid)",
-       "detail": [
-        "Your first cool-Utah long ride — and it's at altitude, so it doubles as bonus P2P altitude prep. Pace by HR, not watts.",
-        "Park City terrain rolls; some climbing is welcome, but keep the EFFORT aerobic (Z2). This is still only ~2 weeks post-Leadville — a re-entry endurance ride, NOT a big-vert day (that comes in the August build).",
-        "Re-run the fuel protocol that worked on 6/28 (≈70 g carb/hr from min 15 + sodium + fluid to thirst). In cool air you'll decouple far less than the 95 °F Memphis ride — watch how much flatter Pw:HR holds."
+        "Saturday's cool-Utah anchor ride, compressed to the time you have. Duration and aerobic effort are the workout — the 3,000 ft is terrain, not a vert goal. Granny gear, seated, deliberately unhurried on the steeps; brief pitch spikes are fine if you recover right after.",
+        "Altitude math: HR reads ~10–20 bpm high up here, so 145 on a climb is aerobically ≈ low-130s at sea level — that's why the climb band is 140–148, not the flat-ground 138.",
+        "Decision point at the top of Armstrong / Mid-Mountain junction: continue up Pinecone Ridge only if HR is settling ≤~142 on Armstrong's grades and you're still conversational. If HR is drifting or legs feel Leadville-flat, traverse Mid-Mountain instead and bank aerobic time — still a full success.",
+        "Re-run the 6/28 fuel protocol (≈70 g carb/hr from min 15, 20-min feed alarm, sodium, fluid to thirst). Watch Pw:HR in the cool air vs the 95°F Memphis ride."
        ],
        "fueling": [
         {
@@ -3068,7 +3016,7 @@
         },
         {
          "at": "2:00",
-         "do": "~35 g carb; refill bottles, top sodium — you're past halfway on fluid needs"
+         "do": "~35 g carb; refill/top sodium — likely near the Armstrong/Pinecone decision point"
         },
         {
          "at": "2:30",
@@ -3076,11 +3024,7 @@
         },
         {
          "at": "3:00",
-         "do": "~35 g carb"
-        },
-        {
-         "at": "3:30",
-         "do": "~35 g carb; hold ~70 g carb/hr, 20–24 oz/hr, 600–1,000 mg sodium/hr across the full 4 h"
+         "do": "~30 g carb to the finish; hold ~70 g/hr, 20–24 oz/hr, 600–1,000 mg sodium/hr throughout"
         }
        ]
       }
@@ -3091,13 +3035,34 @@
       "carb_g": "~530",
       "protein_g": "155–160",
       "fat_g": "~70",
-      "notes": "Long-ride day — full Woodruff fueling, NO deficit (6 g/kg carb). Front-load carbs pre-ride, refeed hard post-ride, protein in 4–5 feedings. Never under-fuel the week's key session.",
+      "notes": "Long-ride day (moved up from Sat) — full Woodruff fueling, NO deficit. Front-load carbs pre-ride, refeed hard post-ride.",
       "sample_meals": [
        "Pre: bagel + jam + banana + coffee",
-       "On-bike: per fueling schedule (~280 g carb over 4 h)",
+       "On-bike: per fueling schedule (~210–240 g carb over 3:00–3:30)",
        "Post: big rice + chicken bowl + 30 g whey + fruit",
-       "Lunch/snack: turkey wrap + yogurt",
        "Dinner: pasta + lean protein + veg + side of potatoes"
+      ]
+     }
+    },
+    {
+     "id": "2026-07-25",
+     "date": "2026-07-25",
+     "weekday": "Sat",
+     "location": "Park City (altitude)",
+     "headline": "OFF — long ride moved to Friday (schedule change); recovery + travel prep",
+     "sessions": [],
+     "nutrition": {
+      "day_type": "easy",
+      "kcal": "~2,900",
+      "carb_g": "~430",
+      "protein_g": "155–160",
+      "fat_g": "~80",
+      "notes": "Day after the long ride — keep the refeed going (no deep deficit within 24 h of a 3+ h session), protein every meal. Back to Memphis road-bike Z2 volume next week, where power targets (130–170 W) apply again at sea level.",
+      "sample_meals": [
+       "Breakfast: eggs + oats + fruit + coffee",
+       "Lunch: turkey & rice bowl",
+       "Snack: cottage cheese + fruit",
+       "Dinner: normal balanced dinner"
       ]
      }
     },
