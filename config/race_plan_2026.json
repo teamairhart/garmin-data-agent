@@ -3217,41 +3217,17 @@
      "date": "2026-07-29",
      "weekday": "Wed",
      "location": "Memphis",
-     "headline": "Quality #1 — OBLA 3×12 min @ 230–240W (moved off the 7/28 travel day)",
+     "headline": "Recovery Z2 — OBLA postponed; sleep is the workout (test gate tomorrow)",
      "sessions": [
       {
        "id": "2026-07-29-ride",
        "type": "bike",
-       "title": "OBLA intervals: 3×12 min @ 230–240W",
-       "duration": "~2:00",
-       "targets": "20 min WU → 3×12 min @ 230–240W, HR 155–160, 90 RPM, 5 min easy between → cooldown",
+       "title": "1:00–1:30 easy Z2 (recovery)",
+       "duration": "1:15",
+       "targets": "Power 100–140 W · talk-test governed (in 90 °F conversational ≈ mid-140s HR is the same internal effort as ≤138 cool) · nothing hard",
        "detail": [
-        "The week's sharp quality day — true OBLA-power reps now that the base is in.",
-        "Hold 230–240W steady; let HR settle to 155–160. If watts fade below 228W on the last rep, end it — don't grind into a hole.",
-        "Early AM to beat the heat. This is one of only 1–2 quality days — make it count, keep everything else easy.",
-        "No strength today and none yesterday — quality bike wins every conflict."
-       ],
-       "fueling": [
-        {
-         "at": "0:15",
-         "do": "Start carb mix + sips — begin fueling proactively from minute 15"
-        },
-        {
-         "at": "0:35",
-         "do": "~30 g carb before the first rep; top off electrolytes"
-        },
-        {
-         "at": "1:00",
-         "do": "~30 g carb between reps; aim 70–75 g carb/hr"
-        },
-        {
-         "at": "1:25",
-         "do": "~30 g carb; keep sodium 600–1,000 mg/hr in heat, 20–24 oz fluid/hr"
-        },
-        {
-         "at": "1:50",
-         "do": "~25–30 g carb on the cooldown; finish your bottles"
-        }
+        "Absorb Monday's red-eye + travel-day ride. The only KPI today is tonight's sleep — the FTP test fires tomorrow ONLY if morning metrics are green (sleep ≥7 h, RHR normal).",
+        "OBLA 3×12 moves to next week and gets re-pitched off the test result."
        ]
       }
      ],
@@ -3276,41 +3252,18 @@
      "date": "2026-07-30",
      "weekday": "Thu",
      "location": "Memphis",
-     "headline": "Cadence: 2:00 Z2 + 8–10×3 min @ 100–110 RPM",
+     "headline": "FTP FIELD TEST (hot floor) — moved from aborted 7/28; green-light gated",
      "sessions": [
       {
        "id": "2026-07-30-ride",
        "type": "bike",
-       "title": "2:00 Z2 + 8–10×3 min leg-speed @ 100–110 RPM",
-       "duration": "2:00",
-       "targets": "Z2 HR ≤138; within it, 8–10×3 min @ 100–110 RPM, HR ≤138, full easy spin recovery between",
+       "title": "20-min FTP field test + Z2 fill",
+       "duration": "1:45–2:00",
+       "targets": "GATE: sleep ≥7 h + RHR normal, else ride 1:00 easy and the test moves to next week (Fri stays easy — Saturday's long ride is untouchable) · test = max steady 20 min · FTP = 0.95× · label it the July hot floor",
        "detail": [
-        "Leg-speed / neuromuscular work — high cadence, NOT high load. Keep HR genuinely easy throughout; this is an easy day with a skills overlay.",
-        "Stay smooth and round at 100–110 RPM — no bouncing in the saddle. Back off RPM if HR climbs over 138.",
-        "Because this is an easy aerobic day, it's a safe day to lift after (see strength rules — never within 24 h before quality).",
-        "Early AM."
-       ],
-       "fueling": [
-        {
-         "at": "0:15",
-         "do": "Start carb mix + sips"
-        },
-        {
-         "at": "0:40",
-         "do": "~30 g carb"
-        },
-        {
-         "at": "1:05",
-         "do": "~30 g carb + electrolytes"
-        },
-        {
-         "at": "1:35",
-         "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat"
-        },
-        {
-         "at": "2:00",
-         "do": "~25–30 g carb; aim 70–75 g carb/hr"
-        }
+        "0:00–0:25 easy Z2 warmup → 5-min opener @ 250–270 W → 10 min very easy → 20-MIN TEST: flattest uninterrupted road, start 245–250 W, hold to min 12, lift only if it's truly there. Cadence ~90. HR is not a target today.",
+        "Then easy spin fill to 1:45–2:00. Fuel normally (~70 g/hr) — a fasted or under-fueled test reads low.",
+        "Whatever it produces is the PROVISIONAL sea-level anchor for the August build; cool-October retest upgrades it. Optional within the fill: 3–4×3 min @ 100–110 rpm leg-speed (moved from today's original cadence session) only if the test went well."
        ]
       }
      ],
