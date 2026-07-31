@@ -300,7 +300,7 @@
     <td class="jaCell"><b>Z2 ONLY, no threshold.</b> Long rebuilds to <b>4:00 Sat</b> (PC, by HR). 2 lifts (Wed full, hex −20%). Gate: RHR &lt;66 + sleep ≥7 h — openers Thu/Fri only if green.</td>
     <td class="rrCell">Recover the back-to-back block. Base &lt;128 · long 3.5–4 h &lt;133 · <b>FTP field test if fresh</b> (else next wk) · fix Fenix FTP setting (190 not 260).</td></tr>
   <tr><td class="wk">Jul 26–Aug 1<br><span class="tag t-build">Build 1</span></td>
-    <td class="jaCell"><b>PC big vert #1:</b> 5.5–6 h / ~8,000 ft, climbs HR ≤145 (150–165 W up high), fuel 70 g/hr. 2 easy 75–90′ Z2 around it · one threshold touch 2×12 @ 150–158 <b>only if fresh</b> · strength 1× @30%.</td>
+    <td class="jaCell"><b>FTP-test week (rewritten in flight):</b> last PC Z2 Mon → travel Tue (test aborted on no sleep — right call) → recovery Wed → <b>Thu FTP TEST: 20-min 250 W → FTP 237 ⭐</b> → easy Fri → <b>Sat LONG flat 4–5 h</b>, full fuel dress rehearsal. OBLA → next wk @ 225–237 W.</td>
     <td class="rrCell"><b>FTP re-test.</b> Tempo 1×: 3–4×8–10′ @ 138–144 · long 4.5–5 h &lt;133, fueled on the timer · base fills the week · weight trend check-in.</td></tr>
   <tr><td class="wk">Aug 2–8<br><span class="tag t-build">Build 2</span></td>
     <td class="jaCell">PC big-vert · <b>cool-Utah long #1</b> · race-band climbing, sustained not coasting · full fuel rehearsal every long ride.</td>
@@ -437,7 +437,13 @@ const DETAIL={
     '2026-07-20':{ac:'34-min Peloton: NP 167 W (IF 0.71), avg HR 147, 12% at/over threshold, one 427 W sprint.',
                   vd:'OFF-PROFILE — prescribed 1:30 Z2 ≤135. Deliberate constant-power heat experiment (good data: +21 bpm drift in still air), but tempo on a Z2-only day. Session left unticked.'},
     '2026-07-21':{ac:'2:15 ridden @ 94 W avg — HR still 139–141 (worst HR-for-power of the log) — plus a hard finish: 600 W sprint, HR 182.',
-                  vd:'OFF-PROFILE — duration ✓ (2:15 vs 2:00) but HR over cap at trivial watts = fatigue flag, and the finish broke the week\'s no-threshold rule. Ticked with a note.'}
+                  vd:'OFF-PROFILE — duration ✓ (2:15 vs 2:00) but HR over cap at trivial watts = fatigue flag, and the finish broke the week\'s no-threshold rule. Ticked with a note.'},
+    '2026-07-28':{ac:'2.1 h in 90–97 °F on a double red-eye: FTP test ABORTED — best 5′ 233 W @ HR 180, no 20-min block existed; 1-min sprints 364 W intact.',
+                  vd:'OFF-PROFILE — plan asked ≤45′ travel spin. The right call made twice: no test on no sleep, talk-test governing what replaced it. Week rewritten: test → Thu, gated on morning metrics.'},
+    '2026-07-29':{ac:'1:25 @ 131 W avg (NP 141) · HR 143 · 0% supra · TSS 50. HR@120W 142, recovering from Monday\'s 149.',
+                  vd:'ON-PROFILE — power in the 100–140 W band, duration in-window; mid-140s HR is the prescription\'s own heat allowance. Recovery visible but not complete — the test gate stayed live.'},
+    '2026-07-30':{ac:'THE TEST: 20-min 250 W @ 90 rpm — quarters 249/251/252/246, 294 W final minute, new max HR 194 → FTP 237 W (2.60 W/kg).',
+                  vd:'ON-PROFILE — gate green, prescription executed to the watt. "July hot floor" anchor set; lab OBLA confirmed — July\'s power gap was heat + fatigue, not fitness. August OBLA re-pitched 225–237 W.'}
   },
   RR:{
     '2026-07-19':{ac:'2.6 h PC MTB, 2,182 ft — avg HR 126 (P2), zero drift. First Assioma power ride: NP 185.',
@@ -511,7 +517,14 @@ const JA_EXACT={
   '2026-07-23':{s:'Travel → PC · optional ≤1:00 easy',d:'front-load fluids · openers only if gate green'},
   '2026-07-24':{s:'1:30 easy Z2 (altitude)',d:'HR ≤135 by feel · watts read low up high'},
   '2026-07-25':{s:'LONG 4:00 Z2 ⭐',d:'HR ≤138 by feel · full fuel rehearsal 70 g/hr',big:1},
-  '2026-07-26':{s:'Rest or ≤1:00 spin',d:'HR ≤125 · sleep is the assignment'}
+  '2026-07-26':{s:'Rest or ≤1:00 spin',d:'HR ≤125 · sleep is the assignment'},
+  '2026-07-27':{s:'2:30–3:00 Z2 base (last PC day)',d:'HR ≤138 by feel at altitude · cool-Utah aerobic volume'},
+  '2026-07-28':{s:'Travel PC → Memphis · optional ≤45′ spin',d:'no quality on the travel day · became the aborted FTP attempt — test moved to Thu'},
+  '2026-07-29':{s:'Recovery Z2 1:00–1:30',d:'100–140 W · talk-test governed · sleep is the workout — test gate tomorrow'},
+  '2026-07-30':{s:'FTP FIELD TEST 20′ ⭐',d:'gate green → WU 25′ · opener 5′ @ 250–270 · 20-min max from 245–250 W · FTP = 0.95× · pedal watts, console ignored'},
+  '2026-07-31':{s:'2:00 Z2 easy (pre-long)',d:'HR ≤135 · 130–170 W · no intervals · carb-forward dinner'},
+  '2026-08-01':{s:'LONG flat Z2 4:00–5:00 ⭐',d:'≤138 · 150–180 W · full fuel dress rehearsal 70–75 g/hr · decoupling <8%',big:1},
+  '2026-08-02':{s:'1:00 recovery + Strength (full)',d:'HR ≤130 · lift after the easy ride · box step-ups are the race-specific lift'}
 };
 function jaPlan(ds,loc,dow){
   const ph=phaseOf(ds);
