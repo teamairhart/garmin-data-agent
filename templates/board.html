@@ -293,30 +293,14 @@
   <div class="n7" id="next7"></div>
 </div>
 
-<h2 class="sec" id="weeks7">🗓 Seven weeks to race day</h2>
+<h2 class="sec" id="weeks7">🗓 Week by week to race day <small style="color:var(--ink3);font-weight:400">— generated from the live plans; edits to the plan JSONs land here on deploy</small></h2>
 <table class="weeks">
   <tr><th style="width:112px">Week</th><th>Jonathan</th><th>Robert</th></tr>
-  <tr><td class="wk">Jul 19–25<br><span class="tag t-down">Re-entry</span></td>
-    <td class="jaCell"><b>Z2 ONLY, no threshold.</b> Long rebuilds to <b>4:00 Sat</b> (PC, by HR). 2 lifts (Wed full, hex −20%). Gate: RHR &lt;66 + sleep ≥7 h — openers Thu/Fri only if green.</td>
-    <td class="rrCell">Recover the back-to-back block. Base &lt;128 · long 3.5–4 h &lt;133 · <b>FTP field test if fresh</b> (else next wk) · fix Fenix FTP setting (190 not 260).</td></tr>
-  <tr><td class="wk">Jul 26–Aug 1<br><span class="tag t-build">Build 1</span></td>
-    <td class="jaCell"><b>FTP-test week (rewritten in flight):</b> last PC Z2 Mon → travel Tue (test aborted on no sleep — right call) → recovery Wed → <b>Thu FTP TEST: 20-min 250 W → FTP 237 ⭐</b> → easy Fri → <b>Sat LONG flat 4–5 h</b>, full fuel dress rehearsal. OBLA → next wk @ 225–237 W.</td>
-    <td class="rrCell"><b>FTP re-test.</b> Tempo 1×: 3–4×8–10′ @ 138–144 · long 4.5–5 h &lt;133, fueled on the timer · base fills the week · weight trend check-in.</td></tr>
-  <tr><td class="wk">Aug 2–8<br><span class="tag t-build">Build 2</span></td>
-    <td class="jaCell">PC big-vert · <b>cool-Utah long #1</b> · race-band climbing, sustained not coasting · full fuel rehearsal every long ride.</td>
-    <td class="rrCell">Long climbing ride stretches to <b>5–6 h aerobic</b> — durability is the gift, lean in · punch budget drilled: &lt;5/hr ≥247 W · cadence 75–80 on moderate grades.</td></tr>
-  <tr><td class="wk">Aug 9–15<br><span class="tag t-down">Down</span></td>
-    <td class="jaCell">Down week — Memphis engine, reduced volume, <b>everything easy</b>. Bank recovery for the peak.</td>
-    <td class="rrCell"><b>Scheduled recovery week</b> (every 3rd — the age-60 gate). Easy spins only. Sleep is the workout.</td></tr>
-  <tr><td class="wk">Aug 16–22<br><span class="tag t-peak">Peak</span></td>
-    <td class="jaCell"><b>Dress rehearsal + cool-Utah long #2 (the big one).</b> Full race protocol: pacing bands, 70 g/hr, 10–15′ aid-swap rehearsal at DV.</td>
-    <td class="rrCell"><b>Joint dress rehearsal.</b> 165–180 W on every climb · fuel 60–80 g/hr on the timer · HR ceiling honored first mile to last.</td></tr>
-  <tr><td class="wk">Aug 23–29<br><span class="tag t-down">Taper</span></td>
-    <td class="jaCell">Load −40% · short openers only — <b>no new fitness available, only freshness</b> · last lift ~7 days out.</td>
-    <td class="rrCell">Volume down · 2–3 short climb touches to stay sharp · sleep protected · <b>no weight-cutting</b> in the final fortnight.</td></tr>
-  <tr><td class="wk">Aug 30–Sep 5<br><span class="tag t-race">Race</span></td>
-    <td class="jaCell">Openers Tue/Thu · <b>carb-load Thu–Fri (~700 g Fri)</b> · <b>RACE Sat Sep 5:</b> first half 165–180 W, HR ≤145, fuel from min 15, caffeine via the 333.</td>
-    <td class="rrCell">Light openers · same carb-load · <b>RACE:</b> climbs ≤135 (ceiling 140) · 165–180 W · &lt;5 punches/hr · his own race — <b>finish strong</b>.</td></tr>
+  {% for w in plan_weeks %}
+  <tr><td class="wk">{{ w.label }}<br><span class="tag {{ w.tag_class }}">{{ w.tag }}</span></td>
+    <td class="jaCell">{{ w.ja }}</td>
+    <td class="rrCell">{{ w.rr }}</td></tr>
+  {% endfor %}
 </table>
 
 <h2 class="sec" id="reports">📖 Ride reports — the coach's log (newest first — a new report lands after each uploaded ride)</h2>
@@ -463,6 +447,12 @@ function showTip(cell,e){
   h+='<div class="pr"><b>Prescribed:</b> '+p.s+(p.d?' — '+p.d:'')+'</div>';
   if(ds<=todayIso){
     if(det){ h+='<div class="ac"><b>Actual:</b> '+det.ac+'</div><div class="vd v-'+ex+'">'+det.vd+'</div>'; }
+    else if(REPORT_IDX[who]&&REPORT_IDX[who][ds]){
+      h+='<div class="ac"><b>Actual:</b> '+REPORT_IDX[who][ds]+'</div>';
+      if(ex==='plan')h+='<div class="vd v-plan">ON-PROFILE — ridden as prescribed.</div>';
+      else if(ex==='off')h+='<div class="vd v-off">OFF-PROFILE — ridden, but not to the prescription.</div>';
+      else if(ex==='miss')h+='<div class="vd v-miss">NO WORKOUT logged against this prescription.</div>';
+    }
     else if(ex==='miss'){ h+='<div class="vd v-miss">NO WORKOUT — the prescription above went unridden.</div>'; }
     else if(ex==='plan'){ h+='<div class="vd v-plan">ON-PROFILE — ridden as prescribed.</div>'; }
     else if(ex==='off'){ h+='<div class="vd v-off">OFF-PROFILE — ridden, but not to the prescription.</div>'; }
@@ -510,23 +500,14 @@ function phaseOf(ds){
   if(ds<='2026-08-29')return'taper';
   return'race';
 }
-// Exact sessions for the current (re-entry) week, from the live race plan.
-const JA_EXACT={
-  '2026-07-21':{s:'2:00 Z2 base',d:'HR ≤138 · watts fall in heat · 85–95 rpm · no coasting'},
-  '2026-07-22':{s:'2:00 Z2 + Strength #2',d:'HR ≤138 · lift AFTER the ride, hex −20%'},
-  '2026-07-23':{s:'Travel → PC · optional ≤1:00 easy',d:'front-load fluids · openers only if gate green'},
-  '2026-07-24':{s:'1:30 easy Z2 (altitude)',d:'HR ≤135 by feel · watts read low up high'},
-  '2026-07-25':{s:'LONG 4:00 Z2 ⭐',d:'HR ≤138 by feel · full fuel rehearsal 70 g/hr',big:1},
-  '2026-07-26':{s:'Rest or ≤1:00 spin',d:'HR ≤125 · sleep is the assignment'},
-  '2026-07-27':{s:'2:30–3:00 Z2 base (last PC day)',d:'HR ≤138 by feel at altitude · cool-Utah aerobic volume'},
-  '2026-07-28':{s:'Travel PC → Memphis · optional ≤45′ spin',d:'no quality on the travel day · became the aborted FTP attempt — test moved to Thu'},
-  '2026-07-29':{s:'Recovery Z2 1:00–1:30',d:'100–140 W · talk-test governed · sleep is the workout — test gate tomorrow'},
-  '2026-07-30':{s:'FTP FIELD TEST 20′ ⭐',d:'gate green → WU 25′ · opener 5′ @ 250–270 · 20-min max from 245–250 W · FTP = 0.95× · pedal watts, console ignored'},
-  '2026-07-31':{s:'2:00 Z2 easy (pre-long)',d:'HR ≤135 · 130–170 W · no intervals · carb-forward dinner'},
-  '2026-08-01':{s:'LONG flat Z2 4:00–5:00 ⭐',d:'≤138 · 150–180 W · full fuel dress rehearsal 70–75 g/hr · decoupling <8%',big:1},
-  '2026-08-02':{s:'1:00 recovery + Strength (full)',d:'HR ≤130 · lift after the easy ride · box step-ups are the race-specific lift'}
-};
+// Prescriptions come from the deployed plan JSONs (same source as the /plan
+// pages) — server-rendered below, so plan rewrites reach the board on deploy.
+// The weekday/phase templates that follow are only the fallback for dates the
+// JSONs don't detail.
+const PLAN_DAYS={{ plan_days|tojson }};
+const REPORT_IDX={{ report_idx|tojson }};
 function jaPlan(ds,loc,dow){
+  const px=PLAN_DAYS.JA[ds]; if(px)return px;
   const ph=phaseOf(ds);
   if(ph==='race'){
     if(ds>'2026-09-05')return{s:'Recover',d:'you earned it'};
@@ -543,7 +524,6 @@ function jaPlan(ds,loc,dow){
     if(dow===0)return{s:'Travel: rest or hotel spin ≤45′',d:'HR ≤125 · walking counts'};
     return{s:'Travel: hotel bike 45–60′ Z2',d:'HR ≤135 by feel · OR bodyweight circuit ×3: step-ups, squats, lunges, planks · keep the fuel habits'};
   }
-  if(JA_EXACT[ds])return JA_EXACT[ds];
   const down=ph==='down', taper=ph==='taper';
   const inPC=loc==='PC';
   switch(dow){
@@ -562,6 +542,7 @@ function jaPlan(ds,loc,dow){
   }
 }
 function rrPlan(ds,loc,dow){
+  const px=PLAN_DAYS.RR[ds]; if(px)return px;
   const ph=phaseOf(ds);
   if(loc==='OFF')return{s:'Fully off',d:'rest is the session · mobility · protein · sleep',off:1};
   if(loc==='TRV'){

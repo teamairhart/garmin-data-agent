@@ -9,7 +9,8 @@ from src.agents.update_monitor import update_monitor
 from src.auth import auth_bp, init_db
 from src.dashboard_data import build_dashboard_context
 from src.training_log import create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions, upsert_workout_log
-from src.plan_tracker import init_plan_tables, load_plan, get_completions, set_completion, progress_summary
+from src.plan_tracker import (init_plan_tables, load_plan, get_completions, set_completion,
+                              progress_summary, plan_prescriptions, plan_week_rows)
 from src.board import (init_board_tables, get_calendar, set_calendar_day, list_reports,
                        upsert_report, record_upload, list_uploads, get_upload, upload_dir)
 from demo_data import generate_demo_ride_data
@@ -166,7 +167,13 @@ def board():
                 u['stale'] = age_s > 30 * 60
             except ValueError:
                 pass
-    return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads)
+    plan_days = {'JA': plan_prescriptions('jonathan'), 'RR': plan_prescriptions('robert')}
+    report_idx = {'JA': {}, 'RR': {}}
+    for r in reports:
+        if r['athlete'] in report_idx:
+            report_idx[r['athlete']][r['day']] = r.get('subline') or r['title']
+    return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads,
+                           plan_days=plan_days, report_idx=report_idx, plan_weeks=plan_week_rows())
 
 
 @app.route('/board/calendar', methods=['GET', 'POST'])

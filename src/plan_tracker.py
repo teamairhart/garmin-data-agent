@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import json
 import os
+import re
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -105,3 +107,116 @@ def progress_summary(plan: dict[str, Any], completions: dict[str, dict[str, Any]
     done = sum(1 for i in ids if completions.get(i, {}).get("completed"))
     total = len(ids)
     return {"done": done, "total": total, "pct": round(100 * done / total) if total else 0}
+
+
+# ---------------- board weekly-view feeds ----------------
+# The /board strip + tooltips + seven-weeks table read these instead of
+# hardcoded template data, so plan rewrites show up on the board the moment
+# the JSON is deployed (same source the /plan pages render from).
+
+_BIG_RE = re.compile(r"\b(long|big vert|big climbing|dress rehearsal|recon)\b", re.I)
+
+
+def _duration_hours(s: str | None) -> float:
+    m = re.search(r"(\d+):(\d{2})", s or "")
+    return int(m.group(1)) + int(m.group(2)) / 60 if m else 0.0
+
+
+def plan_prescriptions(athlete: str) -> dict[str, dict[str, Any]]:
+    """{date: {s, d, big?, race?, off?}} for the board strip/tooltips."""
+    out: dict[str, dict[str, Any]] = {}
+    for week in load_plan(athlete).get("weeks", []):
+        if str(week.get("id", "")).startswith("tmpl-"):
+            continue
+        for day in week.get("days", []):
+            date = day.get("date")
+            if not date:
+                continue
+            headline = (day.get("headline") or "").strip()
+            sessions = [s for s in day.get("sessions", []) if s.get("title")]
+            titles = " + ".join(s["title"].strip() for s in sessions) or headline or "Rest"
+            if len(titles) > 110:
+                titles = titles[:107].rstrip() + "…"
+            detail = ""
+            for s in sessions:
+                if s.get("targets"):
+                    detail = s["targets"].strip()
+                    break
+            if not detail and sessions:
+                detail = headline
+            if len(detail) > 200:
+                detail = detail[:197].rstrip() + "…"
+            entry: dict[str, Any] = {"s": titles, "d": detail}
+            if date == "2026-09-05" or "RACE" in headline.upper():
+                entry["race"] = 1
+            elif _BIG_RE.search(titles) or any(
+                _duration_hours(s.get("duration")) >= 3.5 for s in sessions
+            ):
+                entry["big"] = 1
+            if not sessions and "rest" in (headline or "rest").lower():
+                entry["off"] = 1
+            out[date] = entry
+    return out
+
+
+_WEEK_TAGS = (
+    ("down", ("Down", "t-down")),
+    ("re-entry", ("Re-entry", "t-down")),
+    ("reentry", ("Re-entry", "t-down")),
+    ("peak", ("Peak", "t-peak")),
+    ("taper", ("Taper", "t-peak")),
+    ("build", ("Build", "t-build")),
+)
+
+
+def _trim_focus(text: str, limit: int = 300) -> str:
+    text = (text or "").strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    for boundary in (". ", " · ", "; "):
+        idx = cut.rfind(boundary)
+        if idx > limit // 2:
+            return cut[: idx + 1].rstrip() + "…"
+    return cut.rstrip() + "…"
+
+
+def plan_week_rows(start: str = "2026-07-19") -> list[dict[str, str]]:
+    """Paired JA/RR week rows for the board's weeks table, from the plan JSONs."""
+
+    def by_monday(athlete: str) -> dict[str, dict[str, Any]]:
+        out: dict[str, dict[str, Any]] = {}
+        for week in load_plan(athlete).get("weeks", []):
+            wid = str(week.get("id", ""))
+            m = re.search(r"(\d{4}-\d{2}-\d{2})$", wid)
+            if m and not wid.startswith("tmpl-"):
+                out[m.group(1)] = week
+        return out
+
+    ja_weeks, rr_weeks = by_monday("jonathan"), by_monday("robert")
+    rows = []
+    for monday in sorted(ja_weeks):
+        if monday < start:
+            continue
+        week = ja_weeks[monday]
+        mon = datetime.strptime(monday, "%Y-%m-%d")
+        sun = mon + timedelta(days=6)
+        label = f"{mon.strftime('%b %-d')}–{sun.strftime('%-d') if sun.month == mon.month else sun.strftime('%b %-d')}"
+        phase = (week.get("phase") or "").lower()
+        tag, tag_class = "Build", "t-build"
+        for key, (t, c) in _WEEK_TAGS:
+            if key in phase:
+                tag, tag_class = t, c
+                break
+        if "2026-09-05" >= monday and "2026-09-05" <= sun.strftime("%Y-%m-%d"):
+            tag, tag_class = "RACE 🏁", "t-peak"
+        rows.append(
+            {
+                "label": label,
+                "tag": tag,
+                "tag_class": tag_class,
+                "ja": _trim_focus(week.get("focus", "")),
+                "rr": _trim_focus(rr_weeks.get(monday, {}).get("focus", "")),
+            }
+        )
+    return rows
