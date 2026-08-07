@@ -623,19 +623,17 @@
           "date": "2026-08-05",
           "weekday": "Wed",
           "location": "Park City",
-          "headline": "Recovery spin — watts-governed, flat",
+          "headline": "✅ DONE — 2:21 easy-HR mountain ride (double the dose; engine recovered, throttle didn’t rest)",
           "sessions": [
             {
               "id": "rr-2026-08-05-ride",
               "type": "bike",
-              "title": "1:00–1:15 recovery spin",
-              "duration": "1:00–1:15",
-              "targets": "Power ≤120 W (watts govern, not HR) · flat route — Round Valley doubletrack ideal · no climbs, no surges",
+              "title": "Ridden: 2:21 / 15 mi / 1,988 ft — NP 148, 941 kJ, max HR 133",
+              "duration": "2:21",
+              "targets": "Prescribed 1:00–1:15 ≤120 W flat — full report on the board",
               "detail": [
-                "First ride back — the goal is blood flow, not fitness.",
-                "Conversational the entire time; if a rise forces >150 W, soft-pedal it or skip it.",
-                "Run the fuel timer anyway: sips + ~20 g carb per 30 min — race habits get built on easy days.",
-                "Feeling flat is normal 48 h after 3,000 kJ; end at 1:00 if the legs are wooden."
+                "The great news: negative drift, matched-power HR falling, 177 W climbs at HR 120 — the epic is absorbed.",
+                "The honest news: 941 kJ + 161 surges ≥200 W is a workday, not a flush — Friday now protects Saturday."
               ]
             }
           ],
@@ -680,18 +678,17 @@
           "date": "2026-08-07",
           "weekday": "Fri",
           "location": "Park City",
-          "headline": "Base + race-watts opener (if recovered)",
+          "headline": "True spin or rest — protect Saturday",
           "sessions": [
             {
               "id": "rr-2026-08-07-ride",
               "type": "bike",
-              "title": "Base 1:30 + 2×8 min @ 165–180 W",
-              "duration": "1:30",
-              "targets": "The two intervals ONLY in the 165–180 W band · everything else ≤130 W · fuel on the timer",
+              "title": "45–60 min easy spin (≤120 W, flat) or full rest",
+              "duration": "0:00–1:00",
+              "targets": "Power ≤120 W · flat · no climbs — Wednesday already spent the base dose",
               "detail": [
-                "Legs-opener + first deliberate rehearsal of the race band.",
-                "One moderate climb: 2×8 min seated at 165–180 W, easy spin down between.",
-                "If Wednesday's spin felt bad, make this a flat 1:00 base ride instead."
+                "The 2×8 min race-band opener moved into Saturday, where it belongs.",
+                "The only job today: arrive at Saturday fresh with a full tank. Carb-forward dinner tonight."
               ]
             }
           ],
@@ -719,8 +716,9 @@
               "targets": "Climbs 165–180 W, hard ceiling 200 · ≤5 punches/hr · 80–90 g carb/hr on the 20-min timer from min 15 · 16–20 oz fluid/hr",
               "detail": [
                 "THE session of the week: practice exactly the execution that makes the PCMR cutoff.",
+                "Open the first climb with 2×8 min @ 165–180 W (moved from Friday) — the structured entry into the band.",
                 "Real climbs but not the full course — the full start→PCMR rehearsal comes next week.",
-                "Success = flat climbing watts hour 1 vs hour 4 and zero bonk signs. The clock does not matter on this ride.",
+                "Success = flat climbing watts hour 1 vs hour 4, zero bonk signs, and a single-digit punch count — Wednesday logged 161 surges ≥200 W; this ride retrains that.",
                 "Afterward: note how the 80–90 g/hr sat in the gut — that feedback tunes race day."
               ]
             }
