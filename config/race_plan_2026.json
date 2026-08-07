@@ -3635,18 +3635,18 @@
           "date": "2026-08-07",
           "weekday": "Fri",
           "location": "Park City (Epic, altitude)",
-          "headline": "Threshold-by-HR touch (2×12) — gated on morning metrics",
+          "headline": "✅ DONE — Tempe heat ride 41 mi @ heat index 115 (threshold touch rightly skipped)",
           "sessions": [
             {
               "id": "2026-08-07-ride",
               "type": "bike",
-              "title": "Threshold touch: 2×12 min @ HR 150–158 / 225–237 W (~1:30)",
-              "duration": "1:30",
-              "targets": "Fire ONLY if sleep ≥7 h + RHR normal; if red, swap to 75–90 min easy Z2",
+              "title": "Ridden: 41 mi / 2:55 in 99 °F — avg HR 162, RE 427 (historic)",
+              "duration": "2:55",
+              "targets": "Swapped from the threshold touch (rental bike, extreme heat) — report on the board",
               "detail": [
-                "Slid from Wed in the post-Epic re-sequence.",
-                "2×12 @ 225–237 W (pitched off FTP 237), 8 min easy between, long warmup.",
-                "Last full-quality intensity before next week's build — don't force it on red metrics."
+                "Biggest heat-acclimation dose of the year, 4 weeks out — adaptations mature over 10–14 days.",
+                "HR 135→181 at constant speed = pure thermal drift; talk test governed correctly.",
+                "Recovery owed: fluids + sodium, weigh-in, carbs; next 48 h gated on morning RHR."
               ]
             }
           ],
@@ -3671,31 +3671,17 @@
           "date": "2026-08-08",
           "weekday": "Sat",
           "location": "Park City (altitude)",
-          "headline": "Easy Z2 recovery (post big-day)",
+          "headline": "OFF or ≤45 min flush — gated on morning RHR (post-heat-epic)",
           "sessions": [
             {
               "id": "2026-08-08-ride",
               "type": "bike",
-              "title": "75–90 min easy Z2",
-              "duration": "1:15–1:30",
-              "targets": "HR ≤138 (really ≤130 today if legs are cooked) · altitude: watts fall, ignore the number · spin to flush, no efforts",
+              "title": "OFF, or ≤45 min very easy flush (HR ≤130)",
+              "duration": "0:00–0:45",
+              "targets": "RHR gate: if elevated, full rest — RE 427 was a real withdrawal regardless of how the legs feel",
               "detail": [
-                "Recovery flush after the big climbing day — keep it genuinely easy. If RHR is up or sleep was short, make this ≤1:00 or walk instead; recovery is programmed.",
-                "No threshold, no strength — let the big-day adaptation land. Talk-test throughout."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips proactively"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~25 g carb; target ~70 g carb/hr (keep the gut trained even on easy days)"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~25 g carb + electrolytes; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry altitude)"
-                }
+                "Rehydration is the workout: fluids + sodium until urine runs pale, weight back within ~2 lb of baseline.",
+                "Travel home day — a rest day here costs nothing; Sunday easy Z2 stands."
               ]
             }
           ],
