@@ -706,20 +706,17 @@
           "date": "2026-08-08",
           "weekday": "Sat",
           "location": "Park City",
-          "headline": "Dress rehearsal — 3.5–4.5 h, the two race fixes ⭐",
+          "headline": "✅ DONE — trainer ramp hour (228 W top, more FTP evidence); rehearsal moves to Sunday",
           "sessions": [
             {
               "id": "rr-2026-08-08-ride",
               "type": "bike",
-              "title": "3.5–4.5 h aerobic — climbs capped 165–180 W + 80–90 g/hr fueling",
-              "duration": "3:30–4:30",
-              "targets": "Climbs 165–180 W, hard ceiling 200 · ≤5 punches/hr · 80–90 g carb/hr on the 20-min timer from min 15 · 16–20 oz fluid/hr",
+              "title": "Ridden: 1:00 indoor ramp — 176→228 W, settle ~158, close 248 W",
+              "duration": "1:00",
+              "targets": "The dress rehearsal did not happen — it moves to Sunday. Full report on the board.",
               "detail": [
-                "THE session of the week: practice exactly the execution that makes the PCMR cutoff.",
-                "Open the first climb with 2×8 min @ 165–180 W (moved from Friday) — the structured entry into the band.",
-                "Real climbs but not the full course — the full start→PCMR rehearsal comes next week.",
-                "Success = flat climbing watts hour 1 vs hour 4, zero bonk signs, and a single-digit punch count — Wednesday logged 161 surges ≥200 W; this ride retrains that.",
-                "Afterward: note how the 80–90 g/hr sat in the gut — that feedback tunes race day."
+                "Strong data: 213–228 W for 10+ min at HR ≤155 (max is ~178) — the FTP ~215 revision keeps checking out.",
+                "Zero drift at every stage; 657 kJ, light enough that Sunday is fully rideable."
               ]
             }
           ],
@@ -737,16 +734,20 @@
           "date": "2026-08-09",
           "weekday": "Sun",
           "location": "Park City",
-          "headline": "Recovery spin or rest",
+          "headline": "Dress rehearsal — 3.5–4.5 h, the two race fixes ⭐ (moved from Saturday)",
           "sessions": [
             {
               "id": "rr-2026-08-09-ride",
               "type": "bike",
-              "title": "1:00 easy spin or rest",
-              "duration": "0:00–1:00",
-              "targets": "Power ≤120 W · flat",
+              "title": "3.5–4.5 h aerobic — climbs capped 165–180 W + 80–90 g/hr fueling",
+              "duration": "3:30–4:30",
+              "targets": "Climbs 165–180 W, hard ceiling 200 · ≤5 punches/hr · 80–90 g carb/hr on the 20-min timer from min 15 · 16–20 oz fluid/hr",
               "detail": [
-                "Absorb the week; next week builds toward the full race-start→PCMR rehearsal."
+                "Moved from Saturday — THE session of the block: practice exactly the execution that makes the PCMR cutoff.",
+                "Open the first climb with 2×8 min @ 165–180 W as the structured entry into the band.",
+                "Yesterday's trainer hour proved the top end is there; today proves the throttle. The 165–180 band should feel insultingly easy after a 228 W ramp — that's the point.",
+                "Success = flat climbing watts hour 1 vs hour 4, zero bonk signs, single-digit punch count. The clock does not matter.",
+                "Afterward: note the 80–90 g/hr gut feel — it tunes race day."
               ]
             }
           ],
