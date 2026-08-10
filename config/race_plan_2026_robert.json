@@ -734,20 +734,18 @@
           "date": "2026-08-09",
           "weekday": "Sun",
           "location": "Park City",
-          "headline": "Dress rehearsal — 3.5–4.5 h, the two race fixes ⭐ (moved from Saturday)",
+          "headline": "✅ DRESS REHEARSAL DONE — flat climbing watts (198→211 proxy), zero bonk at 3.5 h",
           "sessions": [
             {
               "id": "rr-2026-08-09-ride",
               "type": "bike",
-              "title": "3.5–4.5 h aerobic — climbs capped 165–180 W + 80–90 g/hr fueling",
-              "duration": "3:30–4:30",
-              "targets": "Climbs 165–180 W, hard ceiling 200 · ≤5 punches/hr · 80–90 g carb/hr on the 20-min timer from min 15 · 16–20 oz fluid/hr",
+              "title": "Ridden: 20 mi / 2,753 ft / 3:30 with JA pacing — best-executed long ride of the summer",
+              "duration": "3:30",
+              "targets": "On-profile — full scorecard on the board",
               "detail": [
-                "Moved from Saturday — THE session of the block: practice exactly the execution that makes the PCMR cutoff.",
-                "Open the first climb with 2×8 min @ 165–180 W as the structured entry into the band.",
-                "Yesterday's trainer hour proved the top end is there; today proves the throttle. The 165–180 band should feel insultingly easy after a 228 W ramp — that's the point.",
-                "Success = flat climbing watts hour 1 vs hour 4, zero bonk signs, single-digit punch count. The clock does not matter.",
-                "Afterward: note the 80–90 g/hr gut feel — it tunes race day."
+                "The #1 criterion passed emphatically: climbing watts flat hour 1 → hour 3 (vs the 8/3 slide to a bonk).",
+                "Remaining gap: the cruise band sat ~200–210, not 165–180 — those 20–30 W are the 8/22 target.",
+                "Log the fueling: g/hr consumed + gut feel — the timer half of the rehearsal counts too."
               ]
             }
           ],
