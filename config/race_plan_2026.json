@@ -3706,35 +3706,18 @@
           "date": "2026-08-09",
           "weekday": "Sun",
           "location": "Park City (altitude)",
-          "headline": "Easy Z2 endurance (steady aerobic close)",
+          "headline": "✅ DONE — paced Robert's dress rehearsal (3:30 MTB, flat 198→211 W climbing hours)",
           "sessions": [
             {
               "id": "2026-08-09-ride",
               "type": "bike",
-              "title": "90 min easy Z2",
-              "duration": "1:30",
-              "targets": "HR ≤138 · 85–95 RPM · altitude: let watts fall, pace by HR · sustained, no coasting",
+              "title": "Ridden: 20 mi / 2,753 ft / 3:30 — the human power meter",
+              "duration": "3:30",
+              "targets": "Swapped from the 90-min easy Z2 — full report on the board",
               "detail": [
-                "Steady aerobic ride to close the week's volume (~11–12 h total) — still truly easy, HR ≤138. Polarized week: only Wed's touch and Fri's big climb carried intensity.",
-                "Bank a little more time-on-bike durability while protecting recovery; shorten or cut if KPIs are red (sleep <6 h for 3+ nights, RHR +5 for 2 mornings = drop the day)."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips proactively"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~25 g carb; target ~70 g carb/hr"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~25 g carb + electrolytes"
-                },
-                {
-                  "at": "1:30",
-                  "do": "~25 g carb; 16–20 oz fluid/hr, 500–600 mg sodium/hr (dry altitude)"
-                }
+                "Service ride done well: drift −2, metronome climbing, Robert's first on-profile badge delivered off this pacing.",
+                "Own ledger: 7% true Z2 at avg HR 157 — the easy day did not happen; Monday absorbs the bill.",
+                "Week context: TSS 373 (Mon) + RE 427 (Fri) + TSS 162 (Sun) — biggest 7-day load of the year."
               ]
             }
           ],
@@ -3769,18 +3752,18 @@
           "date": "2026-08-10",
           "weekday": "Mon",
           "location": "Memphis",
-          "headline": "Rest / easy re-entry",
+          "headline": "FULL REST — load-bearing (biggest 7-day block of the year just closed)",
           "sessions": [
             {
               "id": "2026-08-10-ride",
-              "type": "bike",
-              "title": "Rest or ≤1:00 very easy spin",
-              "duration": "0:00–1:00",
-              "targets": "Full day off OR ≤60 min recovery spin, HR ≤130, flat, light",
+              "type": "rest",
+              "title": "Full rest — no spin",
+              "duration": "—",
+              "targets": "Recovery IS the session: the Epic + Tempe heat + Sunday pacing all get absorbed today",
               "detail": [
-                "Default to rest if the prior week was loaded — recovery is programmed, not optional.",
-                "If you spin: genuinely easy, no intervals, no tempo creep. Legs should feel better leaving than arriving.",
-                "Sleep is the assignment today — protect 7 h."
+                "No riding — the ≤1:00 spin option is withdrawn after Sunday's unplanned 3:30.",
+                "Hydration/weight back to baseline; carbs normal, protein high.",
+                "Tonight's sleep + tomorrow's RHR decide whether Tuesday's OBLA fires."
               ]
             }
           ],
@@ -3804,19 +3787,18 @@
           "date": "2026-08-11",
           "weekday": "Tue",
           "location": "Memphis",
-          "headline": "Quality #1 — OBLA 3×12 min @ 230–240W",
+          "headline": "OBLA 3×12 @ 230–240 W — HARD-GATED on morning metrics",
           "sessions": [
             {
               "id": "2026-08-11-ride",
               "type": "bike",
               "title": "OBLA intervals: 3×12 min @ 230–240W",
               "duration": "~2:00",
-              "targets": "20 min WU → 3×12 min @ 230–240W, HR 155–160, 90 RPM, 5 min easy between → cooldown",
+              "targets": "Fire ONLY if sleep ≥7 h AND RHR normal AND legs feel like riding — else SWAP with Wednesday's Z2 base and run the intervals Wed",
               "detail": [
-                "The week's sharp quality day — true OBLA-power reps now that the base is in.",
-                "Hold 230–240W steady; let HR settle to 155–160. If watts fade below 228W on the last rep, end it — don't grind into a hole.",
-                "Early AM to beat the heat. This is one of only 1–2 quality days — make it count, keep everything else easy.",
-                "No strength today and none yesterday — quality bike wins every conflict."
+                "GATE FIRST: after the biggest 7-day load of the year, a red morning means the swap costs nothing — forcing it costs the week.",
+                "If green: long warmup, 3×12 @ 230–240 W (off FTP 237), 8 min easy between, cadence 90+.",
+                "If swapped: Tuesday = 2:30–3:00 easy Z2, Wednesday = the intervals, rest of week unchanged."
               ],
               "fueling": [
                 {
