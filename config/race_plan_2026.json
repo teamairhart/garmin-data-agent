@@ -3845,44 +3845,17 @@
           "date": "2026-08-12",
           "weekday": "Wed",
           "location": "Memphis",
-          "headline": "Z2 aerobic base 2.5–3:00",
+          "headline": "✅ DONE — steady 2:07 in 95 °F + 15-min progressive finish (best heat-adjusted marker of the log)",
           "sessions": [
             {
               "id": "2026-08-12-ride",
               "type": "bike",
-              "title": "2.5–3:00 Z2 base",
-              "duration": "2:30–3:00",
-              "targets": "HR ≤138 · 150–180W · 85–95 RPM · no coasting",
+              "title": "Ridden: 30 mi / 2:07 — 105 min steady 126–135 W, finish 193→219 W",
+              "duration": "2:07",
+              "targets": "HR@120W 137 at 95 °F — the Tempe heat adaptation is showing. Report on the board.",
               "detail": [
-                "Bread-and-butter aerobic volume. Discipline ride — talk-test the whole way; if you can't talk, slow down.",
-                "Do NOT let it drift into the grey/tempo zone — this is where your 'easy' has historically leaked.",
-                "Early AM, flat, steady spin."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~30 g carb"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~30 g carb + electrolytes"
-                },
-                {
-                  "at": "1:35",
-                  "do": "~30 g carb (real food OK — banana/bar)"
-                },
-                {
-                  "at": "2:05",
-                  "do": "~30 g carb; 600–1,000 mg sodium/hr, 20–24 oz/hr in heat"
-                },
-                {
-                  "at": "2:40",
-                  "do": "~30 g carb if going to 3:00; aim 70–75 g carb/hr"
-                }
+                "Even-pace intent executed to the watt; thermal drift +12–14 bpm by min 90 (the cap did not fail — 95 °F did).",
+                "Finish carried threshold HR at sweet-spot watts — the dry-heat dissociation, correctly governed by power."
               ]
             }
           ],
@@ -3907,41 +3880,19 @@
           "date": "2026-08-13",
           "weekday": "Thu",
           "location": "Memphis",
-          "headline": "Cadence: 2:00 Z2 + 8–10×3 min @ 100–110 RPM",
+          "headline": "OBLA 3×12 @ 225–237 W — EARLY AM, gated (last slot this week)",
           "sessions": [
             {
               "id": "2026-08-13-ride",
               "type": "bike",
-              "title": "2:00 Z2 + 8–10×3 min leg-speed @ 100–110 RPM",
+              "title": "OBLA: 3×12 min @ 225–237 W (~2:00, start before 8 AM)",
               "duration": "2:00",
-              "targets": "Z2 HR ≤138; within it, 8–10×3 min @ 100–110 RPM, HR ≤138, full easy spin recovery between",
+              "targets": "Fire ONLY if: Tuesday OBLA did NOT already happen · morning metrics green · an early cool start is possible. Any miss → ride 2:00 Z2 + 8–10×3 min leg-speed instead and the OBLA defers to next week.",
               "detail": [
-                "Leg-speed / neuromuscular work — high cadence, NOT high load. Keep HR genuinely easy throughout; this is an easy day with a skills overlay.",
-                "Stay smooth and round at 100–110 RPM — no bouncing in the saddle. Back off RPM if HR climbs over 138.",
-                "Because this is an easy aerobic day, it's a safe day to lift after (see strength rules — never within 24 h before quality).",
-                "Early AM."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~30 g carb"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~30 g carb + electrolytes"
-                },
-                {
-                  "at": "1:35",
-                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat"
-                },
-                {
-                  "at": "2:00",
-                  "do": "~25–30 g carb; aim 70–75 g carb/hr"
-                }
+                "Long warmup · 3×12 @ 225–237 W (FTP 237 pitch), 8 min easy between, cadence 90+.",
+                "In afternoon 95 °F this session is not rideable to power honestly — early or not at all.",
+                "Yesterday's 15-min finish spent a match; if legs say no during rep 1, call it at 2 reps.",
+                "Saturday's 4–5 h fuel dress rehearsal is the week's anchor — nothing today is allowed to threaten it."
               ]
             }
           ],
@@ -3966,36 +3917,17 @@
           "date": "2026-08-14",
           "weekday": "Fri",
           "location": "Memphis",
-          "headline": "Easy Z2 (pre-long-ride)",
+          "headline": "Easy Z2 + leg-speed touches (pre-long-ride)",
           "sessions": [
             {
               "id": "2026-08-14-ride",
               "type": "bike",
-              "title": "2:00 Z2 easy",
-              "duration": "2:00",
-              "targets": "HR ≤135 · 130–170W · easy spin · no intervals",
+              "title": "1:30–2:00 easy Z2 + optional 6×30 s leg-speed @ 105–110 rpm",
+              "duration": "1:30–2:00",
+              "targets": "HR ≤138 by feel / power 130–170 W · leg-speed only if Thursday went well",
               "detail": [
-                "Genuinely easy — protects tomorrow's long ride. No strength today (legs fresh for Saturday).",
-                "Keep it conversational the entire ride; bleed off any urge to push.",
-                "Early AM."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix + sips"
-                },
-                {
-                  "at": "0:45",
-                  "do": "~30 g carb"
-                },
-                {
-                  "at": "1:15",
-                  "do": "~30 g carb + electrolytes"
-                },
-                {
-                  "at": "1:50",
-                  "do": "~30 g carb; sodium 600–1,000 mg/hr, 20–24 oz/hr in heat; aim ~70 g carb/hr"
-                }
+                "Pre-long-ride protection day — genuinely easy.",
+                "Carb-forward dinner; Saturday is the fuel dress rehearsal at 70–80 g/hr."
               ]
             }
           ],
