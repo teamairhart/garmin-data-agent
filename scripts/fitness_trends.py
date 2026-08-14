@@ -220,7 +220,12 @@ LAB_JSON = os.path.join(ROOT, "config", "lab_tests.json")
 
 # RR 2026-08-02: raw max 196 / p99.5 186 vs next-best 179 and a lab curve topping
 # at 153 @ 210 W — classic strap/wrist spike. Excluded from his max-HR trend.
-HR_ARTIFACT_FILES = {("RR", "2026-08-02 Park City Road 21mi.fit")}
+HR_ARTIFACT_FILES = {
+    ("RR", "2026-08-02 Park City Road 21mi.fit"),
+    # 2026-07-25: single-sample 185 on an avg-122 Z2 day (p99.5 = 173); his
+    # repeatable max is 179 — excluded from the max-HR trend, ride kept elsewhere.
+    ("RR", "2026-07-25 Sun Valley MTB 28mi.fit"),
+}
 
 
 def _f(v):
@@ -442,17 +447,17 @@ def aggregate():
 
         rr["deltas"] = [
             {"metric": "FTP", "then": "190 W lab (2.0 W/kg)", "then_label": "Testa, Dec 2025",
-             "now": f"~{est_ftp(b20):.0f}-215 W field est ({est_ftp(b20)/kg:.2f}+ W/kg)", "now_label": f"Aug 2026 ({b20:.0f} W x 20-min)",
-             "delta": "+7-13%", "dir": "up", "good": True,
-             "note": f"Steady trainer hour Aug 8: {b60:.0f} W for 60 min below threshold HR — the lab 190 is stale. A formal field test would pin it."},
+             "now": "230 W field test (2.42 W/kg)", "now_label": f"Jul 23 2026 · 20:01 @ {b20:.0f} W",
+             "delta": "+21%", "dir": "up", "good": True,
+             "note": f"The Coggan estimate off the test (0.95 x {b20:.0f} = {est_ftp(b20):.0f}) converges on the tested 230. Corroborated Aug 8: {b60:.0f} W steady for a full hour below threshold HR."},
             {"metric": "Est. VO2max", "then": "33.4 ml/kg/min (lab)", "then_label": "Dec 2025",
              "now": f"~{10.8*b5/kg+7:.0f}-{est_vo2_ftp(b20, kg):.0f} field est", "now_label": "Jul-Aug 2026",
-             "delta": "+1-4", "dir": "up", "good": True,
-             "note": "Age-graded (men 60-64): 33 was 'above average'; 36+ is 'good'. Moving up a band at 60 is a big deal."},
+             "delta": "+3-8", "dir": "up", "good": True,
+             "note": "5-min method gives the floor, FTP/MAP method the ceiling. Age-graded (men 60-64): 33 was 'above average', 36-41 'good', 41+ 'excellent' — at least one band up at 60, possibly two. A lab retest would pin it."},
             {"metric": "Power benchmarks (first power meter)", "then": "none — HR-only era", "then_label": "through Jul 15",
              "now": f"5-min {b5:.0f} W - 20-min {b20:.0f} W - 60-min {b60:.0f} W", "now_label": "since Jul 19",
              "delta": "baseline set", "dir": "flat", "good": None,
-             "note": "Assioma pedals arrived Jul 19. Every number here is a PR by definition — the 2027 comparison starts now."},
+             "note": "Assioma pedals arrived Jul 19; the Jul 23 FTP test + three more rides were recovered from board uploads into the archive on Aug 13, so this power curve is now complete. The 2027 comparison starts here."},
             {"metric": "Truly-easy discipline (% time <= LT1 118)", "then": f"{easy2:.0f}%", "then_label": "Q2 2026",
              "now": f"{easy3:.0f}%", "now_label": "Q3 2026",
              "delta": f"+{easy3-easy2:.0f} pts", "dir": "up", "good": True,
@@ -472,14 +477,14 @@ def aggregate():
         ]
 
         rr["kpis"] = [
-            {"label": "FTP", "value": f"~{est_ftp(b20):.0f}-215 W", "sub": "lab 190 stale",
-             "delta": "+7-13% vs Dec lab", "cls": "good"},
+            {"label": "FTP", "value": "230 W", "sub": "2.42 W/kg · tested Jul 23",
+             "delta": "+21% vs Dec lab", "cls": "good"},
             {"label": "Est. VO2max", "value": f"{10.8*b5/kg+7:.0f}-{est_vo2_ftp(b20, kg):.0f}", "sub": "lab 33.4 Dec 2025",
-             "delta": "up a band at 60", "cls": "good"},
-            {"label": "Best 20-min", "value": f"{b20:.0f} W", "sub": f"{b20/kg:.2f} W/kg · Aug 8",
-             "delta": "first-ever PR", "cls": "na"},
-            {"label": "Max HR (clean)", "value": f"{maxhr:.0f}", "sub": "May 2026",
-             "delta": "Aug 2 spike = artifact", "cls": "na"},
+             "delta": "1-2 bands up at 60", "cls": "good"},
+            {"label": "Best 20-min", "value": f"{b20:.0f} W", "sub": f"{b20/kg:.2f} W/kg · FTP test",
+             "delta": "tested, not estimated", "cls": "good"},
+            {"label": "Max HR (clean)", "value": f"{maxhr:.0f}", "sub": "repeatable · May 2026",
+             "delta": "2 spike artifacts excluded", "cls": "na"},
         ]
 
     with open(TRENDS_JSON, "w") as f:
