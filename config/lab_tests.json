@@ -2,42 +2,54 @@
   "_comment": "Dr. Testa lactate-test history. Fill nulls from the printed test sheets; fitness_trends.py --aggregate merges this into the board Fitness Trends panel. Power in watts, HR in bpm, vo2 in ml/kg/min.",
   "JA": [
     {
-      "date": "2025-05-01",
-      "label": "Visit 1 (spring 2025)",
-      "lt1_w": null, "lt1_hr": null,
-      "obla_w": null, "obla_hr": null,
-      "peak_w": null, "vo2": null,
-      "weight_lb": null,
-      "notes": "Appointment confirmed for May 1 2025 (rescheduled from Apr 21). Numbers not in the vault — enter from the printed sheet."
+      "date": "2025-07-07",
+      "label": "Visit 1 (Jul 2025)",
+      "lt1_w": 130,
+      "lt1_hr": 134,
+      "obla_w": 210,
+      "obla_hr": 155,
+      "peak_w": 250,
+      "vo2": null,
+      "weight_lb": 195,
+      "notes": "Full curve: 2 mMol 165 W @ 139 - 3 mMol 185 W @ 145 - 4 mMol 200 W @ 151. OBLA 2.4 W/kg @ 88.6 kg. From the printed sheet (photo archived 2026-08-13)."
     },
     {
       "date": null,
       "label": "Visit 2 (date?)",
-      "lt1_w": null, "lt1_hr": null,
-      "obla_w": null, "obla_hr": null,
-      "peak_w": null, "vo2": null,
+      "lt1_w": null,
+      "lt1_hr": null,
+      "obla_w": null,
+      "obla_hr": null,
+      "peak_w": null,
+      "vo2": null,
       "weight_lb": null,
-      "notes": "Jonathan reports three visits in two years; only two are documented. Confirm date + numbers."
+      "notes": "Jonathan reports three visits in two years; the third sheet (possibly the May 2025 appointment) is still missing. Confirm date + numbers."
     },
     {
       "date": "2026-03-16",
       "label": "Visit 3 (current anchors)",
-      "lt1_w": 190, "lt1_hr": 138,
-      "obla_w": 240, "obla_hr": 156,
-      "peak_w": 280, "vo2": null,
+      "lt1_w": 190,
+      "lt1_hr": 138,
+      "obla_w": 240,
+      "obla_hr": 156,
+      "peak_w": 280,
+      "vo2": null,
       "weight_lb": 200,
-      "notes": "Authoritative anchors. YoY: clear rightward lactate-curve shift vs 2025 — less lactate at 150-210 W; 190 W is now LT1."
+      "notes": "Authoritative anchors. vs Jul 2025: LT1 +60 W (+46%), OBLA +30 W (+14%), peak +30 W - the whole lactate curve shifted right."
     }
   ],
   "RR": [
     {
       "date": "2025-12-27",
       "label": "Visit 1 (baseline)",
-      "lt1_w": 100, "lt1_hr": 118,
-      "obla_w": 190, "obla_hr": 145,
-      "peak_w": null, "vo2": 33.4,
+      "lt1_w": 100,
+      "lt1_hr": 118,
+      "obla_w": 190,
+      "obla_hr": 145,
+      "peak_w": null,
+      "vo2": 33.4,
       "weight_lb": 210,
-      "notes": "Lactate 3.1 mMol already at 100 W. Testa: normal response; develop the aerobic base. Lab FTP 190 now reads stale — field data suggests ~205-220."
+      "notes": "Lactate 3.1 mMol already at 100 W. Testa: normal response; develop the aerobic base. Lab FTP 190 now reads stale \u2014 field data suggests ~205-220."
     }
   ]
 }

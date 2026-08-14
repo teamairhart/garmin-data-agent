@@ -376,6 +376,10 @@ def aggregate():
         best_sea = min(sea26) if sea26 else (float("nan"), None, None)
 
         ja["deltas"] = [
+            {"metric": "Lab lactate curve (Testa)", "then": "LT1 130 W - OBLA 210 W", "then_label": "Jul 7 2025 (88.6 kg)",
+             "now": "LT1 190 W - OBLA 240 W", "now_label": "Mar 16 2026",
+             "delta": "LT1 +46% - OBLA +14%", "dir": "up", "good": True,
+             "note": "The whole curve shifted right: 2-mMol lactate used to arrive at 165 W, now at 205 W. The gain landed exactly where the diagnosis pointed — the aerobic base — and the lab pair brackets the field data (lab OBLA 210 vs field est FTP 216 in 2025; 240 vs 237-238 in 2026)."},
             {"metric": "Best 20-min power", "then": f"{b20_25:.0f} W", "then_label": "Jul-Aug 2025",
              "now": f"{b20_26:.0f} W", "now_label": "Jul 2026 (FTP test)",
              "delta": f"+{b20_26-b20_25:.0f} W (+{100*(b20_26-b20_25)/b20_25:.0f}%)", "dir": "up", "good": True,
