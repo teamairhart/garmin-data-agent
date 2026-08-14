@@ -891,14 +891,14 @@
           "date": "2026-08-14",
           "weekday": "Fri",
           "location": "Park City",
-          "headline": "Easy or rest",
+          "headline": "FULL REST — Thursday spent the easy-day budget (TSS 177)",
           "sessions": [
             {
               "id": "rr-2026-08-14-ride",
               "type": "bike",
-              "title": "Easy 1:00 or rest",
+              "title": "Full rest — no ride",
               "duration": "0:00–1:00",
-              "targets": "HR <120",
+              "targets": "Thursday's 2:50 / 3,622 ft sweet-spot day was the week's withdrawal; recovery IS the session. Walk, stretch, hydrate.",
               "detail": [
                 "Carb up tonight for the long day."
               ]
@@ -925,7 +925,7 @@
               "type": "bike",
               "title": "Base ride 2:00 easy",
               "duration": "2:00",
-              "targets": "HR <128 · genuinely conversational",
+              "targets": "HR <128 · genuinely conversational the WHOLE ride · FLAT route, not vert · after Thursday's off-profile big day this one decides whether the easy week worked",
               "detail": [
                 "No long ride this week — resist it. Fuel normally anyway to keep the habit."
               ],
