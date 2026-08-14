@@ -3951,14 +3951,14 @@
           "date": "2026-08-15",
           "weekday": "Sat",
           "location": "Memphis",
-          "headline": "Long flat Z2 4:00–5:00 + full fuel dress rehearsal",
+          "headline": "OFF (work 10–4) — the long-ride dose moves to the 8/22 rehearsal",
           "sessions": [
             {
               "id": "2026-08-15-ride",
-              "type": "bike",
-              "title": "Long Z2 4:00–5:00 (flat) — fuel dress rehearsal",
-              "duration": "4:00–5:00",
-              "targets": "HR ≤138 · 150–180W · 85–90 RPM · no coasting · −decoupling <~8%",
+              "type": "rest",
+              "title": "Off — work day",
+              "duration": "—",
+              "targets": "The start→PCMR rehearsal (8/22 window) now carries the long-dose + fuel-rehearsal job; do not chase hours today.",
               "detail": [
                 "The week's durability anchor — Memphis is flat, so this builds the long-duration engine (climbing-specific work is rehearsed in the PC weeks).",
                 "Hold HR ≤138 the entire ride even as it wants to drift up late — long-ride decoupling <~8% is the KPI. If decoupling exceeds ~8%, you've crept into tempo; pull back.",
@@ -4030,14 +4030,14 @@
           "date": "2026-08-16",
           "weekday": "Sun",
           "location": "Memphis",
-          "headline": "Recovery 60 min + strength",
+          "headline": "Optional EVENING heat-dose spin or full rest — NO long ride at 100 °F",
           "sessions": [
             {
               "id": "2026-08-16-ride",
               "type": "bike",
-              "title": "1:00 recovery spin",
+              "title": "Optional: 60–75 min easy spin, EVENING only (after ~7 PM)",
               "duration": "1:00",
-              "targets": "HR ≤130 · very easy recovery · flat, light",
+              "targets": "Power 120–140 W, HR veto 150, fluid+sodium on the 20-min timer, done by dark. If it still feels like Tempe out there, skip entirely — two rest days before the PC week is a feature, not a failure.",
               "detail": [
                 "Easy flush after the long ride — genuinely easy, no intervals.",
                 "Short ride (≤60 min) — light sips and only nibble carbs if hungry; full in-ride fueling not required here.",
