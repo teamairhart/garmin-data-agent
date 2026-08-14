@@ -1,0 +1,706 @@
+{
+ "generated": "2026-08-13",
+ "athletes": {
+  "JA": {
+   "name": "Jonathan",
+   "weight_kg": 90.6,
+   "n_rides": 108,
+   "n_power": 79,
+   "date_range": [
+    "2025-07-01",
+    "2026-08-13"
+   ],
+   "labs": [
+    {
+     "date": "2025-05-01",
+     "label": "Visit 1 (spring 2025)",
+     "lt1_w": null,
+     "lt1_hr": null,
+     "obla_w": null,
+     "obla_hr": null,
+     "peak_w": null,
+     "vo2": null,
+     "weight_lb": null,
+     "notes": "Appointment confirmed for May 1 2025 (rescheduled from Apr 21). Numbers not in the vault \u2014 enter from the printed sheet."
+    },
+    {
+     "date": null,
+     "label": "Visit 2 (date?)",
+     "lt1_w": null,
+     "lt1_hr": null,
+     "obla_w": null,
+     "obla_hr": null,
+     "peak_w": null,
+     "vo2": null,
+     "weight_lb": null,
+     "notes": "Jonathan reports three visits in two years; only two are documented. Confirm date + numbers."
+    },
+    {
+     "date": "2026-03-16",
+     "label": "Visit 3 (current anchors)",
+     "lt1_w": 190,
+     "lt1_hr": 138,
+     "obla_w": 240,
+     "obla_hr": 156,
+     "peak_w": 280,
+     "vo2": null,
+     "weight_lb": 200,
+     "notes": "Authoritative anchors. YoY: clear rightward lactate-curve shift vs 2025 \u2014 less lactate at 150-210 W; 190 W is now LT1."
+    }
+   ],
+   "curve": {
+    "p5s": {
+     "all": 1144,
+     "all_date": "2025-11-03",
+     "r90": 953,
+     "r90_date": "2026-05-20",
+     "all_wkg": 12.63
+    },
+    "p1m": {
+     "all": 374,
+     "all_date": "2026-03-26",
+     "r90": 364,
+     "r90_date": "2026-07-28",
+     "all_wkg": 4.13
+    },
+    "p5m": {
+     "all": 273,
+     "all_date": "2025-07-21",
+     "r90": 253,
+     "r90_date": "2026-07-30",
+     "all_wkg": 3.01
+    },
+    "p10m": {
+     "all": 252,
+     "all_date": "2026-07-30",
+     "r90": 252,
+     "r90_date": "2026-07-30",
+     "all_wkg": 2.78
+    },
+    "p20m": {
+     "all": 250,
+     "all_date": "2026-07-30",
+     "r90": 250,
+     "r90_date": "2026-07-30",
+     "all_wkg": 2.76
+    },
+    "p60m": {
+     "all": 208,
+     "all_date": "2025-07-17",
+     "r90": 174,
+     "r90_date": "2026-08-09",
+     "all_wkg": 2.3
+    }
+   },
+   "spark": {
+    "p20m": [
+     [
+      "2025-07",
+      227.0
+     ],
+     [
+      "2025-08",
+      204.0
+     ],
+     [
+      "2025-09",
+      233.0
+     ],
+     [
+      "2025-10",
+      204.0
+     ],
+     [
+      "2025-11",
+      199.0
+     ],
+     [
+      "2026-02",
+      219.0
+     ],
+     [
+      "2026-03",
+      201.0
+     ],
+     [
+      "2026-04",
+      217.0
+     ],
+     [
+      "2026-05",
+      202.0
+     ],
+     [
+      "2026-06",
+      170.0
+     ],
+     [
+      "2026-07",
+      250.0
+     ],
+     [
+      "2026-08",
+      194.0
+     ]
+    ],
+    "hours": [
+     [
+      "2025-07",
+      23.6
+     ],
+     [
+      "2025-08",
+      56.3
+     ],
+     [
+      "2025-09",
+      14.8
+     ],
+     [
+      "2025-10",
+      1.1
+     ],
+     [
+      "2025-11",
+      5.4
+     ],
+     [
+      "2026-02",
+      6.0
+     ],
+     [
+      "2026-03",
+      14.6
+     ],
+     [
+      "2026-04",
+      14.9
+     ],
+     [
+      "2026-05",
+      29.0
+     ],
+     [
+      "2026-06",
+      36.4
+     ],
+     [
+      "2026-07",
+      29.8
+     ],
+     [
+      "2026-08",
+      20.4
+     ]
+    ],
+    "easy": [
+     [
+      "2025-07",
+      11.0
+     ],
+     [
+      "2025-08",
+      20.0
+     ],
+     [
+      "2025-09",
+      16.5
+     ],
+     [
+      "2025-10",
+      5.0
+     ],
+     [
+      "2025-11",
+      4.0
+     ],
+     [
+      "2026-02",
+      9.0
+     ],
+     [
+      "2026-03",
+      10.0
+     ],
+     [
+      "2026-04",
+      12.0
+     ],
+     [
+      "2026-05",
+      29.5
+     ],
+     [
+      "2026-06",
+      61.5
+     ],
+     [
+      "2026-07",
+      34.5
+     ],
+     [
+      "2026-08",
+      31.5
+     ]
+    ],
+    "hr120_sea": [
+     [
+      "2026-06",
+      137.0
+     ],
+     [
+      "2026-07",
+      138.0
+     ],
+     [
+      "2026-08",
+      135.0
+     ]
+    ],
+    "hr120_alt": [
+     [
+      "2025-07",
+      153.5
+     ],
+     [
+      "2025-08",
+      160.0
+     ],
+     [
+      "2025-09",
+      159.0
+     ],
+     [
+      "2025-10",
+      163.0
+     ],
+     [
+      "2025-11",
+      167.0
+     ],
+     [
+      "2026-02",
+      157.0
+     ],
+     [
+      "2026-03",
+      154.0
+     ],
+     [
+      "2026-04",
+      165.5
+     ],
+     [
+      "2026-05",
+      146.0
+     ],
+     [
+      "2026-06",
+      145.0
+     ],
+     [
+      "2026-07",
+      161.0
+     ],
+     [
+      "2026-08",
+      158.0
+     ]
+    ]
+   },
+   "deltas": [
+    {
+     "metric": "Best 20-min power",
+     "then": "227 W",
+     "then_label": "Jul-Aug 2025",
+     "now": "250 W",
+     "now_label": "Jul 2026 (FTP test)",
+     "delta": "+23 W (+10%)",
+     "dir": "up",
+     "good": true,
+     "note": "Like-for-like mean-max from ride files, same summer window."
+    },
+    {
+     "metric": "Est. FTP (0.95 x 20-min)",
+     "then": "216 W (2.38 W/kg)",
+     "then_label": "Jul-Aug 2025",
+     "now": "238 W (2.62 W/kg)",
+     "now_label": "Jul 2026",
+     "delta": "+22 W",
+     "dir": "up",
+     "good": true,
+     "note": "Rounds to the tested hot-floor FTP 237 W (Jul 30) and sits just under the Mar-2026 lab OBLA 240 W. Coggan bands @ 90.6 kg: 2.62 W/kg = upper 'fair', Cat-4/5 door; 195 lb goal makes the same watts 2.68."
+    },
+    {
+     "metric": "Est. VO2max (MAP method)",
+     "then": "~41",
+     "then_label": "2025",
+     "now": "~45 ml/kg/min",
+     "now_label": "2026",
+     "delta": "+3",
+     "dir": "up",
+     "good": true,
+     "note": "Age-graded (men 45-49): ~45 = 'good', excellent starts ~48. Lab VO2 never directly measured."
+    },
+    {
+     "metric": "Verified max HR",
+     "then": "186 bpm",
+     "then_label": "2025 observed",
+     "now": "194 bpm",
+     "now_label": "Jul 2026 FTP test",
+     "delta": "+8 observed",
+     "dir": "flat",
+     "good": null,
+     "note": "An anchor, not a fitness gain \u2014 the 2026 test simply reached a true max. Zones re-based off 194."
+    },
+    {
+     "metric": "HR @ 120 W (sea level)",
+     "then": "no 2025 baseline",
+     "then_label": "Garmin stayed home",
+     "now": "129 bpm best / 133-137 typical",
+     "now_label": "Jun-Aug 2026",
+     "delta": "-8 bpm within 2026",
+     "dir": "up",
+     "good": true,
+     "note": "149 post-test spike (Jul 28) -> 129 all-time best (Aug 1). Cool-morning October retest is the gold standard."
+    },
+    {
+     "metric": "HR @ 120 W (altitude, matched climb)",
+     "then": "2025-07-02 Armstrong-Pinecone",
+     "then_label": "",
+     "now": "2026-07-24 same climb",
+     "now_label": "",
+     "delta": "-4 bpm at matched power",
+     "dir": "up",
+     "good": true,
+     "note": "Same-climb YoY control (see 7/24 analysis): fitter engine at identical watts, plus -13 W pedaling avg from smarter pacing."
+    },
+    {
+     "metric": "Truly-easy discipline (% time <= LT1)",
+     "then": "33%",
+     "then_label": "Jul-Aug 2025",
+     "now": "43%",
+     "now_label": "Jul-Aug 2026",
+     "delta": "+9 pts",
+     "dir": "up",
+     "good": true,
+     "note": "Testa's #1 fix. 2025 was grey-zone riding (78% above LT1 across the old corpus); the polarized split is taking hold."
+    },
+    {
+     "metric": "Durability at race scale",
+     "then": "P2P 2025: 12:03, hour-7 bonk",
+     "then_label": "",
+     "now": "2026: 9.6 h recon, no bonk; ~21-h-fasted TSS-373 day",
+     "now_label": "",
+     "delta": "shared course span ridden 14 min faster than race pace, in training",
+     "dir": "up",
+     "good": true,
+     "note": "Hour-6-7 climbing at 188 W @ HR 160 on the exact 2025 bonk terrain; matched-power HR improved through the day."
+    },
+    {
+     "metric": "Volume (Jul 1 - Aug 13)",
+     "then": "48 h",
+     "then_label": "2025",
+     "now": "50 h",
+     "now_label": "2026",
+     "delta": "flat by design",
+     "dir": "flat",
+     "good": null,
+     "note": "Same hours, different composition: 2026 adds structure, fuel protocol, and the biggest single days of the log."
+    },
+    {
+     "metric": "Top-end (5-min / sprint)",
+     "then": "273 W 5-min (2025)",
+     "then_label": "",
+     "now": "253 W 5-min in-test; 1,144 W 5-s (Nov 2025)",
+     "now_label": "",
+     "delta": "deliberately untested in 2026",
+     "dir": "flat",
+     "good": null,
+     "note": "The phenotype is anaerobic-dominant (Strava 8-wk 5-min 349 W, Mar 2026); 2026 training targets the aerobic limiter instead."
+    }
+   ],
+   "kpis": [
+    {
+     "label": "Est. FTP",
+     "value": "238 W",
+     "sub": "2.62 W/kg",
+     "delta": "+22 W YoY",
+     "cls": "good"
+    },
+    {
+     "label": "Est. VO2max",
+     "value": "~45",
+     "sub": "ml/kg/min \u00b7 'good' 45-49",
+     "delta": "+3 YoY",
+     "cls": "good"
+    },
+    {
+     "label": "Best 20-min",
+     "value": "250 W",
+     "sub": "Jul 30 test",
+     "delta": "+23 W YoY",
+     "cls": "good"
+    },
+    {
+     "label": "Max HR",
+     "value": "194",
+     "sub": "verified Jul 2026",
+     "delta": "zones re-based",
+     "cls": "na"
+    }
+   ]
+  },
+  "RR": {
+   "name": "Robert",
+   "weight_kg": 95.0,
+   "n_rides": 27,
+   "n_power": 8,
+   "date_range": [
+    "2026-03-18",
+    "2026-08-09"
+   ],
+   "labs": [
+    {
+     "date": "2025-12-27",
+     "label": "Visit 1 (baseline)",
+     "lt1_w": 100,
+     "lt1_hr": 118,
+     "obla_w": 190,
+     "obla_hr": 145,
+     "peak_w": null,
+     "vo2": 33.4,
+     "weight_lb": 210,
+     "notes": "Lactate 3.1 mMol already at 100 W. Testa: normal response; develop the aerobic base. Lab FTP 190 now reads stale \u2014 field data suggests ~205-220."
+    }
+   ],
+   "curve": {
+    "p5s": {
+     "all": 717,
+     "all_date": "2026-08-03",
+     "r90": 717,
+     "r90_date": "2026-08-03",
+     "all_wkg": 7.55
+    },
+    "p1m": {
+     "all": 329,
+     "all_date": "2026-07-19",
+     "r90": 329,
+     "r90_date": "2026-07-19",
+     "all_wkg": 3.46
+    },
+    "p5m": {
+     "all": 239,
+     "all_date": "2026-07-19",
+     "r90": 239,
+     "r90_date": "2026-07-19",
+     "all_wkg": 2.52
+    },
+    "p10m": {
+     "all": 222,
+     "all_date": "2026-07-19",
+     "r90": 222,
+     "r90_date": "2026-07-19",
+     "all_wkg": 2.34
+    },
+    "p20m": {
+     "all": 215,
+     "all_date": "2026-08-08",
+     "r90": 215,
+     "r90_date": "2026-08-08",
+     "all_wkg": 2.26
+    },
+    "p60m": {
+     "all": 182,
+     "all_date": "2026-08-08",
+     "r90": 182,
+     "r90_date": "2026-08-08",
+     "all_wkg": 1.92
+    }
+   },
+   "spark": {
+    "p20m": [
+     [
+      "2026-07",
+      205.0
+     ],
+     [
+      "2026-08",
+      215.0
+     ]
+    ],
+    "hours": [
+     [
+      "2026-03",
+      5.2
+     ],
+     [
+      "2026-04",
+      1.9
+     ],
+     [
+      "2026-05",
+      37.9
+     ],
+     [
+      "2026-07",
+      25.3
+     ],
+     [
+      "2026-08",
+      17.2
+     ]
+    ],
+    "easy": [
+     [
+      "2026-03",
+      25.5
+     ],
+     [
+      "2026-04",
+      23.0
+     ],
+     [
+      "2026-05",
+      20.0
+     ],
+     [
+      "2026-07",
+      34.0
+     ],
+     [
+      "2026-08",
+      29.5
+     ]
+    ],
+    "hr120_sea": [],
+    "hr120_alt": [
+     [
+      "2026-07",
+      130.0
+     ],
+     [
+      "2026-08",
+      119.0
+     ]
+    ]
+   },
+   "deltas": [
+    {
+     "metric": "FTP",
+     "then": "190 W lab (2.0 W/kg)",
+     "then_label": "Testa, Dec 2025",
+     "now": "~204-215 W field est (2.15+ W/kg)",
+     "now_label": "Aug 2026 (215 W x 20-min)",
+     "delta": "+7-13%",
+     "dir": "up",
+     "good": true,
+     "note": "Steady trainer hour Aug 8: 182 W for 60 min below threshold HR \u2014 the lab 190 is stale. A formal field test would pin it."
+    },
+    {
+     "metric": "Est. VO2max",
+     "then": "33.4 ml/kg/min (lab)",
+     "then_label": "Dec 2025",
+     "now": "~34-38 field est",
+     "now_label": "Jul-Aug 2026",
+     "delta": "+1-4",
+     "dir": "up",
+     "good": true,
+     "note": "Age-graded (men 60-64): 33 was 'above average'; 36+ is 'good'. Moving up a band at 60 is a big deal."
+    },
+    {
+     "metric": "Power benchmarks (first power meter)",
+     "then": "none \u2014 HR-only era",
+     "then_label": "through Jul 15",
+     "now": "5-min 239 W - 20-min 215 W - 60-min 182 W",
+     "now_label": "since Jul 19",
+     "delta": "baseline set",
+     "dir": "flat",
+     "good": null,
+     "note": "Assioma pedals arrived Jul 19. Every number here is a PR by definition \u2014 the 2027 comparison starts now."
+    },
+    {
+     "metric": "Truly-easy discipline (% time <= LT1 118)",
+     "then": "19%",
+     "then_label": "Q2 2026",
+     "now": "33%",
+     "now_label": "Q3 2026",
+     "delta": "+15 pts",
+     "dir": "up",
+     "good": true,
+     "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."
+    },
+    {
+     "metric": "Durability (the superpower)",
+     "then": "Leadville recon: 7.5 h @ 12k ft, ZERO drift",
+     "then_label": "May 2026",
+     "now": "P2P recons: 9.6 h, drift ~0 again",
+     "now_label": "Jul-Aug 2026",
+     "delta": "elite marker, repeatedly confirmed",
+     "dir": "up",
+     "good": true,
+     "note": "Friel standard: <5% Pw:HR decoupling = aerobically durable. He posts ~0 on 8-10 h days. Pacing/durability is NOT his limiter \u2014 W/kg is."
+    },
+    {
+     "metric": "Observed max HR",
+     "then": "\u2014",
+     "then_label": "",
+     "now": "179 bpm (clean)",
+     "now_label": "May 2026",
+     "delta": "",
+     "dir": "flat",
+     "good": null,
+     "note": "An Aug 2 spike to 196 was a strap artifact (next-best 179; lab curve tops at 153 @ 210 W). Compressed zones (LT1 118 - threshold 145) make HR pacing knife-edge; power fixes that."
+    },
+    {
+     "metric": "The mission",
+     "then": "95 kg, 2.0 W/kg",
+     "then_label": "Dec 2025",
+     "now": "climbing races reward W/kg",
+     "now_label": "",
+     "delta": "body comp = highest-leverage lever",
+     "dir": "flat",
+     "good": null,
+     "note": "Every kg is ~5 m/h VAM (~3-4 min across P2P's climbing). The engine is proven durable; make it lighter."
+    }
+   ],
+   "kpis": [
+    {
+     "label": "FTP",
+     "value": "~204-215 W",
+     "sub": "lab 190 stale",
+     "delta": "+7-13% vs Dec lab",
+     "cls": "good"
+    },
+    {
+     "label": "Est. VO2max",
+     "value": "34-38",
+     "sub": "lab 33.4 Dec 2025",
+     "delta": "up a band at 60",
+     "cls": "good"
+    },
+    {
+     "label": "Best 20-min",
+     "value": "215 W",
+     "sub": "2.26 W/kg \u00b7 Aug 8",
+     "delta": "first-ever PR",
+     "cls": "na"
+    },
+    {
+     "label": "Max HR (clean)",
+     "value": "179",
+     "sub": "May 2026",
+     "delta": "Aug 2 spike = artifact",
+     "cls": "na"
+    }
+   ]
+  }
+ },
+ "method_notes": [
+  "Power curve = mean-max on a 1 Hz grid, recording gaps count as 0 W (TrainingPeaks convention).",
+  "Est FTP = 0.95 x best 20-min (Coggan). Est VO2max = 10.8 x MAP/kg + 7 with MAP = FTP/0.75 (ACSM-style); where a true maximal 5-min exists, the 5-min method (10.8 x P5/kg + 7) is shown alongside.",
+  "HR@120W = median HR in the 110-130 W band, HR-lag corrected, warm-up excluded (matches ride_metrics.csv). Confounders: ~+2.5 bpm/1,000 ft altitude, heat. Sea-level and altitude are never mixed in one trend.",
+  "W/kg uses CURRENT weight for all periods (historical weights not logged).",
+  "%truly-easy = share of ride time at/below each athlete's own LT1 heart rate (Testa anchors), the polarization KPI."
+ ]
+}

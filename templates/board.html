@@ -172,11 +172,49 @@
   .dcell.raceday{background:var(--race-t);border-color:var(--race)}
   .dcell.offday{background:repeating-linear-gradient(45deg,#f2f1ec 0 6px,#e9e8e1 6px 12px)}
   .dcell.past{opacity:.5}
+
+  /* ---- FITNESS TRENDS ---- */
+  .trends{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:920px){.trends{grid-template-columns:1fr}}
+  .tr-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+  .tr-card.ja{border-top:3px solid var(--ja)} .tr-card.rr{border-top:3px solid var(--rr)}
+  .tr-card h3{font-size:16px;margin-bottom:2px}
+  .tr-card .range{font-size:12px;color:var(--ink3);margin-bottom:12px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px;margin-bottom:14px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:var(--bg)}
+  .kpi .l{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3)}
+  .kpi .v{font-size:19px;font-weight:700;margin-top:2px}
+  .kpi .v small{font-size:11px;font-weight:600;color:var(--ink2)}
+  .kpi .d{font-size:11.5px;font-weight:700;margin-top:1px}
+  .kpi .d.good{color:var(--ok)} .kpi .d.bad{color:var(--race)} .kpi .d.na{color:var(--ink3);font-weight:600}
+  .tr-sub{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin:14px 0 6px;font-weight:800}
+  table.trt{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.trt th{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3);text-align:left;
+               padding:4px 8px 4px 0;border-bottom:1px solid var(--line);font-weight:700}
+  table.trt td{padding:6px 8px 6px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+  table.trt td.m{font-weight:700;color:var(--ink)}
+  table.trt td.num{font-variant-numeric:tabular-nums}
+  table.trt tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;font-size:10.5px;font-weight:800;border-radius:999px;padding:1px 8px;white-space:nowrap}
+  .pill.good{background:var(--ok-t);color:#0c7c54}.pill.bad{background:var(--race-t);color:#a33}
+  .pill.na{background:#eeede8;color:var(--ink3)}
+  .tr-note{font-size:11.5px;color:var(--ink3);margin-top:3px;line-height:1.45}
+  .sparks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+  .spark{border:1px solid var(--line);border-radius:12px;padding:8px 10px;background:var(--bg)}
+  .spark .l{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3)}
+  .spark .v{font-size:14px;font-weight:700;margin:1px 0 2px}
+  .spark .rng{font-size:10.5px;color:var(--ink3)}
+  .spark svg{display:block;width:100%;height:32px;margin-top:2px}
+  .tr-labs td.miss{color:var(--ink3);font-style:italic}
+  details.meth{margin-top:12px;font-size:11.5px;color:var(--ink3)}
+  details.meth summary{cursor:pointer;font-weight:700;font-size:11px;letter-spacing:.8px;text-transform:uppercase}
+  details.meth li{margin:4px 0 4px 16px}
 </style></head><body>
 
 <div class="nav">
   <span class="brand"><span class="j">AIRHART</span> <span class="x">×</span> <span class="r">RAFF</span></span>
   <a href="#calendars">📍 Calendars</a>
+  <a href="#trends">📈 Trends</a>
   <a href="#thisweek">📆 This Week</a>
   <a href="#weeks7">🗓 7 Weeks</a>
   <a href="#reports">📖 Ride Reports</a>
@@ -253,6 +291,111 @@
     <div class="counts" id="cntRR"></div>
   </div>
 </div>
+
+{% if trends %}
+<h2 class="sec" id="trends">📈 Fitness trends — the two-year deep dive</h2>
+<div class="trends" id="trendsGrid"></div>
+<details class="meth" id="trendsMeth">
+  <summary>How these numbers are computed (methodology + caveats)</summary>
+  <ul id="methList"></ul>
+</details>
+<script>window.TRENDS = {{ trends|tojson }};</script>
+<script>
+(function(){
+  const T = window.TRENDS; if(!T || !T.athletes) return;
+  const grid = document.getElementById('trendsGrid');
+  const ACC = {JA:'var(--ja)', RR:'var(--rr)'};
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const pill = (cls, dir) => {
+    const label = cls==='good' ? '&#9650; better' : (cls==='bad' ? '&#9660; worse' : '&#8212; context');
+    return '<span class="pill '+(cls||'na')+'">'+label+'</span>';
+  };
+  const spark = (pts, accent) => {
+    if(!pts || pts.length < 2) return '<div class="rng">not enough data yet</div>';
+    const vs = pts.map(p=>p[1]), min=Math.min(...vs), max=Math.max(...vs), span=(max-min)||1;
+    const W=140, H=32, P=4;
+    const xy = i => [P + i*(W-2*P)/(vs.length-1), H-P-(vs[i]-min)*(H-2*P)/span];
+    const line = vs.map((v,i)=>xy(i).map(n=>n.toFixed(1)).join(',')).join(' ');
+    const [ex,ey] = xy(vs.length-1);
+    const title = pts.map(p=>p[0]+': '+p[1]).join(' · ');
+    return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><title>'+esc(title)+'</title>'+
+      '<polyline points="'+line+'" fill="none" stroke="#b5b4aa" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'+
+      '<circle cx="'+ex.toFixed(1)+'" cy="'+ey.toFixed(1)+'" r="3.5" fill="'+accent+'" stroke="var(--card)" stroke-width="2"/></svg>';
+  };
+  const sparkCard = (label, pts, accent, unit) => {
+    if(!pts || !pts.length) return '';
+    const last = pts[pts.length-1], vs = pts.map(p=>p[1]);
+    return '<div class="spark"><div class="l">'+esc(label)+'</div>'+
+      '<div class="v">'+esc(last[1])+(unit?' <small>'+esc(unit)+'</small>':'')+'</div>'+
+      spark(pts, accent)+
+      '<div class="rng">'+esc(pts[0][0])+' &rarr; '+esc(last[0])+' · range '+Math.min(...vs)+'&ndash;'+Math.max(...vs)+'</div></div>';
+  };
+  const wHr = (w, hr) => (w==null && hr==null) ? '<td class="miss">&mdash;</td>'
+    : '<td class="num">'+(w==null?'&mdash;':w+' W')+(hr==null?'':' @ '+hr)+'</td>';
+
+  const CURVE_LABELS = {p5s:'5 s', p1m:'1 min', p5m:'5 min', p10m:'10 min', p20m:'20 min', p60m:'60 min'};
+
+  ['JA','RR'].forEach(code => {
+    const a = T.athletes[code]; if(!a) return;
+    const acc = ACC[code];
+    let h = '<div class="tr-card '+code.toLowerCase()+'"><h3>'+esc(a.name)+'</h3>' +
+      '<div class="range">'+esc(a.date_range[0])+' &rarr; '+esc(a.date_range[1])+' · '+a.n_rides+' rides ('+a.n_power+' with power) · '+a.weight_kg+' kg</div>';
+
+    // KPI row
+    h += '<div class="kpis">' + (a.kpis||[]).map(k =>
+      '<div class="kpi"><div class="l">'+esc(k.label)+'</div><div class="v">'+esc(k.value)+
+      (k.sub?' <small>'+esc(k.sub)+'</small>':'')+'</div><div class="d '+(k.cls||'na')+'">'+esc(k.delta)+'</div></div>').join('') + '</div>';
+
+    // Lab tests
+    h += '<div class="tr-sub">Dr. Testa lab tests</div><table class="trt tr-labs"><tr><th>Visit</th><th>LT1</th><th>OBLA / FTP</th><th>Peak</th><th>VO2max</th></tr>';
+    (a.labs||[]).forEach(L => {
+      h += '<tr><td class="m">'+esc(L.label)+(L.date?'<div class="tr-note">'+esc(L.date)+'</div>':'')+'</td>'+
+        wHr(L.lt1_w, L.lt1_hr) + wHr(L.obla_w, L.obla_hr) +
+        '<td class="num">'+(L.peak_w==null?'<span class="miss">&mdash;</span>':L.peak_w+' W')+'</td>'+
+        '<td class="num">'+(L.vo2==null?'<span class="miss">&mdash;</span>':L.vo2)+'</td></tr>';
+      if(L.notes) h += '<tr><td colspan="5" class="tr-note" style="padding-top:0">'+esc(L.notes)+'</td></tr>';
+    });
+    h += '</table>';
+
+    // Improved / regressed
+    h += '<div class="tr-sub">Where it moved — and where it didn\'t</div><table class="trt"><tr><th style="width:26%">Metric</th><th>Then</th><th>Now</th><th style="width:90px">Verdict</th></tr>';
+    (a.deltas||[]).forEach(d => {
+      h += '<tr><td class="m">'+esc(d.metric)+'</td>'+
+        '<td class="num">'+esc(d.then)+(d.then_label?'<div class="tr-note">'+esc(d.then_label)+'</div>':'')+'</td>'+
+        '<td class="num">'+esc(d.now)+(d.now_label?'<div class="tr-note">'+esc(d.now_label)+'</div>':'')+'</td>'+
+        '<td>'+pill(d.good===true?'good':(d.good===false?'bad':'na'))+'<div class="tr-note"><b>'+esc(d.delta)+'</b></div></td></tr>';
+      if(d.note) h += '<tr><td colspan="4" class="tr-note" style="padding-top:0">'+esc(d.note)+'</td></tr>';
+    });
+    h += '</table>';
+
+    // Power curve
+    h += '<div class="tr-sub">Power curve (mean-max)</div><table class="trt"><tr><th>Duration</th><th>All-time best</th><th>Last 90 days</th><th>W/kg</th></tr>';
+    Object.keys(CURVE_LABELS).forEach(k => {
+      const c = (a.curve||{})[k]; if(!c || c.all==null) return;
+      h += '<tr><td class="m">'+CURVE_LABELS[k]+'</td><td class="num">'+c.all+' W <span class="tr-note">('+esc(c.all_date)+')</span></td>'+
+        '<td class="num">'+(c.r90==null?'&mdash;':c.r90+' W')+'</td><td class="num">'+c.all_wkg+'</td></tr>';
+    });
+    h += '</table>';
+
+    // Sparklines
+    h += '<div class="tr-sub">Monthly trend lines</div><div class="sparks">' +
+      sparkCard('Best 20-min / mo', a.spark.p20m, acc, 'W') +
+      sparkCard('Hours / mo', a.spark.hours, acc, 'h') +
+      sparkCard('% truly easy', a.spark.easy, acc, '%') +
+      sparkCard('HR@120W sea level', a.spark.hr120_sea, acc, 'bpm') +
+      sparkCard('HR@120W altitude', a.spark.hr120_alt, acc, 'bpm') +
+      '</div>';
+
+    h += '</div>';
+    grid.insertAdjacentHTML('beforeend', h);
+  });
+
+  const meth = document.getElementById('methList');
+  (T.method_notes||[]).forEach(n => meth.insertAdjacentHTML('beforeend', '<li>'+esc(n)+'</li>'));
+  meth.insertAdjacentHTML('beforeend', '<li>Updated '+esc(T.generated)+' · refresh: fitness_trends.py --sweep --aggregate, then push_trends.py.</li>');
+})();
+</script>
+{% endif %}
 
 <h2 class="sec">🎯 The honest numbers</h2>
 <div class="cards">

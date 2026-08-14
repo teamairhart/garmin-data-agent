@@ -108,6 +108,45 @@ def _seed_if_empty() -> None:
     conn.close()
 
 
+def init_trends_table() -> None:
+    conn = get_db_connection()
+    conn.execute(
+        """CREATE TABLE IF NOT EXISTS board_trends (
+            id INTEGER PRIMARY KEY CHECK (id = 1),
+            payload TEXT NOT NULL,
+            updated_at TEXT)"""
+    )
+    conn.commit()
+    conn.close()
+
+
+def get_trends() -> dict | None:
+    conn = get_db_connection()
+    row = conn.execute("SELECT payload, updated_at FROM board_trends WHERE id=1").fetchone()
+    conn.close()
+    if not row:
+        return None
+    try:
+        payload = json.loads(row["payload"])
+    except (TypeError, ValueError):
+        return None
+    payload["_updated_at"] = row["updated_at"]
+    return payload
+
+
+def set_trends(payload: dict) -> None:
+    if not isinstance(payload, dict) or "athletes" not in payload:
+        raise ValueError("payload must be a dict with an 'athletes' key")
+    conn = get_db_connection()
+    conn.execute(
+        "INSERT INTO board_trends (id, payload, updated_at) VALUES (1, ?, ?)"
+        " ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at",
+        (json.dumps(payload), _now()),
+    )
+    conn.commit()
+    conn.close()
+
+
 def get_calendar() -> dict:
     conn = get_db_connection()
     rows = conn.execute("SELECT athlete, day, loc, ex FROM board_calendar").fetchall()

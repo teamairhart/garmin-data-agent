@@ -12,7 +12,8 @@ from src.training_log import create_gym_session, get_workout_logs, init_training
 from src.plan_tracker import (init_plan_tables, load_plan, get_completions, set_completion,
                               progress_summary, plan_prescriptions, plan_week_rows)
 from src.board import (init_board_tables, get_calendar, set_calendar_day, list_reports,
-                       upsert_report, record_upload, list_uploads, get_upload, upload_dir)
+                       upsert_report, record_upload, list_uploads, get_upload, upload_dir,
+                       init_trends_table, get_trends, set_trends)
 from demo_data import generate_demo_ride_data
 from src.fit_parser import load_single_fit_activity
 
@@ -41,6 +42,7 @@ init_db()
 init_training_tables()
 init_plan_tables()
 init_board_tables()
+init_trends_table()
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -173,7 +175,24 @@ def board():
         if r['athlete'] in report_idx:
             report_idx[r['athlete']][r['day']] = r.get('subline') or r['title']
     return render_template('board.html', reports=reports, cal_state=get_calendar(), uploads=uploads,
-                           plan_days=plan_days, report_idx=report_idx, plan_weeks=plan_week_rows())
+                           plan_days=plan_days, report_idx=report_idx, plan_weeks=plan_week_rows(),
+                           trends=get_trends())
+
+
+@app.route('/board/trends', methods=['GET', 'POST'])
+def board_trends():
+    """Fitness-trends payload for the board (pushed by scripts/push_trends.py)."""
+    err = _board_login_required_json()
+    if err:
+        return err
+    if request.method == 'GET':
+        return jsonify({'ok': True, 'trends': get_trends()})
+    payload = request.get_json(silent=True) or {}
+    try:
+        set_trends(payload)
+    except ValueError as exc:
+        return jsonify({'ok': False, 'error': str(exc)}), 400
+    return jsonify({'ok': True})
 
 
 @app.route('/board/calendar', methods=['GET', 'POST'])
