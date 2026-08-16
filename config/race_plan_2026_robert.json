@@ -1118,14 +1118,14 @@
           "date": "2026-08-21",
           "weekday": "Fri",
           "location": "Park City",
-          "headline": "Easy or rest",
+          "headline": "PROTECTED — rest or 45-min opener (rehearsal eve)",
           "sessions": [
             {
               "id": "rr-2026-08-21-ride",
               "type": "bike",
-              "title": "Easy 1:00 or rest",
+              "title": "Rest, or 45-min easy spin",
               "duration": "0:00–1:00",
-              "targets": "HR <120",
+              "targets": "Rehearsal eve: sleep, carbs, bladder + bottles staged for 2.5 h water legs.",
               "detail": [
                 "Carb up tonight for the long day."
               ]
@@ -1145,14 +1145,14 @@
           "date": "2026-08-22",
           "weekday": "Sat",
           "location": "Park City",
-          "headline": "DRESS REHEARSAL 6 h ⭐",
+          "headline": "🏁 P2P REHEARSAL — start→PCMR at band watts (the cutoff dress rehearsal; 8/23 fallback)",
           "sessions": [
             {
               "id": "rr-2026-08-22-ride",
               "type": "bike",
-              "title": "Joint race-sim: ~6 h race protocol",
+              "title": "Rehearsal: course start→PCMR (53.4 mi) at 165–180 W + full race fueling",
               "duration": "5:30–6:30",
-              "targets": "Climbs ≤135 (cap 140) at 165–180 W · <5 punches/hr · fuel 60–80 g/hr from min 15 · race-morning breakfast + timing",
+              "targets": "Targets = verified card: PCMR 8:19 with ALL 24 min of stops · climbs 165–180 W ceiling 200, ≤5 punches/hr · sustained-climb VAM ≥400 m/h = cutoff math working · 80–90 g/hr on the 20-min timer · ride YOUR pace, never Jonathan's, regroup at checkpoints. This ride answers the cutoff question with data.",
               "detail": [
                 "Ride it exactly as Sep 5: same breakfast, same bottles, same feed alarm, same pacing discipline first mile to last.",
                 "Rehearse the aid-station swap with Jonathan (10–15 min, not an hour).",
@@ -1224,14 +1224,14 @@
           "date": "2026-08-23",
           "weekday": "Sun",
           "location": "Park City",
-          "headline": "Base",
+          "headline": "Full rest (rehearsal + 1) — taper begins",
           "sessions": [
             {
               "id": "rr-2026-08-23-ride",
               "type": "bike",
-              "title": "Base 1.5–2 h",
+              "title": "Full rest",
               "duration": "1:30–2:00",
-              "targets": "HR <128",
+              "targets": "Absorb. From here to Sep 5: short easy spins, openers, carbs, sleep.",
               "detail": [
                 "Aerobic close-out; cut it if the long day left damage."
               ]

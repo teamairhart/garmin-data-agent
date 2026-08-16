@@ -4030,14 +4030,14 @@
           "date": "2026-08-16",
           "weekday": "Sun",
           "location": "Memphis",
-          "headline": "Optional EVENING heat-dose spin or full rest — NO long ride at 100 °F",
+          "headline": "FULL REST — easy-day dose banked Saturday; absorb before the PC week",
           "sessions": [
             {
               "id": "2026-08-16-ride",
-              "type": "bike",
-              "title": "Optional: 60–75 min easy spin, EVENING only (after ~7 PM)",
-              "duration": "1:00",
-              "targets": "Power 120–140 W, HR veto 150, fluid+sodium on the 20-min timer, done by dark. If it still feels like Tempe out there, skip entirely — two rest days before the PC week is a feature, not a failure.",
+              "type": "rest",
+              "title": "Full rest",
+              "duration": "—",
+              "targets": "Saturday's 2:23 heat-governed Z2 covered the weekend's riding; recovery is the session.",
               "detail": [
                 "Easy flush after the long ride — genuinely easy, no intervals.",
                 "Short ride (≤60 min) — light sips and only nibble carbs if hungry; full in-ride fueling not required here.",
@@ -4157,13 +4157,13 @@
           "date": "2026-08-18",
           "weekday": "Tue",
           "location": "Park City (altitude)",
-          "headline": "Optional VO2 touch — 4×3 min @ 250–270W (sharpen the P2P punch)",
+          "headline": "OBLA 3×12 @ 210–230 W (altitude re-pitch) — HARD-GATED on morning metrics",
           "sessions": [
             {
               "id": "2026-08-18-ride",
               "type": "bike",
-              "title": "VO2 touch: 4×3 min @ 250–270W (optional, only if fresh)",
-              "targets": "20 min Z2 WU → 4×3 min @ 250–270W (HR drifting 160+), 3 min easy between → cooldown (~1:30 total). ONE short VO2 touch only — sharpens the punchy finishing climbs at P2P. Skip entirely if KPIs aren't green or legs aren't snappy.",
+              "title": "OBLA 3×12 @ 210–230 W (PC altitude band) — only if sleep ≥7h AND RHR normal",
+              "targets": "Deferred from 8/13. Trust power over HR at altitude (Testa PC block). Any gate miss → 90 min easy Z2 and the OBLA is DONE for this build — nothing compromises the 8/22 rehearsal. VO2 touch is cancelled either way.",
               "detail": [
                 "This is the ONLY VO2 work in the plan (1–2 short touches late in the P2P build only) — keep it brief and sharp, not a smashfest.",
                 "Place it early in the week so it never compromises the peak long ride (no quality within 24 h before it).",
@@ -4318,13 +4318,13 @@
           "date": "2026-08-21",
           "weekday": "Fri",
           "location": "Park City (altitude)",
-          "headline": "Easy 90 min Z2 + pre-ride glycogen load (set up the dress rehearsal)",
+          "headline": "PROTECTED — rest or 45-min opener only (rehearsal eve)",
           "sessions": [
             {
               "id": "2026-08-21-ride",
               "type": "bike",
-              "title": "1:30 easy Z2 (pre-long-ride primer)",
-              "targets": "HR ≤138 · ~130–165W at altitude · 85–90 RPM · no coasting",
+              "title": "Rest, or 45-min spin + 3×1-min at race watts",
+              "targets": "Rehearsal eve: sleep, carbs, bottles/gels staged, GPX loaded on the Edge. No strength.",
               "detail": [
                 "Genuinely easy spin the day before the peak ride — open the legs, do not dig.",
                 "Lay out and PRE-COUNT every bottle/gel for tomorrow to 80 g carb/hr (full race fueling rehearsal).",
@@ -4372,13 +4372,13 @@
           "date": "2026-08-22",
           "weekday": "Sat",
           "location": "Park City (Epic, altitude)",
-          "headline": "PEAK dress rehearsal — 6–7 h / 9,000–10,000+ ft (GATED) · all climbs HR ≤145 · 80 g carb/hr",
+          "headline": "🏁 P2P REHEARSAL — start→PCMR at race watts (verified-card adjudication; 8/23 = weather/legs fallback)",
           "sessions": [
             {
               "id": "2026-08-22-ride",
               "type": "bike",
-              "title": "6–7 h / 9,000–10,000+ ft on the Epic — full race rehearsal (GATED)",
-              "targets": "ALL climbs HR ≤145 (hard ceiling 150 — let watts FALL ~150–170W up high), pace by HR not watts, sustained not coasting. GATE: if RHR not <66 AND sleep not ≥7 h by this morning → CUT to 5 h / less vert (do not force the dress rehearsal). Full race fueling 80 g carb/hr so 70 feels trivial on race day.",
+              "title": "Rehearsal: course start→PCMR (53.4 mi) at card watts + full race fueling",
+              "targets": "Targets = verified card: PCMR 7:47 (window 7:40–7:55) · climbs 200–215 W (185 above 8,500 ft) · sustained-climb VAM ~415 m/h · stops per card (12–15 min) · 80–90 g/hr from min 15 · VALIDATE: Gap Loop black, Deer Crest, Steps corridor (GPS-mark the yurt), CMG descent. Record everything; splits adjudicate the final race card.",
               "detail": [
                 "THE GATE (apply at wake-up, non-negotiable): only ride the full 6–7 h / 9–10k ft if morning RHR is <66 AND last night's sleep was ≥7 h. If either fails → cut to 5 h and less vert. Two recovery red flags (RHR ≥+5 over baseline 2 mornings, HRV >1 SD down, subjective ≤2) = mandatory cut. Do NOT force the rehearsal on an under-recovered system.",
                 "This is the race-specific climbing rehearsal — your plan's known weak point is climbing durability (Memphis is flat). Maximize this PC big-climb day.",
@@ -4464,13 +4464,13 @@
           "date": "2026-08-23",
           "weekday": "Sun",
           "location": "Park City (altitude)",
-          "headline": "Recovery — rest or ≤1:00 very easy spin (sleep is the KPI)",
+          "headline": "Recovery spin or full rest (rehearsal + 1)",
           "sessions": [
             {
               "id": "2026-08-23-rest",
               "type": "rest",
-              "title": "Recovery day — full rest OR ≤1:00 very easy spin",
-              "targets": "If you ride at all: ≤1:00, HR ≤120, flat, pure recovery. Otherwise full rest. Sleep ≥7 h is the master KPI — bank it after the peak ride.",
+              "title": "≤60 min recovery spin, or nothing",
+              "targets": "HR ≤130. The taper begins here — from today to Sep 5 it's absorption, openers, carbs, sleep.",
               "detail": [
                 "Big stress yesterday — prioritize sleep, hydration, and protein. No intervals, no strength.",
                 "Log morning RHR/HRV/subjective — this is the data that gates the taper. If RHR is still elevated, take the full rest.",
