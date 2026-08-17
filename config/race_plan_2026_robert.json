@@ -992,8 +992,8 @@
       "label": "Week of Aug 17 — PEAK: joint dress rehearsal",
       "phase": "Peak",
       "location": "Park City",
-      "hours": "9–11",
-      "focus": "The year's key Saturday: full race-protocol dress rehearsal with Jonathan — race fueling, race pacing bands, race-morning timing. Short tempo touch Tuesday keeps the top end awake; everything else protects Saturday.",
+      "hours": "7–9",
+      "focus": "The year's key Saturday: full race-protocol dress rehearsal with Jonathan — race fueling, race pacing bands, race-morning timing. REBUILT 8/17: the recovery week was blown (Thu TSS 177 + Sat TSS 297 race-sim), so this week is freshness-only — Tuesday's touch is green-light-only, everything else short Z2, no strength, Friday protected. Arrive rested or the rehearsal's cutoff data means nothing.",
       "days": [
         {
           "id": "2026-08-17",
@@ -1027,16 +1027,16 @@
           "date": "2026-08-18",
           "weekday": "Tue",
           "location": "Park City",
-          "headline": "Tempo touch",
+          "headline": "Tempo touch — green-light only",
           "sessions": [
             {
               "id": "rr-2026-08-18-ride",
               "type": "bike",
-              "title": "Climb intervals 3×6 min @ HR 138–144",
-              "duration": "1:30",
-              "targets": "HR 138–144 · crisp not heroic",
+              "title": "Climb intervals 2×5 min @ HR 138–144 — ONLY if legs/sleep are green; else easy 1:00",
+              "duration": "1:00–1:15",
+              "targets": "HR 138–144 · crisp not heroic · any doubt → skip the reps",
               "detail": [
-                "Short reps — sharpening, not building."
+                "Saturday's 297-TSS race-sim already delivered this week's stimulus. This is a nervous-system touch, not a builder — cut from 3×6 after the blown recovery week."
               ]
             }
           ],
@@ -1054,16 +1054,16 @@
           "date": "2026-08-19",
           "weekday": "Wed",
           "location": "Park City",
-          "headline": "Base",
+          "headline": "Short Z2 only",
           "sessions": [
             {
               "id": "rr-2026-08-19-ride",
               "type": "bike",
-              "title": "Base 1.5–2 h",
-              "duration": "1:30–2:00",
-              "targets": "HR <128 · conversational",
+              "title": "Base 1:00–1:30",
+              "duration": "1:00–1:30",
+              "targets": "HR <125 · flat · genuinely conversational",
               "detail": [
-                "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
+                "Trimmed from 2 h: freshness for Saturday now outranks volume. Cadence work only if it stays easy."
               ]
             }
           ],
@@ -1081,26 +1081,16 @@
           "date": "2026-08-20",
           "weekday": "Thu",
           "location": "Park City",
-          "headline": "Base + strength",
+          "headline": "Short spin — NO strength",
           "sessions": [
             {
               "id": "rr-2026-08-20-ride",
               "type": "bike",
-              "title": "Base 1.5 h",
-              "duration": "1:30",
-              "targets": "HR <125",
+              "title": "Easy spin 1:00",
+              "duration": "1:00",
+              "targets": "HR <120 · legs loose, nothing more",
               "detail": [
-                "Truly easy — LT1 work."
-              ]
-            },
-            {
-              "id": "rr-2026-08-20-strength",
-              "type": "strength",
-              "title": "Bodyweight strength after",
-              "duration": "~25 min",
-              "targets": "RPE 6",
-              "detail": [
-                "Step-ups 3×10/leg (loaded if a gym) · squats · calf raises · planks. Skip if it threatens Saturday."
+                "Strength is dropped this week — it threatens Saturday, which is the whole point of the block."
               ]
             }
           ],
@@ -1154,6 +1144,7 @@
               "duration": "5:30–6:30",
               "targets": "Targets = verified card: PCMR 8:19 with ALL 24 min of stops · climbs 165–180 W ceiling 200, ≤5 punches/hr · sustained-climb VAM ≥400 m/h = cutoff math working · 80–90 g/hr on the 20-min timer · ride YOUR pace, never Jonathan's, regroup at checkpoints. This ride answers the cutoff question with data.",
               "detail": [
+                "PACING NOTE from the 8/15 data: your first climb went 249 W avg (ceiling is 200) and the first 30 min averaged 190 W — then power halved. The same ride proved long-climb VAM ≥400 m/h at 187–195 W seated. You do NOT need to surge; first hour at the BOTTOM of the band.",
                 "Ride it exactly as Sep 5: same breakfast, same bottles, same feed alarm, same pacing discipline first mile to last.",
                 "Rehearse the aid-station swap with Jonathan (10–15 min, not an hour).",
                 "The goal is zero surprises on race day — equipment, gut, pacing all proven today."
