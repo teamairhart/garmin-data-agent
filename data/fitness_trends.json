@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-18",
+ "generated": "2026-08-19",
  "athletes": {
   "JA": {
    "name": "Jonathan",
@@ -472,11 +472,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 32,
-   "n_power": 12,
+   "n_rides": 33,
+   "n_power": 13,
    "date_range": [
     "2026-03-18",
-    "2026-08-18"
+    "2026-08-19"
    ],
    "labs": [
     {
@@ -566,7 +566,7 @@
      ],
      [
       "2026-08",
-      21.5
+      22.6
      ]
     ],
     "easy": [
@@ -588,7 +588,7 @@
      ],
      [
       "2026-08",
-      29.0
+      36.0
      ]
     ],
     "hr120_sea": [],
@@ -599,7 +599,7 @@
      ],
      [
       "2026-08",
-      119.0
+      117.5
      ]
     ]
    },
@@ -641,9 +641,9 @@
      "metric": "Truly-easy discipline (% time <= LT1 118)",
      "then": "19%",
      "then_label": "Q2 2026",
-     "now": "33%",
+     "now": "35%",
      "now_label": "Q3 2026",
-     "delta": "+14 pts",
+     "delta": "+17 pts",
      "dir": "up",
      "good": true,
      "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."
