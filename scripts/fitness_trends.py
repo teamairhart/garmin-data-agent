@@ -25,8 +25,10 @@ Methodology notes (keep honest):
   - W/kg uses each athlete's CURRENT weight for all periods (historical weights
     not logged); flagged in the JSON as an assumption.
 """
-import argparse, csv, glob, json, os, sys
-from datetime import datetime
+import argparse, csv, glob, json, os, sys, warnings
+from datetime import datetime, timedelta
+
+warnings.filterwarnings("ignore", message="Mean of empty slice")
 
 import numpy as np
 
@@ -63,6 +65,7 @@ FIELDS = [
     "avg_w", "np_w", "kj", "vi", "ef", "device_ftp",
     "p5s", "p1m", "p5m", "p10m", "p20m", "p60m", "vo2_est",
     "hr_at_120w", "n_120", "hr_at_150w", "n_150", "decoupling_pct",
+    "hrr60", "hrr_from", "hrr_n",
     "cad_avg", "cad_pct_ge85",
     "pct_below_lt1", "pct_aero_tempo", "pct_threshold", "pct_supra",
     "has_power", "file",
@@ -84,6 +87,76 @@ def one_hz_power(t, pwr):
     ok = ~np.isnan(pwr)
     grid[idx[ok]] = pwr[ok]
     return grid
+
+
+def _sec_grid(t, vals):
+    """Values on a 1 s elapsed grid, NaN where no sample landed (pauses stay NaN)."""
+    dur = int(t[-1]) + 1
+    grid = np.full(dur, np.nan)
+    idx = np.clip(t.astype(int), 0, dur - 1)
+    ok = ~np.isnan(vals)
+    grid[idx[ok]] = vals[ok]
+    return grid
+
+
+def hrr60(t, hr, pwr, cad, hard_hr, has_power, dist=None):
+    """Best 60-s heart-rate recovery after a sustained hard effort.
+
+    A window qualifies when: onset HR >= hard_hr (the athlete's threshold anchor)
+    and the preceding 60 s averaged within 8 bpm of it (a sustained effort, not a
+    spike); the following 60 s is genuine rest (power < 50 W; or cadence < 30 rpm
+    on HR-only files; or, with no cadence stream either, a full stop — speed
+    < 0.5 m/s from the distance channel) for >= 80% of samples; and the recording
+    is contiguous (>= 90% HR coverage — auto-pause gaps disqualify, they hide the
+    recovery). Returns (best_drop, onset_hr_of_best, n_events) — NaNs/0 when none.
+    """
+    if np.sum(~np.isnan(hr)) < 300:
+        return np.nan, np.nan, 0
+    hr_g = _sec_grid(t, hr)
+    # bridge tiny (<=3 s) sensor dropouts so they don't fail the coverage check
+    isn = np.isnan(hr_g)
+    for i in np.where(isn)[0]:
+        if i and not np.isnan(hr_g[i - 1]) and np.any(~np.isnan(hr_g[i:i + 4])):
+            hr_g[i] = hr_g[i - 1]
+    if has_power:
+        rest = _sec_grid(t, pwr) < 50
+    elif np.sum(~np.isnan(cad)) >= 300:
+        rest = _sec_grid(t, cad) < 30
+    elif dist is not None and np.sum(~np.isnan(dist)) >= 300:
+        d_g = _sec_grid(t, dist)
+        ok = ~np.isnan(d_g)
+        d_g[ok] = np.maximum.accumulate(d_g[ok])  # distance is monotonic; guard noise
+        spd = np.full(len(d_g), np.nan)
+        spd[5:] = (d_g[5:] - d_g[:-5]) / 5.0
+        rest = spd < 0.5
+    else:
+        return np.nan, np.nan, 0
+    # NaN compares False throughout: no data never counts as resting
+    dur = len(hr_g)
+    best, best_from, onsets = np.nan, np.nan, []
+    for i in range(60, dur - 63, 2):
+        nxt, prv = hr_g[i:i + 61], hr_g[i - 60:i]
+        if np.mean(~np.isnan(nxt)) < 0.9 or np.mean(~np.isnan(prv)) < 0.75:
+            continue
+        onset = np.nanmean(hr_g[max(0, i - 3):i + 3])
+        if not onset >= hard_hr or not np.nanmean(prv) >= hard_hr - 8:
+            continue
+        if np.mean(rest[i:i + 61]) < 0.8:
+            continue
+        end = np.nanmean(hr_g[i + 57:i + 63])
+        drop = onset - end
+        if not (0 <= drop <= 80):
+            continue
+        onsets.append(i)
+        if np.isnan(best) or drop > best:
+            best, best_from = drop, onset
+    n = 0
+    last = -10**9
+    for i in onsets:  # overlapping candidates of one recovery collapse to one event
+        if i - last > 120:
+            n += 1
+        last = i
+    return best, best_from, n
 
 
 def compute(path, code):
@@ -164,6 +237,8 @@ def compute(path, code):
         if e1 and not np.isnan(e1) and not np.isnan(e2):
             decoup = round((e2 - e1) / e1 * 100, 1)
 
+    hrr, hrr_from, hrr_n = hrr60(t, hr, pwr, cad, a["lt2_hr"], has_power, dist=dist)
+
     def r(v, d=0):
         return "" if v is None or (isinstance(v, float) and np.isnan(v)) else round(float(v), d)
 
@@ -179,6 +254,7 @@ def compute(path, code):
         "vo2_est": r(vo2, 1),
         "hr_at_120w": r(hr120), "n_120": n120, "hr_at_150w": r(hr150), "n_150": n150,
         "decoupling_pct": r(decoup, 1),
+        "hrr60": r(hrr), "hrr_from": r(hrr_from), "hrr_n": hrr_n,
         "cad_avg": r(cad_avg), "cad_pct_ge85": r(cad_ge85),
         "pct_below_lt1": r(pct_below), "pct_aero_tempo": r(pct_aero),
         "pct_threshold": r(pct_thr), "pct_supra": r(pct_supra),
@@ -195,7 +271,9 @@ def sweep():
         files = sorted(glob.glob(os.path.join(cfg["dir"], "*.fit")))
         for i, p in enumerate(files, 1):
             key = (code, os.path.basename(p))
-            if key in rows:
+            # hrr_n is always numeric once computed — an empty value marks a row
+            # from before the HRR column existed, so recompute to backfill it
+            if key in rows and rows[key].get("hrr_n", "") != "":
                 continue
             try:
                 m = compute(p, code)
@@ -274,6 +352,41 @@ def _window(rows, lo, hi):
     return [r for r in rows if lo <= r["date"] < hi]
 
 
+def _hrr_kpi(sub):
+    """Recent-best HRR60 for the KPI tile: (value, onset_hr, date, prior_best, is_recent).
+
+    Recent = the last 60 days of the athlete's corpus; prior_best = best before that
+    window (NaN when the metric has no history yet). Returns None with no data at all.
+    """
+    q = [r for r in sub if _isnum(_f(r.get("hrr60"))) and _f(r.get("hrr_n")) > 0]
+    if not q:
+        return None
+    latest = max(r["date"] for r in sub)
+    cutoff = (datetime.strptime(latest, "%Y-%m-%d") - timedelta(days=60)).strftime("%Y-%m-%d")
+    recent = [r for r in q if r["date"] >= cutoff]
+    pool = recent or q
+    best = max(pool, key=lambda r: _f(r["hrr60"]))
+    prior = [_f(r["hrr60"]) for r in q if r["date"] < cutoff]
+    pbest = max(prior) if prior else float("nan")
+    return _f(best["hrr60"]), _f(best["hrr_from"]), best["date"], pbest, bool(recent)
+
+
+def _hrr_tile(sub):
+    h = _hrr_kpi(sub)
+    if not h:
+        return None
+    val, frm, dt, pbest, is_recent = h
+    if not _isnum(pbest):
+        delta, cls = "new metric — baseline set", "na"
+    elif val >= pbest:
+        delta, cls = f"ties/beats prior best {pbest:.0f}", "good"
+    else:
+        delta, cls = f"prior best {pbest:.0f}", "na"
+    return {"label": "HRR (60 s)", "value": f"{val:.0f} bpm",
+            "sub": f"from HR {frm:.0f} · {dt[5:]}" + ("" if is_recent else " (older ride)"),
+            "delta": delta, "cls": cls}
+
+
 def est_ftp(best20):
     return best20 * 0.95 if _isnum(best20) else float("nan")
 
@@ -299,6 +412,7 @@ def aggregate():
         "HR@120W = median HR in the 110-130 W band, HR-lag corrected, warm-up excluded (matches ride_metrics.csv). Confounders: ~+2.5 bpm/1,000 ft altitude, heat. Sea-level and altitude are never mixed in one trend.",
         "W/kg uses CURRENT weight for all periods (historical weights not logged).",
         "%truly-easy = share of ride time at/below each athlete's own LT1 heart rate (Testa anchors), the polarization KPI.",
+        "HRR60 = biggest 60-s HR drop after a sustained hard effort (onset >= the athlete's threshold-HR anchor held >=60 s, then >=80% genuine rest — power <50 W, or no pedaling on HR-only files — with contiguous recording; auto-pause gaps disqualify and can hide recoveries). Faster = stronger parasympathetic rebound; compare only from similar onset HR — heat, altitude, and a lower starting HR all shrink the number.",
     ]
 
     for code, cfg in ATHLETES.items():
@@ -432,6 +546,9 @@ def aggregate():
             {"label": "Max HR", "value": "194", "sub": "verified Jul 2026",
              "delta": "zones re-based", "cls": "na"},
         ]
+        t = _hrr_tile(sub)
+        if t:
+            ja["kpis"].append(t)
 
     # ---------------- Robert: era-over-era deltas ----------------
     rr = out["athletes"].get("RR")
@@ -490,6 +607,9 @@ def aggregate():
             {"label": "Max HR (clean)", "value": f"{maxhr:.0f}", "sub": "repeatable · May 2026",
              "delta": "2 spike artifacts excluded", "cls": "na"},
         ]
+        t = _hrr_tile(sub)
+        if t:
+            rr["kpis"].append(t)
 
     with open(TRENDS_JSON, "w") as f:
         json.dump(out, f, indent=1)

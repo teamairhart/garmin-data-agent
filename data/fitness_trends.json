@@ -459,17 +459,24 @@
      "sub": "verified Jul 2026",
      "delta": "zones re-based",
      "cls": "na"
+    },
+    {
+     "label": "HRR (60 s)",
+     "value": "42 bpm",
+     "sub": "from HR 174 \u00b7 07-13",
+     "delta": "ties/beats prior best 42",
+     "cls": "good"
     }
    ]
   },
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 31,
-   "n_power": 11,
+   "n_rides": 32,
+   "n_power": 12,
    "date_range": [
     "2026-03-18",
-    "2026-08-13"
+    "2026-08-18"
    ],
    "labs": [
     {
@@ -522,11 +529,11 @@
      "all_wkg": 2.56
     },
     "p60m": {
-     "all": 182,
-     "all_date": "2026-08-08",
-     "r90": 182,
-     "r90_date": "2026-08-08",
-     "all_wkg": 1.92
+     "all": 184,
+     "all_date": "2026-08-18",
+     "r90": 184,
+     "r90_date": "2026-08-18",
+     "all_wkg": 1.94
     }
    },
    "spark": {
@@ -559,7 +566,7 @@
      ],
      [
       "2026-08",
-      20.0
+      21.5
      ]
     ],
     "easy": [
@@ -581,7 +588,7 @@
      ],
      [
       "2026-08",
-      22.0
+      29.0
      ]
     ],
     "hr120_sea": [],
@@ -592,7 +599,7 @@
      ],
      [
       "2026-08",
-      124.0
+      119.0
      ]
     ]
    },
@@ -606,7 +613,7 @@
      "delta": "+21%",
      "dir": "up",
      "good": true,
-     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 182 W steady for a full hour below threshold HR."
+     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 184 W steady for a full hour below threshold HR."
     },
     {
      "metric": "Est. VO2max",
@@ -623,7 +630,7 @@
      "metric": "Power benchmarks (first power meter)",
      "then": "none \u2014 HR-only era",
      "then_label": "through Jul 15",
-     "now": "5-min 262 W - 20-min 243 W - 60-min 182 W",
+     "now": "5-min 262 W - 20-min 243 W - 60-min 184 W",
      "now_label": "since Jul 19",
      "delta": "baseline set",
      "dir": "flat",
@@ -634,7 +641,7 @@
      "metric": "Truly-easy discipline (% time <= LT1 118)",
      "then": "19%",
      "then_label": "Q2 2026",
-     "now": "32%",
+     "now": "33%",
      "now_label": "Q3 2026",
      "delta": "+14 pts",
      "dir": "up",
@@ -703,6 +710,13 @@
      "sub": "repeatable \u00b7 May 2026",
      "delta": "2 spike artifacts excluded",
      "cls": "na"
+    },
+    {
+     "label": "HRR (60 s)",
+     "value": "32 bpm",
+     "sub": "from HR 157 \u00b7 08-13",
+     "delta": "new metric \u2014 baseline set",
+     "cls": "na"
     }
    ]
   }
@@ -712,6 +726,7 @@
   "Est FTP = 0.95 x best 20-min (Coggan). Est VO2max = 10.8 x MAP/kg + 7 with MAP = FTP/0.75 (ACSM-style); where a true maximal 5-min exists, the 5-min method (10.8 x P5/kg + 7) is shown alongside.",
   "HR@120W = median HR in the 110-130 W band, HR-lag corrected, warm-up excluded (matches ride_metrics.csv). Confounders: ~+2.5 bpm/1,000 ft altitude, heat. Sea-level and altitude are never mixed in one trend.",
   "W/kg uses CURRENT weight for all periods (historical weights not logged).",
-  "%truly-easy = share of ride time at/below each athlete's own LT1 heart rate (Testa anchors), the polarization KPI."
+  "%truly-easy = share of ride time at/below each athlete's own LT1 heart rate (Testa anchors), the polarization KPI.",
+  "HRR60 = biggest 60-s HR drop after a sustained hard effort (onset >= the athlete's threshold-HR anchor held >=60 s, then >=80% genuine rest \u2014 power <50 W, or no pedaling on HR-only files \u2014 with contiguous recording; auto-pause gaps disqualify and can hide recoveries). Faster = stronger parasympathetic rebound; compare only from similar onset HR \u2014 heat, altitude, and a lower starting HR all shrink the number."
  ]
 }
