@@ -4156,37 +4156,18 @@
           "id": "2026-08-18",
           "date": "2026-08-18",
           "weekday": "Tue",
-          "location": "Park City (altitude)",
-          "headline": "OBLA 3×12 @ 210–230 W (altitude re-pitch) — HARD-GATED on morning metrics",
+          "location": "Memphis",
+          "headline": "EXECUTED: OBLA skipped by choice (Memphis, not PC) — 2:05 endurance · OBLA CLOSED for this build",
           "sessions": [
             {
               "id": "2026-08-18-ride",
               "type": "bike",
-              "title": "OBLA 3×12 @ 210–230 W (PC altitude band) — only if sleep ≥7h AND RHR normal",
-              "targets": "Deferred from 8/13. Trust power over HR at altitude (Testa PC block). Any gate miss → 90 min easy Z2 and the OBLA is DONE for this build — nothing compromises the 8/22 rehearsal. VO2 touch is cancelled either way.",
+              "title": "Ridden: 2:05 endurance @ NP 155 W, avg HR 143 (88 °F) — OBLA 3×12 skipped by choice",
+              "targets": "Adjudicated off-profile (sensible substitution). Gates were green; card assumed PC altitude but the week is Memphis until Fri. Consequence: the OBLA block is DONE for this build — Thu opener is the last quality, taper starts 8/23. Rep 1 on 8/13 (234 W dead flat) stands as proof of power.",
               "detail": [
-                "This is the ONLY VO2 work in the plan (1–2 short touches late in the P2P build only) — keep it brief and sharp, not a smashfest.",
-                "Place it early in the week so it never compromises the peak long ride (no quality within 24 h before it).",
-                "On flat terrain or a steady grade where you can hold the watts cleanly; back off if power craters before the rep count.",
-                "If RHR >70 or sleep <6 h: downgrade to plain Z2 (HR ≤138) — do not add intensity to an under-recovered system."
-              ],
-              "fueling": [
-                {
-                  "at": "0:15",
-                  "do": "Start carb mix before the intervals — fuel from minute 15"
-                },
-                {
-                  "at": "0:40",
-                  "do": "~25 g carb during WU; rinse before the first rep"
-                },
-                {
-                  "at": "1:05",
-                  "do": "~25 g carb between reps + electrolytes; 16–20 oz/hr, 500–600 mg sodium/hr (altitude dry)"
-                },
-                {
-                  "at": "1:30",
-                  "do": "~25 g carb on cooldown; finish fluid"
-                }
+                "33.6% true Z2 / 55.7% aero-tempo / 10.6% over threshold — drift +14 (136→150) in 88 °F; matched-power decoupling ~−1% (engine held).",
+                "HR@120W 141 @ 88 °F — mid-band hot-Memphis, no fitness signal either way; 8/15 (134 @ 97 °F) remains the week's marker.",
+                "Lesson for next time: when quality is skipped, ride the substitute like the fallback prescription (truly easy, 8/15-style) — don't split the difference into aero-tempo."
               ]
             }
           ],
@@ -4210,17 +4191,17 @@
           "id": "2026-08-19",
           "date": "2026-08-19",
           "weekday": "Wed",
-          "location": "Park City (altitude)",
-          "headline": "Easy 90 min Z2 (recover into the long ride)",
+          "location": "Memphis",
+          "headline": "Easy 90 min Z2 in Memphis heat (recover into the long ride) — ride it like 8/15",
           "sessions": [
             {
               "id": "2026-08-19-ride",
               "type": "bike",
               "title": "1:30 easy Z2",
-              "targets": "HR ≤138 · ~130–165W at altitude · 85–90 RPM · no coasting",
+              "targets": "HR ≤138 · ~140–170 W sea level · 85–90 RPM · no coasting · early AM to beat the heat",
               "detail": [
-                "Recovery-paced aerobic ride between quality and the peak long ride — keep it genuinely easy.",
-                "Pace by HR (altitude suppresses watts). Conversational throughout.",
+                "Recovery-paced aerobic ride between quality and the peak long ride — genuinely easy, 8/15 discipline (81.5% Z2 is the proven standard, not the exception).",
+                "Sea level: power and HR should agree — if HR walks over 138 at these watts in the morning cool, that is fatigue talking; shorten, don't push.",
                 "Sleep is the assignment this week — protect total sleep over any urge to extend this ride."
               ],
               "fueling": [
@@ -4230,7 +4211,7 @@
                 },
                 {
                   "at": "0:40",
-                  "do": "~20 g carb + sips; 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                  "do": "~20 g carb + sips; 16–20 oz/hr, 600–1000 mg sodium/hr (Memphis heat)"
                 },
                 {
                   "at": "1:05",
@@ -4263,19 +4244,19 @@
           "id": "2026-08-20",
           "date": "2026-08-20",
           "weekday": "Thu",
-          "location": "Park City (altitude)",
-          "headline": "Threshold opener — 2×10 min by HR (prime the legs, don't dig)",
+          "location": "Memphis",
+          "headline": "Threshold opener — 2×10 min at sea level (watts hold; prime the legs, don't dig)",
           "sessions": [
             {
               "id": "2026-08-20-ride",
               "type": "bike",
               "title": "2×10 min threshold opener (by HR)",
-              "targets": "20 min Z2 WU → 2×10 min @ HR 150–158 (sub-threshold, ~215–228W at sea level — let watts fall at altitude), 5 min easy between → cooldown (~1:30 total). An OPENER, not a workout — prime the legs, leave the dress rehearsal fully fueled.",
+              "targets": "20 min Z2 WU → 2×10 min @ 215–228 W / HR 150–158 (sea level — power and HR should both cooperate), 5 min easy between → cooldown (~1:30 total). Early AM. An OPENER, not a workout — last quality of the build.",
               "detail": [
-                "Threshold paced BY HR (150–158), not by a watt target — altitude makes the watt number a liar.",
-                "Polarized plan: this is true quality, the only sanctioned 'middle' is over-unders/altitude climbs. No tempo drift on the recoveries — go genuinely easy between reps.",
-                "Keep it controlled — the peak long ride is the priority; do not arrive at it pre-fatigued.",
-                "Last quality before the peak ride — respect the 24 h rule (nothing hard the day before the big day)."
+                "Sea-level Memphis: pace by power (215–228 W) with the HR band (150–158) as the honesty check — in morning cool both should line up.",
+                "No tempo drift on the recoveries — genuinely easy between reps.",
+                "Keep it controlled — Saturday's rehearsal is the priority; do not arrive at it pre-fatigued.",
+                "Last quality before the peak ride — 48 h of space to Saturday; Friday is travel + protected."
               ],
               "fueling": [
                 {
@@ -4288,7 +4269,7 @@
                 },
                 {
                   "at": "1:05",
-                  "do": "~25 g carb between/after reps + electrolytes; 16–20 oz/hr, 500–600 mg sodium/hr (altitude)"
+                  "do": "~25 g carb between/after reps + electrolytes; 16–20 oz/hr, 600–1000 mg sodium/hr (Memphis heat)"
                 },
                 {
                   "at": "1:25",
@@ -4317,18 +4298,18 @@
           "id": "2026-08-21",
           "date": "2026-08-21",
           "weekday": "Fri",
-          "location": "Park City (altitude)",
-          "headline": "PROTECTED — rest or 45-min opener only (rehearsal eve)",
+          "location": "Travel MEM → Park City",
+          "headline": "PROTECTED — travel to PC; rest or ≤45-min spin after arrival (rehearsal eve)",
           "sessions": [
             {
               "id": "2026-08-21-ride",
               "type": "bike",
-              "title": "Rest, or 45-min spin + 3×1-min at race watts",
-              "targets": "Rehearsal eve: sleep, carbs, bottles/gels staged, GPX loaded on the Edge. No strength.",
+              "title": "Travel day. Optional: 45-min spin + 3×1-min at race watts after arrival",
+              "targets": "Rehearsal eve + travel: sleep, carbs, bottles/gels staged, GPX loaded on the Edge. No strength. Arriving the night before = riding Saturday inside the first ~24 h at altitude (the least-bad window) — hydration and sleep today are double-weight.",
               "detail": [
-                "Genuinely easy spin the day before the peak ride — open the legs, do not dig.",
+                "Fly, then genuinely easy spin at most — open the legs, do not dig. Skipping the spin entirely is fine.",
                 "Lay out and PRE-COUNT every bottle/gel for tomorrow to 80 g carb/hr (full race fueling rehearsal).",
-                "Hydrate hard today (altitude diuresis); start the glycogen load. Bed early — protect sleep for the big day.",
+                "Hydrate hard all day (flight + altitude diuresis stack); start the glycogen load. Bed early — protect sleep for the big day.",
                 "GATE CHECK tonight: log morning RHR and last night's sleep. If RHR is NOT <66 AND sleep is NOT ≥7 h, plan to CUT tomorrow to 5 h / less vert."
               ],
               "fueling": [
