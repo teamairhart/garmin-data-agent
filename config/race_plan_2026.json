@@ -4245,18 +4245,18 @@
           "date": "2026-08-20",
           "weekday": "Thu",
           "location": "Memphis",
-          "headline": "Threshold opener — 2×10 min at sea level (watts hold; prime the legs, don't dig)",
+          "headline": "Threshold opener 2×10 — NOW GATED (felt off 8/19); any gate miss → easy/rest, go to Saturday fresh",
           "sessions": [
             {
               "id": "2026-08-20-ride",
               "type": "bike",
-              "title": "2×10 min threshold opener (by HR)",
-              "targets": "20 min Z2 WU → 2×10 min @ 215–228 W / HR 150–158 (sea level — power and HR should both cooperate), 5 min easy between → cooldown (~1:30 total). Early AM. An OPENER, not a workout — last quality of the build.",
+              "title": "2×10 min threshold opener (by power, sea level) — ONLY if sleep ≥7 h AND RHR normal AND feeling human",
+              "targets": "GATE (added after the 8/19 bad-feel day, engine markers in-band): all three green → 20 min Z2 WU, 2×10 @ 215–228 W / HR 150–158, 5 min easy between, ~1:30 total, early AM. ANY miss → skip the opener entirely: 45–60 min easy Z2 or full rest. The opener is a nice-to-have; Saturday is the build. Nothing hard after today regardless.",
               "detail": [
-                "Sea-level Memphis: pace by power (215–228 W) with the HR band (150–158) as the honesty check — in morning cool both should line up.",
+                "Sea-level Memphis: pace by power (215–228 W) with the HR band (150–158) as the honesty check.",
                 "No tempo drift on the recoveries — genuinely easy between reps.",
-                "Keep it controlled — Saturday's rehearsal is the priority; do not arrive at it pre-fatigued.",
-                "Last quality before the peak ride — 48 h of space to Saturday; Friday is travel + protected."
+                "If gated out, do not compensate Friday — Friday stays travel + protected no matter what.",
+                "Last possible quality before the rehearsal — 48 h of space to Saturday."
               ],
               "fueling": [
                 {
