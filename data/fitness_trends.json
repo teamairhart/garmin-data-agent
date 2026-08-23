@@ -472,11 +472,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 33,
-   "n_power": 13,
+   "n_rides": 34,
+   "n_power": 14,
    "date_range": [
     "2026-03-18",
-    "2026-08-19"
+    "2026-08-20"
    ],
    "labs": [
     {
@@ -566,7 +566,7 @@
      ],
      [
       "2026-08",
-      22.6
+      23.7
      ]
     ],
     "easy": [
@@ -588,7 +588,7 @@
      ],
      [
       "2026-08",
-      36.0
+      36.5
      ]
     ],
     "hr120_sea": [],
@@ -599,7 +599,7 @@
      ],
      [
       "2026-08",
-      117.5
+      116.0
      ]
     ]
    },
@@ -641,9 +641,9 @@
      "metric": "Truly-easy discipline (% time <= LT1 118)",
      "then": "19%",
      "then_label": "Q2 2026",
-     "now": "35%",
+     "now": "38%",
      "now_label": "Q3 2026",
-     "delta": "+17 pts",
+     "delta": "+20 pts",
      "dir": "up",
      "good": true,
      "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."
