@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-22",
+ "generated": "2026-08-23",
  "athletes": {
   "JA": {
    "name": "Jonathan",
@@ -472,11 +472,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 34,
-   "n_power": 14,
+   "n_rides": 35,
+   "n_power": 15,
    "date_range": [
     "2026-03-18",
-    "2026-08-20"
+    "2026-08-22"
    ],
    "labs": [
     {
@@ -501,11 +501,11 @@
      "all_wkg": 7.78
     },
     "p1m": {
-     "all": 336,
-     "all_date": "2026-07-25",
-     "r90": 336,
-     "r90_date": "2026-07-25",
-     "all_wkg": 3.54
+     "all": 347,
+     "all_date": "2026-08-22",
+     "r90": 347,
+     "r90_date": "2026-08-22",
+     "all_wkg": 3.65
     },
     "p5m": {
      "all": 262,
@@ -530,9 +530,9 @@
     },
     "p60m": {
      "all": 184,
-     "all_date": "2026-08-18",
+     "all_date": "2026-08-22",
      "r90": 184,
-     "r90_date": "2026-08-18",
+     "r90_date": "2026-08-22",
      "all_wkg": 1.94
     }
    },
@@ -566,7 +566,7 @@
      ],
      [
       "2026-08",
-      23.7
+      33.0
      ]
     ],
     "easy": [
@@ -588,7 +588,7 @@
      ],
      [
       "2026-08",
-      36.5
+      36.0
      ]
     ],
     "hr120_sea": [],
@@ -599,7 +599,7 @@
      ],
      [
       "2026-08",
-      116.0
+      117.5
      ]
     ]
    },
@@ -643,7 +643,7 @@
      "then_label": "Q2 2026",
      "now": "38%",
      "now_label": "Q3 2026",
-     "delta": "+20 pts",
+     "delta": "+19 pts",
      "dir": "up",
      "good": true,
      "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."
