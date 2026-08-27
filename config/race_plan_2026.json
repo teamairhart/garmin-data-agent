@@ -4483,14 +4483,14 @@
       "phase": "Phase 4: P2P taper + race (sketch)",
       "location": "Memphis → Park City (P2P)",
       "hours": "~8–9 (taper wk) → ~5–6 (race wk)",
-      "focus": "Bring freshness without losing fitness. Cut volume to ~60% (taper week) then ~40% (race week), keep ONE quality touch early then only short openers, and lock in pacing + fueling. Sleep is the #1 taper KPI — RHR should fall to the low 60s. Strength tapers to 40% then STOPS. Carbo-load the final 48 h. Do NOT diet in race week. Race goal: SUB-10 (from 12:03) — won by pacing + fueling, not watts: first-half climbs HR ≤145 (sit low-140s, \"too easy through hour 4\"), fuel 80 g/hr from minute 15, negative-split the climbing, caffeine final third only, midpoint checkpoint ≥50% of target.  Taper week — volume down, one short quality touch, last longer ride 2.5–3 h Sat 8/29. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.",
+      "focus": "Bring freshness without losing fitness. Cut volume to ~60% (taper week) then ~40% (race week), keep ONE quality touch early then only short openers, and lock in pacing + fueling. Sleep is the #1 taper KPI — RHR should fall to the low 60s. Strength tapers to 40% then STOPS. Carbo-load the final 48 h. Do NOT diet in race week. Race goal: SUB-10 (from 12:03) — won by pacing + fueling, not watts: first-half climbs HR ≤145 (sit low-140s, \"too easy through hour 4\"), fuel 80 g/hr from minute 15, negative-split the climbing, caffeine final third only, midpoint checkpoint ≥50% of target.  Taper week — volume down, one short quality touch, last longer ride 2.5–3 h Sat 8/29. SKETCH — confirm location against your FedEx schedule; long rides are placed in cool Park City per your call.  RE-CUT 8/27: Mon–Wed were taken fully off after the 8/22 rehearsal (TSS 441) — recovery is banked; the risk now is staleness, not fatigue. The one sharpening session moves Tue→Thu 8/27; Fri flips from rest to a short flush spin; Sat long Z2 and Sun rest unchanged. Strength block CLOSED (Mon's last lift is NOT made up — no lifting this close to the race). Week lands ~5 h vs the ~8–9 sketch — the right side to miss on in a taper.",
       "days": [
         {
           "id": "2026-08-24",
           "date": "2026-08-24",
           "weekday": "Mon",
           "location": "Memphis",
-          "headline": "Easy Z2 + last meaningful strength @ 40%",
+          "headline": "Easy Z2 + last strength @ 40% — NOT DONE (day off, adjudicated 8/27)",
           "sessions": [
             {
               "id": "2026-08-24-ride",
@@ -4499,6 +4499,7 @@
               "duration": "1:00",
               "targets": "HR ≤138 · 130–180W feel · 85–95 RPM · no coasting",
               "detail": [
+                "ADJUDICATED 8/27: not ridden — full day off after the 8/22 rehearsal (TSS 441 earned it). No consequence; taper freshness banked.",
                 "Taper week opens here — volume is ~60% of build. Keep it genuinely easy; the work is already done, do NOT chase watts.",
                 "Early AM to beat the heat.",
                 "Smooth, relaxed legs — set up a quality Tue."
@@ -4525,6 +4526,7 @@
               "duration": "~35 min",
               "targets": "Load cut to ~40% — maintenance only, RPE ≤6. This is the LAST real lift before the race; none in race week.",
               "detail": [
+                "ADJUDICATED 8/27: not lifted — and NOT made up. The strength block is CLOSED for the season; reintroducing lifting 9 days out buys nothing and risks soreness.",
                 "After the easy ride only (never within 24 h before Tue quality — but Mon easy → Tue quality is fine since this is the easy day).",
                 "Warmup: leg swings, walking knee-hugs, BW squats ×15, walking lunges ×10/leg, glute bridges ×15.",
                 "Hex-bar deadlift 2×8 @ 40% (crisp, no grind)",
@@ -4556,7 +4558,7 @@
           "date": "2026-08-25",
           "weekday": "Tue",
           "location": "Memphis",
-          "headline": "Quality — 3×6 min @ 230–240W (the one sharpening session)",
+          "headline": "Quality 3×6 min @ 230–240W — NOT RIDDEN; MOVED to Thu 8/27",
           "sessions": [
             {
               "id": "2026-08-25-ride",
@@ -4565,6 +4567,7 @@
               "duration": "1:15",
               "targets": "Reps @ 230–240W, HR 155–160, 90 RPM; 4–5 min easy between. Sharpen, do NOT bury yourself.",
               "detail": [
+                "ADJUDICATED 8/27: skipped — days off after the 8/22 rehearsal. The taper's one sharpening session MOVES to Thu 8/27 (9 days out — still plenty of absorption time).",
                 "The ONLY quality of the taper week — keep it crisp, not exhausting. If a rep feels grindy, take the watts to the low end (230W).",
                 "20 min Z2 WU (HR ≤138) including 2–3 short build-ups.",
                 "3×6 min @ 230–240W (HR 155–160), 4–5 min easy spin recovery between.",
@@ -4608,7 +4611,7 @@
           "date": "2026-08-26",
           "weekday": "Wed",
           "location": "Memphis",
-          "headline": "Easy Z2 recovery",
+          "headline": "Easy Z2 recovery — NOT RIDDEN (full rest instead, adjudicated 8/27)",
           "sessions": [
             {
               "id": "2026-08-26-ride",
@@ -4617,6 +4620,7 @@
               "duration": "1:15",
               "targets": "HR ≤135 · 130–170W · 85–95 RPM · genuinely easy",
               "detail": [
+                "ADJUDICATED 8/27: skipped — recovery achieved by full rest instead (4 consecutive days off Sun–Wed). Fine after a TSS-441 rehearsal.",
                 "One of the two easy 60–75 min spins this week. Recover from Tue's quality.",
                 "No strength — lifting is done for the block.",
                 "Talk-test the whole ride; do NOT let it drift to tempo."
@@ -4657,46 +4661,50 @@
           "date": "2026-08-27",
           "weekday": "Thu",
           "location": "Memphis",
-          "headline": "Easy Z2 (second easy spin)",
+          "headline": "RE-CUT — the taper's one quality touch: 3×6 min @ 230–240W (moved from Tue)",
           "sessions": [
             {
               "id": "2026-08-27-ride",
               "type": "bike",
-              "title": "1:00 easy Z2",
-              "duration": "1:00",
-              "targets": "HR ≤135 · 130–170W · 90 RPM · easy",
+              "title": "1:15 incl. 3×6 min @ 230–240W (moved from Tue 8/25)",
+              "duration": "1:15",
+              "targets": "Reps @ 230–240W, HR 155–160, 90 RPM; 4–5 min easy between. First ride in 5 days — sharpen, do NOT bury yourself.",
               "detail": [
-                "Second of the two easy 60–75 min spins. Legs should start to feel springy as fatigue sheds.",
-                "Keep it short and light — resist the taper urge to 'test the legs'."
+                "RE-CUT 8/27: 4 full days off since the 8/22 rehearsal — recovery is banked and the risk is staleness. This is the taper's ONLY quality session, moved here from Tue.",
+                "Extended warm-up: 20–25 min Z2 building, with 3×30 s build-ups — first-ride-back legs often feel wooden for 20 min; give them time to come around before judging the day.",
+                "3×6 min @ 230–240W (HR 155–160), 4–5 min easy spin between. If rep 1 feels grindy, sit at 230W; if rep 2 is still grindy, stop at 2×6 — crisp beats complete.",
+                "10–15 min Z2 cooldown.",
+                "If you're in Park City rather than Memphis: pace the reps by HR 155–160 and let watts fall (~200–215 W); sodium 500–600 mg/hr instead of the heat numbers below."
               ],
               "fueling": [
                 {
                   "at": "0:15",
-                  "do": "Start carb mix + sips"
+                  "do": "Start carb mix during WU — feed from min 15 (keep the race habit grooved)"
                 },
                 {
                   "at": "0:40",
-                  "do": "~30 g carb"
+                  "do": "~30 g carb + electrolytes (between reps)"
                 },
                 {
-                  "at": "0:55",
-                  "do": "Finish fluid 20–24 oz/hr, 600–1000 mg sodium/hr in heat"
+                  "at": "1:05",
+                  "do": "~25 g carb; finish 20–24 oz fluid/hr, 600–1000 mg sodium/hr in heat"
                 }
               ]
             }
           ],
           "nutrition": {
-            "day_type": "easy",
-            "kcal": "~2,900",
-            "carb_g": "~400",
+            "day_type": "hard",
+            "kcal": "~3,300",
+            "carb_g": "~500",
             "protein_g": "155–160",
-            "fat_g": "~80",
-            "notes": "Easy day — modest deficit. Hold protein; trim fat and evening carbs.",
+            "fat_g": "~75",
+            "notes": "Quality day — fuel it fully, no deficit. Carbs around the session to support the only hard effort of the taper.",
             "sample_meals": [
-              "Breakfast: oats + berries + whey",
-              "Lunch: big salad w/ chicken + olive oil",
-              "Snack: jerky + fruit",
-              "Dinner: lean protein + veg + small rice"
+              "Pre-ride: oats + banana + whey + coffee",
+              "Post-ride: rice bowl w/ chicken + 30 g whey",
+              "Lunch: turkey & rice burrito bowl",
+              "Snack: fruit + jerky",
+              "Dinner: lean beef, potatoes, veg"
             ]
           }
         },
@@ -4705,33 +4713,34 @@
           "date": "2026-08-28",
           "weekday": "Fri",
           "location": "Memphis",
-          "headline": "Rest or 30-min spin",
+          "headline": "RE-CUT — easy Z2 flush spin (you've already had 4 rest days)",
           "sessions": [
             {
               "id": "2026-08-28-rest",
-              "type": "rest",
-              "title": "Rest (or ≤30 min very easy spin)",
-              "duration": "—",
-              "targets": "Full day off, or a 30 min HR ≤130 leg-loosener if restless",
+              "type": "bike",
+              "title": "0:45–1:00 easy Z2 flush (or full rest if the schedule demands)",
+              "duration": "0:45–1:00",
+              "targets": "HR ≤135 · 130–170W · flush Thu's quality · genuinely easy",
               "detail": [
-                "Sleep is the assignment — taper KPI #1. Aim for a 7.5 h opportunity.",
-                "If you spin: 30 min flat, HR ≤130, no fueling needed (short ride).",
-                "Set up Sat's longer Z2."
+                "RE-CUT 8/27: with Mon–Wed already off, the default here flips from rest to a short flush — shed Thu's quality and keep the legs ticking over into Sat's last longer ride.",
+                "Talk-test the whole ride; no surges, no tempo creep.",
+                "Sleep is still the assignment — taper KPI #1. Aim for a 7.5 h opportunity.",
+                "Full rest remains acceptable if work/travel intervenes — do not stack stress to fit it in."
               ]
             }
           ],
           "nutrition": {
-            "day_type": "rest",
-            "kcal": "~2,500",
-            "carb_g": "~300",
+            "day_type": "easy",
+            "kcal": "~2,800",
+            "carb_g": "~350–400",
             "protein_g": "155–160",
-            "fat_g": "~85",
-            "notes": "Rest/deficit day — trim fat & evening carbs, hold protein. Do NOT over-restrict; the taper needs glycogen.",
+            "fat_g": "~80",
+            "notes": "Easy/short day — modest deficit at most; do NOT over-restrict, the taper needs glycogen and carbo-load starts late race week.",
             "sample_meals": [
-              "Breakfast: eggs + fruit",
-              "Lunch: grilled protein + salad",
-              "Snack: Greek yogurt",
-              "Dinner: lean protein + veg, light carbs"
+              "Breakfast: eggs + fruit + coffee",
+              "Lunch: chicken + rice + veg",
+              "Snack: Greek yogurt + honey",
+              "Dinner: fish + sweet potato + salad"
             ]
           }
         },
