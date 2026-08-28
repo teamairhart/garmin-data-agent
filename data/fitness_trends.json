@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-27",
+ "generated": "2026-08-28",
  "athletes": {
   "JA": {
    "name": "Jonathan",
@@ -472,11 +472,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 35,
-   "n_power": 15,
+   "n_rides": 38,
+   "n_power": 18,
    "date_range": [
     "2026-03-18",
-    "2026-08-22"
+    "2026-08-27"
    ],
    "labs": [
     {
@@ -501,18 +501,18 @@
      "all_wkg": 7.78
     },
     "p1m": {
-     "all": 347,
-     "all_date": "2026-08-22",
-     "r90": 347,
-     "r90_date": "2026-08-22",
-     "all_wkg": 3.65
+     "all": 416,
+     "all_date": "2026-08-25",
+     "r90": 416,
+     "r90_date": "2026-08-25",
+     "all_wkg": 4.38
     },
     "p5m": {
-     "all": 262,
-     "all_date": "2026-07-23",
-     "r90": 262,
-     "r90_date": "2026-07-23",
-     "all_wkg": 2.76
+     "all": 286,
+     "all_date": "2026-08-25",
+     "r90": 286,
+     "r90_date": "2026-08-25",
+     "all_wkg": 3.01
     },
     "p10m": {
      "all": 248,
@@ -566,7 +566,7 @@
      ],
      [
       "2026-08",
-      33.0
+      36.8
      ]
     ],
     "easy": [
@@ -588,7 +588,7 @@
      ],
      [
       "2026-08",
-      36.0
+      36.5
      ]
     ],
     "hr120_sea": [],
@@ -599,7 +599,7 @@
      ],
      [
       "2026-08",
-      117.5
+      116.0
      ]
     ]
    },
@@ -619,7 +619,7 @@
      "metric": "Est. VO2max",
      "then": "33.4 ml/kg/min (lab)",
      "then_label": "Dec 2025",
-     "now": "~37-42 field est",
+     "now": "~40-42 field est",
      "now_label": "Jul-Aug 2026",
      "delta": "+3-8",
      "dir": "up",
@@ -630,7 +630,7 @@
      "metric": "Power benchmarks (first power meter)",
      "then": "none \u2014 HR-only era",
      "then_label": "through Jul 15",
-     "now": "5-min 262 W - 20-min 243 W - 60-min 184 W",
+     "now": "5-min 286 W - 20-min 243 W - 60-min 184 W",
      "now_label": "since Jul 19",
      "delta": "baseline set",
      "dir": "flat",
@@ -641,9 +641,9 @@
      "metric": "Truly-easy discipline (% time <= LT1 118)",
      "then": "19%",
      "then_label": "Q2 2026",
-     "now": "38%",
+     "now": "41%",
      "now_label": "Q3 2026",
-     "delta": "+19 pts",
+     "delta": "+22 pts",
      "dir": "up",
      "good": true,
      "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."
@@ -692,7 +692,7 @@
     },
     {
      "label": "Est. VO2max",
-     "value": "37-42",
+     "value": "40-42",
      "sub": "lab 33.4 Dec 2025",
      "delta": "1-2 bands up at 60",
      "cls": "good"
@@ -713,8 +713,8 @@
     },
     {
      "label": "HRR (60 s)",
-     "value": "32 bpm",
-     "sub": "from HR 157 \u00b7 08-13",
+     "value": "50 bpm",
+     "sub": "from HR 174 \u00b7 08-25",
      "delta": "new metric \u2014 baseline set",
      "cls": "na"
     }

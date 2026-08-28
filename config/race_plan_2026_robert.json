@@ -1280,7 +1280,7 @@
           "date": "2026-08-25",
           "weekday": "Tue",
           "location": "Park City",
-          "headline": "Climb touches",
+          "headline": "Climb touches — EXECUTED (1 hot + 2 textbook); p5m 286 W all-time PR",
           "sessions": [
             {
               "id": "rr-2026-08-25-ride",
@@ -1289,6 +1289,7 @@
               "duration": "1:15",
               "targets": "HR 138–144 · full recovery",
               "detail": [
+                "ADJUDICATED 8/28: three touches delivered — 3:40 @ 318 W (HR 157–178: nearly double the intended stimulus) then 3:59 @ 248 W and 4:01 @ 239 W both dead on the 138–144 band. p5m 286 W = all-time PR (+24 W) and HRR60 50 (provisional — strap caveat on the 178): the rehearsal is absorbed, freshness arriving. Badge on-profile. Consequence: that was the LAST HR >145 until Sep 5.",
                 "Stay sharp, nothing more. Second touch Thursday only if fresh."
               ]
             }
@@ -1307,7 +1308,7 @@
           "date": "2026-08-26",
           "weekday": "Wed",
           "location": "Park City",
-          "headline": "Base",
+          "headline": "Base — EXECUTED on-profile: the Sep 5 template ride",
           "sessions": [
             {
               "id": "rr-2026-08-26-ride",
@@ -1316,6 +1317,7 @@
               "duration": "1:30–2:00",
               "targets": "HR <128 · conversational",
               "detail": [
+                "ADJUDICATED 8/28: 1:43 moving, avg HR 123 (60% under the 128 ceiling), drift +1 across two hours at 6,600–7,100 ft, HR@120W 124 in the rehearsal band. Middle third ran AT the ceiling through the climbing — a note, not a fault. Badge on-profile. This file is how the race's first half should feel.",
                 "Easy aerobic volume — the core of the plan. Cadence work lives here: 75–80 rpm on moderate grades."
               ]
             }
@@ -1334,7 +1336,7 @@
           "date": "2026-08-27",
           "weekday": "Thu",
           "location": "Park City",
-          "headline": "Base + strength",
+          "headline": "Base + strength — NOT RIDDEN as prescribed (stop-start rest-equivalent day; benign)",
           "sessions": [
             {
               "id": "rr-2026-08-27-ride",
@@ -1343,6 +1345,7 @@
               "duration": "1:30",
               "targets": "HR <125",
               "detail": [
+                "ADJUDICATED 8/28: the file is 84 min out with only ~31 at riding speed, avg HR 90, 272 kJ — a rest day's load, not the 1.5 h base. Harmless nine days out (taper currency is freshness). NOT ticked per partial-satisfaction convention; badge off-profile, benign. Strength session unconfirmed — ask. No re-cut: Fri easy/rest, Sat–Sun base stand.",
                 "Truly easy — LT1 work."
               ]
             },
