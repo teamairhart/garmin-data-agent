@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-28",
+ "generated": "2026-08-30",
  "athletes": {
   "JA": {
    "name": "Jonathan",
@@ -472,11 +472,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 38,
-   "n_power": 18,
+   "n_rides": 40,
+   "n_power": 19,
    "date_range": [
     "2026-03-18",
-    "2026-08-27"
+    "2026-08-30"
    ],
    "labs": [
     {
@@ -529,11 +529,11 @@
      "all_wkg": 2.56
     },
     "p60m": {
-     "all": 184,
-     "all_date": "2026-08-22",
-     "r90": 184,
-     "r90_date": "2026-08-22",
-     "all_wkg": 1.94
+     "all": 189,
+     "all_date": "2026-08-30",
+     "r90": 189,
+     "r90_date": "2026-08-30",
+     "all_wkg": 1.99
     }
    },
    "spark": {
@@ -566,7 +566,7 @@
      ],
      [
       "2026-08",
-      36.8
+      40.1
      ]
     ],
     "easy": [
@@ -588,7 +588,7 @@
      ],
      [
       "2026-08",
-      36.5
+      32.5
      ]
     ],
     "hr120_sea": [],
@@ -599,7 +599,7 @@
      ],
      [
       "2026-08",
-      116.0
+      117.5
      ]
     ]
    },
@@ -613,7 +613,7 @@
      "delta": "+21%",
      "dir": "up",
      "good": true,
-     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 184 W steady for a full hour below threshold HR."
+     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 189 W steady for a full hour below threshold HR."
     },
     {
      "metric": "Est. VO2max",
@@ -630,7 +630,7 @@
      "metric": "Power benchmarks (first power meter)",
      "then": "none \u2014 HR-only era",
      "then_label": "through Jul 15",
-     "now": "5-min 286 W - 20-min 243 W - 60-min 184 W",
+     "now": "5-min 286 W - 20-min 243 W - 60-min 189 W",
      "now_label": "since Jul 19",
      "delta": "baseline set",
      "dir": "flat",
@@ -641,9 +641,9 @@
      "metric": "Truly-easy discipline (% time <= LT1 118)",
      "then": "19%",
      "then_label": "Q2 2026",
-     "now": "41%",
+     "now": "39%",
      "now_label": "Q3 2026",
-     "delta": "+22 pts",
+     "delta": "+20 pts",
      "dir": "up",
      "good": true,
      "note": "His LT1 (100 W / 118 bpm) is the limiter Testa flagged \u2014 easy volume is exactly the prescription."

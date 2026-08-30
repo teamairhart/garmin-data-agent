@@ -1401,7 +1401,7 @@
           "date": "2026-08-29",
           "weekday": "Sat",
           "location": "Park City",
-          "headline": "Easy 1.5–2 h",
+          "headline": "Easy 1.5–2 h — RIDDEN INDOORS, shorter + hotter (off-profile, benign)",
           "sessions": [
             {
               "id": "rr-2026-08-29-ride",
@@ -1410,6 +1410,7 @@
               "duration": "1:30–2:00",
               "targets": "HR <128",
               "detail": [
+                "ADJUDICATED 8/30: 1:10 indoor trainer (HR-only), avg HR 131 vs the <128 ceiling, drift 125→137 — moderate tempo, not the easy card; thermal-vs-effort unresolvable without power. NOT ticked (partial satisfaction); badge off-profile, benign. Six days out: costs nothing.",
                 "No long ride — the race is next Saturday. Keep the fuel habit."
               ],
               "fueling": [
@@ -1446,7 +1447,7 @@
           "date": "2026-08-30",
           "weekday": "Sun",
           "location": "Park City",
-          "headline": "Base",
+          "headline": "Base — EXECUTED on-profile: taper volume closes on a template ride",
           "sessions": [
             {
               "id": "rr-2026-08-30-ride",
@@ -1455,6 +1456,7 @@
               "duration": "1:30–2:00",
               "targets": "HR <128",
               "detail": [
+                "ADJUDICATED 8/30: 2:04 out / 1:51 moving, avg HR 127 (one under the ceiling), thirds 130→127→124 at held power, p20m 199 W, HR@120W 126 — third straight in-band aerobic read. 19.5 min at ≥139 noted as the race-day ration to hoard. Ticked; badge on-profile. Taper volume CLOSED — race week is rest, openers, carbs, sleep only.",
                 "Aerobic close-out; cut it if the long day left damage."
               ]
             }
