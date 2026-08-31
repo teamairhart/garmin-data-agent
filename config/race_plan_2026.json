@@ -4714,7 +4714,7 @@
           "date": "2026-08-28",
           "weekday": "Fri",
           "location": "Memphis",
-          "headline": "RE-CUT — easy Z2 flush spin (you've already had 4 rest days)",
+          "headline": "Flush spin — NOT RIDDEN (travel prep; adjudicated 8/30)",
           "sessions": [
             {
               "id": "2026-08-28-rest",
@@ -4723,6 +4723,7 @@
               "duration": "0:45–1:00",
               "targets": "HR ≤135 · 130–170W · flush Thu's quality · genuinely easy",
               "detail": [
+                "ADJUDICATED 8/30: not ridden — travel prep. With Thu's hot quality the extra rest was harmless; the restraint rehearsal defers to race week's easy days.",
                 "RE-PITCHED 8/27 post-quality: Thu ran ~2× the intended cost (TSS 85, max HR 187). This flush is now a RESTRAINT rehearsal — HR ≤135 is a hard ceiling, not a suggestion. The race is won by the rider who can hold back; practice being him today.",
                 "RE-CUT 8/27: with Mon–Wed already off, the default here flips from rest to a short flush — shed Thu's quality and keep the legs ticking over into Sat's last longer ride.",
                 "Talk-test the whole ride; no surges, no tempo creep.",
@@ -4751,7 +4752,7 @@
           "date": "2026-08-29",
           "weekday": "Sat",
           "location": "Memphis",
-          "headline": "2.5–3 h pure Z2 (last longer ride)",
+          "headline": "2.5–3 h pure Z2 — NOT RIDDEN (travel MEM→PC; adjudicated 8/30)",
           "sessions": [
             {
               "id": "2026-08-29-ride",
@@ -4760,6 +4761,7 @@
               "duration": "2:30–3:00",
               "targets": "HR ≤138 · 150–180W feel · 85–90 RPM · no coasting · ZERO intensity",
               "detail": [
+                "ADJUDICATED 8/30: not ridden — travel day, arrived Park City 8/29. The last-long-ride fueling rehearsal never happened; acceptable — the 8/22 rehearsal grooved the cadence. Big silver lining: race day is now DAY 8 at altitude (vs day 5 planned) — the acclimatization dip clears midweek. Taper week closed at 2 rides / ~2.2 h / TSS ~135: deeply under-volume, maximally fresh.",
                 "NOTE 8/27: after Thu's hot execution, this ride's ZERO-intensity spec carries extra weight — three positive-split reps showed the anti-pattern of the race thesis (HR ≤145 first half, negative-split). Ride Sat the way the first half of P2P must be ridden: bored on purpose.",
                 "The last longer ride before race week — pure aerobic, no surges, no tempo creep.",
                 "Keeps the engine warm without adding fatigue. Decoupling should be <~6% — confirm freshness.",
@@ -4814,7 +4816,7 @@
           "date": "2026-08-30",
           "weekday": "Sun",
           "location": "Memphis",
-          "headline": "Rest — close the taper week",
+          "headline": "Rest card — RIDDEN: 38-min punchy PC blast (off-profile, benign-to-useful)",
           "sessions": [
             {
               "id": "2026-08-30-rest",
@@ -4823,6 +4825,7 @@
               "duration": "—",
               "targets": "Full day off. Sleep, hydrate, eat to rest-day target.",
               "detail": [
+                "ADJUDICATED 8/30 (as ridden): 7 mi / 38 min, NP 214, TSS 50, avg HR 149 max 174, six 1–2 min surges @ 215–277 W in cool 70 °F PC air. Functionally an unstructured opener two days early — woke the legs at altitude, cost little, but it SPENDS Mon's intensity allowance. Badge off-profile, benign. NOT ticked (a ride doesn't satisfy a rest card).",
                 "Taper week #1 closes here at ~60% volume. Race week begins tomorrow at ~40%.",
                 "No bike, no gym. Protect sleep — RHR should be trending into the low 60s."
               ]
@@ -4857,21 +4860,19 @@
           "id": "2026-08-31",
           "date": "2026-08-31",
           "weekday": "Mon",
-          "location": "Memphis",
-          "headline": "Short opener — 4×90 s @ 230W",
+          "location": "Park City",
+          "headline": "RE-CUT — easy Z2 spin (tonight 8/30 was the opener; already at altitude)",
           "sessions": [
             {
               "id": "2026-08-31-ride",
               "type": "bike",
-              "title": "0:50 incl. 4×90 s @ 230W",
-              "duration": "0:50",
-              "targets": "4×90 s @ 230W, HR settling 150–158, 90 RPM; 2–3 min easy between. Keep the legs sharp, NOT tired.",
+              "title": "0:45–1:00 easy Z2 (RE-CUT from 4×90 s opener)",
+              "duration": "0:45-1:00",
+              "targets": "HR ≤138 · altitude: pace by HR, let watts fall (~130–160 W) · genuinely easy",
               "detail": [
-                "Race week begins — ~40% volume, short daily openers only.",
-                "20 min Z2 WU, HR ≤138.",
-                "4×90 s @ 230W, full easy recovery between (2–3 min). These wake the legs without cost.",
-                "10 min easy cooldown.",
-                "No strength this week and the rest of the block — lifting is done."
+                "RE-CUT 8/30: Sunday evening's blast (six surges, 6.7 min supra) already delivered this opener's stimulus — back-to-back punch days is not taper. Today flips to a genuinely easy spin: shed last night, keep the legs ticking.",
+                "You are at altitude on acclimation day 3 — the dip window. If the legs feel flat, that's chemistry, not fitness. Do not test them.",
+                "Hydrate hard — altitude front-loading starts NOW (it was scheduled for the travel day): sodium 500–600 mg/hr on the bike, fluids all day off it."
               ],
               "fueling": [
                 {
@@ -4904,19 +4905,18 @@
           "id": "2026-09-01",
           "date": "2026-09-01",
           "weekday": "Tue",
-          "location": "Memphis → Park City (travel)",
-          "headline": "Short opener + travel; front-load altitude hydration",
+          "location": "Park City",
+          "headline": "RE-CUT — opener at altitude watts (travel already done — arrived 8/29)",
           "sessions": [
             {
               "id": "2026-09-01-ride",
               "type": "bike",
-              "title": "0:45 incl. 3×90 s @ 230W (or travel-day spin)",
+              "title": "0:45 incl. 3×90 s @ ~205–215 W (altitude-adjusted from 230)",
               "duration": "0:45",
-              "targets": "3×90 s @ 230W, HR 150–158, full recovery; otherwise short flat spin if traveling early",
+              "targets": "3×90 s @ ~205–215 W or HR touches ~150 · full spin-down between · crisp, never strained",
               "detail": [
-                "Short opener before/around travel to PC. If the travel day is tight, ride 30–40 min very easy with a couple of 90 s pickups.",
-                "Begin aggressive hydration for altitude (altitude diuresis) — no alcohol from here to the race.",
-                "Arrive PC; ease into the elevation."
+                "RE-CUT 8/30: the travel is already behind you (arrived 8/29) — this is now a pure opener day. Watts re-pitched for altitude per the plan's own rule (power reads low up here — pace by HR/feel): 3×90 s @ ~205–215 W, HR touching ~150, nothing held.",
+                "Keep the day otherwise easy Z2 (HR ≤138). Hydration emphasis unchanged."
               ],
               "fueling": [
                 {
@@ -4932,9 +4932,9 @@
             {
               "id": "2026-09-01-travel",
               "type": "travel",
-              "title": "Travel Memphis → Park City",
+              "title": "Travel — ALREADY DONE (arrived PC 8/29)",
               "duration": "—",
-              "targets": "Hydrate hard, move/stretch in transit, protect sleep on arrival",
+              "targets": "Adjudicated 8/30: flight moved up two days; race day = day 8 at altitude (better than planned).",
               "detail": [
                 "Front-load fluids + electrolytes (altitude is dry and diuretic).",
                 "No alcohol. Walk/stretch during layovers.",
