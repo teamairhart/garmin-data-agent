@@ -1485,7 +1485,7 @@
           "date": "2026-08-31",
           "weekday": "Mon",
           "location": "Park City",
-          "headline": "Rest",
+          "headline": "Rest — RIDDEN as the shifted Tue opener (adjudicated 9/7, benign)",
           "sessions": [
             {
               "id": "rr-2026-08-31-ride",
@@ -1494,6 +1494,7 @@
               "duration": "—",
               "targets": "Full rest · hydrate",
               "detail": [
+                "ADJUDICATED 9/7: 1:02 opener-style ride (builds above 145, easy home) on the rest card — the Tue opener shifted a day early. Off-profile-benign; ticked as rr-2026-09-01-ride.",
                 "Nothing to gain this week except freshness."
               ]
             }
@@ -1620,7 +1621,7 @@
           "date": "2026-09-05",
           "weekday": "Sat",
           "location": "Park City",
-          "headline": "RACE — Park City Point 2 Point 🏁",
+          "headline": "🏆 P2P RACED & FINISHED — cutoff beaten by 30 min; official ~12:05 (adjudicated 9/7)",
           "sessions": [
             {
               "id": "rr-2026-09-05-ride",
@@ -1629,6 +1630,7 @@
               "duration": "~9–10 h",
               "targets": "Front 150–165 W in a group · climbs 165–180 ceiling 200 · ≤5 punches/hr · fuel 80–90 g/hr on the 20-min timer · 24 min stops",
               "detail": [
+                "ADJUDICATED 9/7 (as raced): FINISHED, official ~12:05, wheel-to-wheel with JA all day. PCMR 7:56 elapsed (3:00 PM — 30 min inside the cutoff, 21 min faster than the consensus card, 1:19 faster than the 8/22 rehearsal's 9:15). 5,342 kJ (life-biggest by a third), avg HR 127, drift −15, zero bonk after a 232–239 W front — the 8/3 profile ridden again and beaten because the fueling ran all day. Every fixed-clock deadline beaten by 11–32 min. Mission accomplished. Ticked; badge on-profile.",
                 "CHECKPOINT LADDER (targets/deadlines, 7:00 start; per 8/13 race email): Richardson Flat (11.8) 1:08/1:22 · Aerie crew (16.28) 1:52/2:05 · climb start (19.16) 2:23/2:36 · Gap base 2:49/3:02 · Gap end 3:04/3:17 · ST. REGIS WATER (23) 3:09→3:11 · Silver Lake rolling (25.75) 3:44/3:57 · turnaround (29.83) 4:32 · top (30.8) 4:45/5:02 · MONTAGE AID #1 (33.5, crew): arr 5:06 dep 5:12 — MAIN RELOAD for the 19.5-mi high country · Angle (35.79) 5:30/5:45 · WALL=HIKE ALWAYS · John's btm 5:48 · Angle-2nd (38.82) 6:02/6:17 — EAT · YURT (Steps top) 6:27 · 9K (42.47) 7:00/7:14 · SL Loop/Saddle end (46.21) 7:52/7:56 · PCMR AID #2 (53.39) 8:28 raw vs the 8:30 gun · Armstrong/MM jct (57.79) 10:02 · FINAL AID (65) arr 10:55 dep 10:58 · AMBUSH SPLIT (70.19) = SUB-12 GATE: pass by 11:35 → sub-12 at normal descent; 11:42 drop-dead · FINISH ~11:58.",
                 "The yurt climb is where the 8/3 bonk detonated: eat at 38.82 BEFORE it, 165–175 W strictly, ~25 min, HR will lie low.",
                 "Behind-schedule playbook + full cards on the board (2026-09-05)."

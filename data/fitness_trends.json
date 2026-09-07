@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06",
+ "generated": "2026-09-07",
  "athletes": {
   "JA": {
    "name": "Jonathan",
@@ -488,11 +488,11 @@
   "RR": {
    "name": "Robert",
    "weight_kg": 95.0,
-   "n_rides": 40,
-   "n_power": 19,
+   "n_rides": 42,
+   "n_power": 21,
    "date_range": [
     "2026-03-18",
-    "2026-08-30"
+    "2026-09-05"
    ],
    "labs": [
     {
@@ -531,11 +531,11 @@
      "all_wkg": 3.01
     },
     "p10m": {
-     "all": 248,
-     "all_date": "2026-07-23",
-     "r90": 248,
-     "r90_date": "2026-07-23",
-     "all_wkg": 2.61
+     "all": 250,
+     "all_date": "2026-09-05",
+     "r90": 250,
+     "r90_date": "2026-09-05",
+     "all_wkg": 2.63
     },
     "p20m": {
      "all": 243,
@@ -545,11 +545,11 @@
      "all_wkg": 2.56
     },
     "p60m": {
-     "all": 189,
-     "all_date": "2026-08-30",
-     "r90": 189,
-     "r90_date": "2026-08-30",
-     "all_wkg": 1.99
+     "all": 190,
+     "all_date": "2026-09-05",
+     "r90": 190,
+     "r90_date": "2026-09-05",
+     "all_wkg": 2.0
     }
    },
    "spark": {
@@ -561,6 +561,10 @@
      [
       "2026-08",
       215.0
+     ],
+     [
+      "2026-09",
+      220.0
      ]
     ],
     "hours": [
@@ -582,7 +586,11 @@
      ],
      [
       "2026-08",
-      40.1
+      41.1
+     ],
+     [
+      "2026-09",
+      12.1
      ]
     ],
     "easy": [
@@ -604,7 +612,11 @@
      ],
      [
       "2026-08",
-      32.5
+      36.0
+     ],
+     [
+      "2026-09",
+      24.0
      ]
     ],
     "hr120_sea": [],
@@ -615,7 +627,11 @@
      ],
      [
       "2026-08",
-      117.5
+      119.0
+     ],
+     [
+      "2026-09",
+      130.0
      ]
     ]
    },
@@ -629,7 +645,7 @@
      "delta": "+21%",
      "dir": "up",
      "good": true,
-     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 189 W steady for a full hour below threshold HR."
+     "note": "The Coggan estimate off the test (0.95 x 243 = 231) converges on the tested 230. Corroborated Aug 8: 190 W steady for a full hour below threshold HR."
     },
     {
      "metric": "Est. VO2max",
@@ -646,7 +662,7 @@
      "metric": "Power benchmarks (first power meter)",
      "then": "none \u2014 HR-only era",
      "then_label": "through Jul 15",
-     "now": "5-min 286 W - 20-min 243 W - 60-min 189 W",
+     "now": "5-min 286 W - 20-min 243 W - 60-min 190 W",
      "now_label": "since Jul 19",
      "delta": "baseline set",
      "dir": "flat",
@@ -729,8 +745,8 @@
     },
     {
      "label": "HRR (60 s)",
-     "value": "50 bpm",
-     "sub": "from HR 174 \u00b7 08-25",
+     "value": "56 bpm",
+     "sub": "from HR 148 \u00b7 08-31",
      "delta": "new metric \u2014 baseline set",
      "cls": "na"
     }
