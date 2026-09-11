@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+{% block title %}Strength — {{ plan.meta.athlete }}{% endblock %}
+
+{% block content %}
+<style>
+  .st-head { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; margin-bottom:14px; }
+  .st-head h2 { margin:0; }
+  .phase-box { text-align:right; min-width:240px; }
+  .phase-name { font-weight:800; color:var(--brand-dark); font-size:1.1rem; }
+  .phase-bar { height:8px; background:#e7e2d8; border-radius:999px; overflow:hidden; margin-top:6px; }
+  .phase-bar > div { height:100%; background:var(--brand); }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; margin-bottom:18px; }
+  .kpi { background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:12px 14px; }
+  .kpi .lab { font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700; }
+  .kpi .val { font-size:1.55rem; font-weight:800; color:var(--ink); line-height:1.15; margin-top:2px; }
+  .kpi .sub { font-size:.8rem; color:var(--muted); }
+  .kpi .delta { font-size:.78rem; font-weight:700; margin-top:4px; }
+  .kpi .delta.good{color:#1e7d3a} .kpi .delta.warn{color:#a35c00} .kpi .delta.na{color:var(--muted)}
+  .wk-row { display:flex; gap:10px; padding:8px 0; border-top:1px dashed var(--line); align-items:flex-start; }
+  .wk-row:first-of-type { border-top:none; }
+  .wk-day { min-width:46px; font-weight:800; color:var(--brand-dark); }
+  .wk-row.done .wk-title { text-decoration:line-through; color:var(--muted); }
+  .wk-title { font-weight:700; }
+  .wk-items { font-size:.86rem; color:var(--muted); margin:2px 0 0; padding-left:1rem; }
+  .tick { font-size:.72rem; font-weight:800; border-radius:999px; padding:2px 8px; background:rgba(30,125,58,.12); color:#1e7d3a; margin-left:6px; }
+  .type-pill { font-size:.66rem; border-radius:999px; padding:2px 7px; font-weight:800; text-transform:uppercase; margin-left:6px; vertical-align:middle; }
+  .type-strength{background:rgba(235,104,52,.16);color:#7a431d;} .type-bike{background:rgba(42,120,214,.14);color:var(--brand-dark);} .type-core{background:rgba(201,133,0,.16);color:#7a5200;} .type-rest{background:#e7e2d8;color:var(--muted);}
+  .sess-card { border:1px solid var(--line); border-radius:16px; background:#fff; padding:14px 16px; margin-bottom:12px; }
+  .sess-head { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:baseline; }
+  .sess-date { font-weight:800; color:var(--brand-dark); }
+  .chip { font-size:.74rem; background:#f1efe8; border-radius:999px; padding:2px 8px; color:var(--muted); margin-left:4px; }
+  .ex-line { display:flex; justify-content:space-between; gap:10px; padding:5px 0; border-top:1px dashed var(--line); font-size:.93rem; }
+  .ex-line:first-of-type { border-top:none; }
+  .ex-name { font-weight:600; }
+  .ex-sets { color:var(--muted); font-variant-numeric:tabular-nums; }
+  .ex-e1 { white-space:nowrap; font-weight:700; color:var(--brand-dark); }
+  .pr { font-size:.68rem; font-weight:800; border-radius:999px; padding:1px 7px; background:rgba(201,133,0,.18); color:#7a5200; margin-left:6px; }
+  .first { font-size:.68rem; font-weight:700; border-radius:999px; padding:1px 7px; background:#eef2f7; color:var(--muted); margin-left:6px; }
+  .notes { font-size:.86rem; color:var(--muted); margin-top:8px; white-space:pre-line; }
+  table.ladder { width:100%; font-size:.9rem; }
+  table.ladder td, table.ladder th { padding:5px 6px; border-top:1px dashed var(--line); }
+  table.ladder tr.met td { color:#1e7d3a; }
+  table.ladder tr.due td { color:#a35c00; }
+  table.ladder tr.next td { font-weight:800; }
+  .ph-row { padding:7px 0; border-top:1px dashed var(--line); font-size:.88rem; }
+  .ph-row.now { background:rgba(42,120,214,.07); border-radius:8px; padding:7px 8px; }
+  .ph-name { font-weight:800; }
+  .ph-dates { color:var(--muted); font-size:.8rem; }
+  .rules li, .hotel li { font-size:.86rem; margin-bottom:4px; }
+  textarea.log { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9rem; min-height:150px; }
+  .hint { font-size:.8rem; color:var(--muted); }
+  code { color:#7a431d; }
+</style>
+
+<div class="st-head">
+  <div>
+    <div class="panel-label">💪 Strength &amp; Conditioning</div>
+    <h2>{{ plan.meta.athlete }} · {{ plan.meta.title }}</h2>
+    <div class="text-muted">{{ plan.meta.subtitle }}</div>
+  </div>
+  <div class="phase-box">
+    {% if days_to_race is not none %}<div class="hint">{{ plan.meta.race }} in <b>{{ days_to_race }}</b> days</div>{% endif %}
+    {% if phase %}
+    <div class="phase-name">Phase {{ phase.id[1:] }} · {{ phase.name }}</div>
+    <div class="hint">day {{ phase_prog.day }} of {{ phase_prog.total }} · {{ phase.start }} → {{ phase.end }}</div>
+    <div class="phase-bar"><div style="width:{{ phase_prog.pct }}%"></div></div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi">
+    <div class="lab">Bench e1RM</div>
+    {% if summary.bench %}
+      <div class="val">{{ summary.bench.best_e1rm|round|int }} lb</div>
+      <div class="sub">{{ summary.bench.best_load|round|int }} × {{ summary.bench.best_reps }} · {{ summary.bench.best_date }}</div>
+      {% if next_rung %}<div class="delta {{ 'warn' if next_rung.status == 'due' else 'na' }}">next rung {{ next_rung.e1rm }} by {{ next_rung.label }}</div>{% endif %}
+    {% else %}<div class="val">—</div><div class="sub">log a bench session</div>{% endif %}
+  </div>
+  <div class="kpi">
+    <div class="lab">Trap-bar e1RM</div>
+    {% if summary.trapbar %}
+      <div class="val">{{ summary.trapbar.best_e1rm|round|int }} lb</div>
+      <div class="sub">{{ summary.trapbar.best_load|round|int }} × {{ summary.trapbar.best_reps }} · {{ summary.trapbar.best_date }}</div>
+    {% else %}<div class="val">—</div><div class="sub">first Lower day starts it</div>{% endif %}
+  </div>
+  <div class="kpi">
+    <div class="lab">Body mass</div>
+    {% if summary.latest_bodyweight %}
+      <div class="val">{{ summary.latest_bodyweight.value|round(1) }} lb</div>
+      <div class="sub">logged {{ summary.latest_bodyweight.date }}</div>
+      <div class="delta na">target 175–180</div>
+    {% else %}<div class="val">—</div><div class="sub">add <code>bw: 198</code> under a session header</div><div class="delta na">target 175–180</div>{% endif %}
+  </div>
+  <div class="kpi">
+    <div class="lab">W/kg</div>
+    {% if wkg %}
+      <div class="val">{{ wkg.wkg }}</div>
+      <div class="sub">FTP {{ wkg.ftp_w }} W ÷ {{ wkg.lb|round|int }} lb{% if wkg.assumed %} (assumed){% endif %}</div>
+      <div class="delta na">3.3 at 265 W / 178 lb</div>
+    {% else %}<div class="val">—</div><div class="sub">needs FTP from Fitness Trends</div>{% endif %}
+  </div>
+  <div class="kpi">
+    <div class="lab">Gym this week</div>
+    <div class="val">{{ week.done_strength }}<span class="sub"> / {{ week.planned_strength }}</span></div>
+    <div class="sub">{{ week_label }}</div>
+    <div class="delta {{ 'good' if week.done_strength >= week.planned_strength and week.planned_strength else 'na' }}">{{ summary.total_sessions }} sessions logged since {{ summary.first_date or '—' }}</div>
+  </div>
+  <div class="kpi">
+    <div class="lab">Core this week</div>
+    <div class="val">{{ summary.week.core_sessions }}<span class="sub"> / {{ summary.core_target }}</span></div>
+    <div class="sub">any session with core work counts</div>
+    <div class="delta {{ 'good' if summary.core_weeks_at_target else 'na' }}">{{ summary.core_weeks_at_target }} week{{ '' if summary.core_weeks_at_target == 1 else 's' }} at target in a row</div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-7">
+
+    <div class="panel-card mb-4">
+      <p class="panel-label">This week · {{ phase.name if phase else '' }} template</p>
+      {% if week.rows %}
+        {% for r in week.rows %}
+        <div class="wk-row {{ 'done' if r.done else '' }}">
+          <div class="wk-day">{{ r.day }}</div>
+          <div style="flex:1">
+            <span class="wk-title">{{ r.session }}</span>
+            <span class="type-pill type-{{ r.type }}">{{ r.type }}</span>
+            {% if r.done %}<span class="tick">✓ {{ r.matched }}</span>{% endif %}
+            {% if r.type == 'core' %}<span class="chip">{{ summary.week.core_sessions }}/{{ summary.core_target }} this week</span>{% endif %}
+            <ul class="wk-items">{% for it in r["items"] %}<li>{{ it }}</li>{% endfor %}</ul>
+          </div>
+        </div>
+        {% endfor %}
+        {% if phase and phase.bench_rule %}<div class="hint mt-2"><b>Bench rule this phase:</b> {{ phase.bench_rule }}</div>{% endif %}
+      {% else %}<p class="text-muted mb-0">No template for this phase.</p>{% endif %}
+    </div>
+
+    <div class="panel-card mb-4">
+      <p class="panel-label">Log a session</p>
+      <form method="POST" action="{{ url_for('strength_log_form') }}">
+        <textarea class="form-control log" name="text" placeholder="## {{ today }} · Upper A · MEM
+bw: 198 · time: 50 · rpe: 7
+- Bench press: 135 x 10, 10, 8, 5
+- Kettlebell row: 53 x 10, 10, 10
+- Hanging knee raise: bw x 15, 20, 10
+Notes: felt good"></textarea>
+        <div class="d-flex justify-content-between align-items-center mt-2 flex-wrap gap-2">
+          <div class="hint">Same grammar as the Obsidian note: <code>## date · Session</code>, one <code>- Exercise: load x reps, reps; load x reps</code> per line, <code>bw</code>, <code>45s</code>, <code>@8</code>, <code>+</code> for a rep-max set. Re-posting the same date + session name replaces it.</div>
+          <button class="btn btn-primary btn-sm" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel-card">
+      <p class="panel-label">History</p>
+      {% if sessions %}
+        {% for s in sessions %}
+        <div class="sess-card">
+          <div class="sess-head">
+            <div><span class="sess-date">{{ s.label }}</span> · <b>{{ s.title }}</b>
+              {% if s.location %}<span class="chip">{{ s.location }}</span>{% endif %}
+              {% if s.bodyweight %}<span class="chip">bw {{ s.bodyweight|round(1) }}</span>{% endif %}
+              {% if s.duration_minutes %}<span class="chip">{{ s.duration_minutes }} min</span>{% endif %}
+              {% if s.rpe %}<span class="chip">RPE {{ s.rpe|round(1) }}</span>{% endif %}
+            </div>
+            <div class="hint">{{ s.exercises|length }} exercises{% if s.volume_lb %} · {{ "{:,}".format(s.volume_lb) }} lb moved{% endif %}</div>
+          </div>
+          <div class="mt-2">
+            {% for g in s.exercises %}
+            <div class="ex-line">
+              <div><span class="ex-name">{{ g.name }}</span> <span class="ex-sets">— {{ g.sets_text }}</span>
+                {% if g.pr %}<span class="pr">PR</span>{% elif g.first %}<span class="first">first</span>{% endif %}</div>
+              {% if g.best %}<div class="ex-e1">e1RM {{ g.best.e1rm|round|int }}</div>{% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          {% if s.notes %}<div class="notes">{{ s.notes }}</div>{% endif %}
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="text-muted mb-0">Nothing logged yet. Paste a session above or run <code>scripts/push_workouts.py</code>.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="panel-card mb-4">
+      <p class="panel-label">Bench ladder → 315</p>
+      <table class="ladder">
+        <tr><th>By</th><th>e1RM</th><th>Looks like</th><th></th></tr>
+        {% for r in ladder %}
+        <tr class="{{ r.status }} {{ 'next' if next_rung and r.date == next_rung.date else '' }}">
+          <td>{{ r.label }}</td><td>{{ r.e1rm }}</td><td>{{ r.example }}</td>
+          <td>{% if r.status == 'met' %}✓{% elif r.status == 'due' %}behind{% elif r.review %}review{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <div class="hint mt-2">225×12 and 315×1 are the same e1RM. Review points Jan 1 and May 1: if behind, the 315 single slides to October 2027 and 225×12 stays the in-season target.</div>
+    </div>
+
+    <div class="panel-card mb-4">
+      <p class="panel-label">Phases</p>
+      {% for ph in plan.phases %}
+      <div class="ph-row {{ 'now' if phase and ph.id == phase.id else '' }}">
+        <span class="ph-name">{{ ph.id[1:] }} · {{ ph.name }}</span> <span class="ph-dates">{{ ph.start }} → {{ ph.end }} · gym {{ ph.gym_days }}×/wk</span>
+        <div class="hint">{{ ph.gym }}</div>
+        <div class="hint">🚴 {{ ph.bike }} · ⚖️ {{ ph.weight }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="panel-card mb-4">
+      <p class="panel-label">Goals</p>
+      {% for g in plan.goals %}
+      <div class="ph-row"><span class="ph-name">{{ g.label }}</span>
+        <span class="hint">{% if g.start is defined %}{{ g.start }} → {% endif %}{% if g.target is defined %}{{ g.target }}{% else %}{{ g.target_low }}–{{ g.target_high }}{% endif %} {{ g.unit or '' }}</span>
+        <div class="hint">{{ g.note }}</div></div>
+      {% endfor %}
+    </div>
+
+    <div class="panel-card mb-4">
+      <p class="panel-label">Rules</p>
+      <ol class="rules mb-0">{% for r in plan.rules %}<li>{{ r }}</li>{% endfor %}</ol>
+    </div>
+
+    <div class="panel-card">
+      <p class="panel-label">Hotel versions (they count)</p>
+      {% for h in plan.hotel %}
+      <div class="ph-row"><span class="ph-name">{{ h.session }}</span>
+        <ul class="hotel mb-0 mt-1">{% for it in h["items"] %}<li>{{ it }}</li>{% endfor %}</ul></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

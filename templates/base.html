@@ -173,6 +173,7 @@
         <a href="/board">🤝 Team Board</a>
         <a href="{{ url_for('plan') }}">🗓 Jonathan's Plan</a>
         <a href="/plan/robert">🗓 Robert's Plan</a>
+        <a href="{{ url_for('strength') }}">💪 Strength</a>
         <a href="{{ url_for('dashboard') }}">Dashboard</a>
         {% if session.user_id %}
             <a class="out" href="{{ url_for('auth.logout') }}">Log out</a>

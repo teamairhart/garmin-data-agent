@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "athlete": "Jonathan",
+    "title": "Strength & Conditioning 2027",
+    "subtitle": "Bench 315 (= 225×12) · back-safe leg power · −20 lb to 175–180 · FTP + VO2max up · daily core",
+    "race": "Park City Point 2 Point",
+    "race_date": "2027-09-04",
+    "race_date_note": "Saturday before Labor Day — confirm when the 2027 date is posted",
+    "source_note": "~/Vault/Fitness/Strength & Conditioning Plan 2027.md",
+    "version": "v0 · 2026-09-10"
+  },
+  "goals": [
+    {"key": "bench", "label": "Bench e1RM", "start": 180, "target": 315, "unit": "lb", "note": "225×12 and 315×1 are the same e1RM — one goal, two tests"},
+    {"key": "bodyweight", "label": "Body mass", "start": 200, "target_low": 175, "target_high": 180, "unit": "lb", "note": "cut Sep 21 → Apr 15 at 0.5–0.75 lb/wk, then hold"},
+    {"key": "ftp", "label": "FTP", "start": 240, "target": 265, "unit": "W", "note": "≈3.3 W/kg at 178 lb; the sub-10 lever"},
+    {"key": "core", "label": "Core sessions / week", "target": 5, "note": "McGill Big 3 near-daily + 2 gym core blocks"}
+  ],
+  "phases": [
+    {"id": "p0", "name": "Transition", "start": "2026-09-10", "end": "2026-10-11", "gym_days": 3,
+     "gym": "3×/wk light, 3×8–12, RPE ≤7 — tendons and patterns, not loads",
+     "bike": "Post-race recovery → easy Z2; October cool sea-level retest",
+     "weight": "Start a gentle deficit (−250 kcal) in week 2", "core": "Big 3 daily from day 1",
+     "bench_rule": "3×8–10, +5 lb/week, RPE ≤7, 1-count pause on the chest"},
+    {"id": "p1", "name": "Strength + Base", "start": "2026-10-12", "end": "2027-01-31", "gym_days": 3,
+     "gym": "3×/wk (Upper A · Lower · Upper B), linear progression — THE strength phase",
+     "bike": "Z2 backbone 7–9 h; one 4×4 VO2/wk from November; one sweet-spot ride/wk",
+     "weight": "−0.5 to −0.75 lb/wk, −300–400 kcal/day, protein 180 g", "core": "Big 3 daily + 2 gym core blocks",
+     "bench_rule": "Mon 3×5 +5 lb/session while all 15 reps are clean; Fri 4×6–8 at −10–15%; stall twice → −10% and rebuild"},
+    {"id": "p2", "name": "Build", "start": "2027-02-01", "end": "2027-04-30", "gym_days": 2,
+     "gym": "2×/wk (Upper · Lower), wave loading, intensity up / volume down; power work starts",
+     "bike": "3-wk blocks alternating VO2 (4×4 2×/wk) ↔ threshold (Testa 4–6 × 8–15 min @ 220–240)",
+     "weight": "Deficit ends ~Apr 15 at ~180, then hold", "core": "same",
+     "bench_rule": "5/3/1-style waves off a training max = 90% e1RM; top set AMRAP logged with +"},
+    {"id": "p3", "name": "Specific", "start": "2027-05-01", "end": "2027-07-31", "gym_days": 2,
+     "gym": "2×/wk strength maintenance + power (swings, jumps, sled); 225×12 test in June",
+     "bike": "Long climbs, altitude weeks, Testa PC menu incl. 50–60 rpm torque grinds",
+     "weight": "Hold 175–180, no deficit, carbs periodized to ride days", "core": "same",
+     "bench_rule": "Singles/doubles at 85–92%, low volume; 225 rep test in June"},
+    {"id": "p4", "name": "Peak / Taper", "start": "2027-08-01", "end": "2027-09-03", "gym_days": 1,
+     "gym": "1×/wk full body; 315 attempt Aug 1–14 only if e1RM tracking ≥325 (else October)",
+     "bike": "Race prep as 2026; front-3-hours restraint is the stated lesson",
+     "weight": "Hold", "core": "Big 3 only in race week",
+     "bench_rule": "2×2 @ 90%; attempt window Aug 1–14 if on track"},
+    {"id": "p5", "name": "Post-race", "start": "2027-09-05", "end": "2027-10-31", "gym_days": 3,
+     "gym": "Strength push again; deferred 315 attempt", "bike": "Recovery", "weight": "—", "core": "resume",
+     "bench_rule": "as Phase 1"}
+  ],
+  "ladder": [
+    {"date": "2026-09-10", "e1rm": 180, "example": "135×10 (baseline)"},
+    {"date": "2026-11-01", "e1rm": 205, "example": "165×8 or 185×3"},
+    {"date": "2027-01-01", "e1rm": 240, "example": "200×6 or 215×3", "review": true},
+    {"date": "2027-03-01", "e1rm": 265, "example": "225×5"},
+    {"date": "2027-05-01", "e1rm": 285, "example": "245×5", "review": true},
+    {"date": "2027-07-01", "e1rm": 305, "example": "225×10 or 275×3"},
+    {"date": "2027-08-14", "e1rm": 315, "example": "225×12 · 315×1"}
+  ],
+  "weekly_templates": {
+    "p0": [
+      {"day": "Mon", "session": "Upper A", "type": "strength", "items": ["Bench press 3×8–10 (+5/wk, RPE ≤7, paused)", "Kettlebell row 3×10", "Overhead press 3×10", "Lat pulldown (wide grip) 3×10", "Band pull-apart 3×20", "Core: Hanging knee raise 3×10–15 · Pallof press 3×10/side · Dead bug 3×8/side"]},
+      {"day": "Tue", "session": "Z2 ride", "type": "bike", "items": ["Easy Z2 45–75 min (recovery block)"]},
+      {"day": "Wed", "session": "Lower", "type": "strength", "items": ["Trap-bar deadlift 3×12 light (RPE ≤7, neutral spine)", "Leg press 3×12", "Bulgarian split squat 3×8/leg", "Box step-up 2×10/leg (15\")", "Hip thrust 3×10", "Leg curl 3×10", "Calf raise 3×15", "Plank (RKC) 3×30s"]},
+      {"day": "Thu", "session": "Z2 ride", "type": "bike", "items": ["Easy Z2 45–75 min"]},
+      {"day": "Fri", "session": "Upper B", "type": "strength", "items": ["Incline press (Hammer Strength) 3×10", "Chest-supported row 3×10", "Dip or Push-up 3× (max − 2)", "Face pull 3×15", "Core: Suitcase carry 2×40 m · Side plank 3×30s/side"]},
+      {"day": "Sat", "session": "Long Z2", "type": "bike", "items": ["Z2 1.5–2.5 h, fueled (gut training per Kary)"]},
+      {"day": "Sun", "session": "Off", "type": "rest", "items": ["Big 3 + walk"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up 5-3-1 × 10s", "Side plank 5-3-1 × 10s/side", "Bird dog 5-3-1 × 10s/side"]}
+    ],
+    "p1": [
+      {"day": "Mon", "session": "Upper A", "type": "strength", "items": ["Bench press 3×5 (+5 lb/session)", "Kettlebell row 4×8", "Overhead press 3×6–8", "Lat pulldown (wide grip) 3×8", "Band pull-apart 3×20", "Core: Hanging knee raise 3×10–20 · Pallof press 3×10/side · Dead bug 3×8/side"]},
+      {"day": "Tue", "session": "Z2 ride", "type": "bike", "items": ["Z2 60–90 min"]},
+      {"day": "Wed", "session": "Lower", "type": "strength", "items": ["Trap-bar deadlift 4×6 (+10 lb/wk when clean, RPE cap 8)", "Leg press 3×10", "Bulgarian split squat 3×8/leg", "Hip thrust 3×8", "Nordic curl or Leg curl 3×8", "Calf raise 3×15", "Plank (RKC) 3×30s"]},
+      {"day": "Thu", "session": "VO2 4×4", "type": "bike", "items": ["4 × 4 min, HR 175–184 by end of min 2 (~270–290 W), 3 min easy between · ride it fresh · sweet-spot 2×20 in early P1 instead"]},
+      {"day": "Fri", "session": "Upper B", "type": "strength", "items": ["Bench press 4×6–8 at −12%", "Incline press (Hammer Strength) 3×8", "Chest-supported row 4×10", "Dip 3×8", "Face pull 3×15", "Core: Suitcase carry 2×40 m · Side plank 3×30s/side"]},
+      {"day": "Sat", "session": "Long Z2", "type": "bike", "items": ["Z2 2–4 h, fueled"]},
+      {"day": "Sun", "session": "Off", "type": "rest", "items": ["Big 3 + walk"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up 5-3-1 × 10s", "Side plank 5-3-1 × 10s/side", "Bird dog 5-3-1 × 10s/side"]}
+    ],
+    "p2": [
+      {"day": "Mon", "session": "Upper", "type": "strength", "items": ["Bench press wave (5s / 3s / 1+ / deload) off TM = 90% e1RM", "Incline press (Hammer Strength) 3×8", "Kettlebell row 4×8", "Overhead press 3×5", "Face pull 3×15", "Core block"]},
+      {"day": "Tue", "session": "Bike quality #1", "type": "bike", "items": ["VO2 block: 4×4 · Threshold block: 4–6 × 8–15 min @ 220–240"]},
+      {"day": "Wed", "session": "Lower", "type": "strength", "items": ["Trap-bar deadlift 3×5 (RPE cap 8)", "Kettlebell swing 5×10", "Box jump 4×5 (12–18\")", "Bulgarian split squat 3×8/leg", "Hip thrust 3×8", "Nordic curl 3×6", "Core block"]},
+      {"day": "Thu", "session": "Z2 ride", "type": "bike", "items": ["Z2 60–90 min"]},
+      {"day": "Fri", "session": "Bike quality #2", "type": "bike", "items": ["VO2 block: 4×4 or Rønnestad 30/15 · Threshold block: Z2"]},
+      {"day": "Sat", "session": "Long Z2", "type": "bike", "items": ["Z2 2.5–4 h"]},
+      {"day": "Sun", "session": "Off", "type": "rest", "items": ["Big 3 + walk"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up · Side plank · Bird dog (5-3-1)"]}
+    ],
+    "p3": [
+      {"day": "Mon", "session": "Upper", "type": "strength", "items": ["Bench press 3×3 @ 85–90% (225 rep test in June)", "Overhead press 3×5", "Kettlebell row 3×8", "Face pull 3×15", "Core block"]},
+      {"day": "Tue", "session": "Bike quality #1", "type": "bike", "items": ["Threshold / climbing per Testa PC menu"]},
+      {"day": "Wed", "session": "Lower", "type": "strength", "items": ["Trap-bar deadlift 3×3–5", "Kettlebell swing 5×10", "Box jump 4×5", "Bulgarian split squat 2×8/leg", "Hip thrust 2×8", "Core block"]},
+      {"day": "Thu", "session": "Z2 ride", "type": "bike", "items": ["Z2 60–90 min or torque grinds 5×4 @ 50–60 rpm"]},
+      {"day": "Fri", "session": "Bike quality #2", "type": "bike", "items": ["VO2 4×4 or 30/15"]},
+      {"day": "Sat", "session": "Long climb", "type": "bike", "items": ["3–5 h with climbing"]},
+      {"day": "Sun", "session": "Off", "type": "rest", "items": ["Big 3 + walk"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up · Side plank · Bird dog (5-3-1)"]}
+    ],
+    "p4": [
+      {"day": "Wed", "session": "Full body", "type": "strength", "items": ["Bench press 2×2 @ 90% (315 attempt Aug 1–14 if on track)", "Trap-bar deadlift 2×5", "Bulgarian split squat 2×8/leg", "Core block"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up · Side plank · Bird dog (5-3-1) — only this in race week"]}
+    ],
+    "p5": [
+      {"day": "Mon", "session": "Upper A", "type": "strength", "items": ["as Phase 1"]},
+      {"day": "Wed", "session": "Lower", "type": "strength", "items": ["as Phase 1"]},
+      {"day": "Fri", "session": "Upper B", "type": "strength", "items": ["as Phase 1"]},
+      {"day": "Daily", "session": "Big 3", "type": "core", "items": ["Curl-up · Side plank · Bird dog (5-3-1)"]}
+    ]
+  },
+  "rules": [
+    "Bike wins (Testa): if 24 h soreness stops you holding a 130 W Z2 floor, drop gym loads 20%.",
+    "Lift after Z2 rides, never before intervals; heavy lower ≥48 h before the long ride.",
+    "Spine: neutral on every hinge; RPE cap 8 on trap-bar and RDL; no grinding reps; no max-outs on hinges; stop at the first back tightness and swap to leg press / split squat. No barbell back squat.",
+    "Trips: Hotel Upper / Hotel Lower / Hotel Core count fully toward the week.",
+    "Sleep <6 h two nights running → that day's gym session becomes Big 3 + walk.",
+    "Deload every 4th week: strength sets −40%, loads held, aligned with the bike recovery week."
+  ],
+  "hotel": [
+    {"session": "Hotel Upper", "items": ["Dumbbell bench press or Floor press 4×8", "Dumbbell row 4×10", "Push-up 3×max", "Overhead press (DB) 3×10", "Band pull-apart 3×20"]},
+    {"session": "Hotel Lower", "items": ["Goblet squat 4×10", "Bulgarian split squat 3×10/leg", "Romanian deadlift (DB, light, RPE ≤7) 3×10", "Box step-up on a bench 3×10/leg", "Calf raise 3×20"]},
+    {"session": "Hotel Core", "items": ["Big 3", "Pallof press with a packed band 3×10/side", "Dead bug 3×8/side"]}
+  ]
+}

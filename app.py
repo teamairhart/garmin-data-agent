@@ -8,7 +8,12 @@ from src.agents.data_analyzer import ride_analyzer
 from src.agents.update_monitor import update_monitor
 from src.auth import auth_bp, init_db
 from src.dashboard_data import build_dashboard_context
-from src.training_log import create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions, upsert_workout_log
+from src.training_log import (create_gym_session, get_workout_logs, init_training_tables, list_recent_gym_sessions,
+                              upsert_workout_log, init_strength_columns, upsert_gym_session, list_gym_sessions,
+                              strength_summary)
+from src.strength_log import parse_workout_log, coerce_session, load_exercise_library
+from src.strength_plan import (load_strength_plan, current_phase, phase_progress, days_to_race, ladder_status,
+                               week_view, week_label)
 from src.plan_tracker import (init_plan_tables, load_plan, get_completions, set_completion,
                               progress_summary, plan_prescriptions, plan_week_rows)
 from src.board import (init_board_tables, get_calendar, set_calendar_day, list_reports,
@@ -40,6 +45,7 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 # Initialize database
 init_db()
 init_training_tables()
+init_strength_columns()
 init_plan_tables()
 init_board_tables()
 init_trends_table()
@@ -429,6 +435,107 @@ def debug_llm():
         debug_info["test_result"] = "No token - cannot test"
     
     return f"<pre>{debug_info}</pre>"
+
+
+
+# ---------------- Strength & Conditioning (Workout log grammar) ----------------
+
+import re as _re
+
+
+def _trends_ftp_w(trends, athlete='JA'):
+    """Pull 'Est. FTP' (watts) out of the Fitness Trends payload pushed by push_trends.py."""
+    try:
+        for t in (trends or {}).get('athletes', {}).get(athlete, {}).get('kpis', []):
+            if str(t.get('label', '')).lower().startswith('est. ftp'):
+                m = _re.search(r'(\d+(?:\.\d+)?)', str(t.get('value', '')))
+                if m:
+                    return float(m.group(1))
+    except Exception:
+        return None
+    return None
+
+
+def _ingest_sessions(user_id, parsed, source):
+    results = []
+    for sess in parsed:
+        results.append(upsert_gym_session(user_id, sess, source=source))
+    return results
+
+
+@app.route('/strength')
+def strength():
+    """Strength & Conditioning page: plan, this week, log, history, ladder."""
+    if not session.get('user_id'):
+        return redirect(url_for('auth.login', next='/strength'))
+    user_id = int(session['user_id'])
+    today = date.today()
+    plan_data = load_strength_plan()
+    phase = current_phase(plan_data, today)
+    sessions = list_gym_sessions(user_id)
+    summary = strength_summary(user_id, today, sessions=sessions)
+    ladder, next_rung = ladder_status(plan_data, summary['bench']['best_e1rm'] if summary['bench'] else None, today)
+    week = week_view(plan_data, phase, summary['week']['sessions'])
+    wkg = None
+    ftp_w = _trends_ftp_w(get_trends())
+    if ftp_w:
+        bw = summary['latest_bodyweight']['value'] if summary['latest_bodyweight'] else None
+        assumed = bw is None
+        if bw is None:
+            bw = next((g.get('start') for g in plan_data.get('goals', []) if g.get('key') == 'bodyweight'), None)
+        if bw:
+            wkg = {'ftp_w': int(ftp_w), 'lb': bw, 'wkg': round(ftp_w / (bw * 0.45359237), 2), 'assumed': assumed}
+    return render_template(
+        'strength.html',
+        plan=plan_data, phase=phase, phase_prog=phase_progress(phase, today),
+        days_to_race=days_to_race(plan_data, today), ladder=ladder, next_rung=next_rung,
+        week=week, week_label=week_label(today), sessions=sessions, summary=summary, wkg=wkg,
+        today=today.isoformat(),
+    )
+
+
+@app.route('/strength/log', methods=['POST'])
+def strength_log_form():
+    """Textarea on the page: same grammar as the Obsidian note."""
+    if not session.get('user_id'):
+        flash('Please log in to save sessions.', 'error')
+        return redirect(url_for('auth.login', next='/strength'))
+    text = request.form.get('text', '')
+    parsed = parse_workout_log(text)
+    if not parsed:
+        flash('Nothing parsed — the first line must be a header like "## 2026-09-10 · Upper A".', 'error')
+        return redirect(url_for('strength'))
+    results = _ingest_sessions(int(session['user_id']), parsed, source='page')
+    n_new = sum(1 for r in results if r['created'])
+    warn = [w for r in results for w in r['warnings']]
+    flash(f"Saved {len(results)} session(s) ({n_new} new, {len(results) - n_new} replaced)." +
+          (f" {len(warn)} warning(s): " + '; '.join(warn[:4]) if warn else ''), 'success' if not warn else 'error')
+    return redirect(url_for('strength'))
+
+
+@app.route('/strength/sessions', methods=['GET', 'POST'])
+def strength_sessions_api():
+    """JSON API used by scripts/push_workouts.py. POST {"text": "..."} or {"sessions": [...]}; GET lists."""
+    err = _board_login_required_json()
+    if err:
+        return err
+    user_id = int(session['user_id'])
+    if request.method == 'GET':
+        return jsonify({'ok': True, 'sessions': list_gym_sessions(user_id, limit=int(request.args.get('limit', 50)))})
+    payload = request.get_json(silent=True) or {}
+    parsed = []
+    try:
+        if payload.get('text'):
+            parsed = parse_workout_log(str(payload['text']))
+        else:
+            lib = load_exercise_library()
+            parsed = [coerce_session(d, lib) for d in (payload.get('sessions') or [])]
+    except (ValueError, TypeError) as exc:
+        return jsonify({'ok': False, 'error': str(exc)}), 400
+    if not parsed:
+        return jsonify({'ok': False, 'error': 'no sessions in payload'}), 400
+    results = _ingest_sessions(user_id, parsed, source='push')
+    return jsonify({'ok': True, 'results': results})
 
 
 @app.route('/dashboard/log-workout', methods=['POST'])
